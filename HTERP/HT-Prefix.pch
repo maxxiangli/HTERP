@@ -1,0 +1,39 @@
+//
+// Prefix header for all source files of the 'QQStock' target in the 'QQStock' project
+//
+
+#import <Availability.h>
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+
+#ifdef __OBJC__
+	#import <UIKit/UIKit.h>
+	#import <Foundation/Foundation.h>
+	//自定义类
+    #import "CCustomButton.h"
+    #import "NSObject+Json.h"
+    #import "HTGlobal.h"
+    #import "CCommon.h"
+	#import "CConfiguration.h"
+	#import "CThemeColorMapConfig.h"
+//
+////	#import "CStockLog.h"
+//
+//	#import "UIView+UIViewAdditions.h"
+//	#import "CCustomTabBarController.h"
+//	#import "UINavigationBar+Draw.h"
+	#import "UIViewController+ext.h"
+//    #import "CCustomUILabel.h"
+//	#import "CCustomViewController.h"
+//    #import "CCustomButton.h"
+//
+//
+////    #import "CLogin.h"
+	#import "CPortfolioLoginManager.h"
+//
+////	#import "CWtLoginManager.h"
+////	#import "CWXLoginManager.h"
+//    #import "NullSafe.h"//[保证PHP后台返回的null 不崩]
+#endif

@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, weak) HTMainTabBarController* tabBarController;
 @end
 
 @implementation AppDelegate
@@ -47,5 +47,19 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
+-(UINavigationController*) currentController
+{
+    UIViewController *selectViewCtrl = self.tabBarController.selectedViewController;
+    if ([selectViewCtrl isKindOfClass:[UISplitViewController class]]) {
+        if (!isiOS8Later) return nil;
+        UISplitViewController *theSplitCtrl = (UISplitViewController*) self.tabBarController.selectedViewController;
+        NSArray *viewCtrls = theSplitCtrl.viewControllers;
+        if (!viewCtrls.count) return nil;
+        UINavigationController *primaryViewController = [viewCtrls lastObject];
+        return primaryViewController;
+    } else if ([selectViewCtrl isKindOfClass:[UINavigationController class]]) {
+        return (UINavigationController *) self.tabBarController.selectedViewController;
+    }
+    return nil;
+}
 @end
