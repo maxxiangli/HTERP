@@ -7,7 +7,7 @@
 //
 
 #import "UIViewController+ext.h"
-//#import "CCustomUILabel.h"
+#import "CCustomUILabel.h"
 
 #define kUIVIEWCONTROLLER_BUTTON_LEFTMARGIN         13.0f
 #define kUIVIEWCONTROLLER_BUTTON_RIGHTMARGIN        13.0f
@@ -116,7 +116,7 @@
     titleView.autoresizesSubviews = YES;
     titleView.backgroundColor = [UIColor clearColor];
     
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 44)];
+    UILabel *titleLabel = [[CCustomUILabel alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 44)];
     titleLabel.tag = kUIVIEWCONTROLLER_LABEL_TAG;
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:FS_NavigationBar_Title];

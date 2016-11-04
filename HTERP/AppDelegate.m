@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "RDVTabBarItem.h"
-#import "FirstViewController.h"
+#import "CNavigationController.h"
+#import "CBigEventController.h"
 #import "SecondViewController.h"
 #import "ThirdViewController.h"
 #import "FourthViewController.h"
@@ -24,6 +25,19 @@
     [self.window makeKeyAndVisible];
     
     [self customizeInterface];
+    
+    [UINavigationBar navigationBarEnhancement];
+    [UINavigationBar setCustomBackgroundImage:BUNDLEIMAGE(@"stock_navi_bg_128.png")];
+    
+    //初始化字号
+    initFontTypeFor6p();
+    
+    // 状态栏样式
+    UIApplication *statusBar = [UIApplication sharedApplication];
+    // add by wangsn start for plist文件中增加了一句初试隐藏状态条的语句，所以这里把状态条打开
+    [statusBar setStatusBarHidden:NO];
+    // add by wangsn end
+    [statusBar setStatusBarStyle:UIStatusBarStyleLightContent];
     return YES;
 }
 
@@ -57,24 +71,27 @@
 #pragma mark - Methods
 
 - (void)setupViewControllers {
-    UIStoryboard *firstStoryboard = [UIStoryboard storyboardWithName:@"HTFirstTabStoryboard" bundle:nil];
-    FirstViewController *firstViewController = [firstStoryboard instantiateViewControllerWithIdentifier:@"firstViewController"];
-    UIViewController *firstNavigationController = [[UINavigationController alloc]
-                                                   initWithRootViewController:firstViewController];
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"StockDetail" bundle:nil];
+    CBigEventController *bigEventController = [storyBoard instantiateViewControllerWithIdentifier:@"CBigEventController"];
+    bigEventController.stockCode = @"sz002816";
+    bigEventController.stockName = @"海汽集团";
+
+    UIViewController *firstNavigationController = [[CNavigationController alloc]
+                                                   initWithRootViewController:bigEventController];
     
     UIStoryboard *secondstoryboard = [UIStoryboard storyboardWithName:@"HTSecondTabStoryboard" bundle:nil];
     SecondViewController *secondViewController = [secondstoryboard instantiateViewControllerWithIdentifier:@"secondViewController"];
-    UIViewController *secondNavigationController = [[UINavigationController alloc]
+    UIViewController *secondNavigationController = [[CNavigationController alloc]
                                                    initWithRootViewController:secondViewController];
     
     UIStoryboard *thirdStoryboard = [UIStoryboard storyboardWithName:@"HTThirdTabStoryboard" bundle:nil];
     ThirdViewController *thirdViewController = [thirdStoryboard instantiateViewControllerWithIdentifier:@"thirdViewController"];
-    UIViewController *thirdNavigationController = [[UINavigationController alloc]
+    UIViewController *thirdNavigationController = [[CNavigationController alloc]
                                                    initWithRootViewController:thirdViewController];
     
     UIStoryboard *fourthStoryboard = [UIStoryboard storyboardWithName:@"HTFourthTabStoryboard" bundle:nil];
     FourthViewController *fourthViewController = [fourthStoryboard instantiateViewControllerWithIdentifier:@"fourthViewController"];
-    UIViewController *fourthNavigationController = [[UINavigationController alloc]
+    UIViewController *fourthNavigationController = [[CNavigationController alloc]
                                                    initWithRootViewController:fourthViewController];
     
     RDVTabBarController *tabBarController = [[RDVTabBarController alloc] init];

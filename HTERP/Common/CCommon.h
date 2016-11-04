@@ -23,7 +23,7 @@
 //#import "CTimeRecord.h"
 #import "CWorkedThread.h"
 //#import "CGestureUtil.h"
-//#import "CImageHelper.h"
+#import "CImageHelper.h"
 //#import "CImageCache.h"
 //#import "CTaskManager.h"
 //#import "CDeviceEventCenter.h"

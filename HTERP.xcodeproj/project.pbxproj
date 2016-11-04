@@ -72,18 +72,15 @@
 		C91ED4561DCB38F8003688C7 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91ED4551DCB38F8003688C7 /* JavaScriptCore.framework */; };
 		C91ED4581DCB38FF003688C7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91ED4571DCB38FF003688C7 /* WebKit.framework */; };
 		C91ED45A1DCB39BD003688C7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C91ED4591DCB39BD003688C7 /* libz.tbd */; };
-		C94890081DCC2866002C862F /* HTMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9488FFB1DCC2866002C862F /* HTMainTabBarController.m */; };
 		C94890091DCC2866002C862F /* HTSecondTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9488FFD1DCC2866002C862F /* HTSecondTabStoryboard.storyboard */; };
 		C948900A1DCC2866002C862F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890011DCC2866002C862F /* SecondViewController.m */; };
 		C948900B1DCC2866002C862F /* HTThirdTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94890031DCC2866002C862F /* HTThirdTabStoryboard.storyboard */; };
 		C948900C1DCC2866002C862F /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890071DCC2866002C862F /* ThirdViewController.m */; };
-		C94890191DCC286C002C862F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C948900F1DCC286C002C862F /* FirstViewController.m */; };
 		C948901B1DCC286C002C862F /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890151DCC286C002C862F /* FourthViewController.m */; };
 		C948901C1DCC286C002C862F /* HTFourthTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94890161DCC286C002C862F /* HTFourthTabStoryboard.storyboard */; };
 		C94890241DCC2CB3002C862F /* UIViewController+TABLEVIEW_StoryBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = C948901F1DCC2CB3002C862F /* UIViewController+TABLEVIEW_StoryBoard.m */; };
 		C94890251DCC2CB3002C862F /* CLoadMoreTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890211DCC2CB3002C862F /* CLoadMoreTableFooterView.m */; };
 		C94890261DCC2CB3002C862F /* UIViewController_TABLEVIEW_LoadMore.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890231DCC2CB3002C862F /* UIViewController_TABLEVIEW_LoadMore.m */; };
-		C94890281DCC2F4C002C862F /* HTFirstTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94890271DCC2F4C002C862F /* HTFirstTabStoryboard.storyboard */; };
 		C948902D1DCC2F95002C862F /* UIStoryBoardTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C948902A1DCC2F95002C862F /* UIStoryBoardTableView.m */; };
 		C948902E1DCC2F95002C862F /* UITableViewCell_StoryBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = C948902C1DCC2F95002C862F /* UITableViewCell_StoryBoard.m */; };
 		C94890351DCC2FC2002C862F /* CCustomBackButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890301DCC2FC2002C862F /* CCustomBackButtonController.m */; };
@@ -91,6 +88,25 @@
 		C94890371DCC2FC2002C862F /* CCustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890341DCC2FC2002C862F /* CCustomTableViewController.m */; };
 		C948903D1DCC30A2002C862F /* CNoDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = C948903B1DCC30A2002C862F /* CNoDataView.m */; };
 		C948903E1DCC30A2002C862F /* CNoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C948903C1DCC30A2002C862F /* CNoDataView.xib */; };
+		C94890481DCC3548002C862F /* CBigEventNoMoreDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94890401DCC3548002C862F /* CBigEventNoMoreDataTableViewCell.xib */; };
+		C94890491DCC3548002C862F /* CBigEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890421DCC3548002C862F /* CBigEventCell.m */; };
+		C948904A1DCC3548002C862F /* CBigEventController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890441DCC3548002C862F /* CBigEventController.m */; };
+		C948904B1DCC3548002C862F /* CBigEventNoMoreDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890461DCC3548002C862F /* CBigEventNoMoreDataTableViewCell.m */; };
+		C948904C1DCC3548002C862F /* StockDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94890471DCC3548002C862F /* StockDetail.storyboard */; };
+		C94890511DCC354E002C862F /* CBigEventReminderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C948904E1DCC354E002C862F /* CBigEventReminderModel.m */; };
+		C94890521DCC354E002C862F /* CBigEventReminderParam.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890501DCC354E002C862F /* CBigEventReminderParam.m */; };
+		C94890551DCC3636002C862F /* UIStoryBoardPullingheaderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890541DCC3636002C862F /* UIStoryBoardPullingheaderTableView.m */; };
+		C94890581DCC367C002C862F /* UIPullingheaderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890571DCC367C002C862F /* UIPullingheaderTableView.m */; };
+		C948905B1DCC3700002C862F /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890591DCC3700002C862F /* EGORefreshTableHeaderView.m */; };
+		C94890621DCC372B002C862F /* CATradeAlertLoadingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C948905E1DCC372B002C862F /* CATradeAlertLoadingObject.m */; };
+		C94890631DCC372B002C862F /* CATradeLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890601DCC372B002C862F /* CATradeLoadingView.m */; };
+		C94890641DCC372B002C862F /* CATradeLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94890611DCC372B002C862F /* CATradeLoadingView.xib */; };
+		C94890661DCC3C2C002C862F /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890651DCC3C2C002C862F /* UIViewAdditions.m */; };
+		C948906B1DCC42DD002C862F /* t0_colorDic.plist in Resources */ = {isa = PBXBuildFile; fileRef = C94890691DCC42DD002C862F /* t0_colorDic.plist */; };
+		C948906C1DCC42DD002C862F /* t1_colorDic.plist in Resources */ = {isa = PBXBuildFile; fileRef = C948906A1DCC42DD002C862F /* t1_colorDic.plist */; };
+		C948906F1DCC4E63002C862F /* UINavigationBar+Draw.m in Sources */ = {isa = PBXBuildFile; fileRef = C948906E1DCC4E63002C862F /* UINavigationBar+Draw.m */; };
+		C94890721DCC4EA1002C862F /* CImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890711DCC4EA1002C862F /* CImageHelper.m */; };
+		C94890751DCC532E002C862F /* CCustomUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890741DCC532E002C862F /* CCustomUILabel.m */; };
 		F0E56C711DCAF8BE0038ED5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E56C701DCAF8BE0038ED5A /* main.m */; };
 		F0E56C741DCAF8BE0038ED5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E56C731DCAF8BE0038ED5A /* AppDelegate.m */; };
 		F0E56C7D1DCAF8BE0038ED5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E56C7B1DCAF8BE0038ED5A /* Main.storyboard */; };
@@ -227,16 +243,12 @@
 		C91ED4551DCB38F8003688C7 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		C91ED4571DCB38FF003688C7 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		C91ED4591DCB39BD003688C7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		C9488FFA1DCC2866002C862F /* HTMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMainTabBarController.h; sourceTree = "<group>"; };
-		C9488FFB1DCC2866002C862F /* HTMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMainTabBarController.m; sourceTree = "<group>"; };
 		C9488FFD1DCC2866002C862F /* HTSecondTabStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HTSecondTabStoryboard.storyboard; sourceTree = "<group>"; };
 		C94890001DCC2866002C862F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		C94890011DCC2866002C862F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		C94890031DCC2866002C862F /* HTThirdTabStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HTThirdTabStoryboard.storyboard; sourceTree = "<group>"; };
 		C94890061DCC2866002C862F /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		C94890071DCC2866002C862F /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
-		C948900E1DCC286C002C862F /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		C948900F1DCC286C002C862F /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		C94890141DCC286C002C862F /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		C94890151DCC286C002C862F /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 		C94890161DCC286C002C862F /* HTFourthTabStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HTFourthTabStoryboard.storyboard; sourceTree = "<group>"; };
@@ -246,7 +258,6 @@
 		C94890211DCC2CB3002C862F /* CLoadMoreTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLoadMoreTableFooterView.m; sourceTree = "<group>"; };
 		C94890221DCC2CB3002C862F /* UIViewController_TABLEVIEW_LoadMore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewController_TABLEVIEW_LoadMore.h; sourceTree = "<group>"; };
 		C94890231DCC2CB3002C862F /* UIViewController_TABLEVIEW_LoadMore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewController_TABLEVIEW_LoadMore.m; sourceTree = "<group>"; };
-		C94890271DCC2F4C002C862F /* HTFirstTabStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HTFirstTabStoryboard.storyboard; sourceTree = "<group>"; };
 		C94890291DCC2F95002C862F /* UIStoryBoardTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIStoryBoardTableView.h; sourceTree = "<group>"; };
 		C948902A1DCC2F95002C862F /* UIStoryBoardTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIStoryBoardTableView.m; sourceTree = "<group>"; };
 		C948902B1DCC2F95002C862F /* UITableViewCell_StoryBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewCell_StoryBoard.h; sourceTree = "<group>"; };
@@ -260,6 +271,38 @@
 		C948903A1DCC30A2002C862F /* CNoDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNoDataView.h; sourceTree = "<group>"; };
 		C948903B1DCC30A2002C862F /* CNoDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNoDataView.m; sourceTree = "<group>"; };
 		C948903C1DCC30A2002C862F /* CNoDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CNoDataView.xib; sourceTree = "<group>"; };
+		C94890401DCC3548002C862F /* CBigEventNoMoreDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBigEventNoMoreDataTableViewCell.xib; sourceTree = "<group>"; };
+		C94890411DCC3548002C862F /* CBigEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBigEventCell.h; sourceTree = "<group>"; };
+		C94890421DCC3548002C862F /* CBigEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBigEventCell.m; sourceTree = "<group>"; };
+		C94890431DCC3548002C862F /* CBigEventController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBigEventController.h; sourceTree = "<group>"; };
+		C94890441DCC3548002C862F /* CBigEventController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBigEventController.m; sourceTree = "<group>"; };
+		C94890451DCC3548002C862F /* CBigEventNoMoreDataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBigEventNoMoreDataTableViewCell.h; sourceTree = "<group>"; };
+		C94890461DCC3548002C862F /* CBigEventNoMoreDataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBigEventNoMoreDataTableViewCell.m; sourceTree = "<group>"; };
+		C94890471DCC3548002C862F /* StockDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StockDetail.storyboard; sourceTree = "<group>"; };
+		C948904D1DCC354E002C862F /* CBigEventReminderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBigEventReminderModel.h; sourceTree = "<group>"; };
+		C948904E1DCC354E002C862F /* CBigEventReminderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBigEventReminderModel.m; sourceTree = "<group>"; };
+		C948904F1DCC354E002C862F /* CBigEventReminderParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBigEventReminderParam.h; sourceTree = "<group>"; };
+		C94890501DCC354E002C862F /* CBigEventReminderParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBigEventReminderParam.m; sourceTree = "<group>"; };
+		C94890531DCC3636002C862F /* UIStoryBoardPullingheaderTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIStoryBoardPullingheaderTableView.h; sourceTree = "<group>"; };
+		C94890541DCC3636002C862F /* UIStoryBoardPullingheaderTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIStoryBoardPullingheaderTableView.m; sourceTree = "<group>"; };
+		C94890561DCC367C002C862F /* UIPullingheaderTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPullingheaderTableView.h; sourceTree = "<group>"; };
+		C94890571DCC367C002C862F /* UIPullingheaderTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPullingheaderTableView.m; sourceTree = "<group>"; };
+		C94890591DCC3700002C862F /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		C948905A1DCC3700002C862F /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		C948905D1DCC372B002C862F /* CATradeAlertLoadingObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATradeAlertLoadingObject.h; sourceTree = "<group>"; };
+		C948905E1DCC372B002C862F /* CATradeAlertLoadingObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATradeAlertLoadingObject.m; sourceTree = "<group>"; };
+		C948905F1DCC372B002C862F /* CATradeLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATradeLoadingView.h; sourceTree = "<group>"; };
+		C94890601DCC372B002C862F /* CATradeLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATradeLoadingView.m; sourceTree = "<group>"; };
+		C94890611DCC372B002C862F /* CATradeLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CATradeLoadingView.xib; sourceTree = "<group>"; };
+		C94890651DCC3C2C002C862F /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		C94890691DCC42DD002C862F /* t0_colorDic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = t0_colorDic.plist; sourceTree = "<group>"; };
+		C948906A1DCC42DD002C862F /* t1_colorDic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = t1_colorDic.plist; sourceTree = "<group>"; };
+		C948906D1DCC4E63002C862F /* UINavigationBar+Draw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Draw.h"; sourceTree = "<group>"; };
+		C948906E1DCC4E63002C862F /* UINavigationBar+Draw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Draw.m"; sourceTree = "<group>"; };
+		C94890701DCC4EA1002C862F /* CImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CImageHelper.h; sourceTree = "<group>"; };
+		C94890711DCC4EA1002C862F /* CImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CImageHelper.m; sourceTree = "<group>"; };
+		C94890731DCC532E002C862F /* CCustomUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCustomUILabel.h; sourceTree = "<group>"; };
+		C94890741DCC532E002C862F /* CCustomUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCustomUILabel.m; sourceTree = "<group>"; };
 		F0E56C6C1DCAF8BE0038ED5A /* HTERP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTERP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E56C701DCAF8BE0038ED5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0E56C721DCAF8BE0038ED5A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -384,6 +427,8 @@
 		C91ED3A61DCB1B32003688C7 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				C948906D1DCC4E63002C862F /* UINavigationBar+Draw.h */,
+				C948906E1DCC4E63002C862F /* UINavigationBar+Draw.m */,
 				C91ED3A71DCB1B32003688C7 /* NotificationDefines.h */,
 				C91ED3A81DCB1B32003688C7 /* NotificationDefines.m */,
 				C91ED3A91DCB1B32003688C7 /* UIViewController+Extra.h */,
@@ -428,6 +473,7 @@
 		C91ED3C81DCB1B32003688C7 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				C94890651DCC3C2C002C862F /* UIViewAdditions.m */,
 				C91ED3CD1DCB1B32003688C7 /* UIImage+fixOrientation.h */,
 				C91ED3CE1DCB1B32003688C7 /* UIImage+fixOrientation.m */,
 				C91ED3CF1DCB1B32003688C7 /* UILabel+Extra.h */,
@@ -457,6 +503,8 @@
 		C91ED3F61DCB1E7A003688C7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				C94890701DCC4EA1002C862F /* CImageHelper.h */,
+				C94890711DCC4EA1002C862F /* CImageHelper.m */,
 				C91ED4241DCB2AEF003688C7 /* CNetworkMonitor.h */,
 				C91ED4251DCB2AEF003688C7 /* CNetworkMonitor.m */,
 				C91ED41A1DCB2820003688C7 /* CStopWatch.h */,
@@ -524,7 +572,6 @@
 			children = (
 				C948900D1DCC286C002C862F /* FirstTab */,
 				C94890131DCC286C002C862F /* FourthTab */,
-				C9488FF91DCC2866002C862F /* MainTabBar */,
 				C9488FFC1DCC2866002C862F /* SecondTab */,
 				C94890021DCC2866002C862F /* ThirdTab */,
 				C91ED42C1DCB2E7C003688C7 /* LogSend */,
@@ -545,6 +592,10 @@
 		C91ED4321DCB2EE4003688C7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C94890561DCC367C002C862F /* UIPullingheaderTableView.h */,
+				C94890571DCC367C002C862F /* UIPullingheaderTableView.m */,
+				C94890531DCC3636002C862F /* UIStoryBoardPullingheaderTableView.h */,
+				C94890541DCC3636002C862F /* UIStoryBoardPullingheaderTableView.m */,
 				C94890391DCC30A2002C862F /* Controll */,
 				C948902F1DCC2FC2002C862F /* CCustomBackButtonController.h */,
 				C94890301DCC2FC2002C862F /* CCustomBackButtonController.m */,
@@ -574,15 +625,6 @@
 				C91ED4341DCB2EE4003688C7 /* CCustomViewController.m */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		C9488FF91DCC2866002C862F /* MainTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				C9488FFA1DCC2866002C862F /* HTMainTabBarController.h */,
-				C9488FFB1DCC2866002C862F /* HTMainTabBarController.m */,
-			);
-			path = MainTabBar;
 			sourceTree = "<group>";
 		};
 		C9488FFC1DCC2866002C862F /* SecondTab */ = {
@@ -640,9 +682,14 @@
 		C948900D1DCC286C002C862F /* FirstTab */ = {
 			isa = PBXGroup;
 			children = (
-				C94890271DCC2F4C002C862F /* HTFirstTabStoryboard.storyboard */,
-				C948900E1DCC286C002C862F /* FirstViewController.h */,
-				C948900F1DCC286C002C862F /* FirstViewController.m */,
+				C94890401DCC3548002C862F /* CBigEventNoMoreDataTableViewCell.xib */,
+				C94890411DCC3548002C862F /* CBigEventCell.h */,
+				C94890421DCC3548002C862F /* CBigEventCell.m */,
+				C94890431DCC3548002C862F /* CBigEventController.h */,
+				C94890441DCC3548002C862F /* CBigEventController.m */,
+				C94890451DCC3548002C862F /* CBigEventNoMoreDataTableViewCell.h */,
+				C94890461DCC3548002C862F /* CBigEventNoMoreDataTableViewCell.m */,
+				C94890471DCC3548002C862F /* StockDetail.storyboard */,
 				C94890111DCC286C002C862F /* Model */,
 				C94890121DCC286C002C862F /* request */,
 			);
@@ -652,6 +699,10 @@
 		C94890111DCC286C002C862F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C948904D1DCC354E002C862F /* CBigEventReminderModel.h */,
+				C948904E1DCC354E002C862F /* CBigEventReminderModel.m */,
+				C948904F1DCC354E002C862F /* CBigEventReminderParam.h */,
+				C94890501DCC354E002C862F /* CBigEventReminderParam.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -692,11 +743,45 @@
 		C94890391DCC30A2002C862F /* Controll */ = {
 			isa = PBXGroup;
 			children = (
+				C94890731DCC532E002C862F /* CCustomUILabel.h */,
+				C94890741DCC532E002C862F /* CCustomUILabel.m */,
+				C948905C1DCC372B002C862F /* CATradeLoading */,
+				C94890591DCC3700002C862F /* EGORefreshTableHeaderView.m */,
+				C948905A1DCC3700002C862F /* EGORefreshTableHeaderView.h */,
 				C948903A1DCC30A2002C862F /* CNoDataView.h */,
 				C948903B1DCC30A2002C862F /* CNoDataView.m */,
 				C948903C1DCC30A2002C862F /* CNoDataView.xib */,
 			);
 			path = Controll;
+			sourceTree = "<group>";
+		};
+		C948905C1DCC372B002C862F /* CATradeLoading */ = {
+			isa = PBXGroup;
+			children = (
+				C948905D1DCC372B002C862F /* CATradeAlertLoadingObject.h */,
+				C948905E1DCC372B002C862F /* CATradeAlertLoadingObject.m */,
+				C948905F1DCC372B002C862F /* CATradeLoadingView.h */,
+				C94890601DCC372B002C862F /* CATradeLoadingView.m */,
+				C94890611DCC372B002C862F /* CATradeLoadingView.xib */,
+			);
+			path = CATradeLoading;
+			sourceTree = "<group>";
+		};
+		C94890671DCC42DD002C862F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C94890681DCC42DD002C862F /* theme */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C94890681DCC42DD002C862F /* theme */ = {
+			isa = PBXGroup;
+			children = (
+				C94890691DCC42DD002C862F /* t0_colorDic.plist */,
+				C948906A1DCC42DD002C862F /* t1_colorDic.plist */,
+			);
+			path = theme;
 			sourceTree = "<group>";
 		};
 		F0E56C631DCAF8BE0038ED5A = {
@@ -720,6 +805,7 @@
 		F0E56C6E1DCAF8BE0038ED5A /* HTERP */ = {
 			isa = PBXGroup;
 			children = (
+				C94890671DCC42DD002C862F /* Resource */,
 				C91ED43D1DCB3311003688C7 /* NSObject+Json.h */,
 				C91ED43E1DCB3311003688C7 /* NSObject+Json.m */,
 				C91ED42B1DCB2E7C003688C7 /* UI */,
@@ -808,14 +894,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C91ED4311DCB2E7C003688C7 /* CStockLogSenderController.xib in Resources */,
+				C94890481DCC3548002C862F /* CBigEventNoMoreDataTableViewCell.xib in Resources */,
+				C948906C1DCC42DD002C862F /* t1_colorDic.plist in Resources */,
 				C94890091DCC2866002C862F /* HTSecondTabStoryboard.storyboard in Resources */,
-				C94890281DCC2F4C002C862F /* HTFirstTabStoryboard.storyboard in Resources */,
 				F0E56C821DCAF8BE0038ED5A /* LaunchScreen.storyboard in Resources */,
+				C948904C1DCC3548002C862F /* StockDetail.storyboard in Resources */,
 				F0E56C7F1DCAF8BE0038ED5A /* Assets.xcassets in Resources */,
 				F0E56C7D1DCAF8BE0038ED5A /* Main.storyboard in Resources */,
 				C948900B1DCC2866002C862F /* HTThirdTabStoryboard.storyboard in Resources */,
 				C948901C1DCC286C002C862F /* HTFourthTabStoryboard.storyboard in Resources */,
+				C948906B1DCC42DD002C862F /* t0_colorDic.plist in Resources */,
 				C948903E1DCC30A2002C862F /* CNoDataView.xib in Resources */,
+				C94890641DCC372B002C862F /* CATradeLoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -875,21 +965,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				C91ED4481DCB3737003688C7 /* SizeDefine.m in Sources */,
+				C94890551DCC3636002C862F /* UIStoryBoardPullingheaderTableView.m in Sources */,
 				C91ED3A01DCB16B9003688C7 /* HTGlobal.m in Sources */,
 				C91ED3FF1DCB217E003688C7 /* GTMBase64.m in Sources */,
+				C94890521DCC354E002C862F /* CBigEventReminderParam.m in Sources */,
 				C91ED3981DCB1644003688C7 /* CRequestJSONModelBase.m in Sources */,
 				C91ED4451DCB3693003688C7 /* UIViewController+ext.m in Sources */,
 				C94890371DCC2FC2002C862F /* CCustomTableViewController.m in Sources */,
 				C91ED4141DCB2351003688C7 /* HttpDnsUtility.m in Sources */,
 				C948900C1DCC2866002C862F /* ThirdViewController.m in Sources */,
-				C94890191DCC286C002C862F /* FirstViewController.m in Sources */,
 				C91ED3F31DCB1D68003688C7 /* CURLLoaderCache.m in Sources */,
+				C94890511DCC354E002C862F /* CBigEventReminderModel.m in Sources */,
 				C948901B1DCC286C002C862F /* FourthViewController.m in Sources */,
+				C948906F1DCC4E63002C862F /* UINavigationBar+Draw.m in Sources */,
 				C91ED4231DCB2A38003688C7 /* CBossReporter.m in Sources */,
 				C948900A1DCC2866002C862F /* SecondViewController.m in Sources */,
 				C91ED3F41DCB1D68003688C7 /* CURLLoaderProxy.m in Sources */,
 				C948902D1DCC2F95002C862F /* UIStoryBoardTableView.m in Sources */,
 				C91ED4351DCB2EE4003688C7 /* CCustomViewController.m in Sources */,
+				C94890631DCC372B002C862F /* CATradeLoadingView.m in Sources */,
 				C91ED41C1DCB2820003688C7 /* CStopWatch.m in Sources */,
 				C948902E1DCC2F95002C862F /* UITableViewCell_StoryBoard.m in Sources */,
 				C91ED3F11DCB1D68003688C7 /* CURLDataDownloader.m in Sources */,
@@ -900,9 +994,12 @@
 				F0E56C741DCAF8BE0038ED5A /* AppDelegate.m in Sources */,
 				C91ED4111DCB2351003688C7 /* HttpDnsManager.m in Sources */,
 				C91ED3DE1DCB1B33003688C7 /* NSString+HTML.m in Sources */,
+				C948905B1DCC3700002C862F /* EGORefreshTableHeaderView.m in Sources */,
 				C91ED3D41DCB1B32003688C7 /* NotificationDefines.m in Sources */,
 				C91ED3A41DCB1AC0003688C7 /* CRequestCommand.m in Sources */,
+				C94890751DCC532E002C862F /* CCustomUILabel.m in Sources */,
 				C91ED3E21DCB1B33003688C7 /* UIStoryboard+Extra.m in Sources */,
+				C94890581DCC367C002C862F /* UIPullingheaderTableView.m in Sources */,
 				C91ED3E01DCB1B33003688C7 /* NSString+UrlEncode.m in Sources */,
 				C91ED3951DCB1644003688C7 /* CJSONRequestCommand.m in Sources */,
 				C91ED4261DCB2AEF003688C7 /* CNetworkMonitor.m in Sources */,
@@ -913,6 +1010,7 @@
 				C94890361DCC2FC2002C862F /* CCustomTableViewBackButtonController.m in Sources */,
 				C94890251DCC2CB3002C862F /* CLoadMoreTableFooterView.m in Sources */,
 				C91ED3DF1DCB1B33003688C7 /* NSString+numberValid.m in Sources */,
+				C948904A1DCC3548002C862F /* CBigEventController.m in Sources */,
 				C91ED3D81DCB1B32003688C7 /* NSArray+Extra.m in Sources */,
 				C94890351DCC2FC2002C862F /* CCustomBackButtonController.m in Sources */,
 				C94890241DCC2CB3002C862F /* UIViewController+TABLEVIEW_StoryBoard.m in Sources */,
@@ -920,10 +1018,10 @@
 				C948903D1DCC30A2002C862F /* CNoDataView.m in Sources */,
 				C91ED3E61DCB1B33003688C7 /* UILabel+Extra.m in Sources */,
 				C91ED43C1DCB2FD8003688C7 /* CNavigationController.m in Sources */,
+				C94890491DCC3548002C862F /* CBigEventCell.m in Sources */,
 				C91ED4381DCB2F19003688C7 /* CStateController.m in Sources */,
 				C91ED4151DCB2351003688C7 /* HttpDnsWhitelistRequest.m in Sources */,
 				F0E56C711DCAF8BE0038ED5A /* main.m in Sources */,
-				C94890081DCC2866002C862F /* HTMainTabBarController.m in Sources */,
 				C91ED3E71DCB1B33003688C7 /* UITableViewCell+FixUITableViewCellAutolayoutIHope.m in Sources */,
 				C91ED43F1DCB3311003688C7 /* NSObject+Json.m in Sources */,
 				C91ED4021DCB227B003688C7 /* CWorkedThread.m in Sources */,
@@ -932,13 +1030,17 @@
 				C94890261DCC2CB3002C862F /* UIViewController_TABLEVIEW_LoadMore.m in Sources */,
 				C91ED3E11DCB1B33003688C7 /* UIColor+Extra.m in Sources */,
 				C91ED3F91DCB1E7A003688C7 /* CMD5Util.m in Sources */,
+				C94890721DCC4EA1002C862F /* CImageHelper.m in Sources */,
+				C94890661DCC3C2C002C862F /* UIViewAdditions.m in Sources */,
 				C91ED39A1DCB1644003688C7 /* CThemeManager.m in Sources */,
 				C91ED3D51DCB1B32003688C7 /* UIViewController+Extra.m in Sources */,
+				C948904B1DCC3548002C862F /* CBigEventNoMoreDataTableViewCell.m in Sources */,
 				C91ED4181DCB239C003688C7 /* Reachability.m in Sources */,
 				C91ED4301DCB2E7C003688C7 /* CStockLogSenderController.m in Sources */,
 				C91ED42A1DCB2C89003688C7 /* CPortfolioLoginManager.m in Sources */,
 				C91ED3D61DCB1B32003688C7 /* UIViewController+SEGUE.m in Sources */,
 				C91ED4101DCB2351003688C7 /* HttpDnsDebug.m in Sources */,
+				C94890621DCC372B002C862F /* CATradeAlertLoadingObject.m in Sources */,
 				C91ED3D91DCB1B32003688C7 /* NSDate+Utilities.m in Sources */,
 				C91ED4121DCB2351003688C7 /* HttpDnsRecordRequest.m in Sources */,
 				C91ED3DC1DCB1B32003688C7 /* NSString+FirstCharacter.m in Sources */,
