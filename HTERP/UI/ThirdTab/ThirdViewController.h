@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  FirstViewController.h
 //  HTERP
 //
 //  Created by 王振宇 on 2016/11/3.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface ThirdViewController : UIViewController
 
 
 @end

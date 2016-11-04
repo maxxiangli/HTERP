@@ -36,3 +36,6 @@
 #import "SizeDefine.h"
 #import "CStockLog.h"
 #import "CBossReporter.h"
+
+#import "CCustomViewController.h"
+#import "UIViewController_TABLEVIEW_LoadMore.h"

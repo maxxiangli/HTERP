@@ -8,4 +8,5 @@ target 'HTERP' do
     pod 'MJRefresh'
     pod 'JSONModel'
     pod 'UITableView+FDTemplateLayoutCell'
+    pod 'RDVTabBarController'
 end

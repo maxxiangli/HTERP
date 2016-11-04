@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "HTGlobal.h"
-#import "HTMainTabBarController.h"
+#import "RDVTabBarController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) RDVTabBarController *tabBarController;
 
 -(UINavigationController*) currentController;
 @end
