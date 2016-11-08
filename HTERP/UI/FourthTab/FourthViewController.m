@@ -7,6 +7,7 @@
 //
 
 #import "FourthViewController.h"
+#import "CNavigationController.h"
 
 @interface FourthViewController ()
 
@@ -25,5 +26,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
 @end

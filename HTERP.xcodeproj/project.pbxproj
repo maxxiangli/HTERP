@@ -1166,6 +1166,7 @@
 			baseConfigurationReference = 9D09A9BEF01B1645B46D7515 /* Pods-HTERP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "HTERP/HT-Prefix.pch";
 				INFOPLIST_FILE = HTERP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1180,6 +1181,7 @@
 			baseConfigurationReference = 3FE198DB83145F5846EB49A4 /* Pods-HTERP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "HTERP/HT-Prefix.pch";
 				INFOPLIST_FILE = HTERP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
