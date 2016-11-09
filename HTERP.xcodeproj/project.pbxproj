@@ -838,6 +838,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FAA232BD1DD332510037B33E /* Function */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		FAA232BE1DD332510037B33E /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		FAA232BF1DD332510037B33E /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		FAA232C01DD332510037B33E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		FADA20BD1DD2BA7600F73DAC /* Code */ = {
 			isa = PBXGroup;
 			children = (
@@ -889,6 +917,10 @@
 		FADA20C31DD2BA7600F73DAC /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				FAA232BD1DD332510037B33E /* Function */,
+				FAA232BE1DD332510037B33E /* ThirdParty */,
+				FAA232BF1DD332510037B33E /* Tools */,
+				FAA232C01DD332510037B33E /* UI */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
