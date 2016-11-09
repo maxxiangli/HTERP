@@ -934,6 +934,9 @@
 		FADA20C91DD2BE5900F73DAC /* SpashScreen */ = {
 			isa = PBXGroup;
 			children = (
+				FADA20CC1DD2C0A100F73DAC /* controller */,
+				FADA20CD1DD2C0A100F73DAC /* mode */,
+				FADA20CE1DD2C0A100F73DAC /* view */,
 			);
 			path = SpashScreen;
 			sourceTree = "<group>";
@@ -950,6 +953,27 @@
 			children = (
 			);
 			path = Workflow;
+			sourceTree = "<group>";
+		};
+		FADA20CC1DD2C0A100F73DAC /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		FADA20CD1DD2C0A100F73DAC /* mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mode;
+			sourceTree = "<group>";
+		};
+		FADA20CE1DD2C0A100F73DAC /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
