@@ -843,7 +843,6 @@
 			children = (
 				FADA20BE1DD2BA7600F73DAC /* Common */,
 				FADA20BF1DD2BA7600F73DAC /* Macro */,
-				FADA20C01DD2BA7600F73DAC /* Mode */,
 				FADA20C11DD2BA7600F73DAC /* Modules */,
 				FADA20C21DD2BA7600F73DAC /* ThirdParty */,
 				FADA20C31DD2BA7600F73DAC /* Utility */,
@@ -863,13 +862,6 @@
 			children = (
 			);
 			path = Macro;
-			sourceTree = "<group>";
-		};
-		FADA20C01DD2BA7600F73DAC /* Mode */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mode;
 			sourceTree = "<group>";
 		};
 		FADA20C11DD2BA7600F73DAC /* Modules */ = {
