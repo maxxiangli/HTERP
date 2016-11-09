@@ -870,6 +870,14 @@
 		FADA20C11DD2BA7600F73DAC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FADA20C41DD2BE5900F73DAC /* Account */,
+				FADA20C51DD2BE5900F73DAC /* AppGuide */,
+				FADA20C61DD2BE5900F73DAC /* Contact */,
+				FADA20C71DD2BE5900F73DAC /* IM */,
+				FADA20C81DD2BE5900F73DAC /* Person */,
+				FADA20C91DD2BE5900F73DAC /* SpashScreen */,
+				FADA20CA1DD2BE5900F73DAC /* WebView */,
+				FADA20CB1DD2BE5900F73DAC /* Workflow */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -886,6 +894,62 @@
 			children = (
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		FADA20C41DD2BE5900F73DAC /* Account */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		FADA20C51DD2BE5900F73DAC /* AppGuide */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppGuide;
+			sourceTree = "<group>";
+		};
+		FADA20C61DD2BE5900F73DAC /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		FADA20C71DD2BE5900F73DAC /* IM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IM;
+			sourceTree = "<group>";
+		};
+		FADA20C81DD2BE5900F73DAC /* Person */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
+		FADA20C91DD2BE5900F73DAC /* SpashScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SpashScreen;
+			sourceTree = "<group>";
+		};
+		FADA20CA1DD2BE5900F73DAC /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		FADA20CB1DD2BE5900F73DAC /* Workflow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Workflow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
