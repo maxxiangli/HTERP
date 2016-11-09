@@ -805,6 +805,7 @@
 		F0E56C6E1DCAF8BE0038ED5A /* HTERP */ = {
 			isa = PBXGroup;
 			children = (
+				FADA20BD1DD2BA7600F73DAC /* Code */,
 				C94890671DCC42DD002C862F /* Resource */,
 				C91ED43D1DCB3311003688C7 /* NSObject+Json.h */,
 				C91ED43E1DCB3311003688C7 /* NSObject+Json.m */,
@@ -830,6 +831,61 @@
 				F0E56C701DCAF8BE0038ED5A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FADA20BD1DD2BA7600F73DAC /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				FADA20BE1DD2BA7600F73DAC /* Common */,
+				FADA20BF1DD2BA7600F73DAC /* Macro */,
+				FADA20C01DD2BA7600F73DAC /* Mode */,
+				FADA20C11DD2BA7600F73DAC /* Modules */,
+				FADA20C21DD2BA7600F73DAC /* ThirdParty */,
+				FADA20C31DD2BA7600F73DAC /* Utility */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		FADA20BE1DD2BA7600F73DAC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		FADA20BF1DD2BA7600F73DAC /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		FADA20C01DD2BA7600F73DAC /* Mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mode;
+			sourceTree = "<group>";
+		};
+		FADA20C11DD2BA7600F73DAC /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FADA20C21DD2BA7600F73DAC /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		FADA20C31DD2BA7600F73DAC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
