@@ -112,6 +112,8 @@
 		F0E56C7D1DCAF8BE0038ED5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E56C7B1DCAF8BE0038ED5A /* Main.storyboard */; };
 		F0E56C7F1DCAF8BE0038ED5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0E56C7E1DCAF8BE0038ED5A /* Assets.xcassets */; };
 		F0E56C821DCAF8BE0038ED5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E56C801DCAF8BE0038ED5A /* LaunchScreen.storyboard */; };
+		FADA20D01DD2C14600F73DAC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */; };
+		FADA20D31DD2C23900F73DAC /* CHSpashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -311,6 +313,9 @@
 		F0E56C7E1DCAF8BE0038ED5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0E56C811DCAF8BE0038ED5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0E56C831DCAF8BE0038ED5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		FADA20D11DD2C23900F73DAC /* CHSpashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSpashScreenViewController.h; sourceTree = "<group>"; };
+		FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSpashScreenViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -958,6 +963,9 @@
 		FADA20CC1DD2C0A100F73DAC /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */,
+				FADA20D11DD2C23900F73DAC /* CHSpashScreenViewController.h */,
+				FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1042,6 +1050,7 @@
 				C948906C1DCC42DD002C862F /* t1_colorDic.plist in Resources */,
 				C94890091DCC2866002C862F /* HTSecondTabStoryboard.storyboard in Resources */,
 				F0E56C821DCAF8BE0038ED5A /* LaunchScreen.storyboard in Resources */,
+				FADA20D01DD2C14600F73DAC /* Storyboard.storyboard in Resources */,
 				C948904C1DCC3548002C862F /* StockDetail.storyboard in Resources */,
 				F0E56C7F1DCAF8BE0038ED5A /* Assets.xcassets in Resources */,
 				F0E56C7D1DCAF8BE0038ED5A /* Main.storyboard in Resources */,
@@ -1138,6 +1147,7 @@
 				F0E56C741DCAF8BE0038ED5A /* AppDelegate.m in Sources */,
 				C91ED4111DCB2351003688C7 /* HttpDnsManager.m in Sources */,
 				C91ED3DE1DCB1B33003688C7 /* NSString+HTML.m in Sources */,
+				FADA20D31DD2C23900F73DAC /* CHSpashScreenViewController.m in Sources */,
 				C948905B1DCC3700002C862F /* EGORefreshTableHeaderView.m in Sources */,
 				C91ED3D41DCB1B32003688C7 /* NotificationDefines.m in Sources */,
 				C91ED3A41DCB1AC0003688C7 /* CRequestCommand.m in Sources */,
