@@ -10,4 +10,12 @@
 
 @implementation CHDeparment
 
++(JSONKeyMapper *)keyMapper
+{
+    NSDictionary *info = @{@"deparmentId":@"id", @"deparments":@"child"};
+    
+    JSONKeyMapper *mapper = [[JSONKeyMapper alloc] initWithModelToJSONDictionary:info];
+    return mapper;
+}
+
 @end
