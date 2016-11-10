@@ -72,6 +72,8 @@
 		C91ED4561DCB38F8003688C7 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91ED4551DCB38F8003688C7 /* JavaScriptCore.framework */; };
 		C91ED4581DCB38FF003688C7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91ED4571DCB38FF003688C7 /* WebKit.framework */; };
 		C91ED45A1DCB39BD003688C7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C91ED4591DCB39BD003688C7 /* libz.tbd */; };
+		C92A816A1DD4AEBE00469C52 /* CLoginLoginParam.m in Sources */ = {isa = PBXBuildFile; fileRef = C92A81691DD4AEBE00469C52 /* CLoginLoginParam.m */; };
+		C92A816D1DD4B0E200469C52 /* CLoginInforModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C92A816C1DD4B0E200469C52 /* CLoginInforModel.m */; };
 		C94890091DCC2866002C862F /* HTSecondTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9488FFD1DCC2866002C862F /* HTSecondTabStoryboard.storyboard */; };
 		C948900A1DCC2866002C862F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890011DCC2866002C862F /* SecondViewController.m */; };
 		C948900B1DCC2866002C862F /* HTThirdTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94890031DCC2866002C862F /* HTThirdTabStoryboard.storyboard */; };
@@ -258,6 +260,10 @@
 		C91ED4551DCB38F8003688C7 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		C91ED4571DCB38FF003688C7 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		C91ED4591DCB39BD003688C7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		C92A81681DD4AEBE00469C52 /* CLoginLoginParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLoginLoginParam.h; sourceTree = "<group>"; };
+		C92A81691DD4AEBE00469C52 /* CLoginLoginParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLoginLoginParam.m; sourceTree = "<group>"; };
+		C92A816B1DD4B0E200469C52 /* CLoginInforModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLoginInforModel.h; sourceTree = "<group>"; };
+		C92A816C1DD4B0E200469C52 /* CLoginInforModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLoginInforModel.m; sourceTree = "<group>"; };
 		C9488FFD1DCC2866002C862F /* HTSecondTabStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HTSecondTabStoryboard.storyboard; sourceTree = "<group>"; };
 		C94890001DCC2866002C862F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		C94890011DCC2866002C862F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
@@ -844,6 +850,10 @@
 			children = (
 				C94C82241DD452E800B1D578 /* HTLoginManager.h */,
 				C94C82251DD452E800B1D578 /* HTLoginManager.m */,
+				C92A81681DD4AEBE00469C52 /* CLoginLoginParam.h */,
+				C92A81691DD4AEBE00469C52 /* CLoginLoginParam.m */,
+				C92A816B1DD4B0E200469C52 /* CLoginInforModel.h */,
+				C92A816C1DD4B0E200469C52 /* CLoginInforModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1338,6 +1348,7 @@
 				C94890241DCC2CB3002C862F /* UIViewController+TABLEVIEW_StoryBoard.m in Sources */,
 				C91ED3941DCB1644003688C7 /* CJSONModel.m in Sources */,
 				C948903D1DCC30A2002C862F /* CNoDataView.m in Sources */,
+				C92A816D1DD4B0E200469C52 /* CLoginInforModel.m in Sources */,
 				FA44F0801DD4685400985425 /* CHContactListManager.m in Sources */,
 				C91ED3E61DCB1B33003688C7 /* UILabel+Extra.m in Sources */,
 				C91ED43C1DCB2FD8003688C7 /* CNavigationController.m in Sources */,
@@ -1360,6 +1371,7 @@
 				C91ED39A1DCB1644003688C7 /* CThemeManager.m in Sources */,
 				C91ED3D51DCB1B32003688C7 /* UIViewController+Extra.m in Sources */,
 				C948904B1DCC3548002C862F /* CBigEventNoMoreDataTableViewCell.m in Sources */,
+				C92A816A1DD4AEBE00469C52 /* CLoginLoginParam.m in Sources */,
 				C91ED4181DCB239C003688C7 /* Reachability.m in Sources */,
 				C91ED4301DCB2E7C003688C7 /* CStockLogSenderController.m in Sources */,
 				C91ED42A1DCB2C89003688C7 /* CPortfolioLoginManager.m in Sources */,

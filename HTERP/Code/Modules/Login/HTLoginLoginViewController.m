@@ -7,6 +7,10 @@
 //
 
 #import "HTLoginLoginViewController.h"
+#import "CLoginStateJSONRequestCommand.h"
+#import "CATradeLoadingView.h"
+#import "CLoginLoginParam.h"
+#import "CLoginInforModel.h"
 
 @interface HTLoginLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumTextField;
@@ -109,8 +113,22 @@
         return;
     }
     
+    CLoginLoginParam *param = [[CLoginLoginParam alloc] init];
+    param.mobile = self.phoneNumTextField.text;
+    param.passwd = self.pswTextField.text;
+    param.checktype = 1;
     
-//    [CATradeLoadingView showLoadingViewAddedTo:self.view];
+    [CATradeLoadingView showLoadingViewAddedTo:self.view];
+    __weak typeof(self) weakSelf = self;
+    [CLoginStateJSONRequestCommand getWithParams:param modelClass:[CLoginInforModel class] sucess:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand) {
+        //关闭loading
+        [CATradeLoadingView hideLoadingViewForView:weakSelf.view];
+        
+    } failure:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand, NSError *dataParseError) {
+        //关闭loading
+        [CATradeLoadingView hideLoadingViewForView:weakSelf.view];
+
+    }];
 }
 
 //注册
