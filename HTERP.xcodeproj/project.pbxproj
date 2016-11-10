@@ -124,6 +124,7 @@
 		FA44F07D1DD4543D00985425 /* CHContactList.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F07C1DD4543D00985425 /* CHContactList.m */; };
 		FA44F0801DD4685400985425 /* CHContactListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F07F1DD4685400985425 /* CHContactListManager.m */; };
 		FA44F0841DD4747F00985425 /* CHGlobalDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F0831DD4747F00985425 /* CHGlobalDefine.m */; };
+		FA44F0881DD493E600985425 /* CHFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F0871DD493E600985425 /* CHFileManager.m */; };
 		FADA20D01DD2C14600F73DAC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */; };
 		FADA20D31DD2C23900F73DAC /* CHSpashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */; };
 /* End PBXBuildFile section */
@@ -348,6 +349,8 @@
 		FA44F07F1DD4685400985425 /* CHContactListManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHContactListManager.m; sourceTree = "<group>"; };
 		FA44F0821DD4747F00985425 /* CHGlobalDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHGlobalDefine.h; sourceTree = "<group>"; };
 		FA44F0831DD4747F00985425 /* CHGlobalDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHGlobalDefine.m; sourceTree = "<group>"; };
+		FA44F0861DD493E600985425 /* CHFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHFileManager.h; sourceTree = "<group>"; };
+		FA44F0871DD493E600985425 /* CHFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHFileManager.m; sourceTree = "<group>"; };
 		FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		FADA20D11DD2C23900F73DAC /* CHSpashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSpashScreenViewController.h; sourceTree = "<group>"; };
 		FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSpashScreenViewController.m; sourceTree = "<group>"; };
@@ -954,6 +957,15 @@
 			path = Define;
 			sourceTree = "<group>";
 		};
+		FA44F0851DD493CD00985425 /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				FA44F0861DD493E600985425 /* CHFileManager.h */,
+				FA44F0871DD493E600985425 /* CHFileManager.m */,
+			);
+			path = FileManager;
+			sourceTree = "<group>";
+		};
 		FAA232BD1DD332510037B33E /* Function */ = {
 			isa = PBXGroup;
 			children = (
@@ -997,6 +1009,7 @@
 		FADA20BE1DD2BA7600F73DAC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FA44F0851DD493CD00985425 /* FileManager */,
 				FA44F0811DD4746200985425 /* Define */,
 			);
 			path = Common;
@@ -1270,6 +1283,7 @@
 				C91ED3A01DCB16B9003688C7 /* HTGlobal.m in Sources */,
 				C91ED3FF1DCB217E003688C7 /* GTMBase64.m in Sources */,
 				C94890521DCC354E002C862F /* CBigEventReminderParam.m in Sources */,
+				FA44F0881DD493E600985425 /* CHFileManager.m in Sources */,
 				C91ED3981DCB1644003688C7 /* CRequestJSONModelBase.m in Sources */,
 				C91ED4451DCB3693003688C7 /* UIViewController+ext.m in Sources */,
 				C94890371DCC2FC2002C862F /* CCustomTableViewController.m in Sources */,
