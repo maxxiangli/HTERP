@@ -10,6 +10,7 @@
 #import "CHContactList.h"
 #import "CHGetCompanyParams.h"
 #import "CHGetCompanyRequestCommand.h"
+#import "CHGlobalDefine.h"
 
 @interface CHContactListManager()
 
@@ -50,6 +51,9 @@
     {
         NSLog(@"code = %@ msg = %@", @(code), msg);
         weakSelf.contactsList = (CHContactList *)requestCommand.responseModel;
+        
+        [weakSelf postContactsUpdateNotification];
+        
     } failure:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand, NSError *dataParseError) {
         NSLog(@"dataParseError = %@", dataParseError);
         NSLog(@"code = %@ msg = %@", @(code), msg);
@@ -64,6 +68,12 @@
         [self.requestComment stopRequest];
         self.requestComment = nil;
     }
+}
+
+#pragma mark - Private function
+- (void)postContactsUpdateNotification
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:CHUpdateContactsNotification object:nil];
 }
 
 
