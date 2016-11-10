@@ -838,6 +838,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FA44F0661DD4059300985425 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		FA44F0671DD4059300985425 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		FA44F0681DD4059300985425 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		FAA232BD1DD332510037B33E /* Function */ = {
 			isa = PBXGroup;
 			children = (
@@ -942,6 +963,9 @@
 		FADA20C61DD2BE5900F73DAC /* Contact */ = {
 			isa = PBXGroup;
 			children = (
+				FA44F0661DD4059300985425 /* controller */,
+				FA44F0671DD4059300985425 /* model */,
+				FA44F0681DD4059300985425 /* view */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
