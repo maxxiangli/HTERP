@@ -114,7 +114,7 @@
 		F0E56C821DCAF8BE0038ED5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E56C801DCAF8BE0038ED5A /* LaunchScreen.storyboard */; };
 		FA44F06B1DD406C100985425 /* CHGetCompanyParams.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F06A1DD406C100985425 /* CHGetCompanyParams.m */; };
 		FA44F06E1DD4097C00985425 /* CHGetCompanyRequestCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F06D1DD4097C00985425 /* CHGetCompanyRequestCommand.m */; };
-		FA44F0711DD41C6100985425 /* CHPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F0701DD41C6100985425 /* CHPerson.m */; };
+		FA44F0711DD41C6100985425 /* CHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F0701DD41C6100985425 /* CHUser.m */; };
 		FADA20D01DD2C14600F73DAC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */; };
 		FADA20D31DD2C23900F73DAC /* CHSpashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */; };
 /* End PBXBuildFile section */
@@ -320,8 +320,8 @@
 		FA44F06A1DD406C100985425 /* CHGetCompanyParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHGetCompanyParams.m; sourceTree = "<group>"; };
 		FA44F06C1DD4097C00985425 /* CHGetCompanyRequestCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHGetCompanyRequestCommand.h; sourceTree = "<group>"; };
 		FA44F06D1DD4097C00985425 /* CHGetCompanyRequestCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHGetCompanyRequestCommand.m; sourceTree = "<group>"; };
-		FA44F06F1DD41C6100985425 /* CHPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHPerson.h; sourceTree = "<group>"; };
-		FA44F0701DD41C6100985425 /* CHPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHPerson.m; sourceTree = "<group>"; };
+		FA44F06F1DD41C6100985425 /* CHUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHUser.h; sourceTree = "<group>"; };
+		FA44F0701DD41C6100985425 /* CHUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHUser.m; sourceTree = "<group>"; };
 		FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		FADA20D11DD2C23900F73DAC /* CHSpashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSpashScreenViewController.h; sourceTree = "<group>"; };
 		FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSpashScreenViewController.m; sourceTree = "<group>"; };
@@ -861,8 +861,8 @@
 				FA44F06A1DD406C100985425 /* CHGetCompanyParams.m */,
 				FA44F06C1DD4097C00985425 /* CHGetCompanyRequestCommand.h */,
 				FA44F06D1DD4097C00985425 /* CHGetCompanyRequestCommand.m */,
-				FA44F06F1DD41C6100985425 /* CHPerson.h */,
-				FA44F0701DD41C6100985425 /* CHPerson.m */,
+				FA44F06F1DD41C6100985425 /* CHUser.h */,
+				FA44F0701DD41C6100985425 /* CHUser.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1222,7 +1222,7 @@
 				C91ED3951DCB1644003688C7 /* CJSONRequestCommand.m in Sources */,
 				C91ED4261DCB2AEF003688C7 /* CNetworkMonitor.m in Sources */,
 				C91ED3D71DCB1B32003688C7 /* CGRect+Extra.m in Sources */,
-				FA44F0711DD41C6100985425 /* CHPerson.m in Sources */,
+				FA44F0711DD41C6100985425 /* CHUser.m in Sources */,
 				C91ED3DA1DCB1B32003688C7 /* NSDictionary+Extra.m in Sources */,
 				C91ED3E51DCB1B33003688C7 /* UIImage+fixOrientation.m in Sources */,
 				C91ED3DD1DCB1B33003688C7 /* NSString+GTMNSStringHTMLAdditions.m in Sources */,
