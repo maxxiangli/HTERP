@@ -115,6 +115,7 @@
 		FA44F06B1DD406C100985425 /* CHGetCompanyParams.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F06A1DD406C100985425 /* CHGetCompanyParams.m */; };
 		FA44F06E1DD4097C00985425 /* CHGetCompanyRequestCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F06D1DD4097C00985425 /* CHGetCompanyRequestCommand.m */; };
 		FA44F0711DD41C6100985425 /* CHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F0701DD41C6100985425 /* CHUser.m */; };
+		FA44F0741DD4465400985425 /* CHCompanyInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F0731DD4465400985425 /* CHCompanyInformation.m */; };
 		FADA20D01DD2C14600F73DAC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */; };
 		FADA20D31DD2C23900F73DAC /* CHSpashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */; };
 /* End PBXBuildFile section */
@@ -322,6 +323,8 @@
 		FA44F06D1DD4097C00985425 /* CHGetCompanyRequestCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHGetCompanyRequestCommand.m; sourceTree = "<group>"; };
 		FA44F06F1DD41C6100985425 /* CHUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHUser.h; sourceTree = "<group>"; };
 		FA44F0701DD41C6100985425 /* CHUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHUser.m; sourceTree = "<group>"; };
+		FA44F0721DD4465400985425 /* CHCompanyInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCompanyInformation.h; sourceTree = "<group>"; };
+		FA44F0731DD4465400985425 /* CHCompanyInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCompanyInformation.m; sourceTree = "<group>"; };
 		FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		FADA20D11DD2C23900F73DAC /* CHSpashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSpashScreenViewController.h; sourceTree = "<group>"; };
 		FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSpashScreenViewController.m; sourceTree = "<group>"; };
@@ -863,6 +866,8 @@
 				FA44F06D1DD4097C00985425 /* CHGetCompanyRequestCommand.m */,
 				FA44F06F1DD41C6100985425 /* CHUser.h */,
 				FA44F0701DD41C6100985425 /* CHUser.m */,
+				FA44F0721DD4465400985425 /* CHCompanyInformation.h */,
+				FA44F0731DD4465400985425 /* CHCompanyInformation.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1207,6 +1212,7 @@
 				C91ED3F21DCB1D68003688C7 /* CURLDataLoader.m in Sources */,
 				FA44F06B1DD406C100985425 /* CHGetCompanyParams.m in Sources */,
 				C91ED39D1DCB1664003688C7 /* CConfiguration.m in Sources */,
+				FA44F0741DD4465400985425 /* CHCompanyInformation.m in Sources */,
 				C91ED3961DCB1644003688C7 /* CLoginStateJSONRequestCommand.m in Sources */,
 				F0E56C741DCAF8BE0038ED5A /* AppDelegate.m in Sources */,
 				C91ED4111DCB2351003688C7 /* HttpDnsManager.m in Sources */,
