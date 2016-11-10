@@ -107,6 +107,9 @@
 		C948906F1DCC4E63002C862F /* UINavigationBar+Draw.m in Sources */ = {isa = PBXBuildFile; fileRef = C948906E1DCC4E63002C862F /* UINavigationBar+Draw.m */; };
 		C94890721DCC4EA1002C862F /* CImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890711DCC4EA1002C862F /* CImageHelper.m */; };
 		C94890751DCC532E002C862F /* CCustomUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890741DCC532E002C862F /* CCustomUILabel.m */; };
+		C94C82261DD452E800B1D578 /* HTLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C82251DD452E800B1D578 /* HTLoginManager.m */; };
+		C94C82291DD457DA00B1D578 /* HTLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94C82281DD457DA00B1D578 /* HTLogin.storyboard */; };
+		C94C822C1DD4594A00B1D578 /* HTLoginLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C822B1DD4594A00B1D578 /* HTLoginLoginViewController.m */; };
 		F0E56C711DCAF8BE0038ED5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E56C701DCAF8BE0038ED5A /* main.m */; };
 		F0E56C741DCAF8BE0038ED5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E56C731DCAF8BE0038ED5A /* AppDelegate.m */; };
 		F0E56C7D1DCAF8BE0038ED5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E56C7B1DCAF8BE0038ED5A /* Main.storyboard */; };
@@ -314,6 +317,11 @@
 		C94890711DCC4EA1002C862F /* CImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CImageHelper.m; sourceTree = "<group>"; };
 		C94890731DCC532E002C862F /* CCustomUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCustomUILabel.h; sourceTree = "<group>"; };
 		C94890741DCC532E002C862F /* CCustomUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCustomUILabel.m; sourceTree = "<group>"; };
+		C94C82241DD452E800B1D578 /* HTLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLoginManager.h; sourceTree = "<group>"; };
+		C94C82251DD452E800B1D578 /* HTLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLoginManager.m; sourceTree = "<group>"; };
+		C94C82281DD457DA00B1D578 /* HTLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HTLogin.storyboard; sourceTree = "<group>"; };
+		C94C822A1DD4594A00B1D578 /* HTLoginLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLoginLoginViewController.h; sourceTree = "<group>"; };
+		C94C822B1DD4594A00B1D578 /* HTLoginLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLoginLoginViewController.m; sourceTree = "<group>"; };
 		F0E56C6C1DCAF8BE0038ED5A /* HTERP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTERP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E56C701DCAF8BE0038ED5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0E56C721DCAF8BE0038ED5A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -816,6 +824,41 @@
 			path = theme;
 			sourceTree = "<group>";
 		};
+		C94C82211DD4528000B1D578 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C94C82221DD4528000B1D578 /* Model */,
+				C94C82231DD4528000B1D578 /* View */,
+				C94C82281DD457DA00B1D578 /* HTLogin.storyboard */,
+				C94C822A1DD4594A00B1D578 /* HTLoginLoginViewController.h */,
+				C94C822B1DD4594A00B1D578 /* HTLoginLoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C94C82221DD4528000B1D578 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C94C82241DD452E800B1D578 /* HTLoginManager.h */,
+				C94C82251DD452E800B1D578 /* HTLoginManager.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C94C82231DD4528000B1D578 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C94C82271DD4560100B1D578 /* GuidePage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GuidePage;
+			sourceTree = "<group>";
+		};
 		F0E56C631DCAF8BE0038ED5A = {
 			isa = PBXGroup;
 			children = (
@@ -969,6 +1012,8 @@
 		FADA20C11DD2BA7600F73DAC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C94C82271DD4560100B1D578 /* GuidePage */,
+				C94C82211DD4528000B1D578 /* Login */,
 				FADA20C41DD2BE5900F73DAC /* Account */,
 				FADA20C51DD2BE5900F73DAC /* AppGuide */,
 				FADA20C61DD2BE5900F73DAC /* Contact */,
@@ -1151,6 +1196,7 @@
 				C948906C1DCC42DD002C862F /* t1_colorDic.plist in Resources */,
 				C94890091DCC2866002C862F /* HTSecondTabStoryboard.storyboard in Resources */,
 				F0E56C821DCAF8BE0038ED5A /* LaunchScreen.storyboard in Resources */,
+				C94C82291DD457DA00B1D578 /* HTLogin.storyboard in Resources */,
 				FADA20D01DD2C14600F73DAC /* Storyboard.storyboard in Resources */,
 				C948904C1DCC3548002C862F /* StockDetail.storyboard in Resources */,
 				F0E56C7F1DCAF8BE0038ED5A /* Assets.xcassets in Resources */,
@@ -1220,6 +1266,7 @@
 			files = (
 				C91ED4481DCB3737003688C7 /* SizeDefine.m in Sources */,
 				C94890551DCC3636002C862F /* UIStoryBoardPullingheaderTableView.m in Sources */,
+				C94C822C1DD4594A00B1D578 /* HTLoginLoginViewController.m in Sources */,
 				C91ED3A01DCB16B9003688C7 /* HTGlobal.m in Sources */,
 				C91ED3FF1DCB217E003688C7 /* GTMBase64.m in Sources */,
 				C94890521DCC354E002C862F /* CBigEventReminderParam.m in Sources */,
@@ -1233,6 +1280,7 @@
 				C94890511DCC354E002C862F /* CBigEventReminderModel.m in Sources */,
 				C948901B1DCC286C002C862F /* FourthViewController.m in Sources */,
 				C948906F1DCC4E63002C862F /* UINavigationBar+Draw.m in Sources */,
+				C94C82261DD452E800B1D578 /* HTLoginManager.m in Sources */,
 				C91ED4231DCB2A38003688C7 /* CBossReporter.m in Sources */,
 				C948900A1DCC2866002C862F /* SecondViewController.m in Sources */,
 				C91ED3F41DCB1D68003688C7 /* CURLLoaderProxy.m in Sources */,
@@ -1368,6 +1416,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"DEBUG_PROFILE＝1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -1430,6 +1479,7 @@
 			baseConfigurationReference = 9D09A9BEF01B1645B46D7515 /* Pods-HTERP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "HTERP/HT-Prefix.pch";
 				INFOPLIST_FILE = HTERP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1444,6 +1494,7 @@
 			baseConfigurationReference = 3FE198DB83145F5846EB49A4 /* Pods-HTERP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "HTERP/HT-Prefix.pch";
 				INFOPLIST_FILE = HTERP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

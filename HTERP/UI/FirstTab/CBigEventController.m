@@ -17,6 +17,7 @@
 //#import "CStockDetailController.h"
 #import "CBigEventNoMoreDataTableViewCell.h"
 //#import "CDragonTigerDetailViewController.h"
+#import "HTLoginLoginViewController.h"
 
 @interface CBigEventController ()
 @property(nonatomic, strong) UIButton *failedButton;
@@ -80,16 +81,9 @@
 
 - (void)onHangQingBtnClick:(id)sender
 {
-    if ( self.stockCode )
-    {
-//        CSimpleStockData *simpleData = [[CSimpleStockData alloc] init];
-//        simpleData.stockID = self.stockCode;
-//        simpleData.stockName = self.stockName;
-//        [CStockDetailController showDetail:[NSMutableArray arrayWithObject:simpleData]
-//                                 stockData:simpleData
-//                               backBtnType:-1
-//                            naviController:self.navigationController];
-    }
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"HTLogin" bundle:nil];
+    HTLoginLoginViewController *loginViewController = [storyBoard instantiateViewControllerWithIdentifier:@"loginViewController"];
+    [self.navigationController pushViewController:loginViewController animated:YES];
 }
 
 - (BOOL)isFirstPage
