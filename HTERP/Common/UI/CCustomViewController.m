@@ -30,6 +30,7 @@
 {
 	[super viewDidLoad];
 	
+    self.view.backgroundColor = TC_DefaultBackgroundColor;
 #if	iOS7SDK
 	if ((isThaniOS6)) {
 //		self.preferredStatusBarStyle = UIStatusBarStyleLightContent;

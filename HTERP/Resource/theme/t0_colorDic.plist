@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>DefaultBackgroundColor</key>
+	<string>#f1f1f1</string>
+	<key>---------------------------------</key>
+	<string>#f1f1f1</string>
 	<key>StockDetailLoadingColor</key>
 	<string>61|118|184</string>
 	<key>UIPullHeaderLoadingColor</key>
@@ -22,8 +26,6 @@
 	<string>16|20|25</string>
 	<key>SettingViewBackgroundColor</key>
 	<string>238|239|239</string>
-	<key>DefaultBackgroundColor</key>
-	<string>16|20|25</string>
 	<key>DefaultSelectedBackgroundColor</key>
 	<string>31|38|48</string>
 	<key>DefaultStockNameColor</key>

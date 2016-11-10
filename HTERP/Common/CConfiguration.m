@@ -37,6 +37,7 @@ static CConfiguration* _sharedConfiguration = nil;
     if (_sharedConfiguration == nil)
     {
         _sharedConfiguration = [[CConfiguration alloc] init];
+        _sharedConfiguration.themeType = eThemeBlueWhite;
     }
     return _sharedConfiguration;
 }
