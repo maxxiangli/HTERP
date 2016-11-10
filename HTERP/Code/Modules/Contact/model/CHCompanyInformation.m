@@ -10,4 +10,12 @@
 
 @implementation CHCompanyInformation
 
++(JSONKeyMapper *)keyMapper
+{
+    NSDictionary *info = @{@"companyId":@"id"};
+    
+    JSONKeyMapper *mapper = [[JSONKeyMapper alloc] initWithModelToJSONDictionary:info];
+    return mapper;
+}
+
 @end
