@@ -7,6 +7,7 @@
 //
 
 #import "CHGetCompanyRequestCommand.h"
+#import "CJSONRequestCommand.h"
 
 @implementation CHGetCompanyRequestCommand
 
@@ -75,5 +76,25 @@
     
     return [header copy];
 }
+
+//-(void)parserDataInThread:(NSData *)recvData
+//{
+//#ifdef DEBUG_PROFILE
+    
+//    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:recvData options:NSJSONReadingMutableContainers error:nil];
+    
+//    NSString *string = [[NSString alloc] initWithData:recvData encoding:NSUTF8StringEncoding];
+
+//    self.originalData = [CJSONRequestCommand replaceUnicode:string] ;
+//#endif
+    
+//    NSError *error = nil;
+//    self.responseModel = [[self.modelClass alloc] initWithData:recvData error:&error] ;
+//    if (error) {
+//        _dataParseError = [error copy];
+//    }
+//}
+
+
 
 @end

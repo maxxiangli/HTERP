@@ -13,12 +13,12 @@
 
 @interface CHCompanyInformation : CJSONModel
 
-@property(nonatomic, strong)NSString *companyId;
-@property(nonatomic, strong)NSString *name;
-@property(nonatomic, strong)NSString *fullName;
-@property(nonatomic, strong)NSString *area;
-@property(nonatomic, strong)NSString *industry;
-@property(nonatomic, strong)NSString *uploadFiles;
-@property(nonatomic, strong)NSString *version;
+@property(nonatomic, strong)NSString<Optional> *companyId;
+@property(nonatomic, strong)NSString<Optional> *name;
+@property(nonatomic, strong)NSString<Optional> *fullName;
+@property(nonatomic, strong)NSString<Optional> *area;
+@property(nonatomic, strong)NSString<Optional> *industry;
+@property(nonatomic, strong)NSString<Optional> *uploadFiles;
+@property(nonatomic, strong)NSString<Optional> *version;
 
 @end

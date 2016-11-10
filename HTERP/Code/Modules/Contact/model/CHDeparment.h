@@ -7,7 +7,18 @@
 //
 
 #import "CJSONModel.h"
+#import "CHUser.h"
+
+@protocol CHDeparment
+
+@end
 
 @interface CHDeparment : CJSONModel
+
+@property(nonatomic, strong)NSString<Optional> *deparmentId;
+@property(nonatomic, strong)NSString<Optional> *rootId;
+@property(nonatomic, strong)NSString<Optional> *name;
+@property(nonatomic, strong)NSArray<CHDeparment,Optional> *deparments;
+@property(nonatomic, strong)NSArray<CHUser,Optional> *users;
 
 @end
