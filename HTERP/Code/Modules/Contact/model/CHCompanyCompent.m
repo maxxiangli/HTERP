@@ -10,12 +10,4 @@
 
 @implementation CHCompanyCompent
 
-+(JSONKeyMapper *)keyMapper
-{
-    NSDictionary *info = @{@"companyInfo":@"companyInfo", @"deparment":@"branchList"};
-    
-    JSONKeyMapper *mapper = [[JSONKeyMapper alloc] initWithModelToJSONDictionary:info];
-    return mapper;
-}
-
 @end

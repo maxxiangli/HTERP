@@ -12,7 +12,7 @@
 
 +(JSONKeyMapper *)keyMapper
 {
-    NSDictionary *info = @{@"deparmentId":@"id", @"deparments":@"child"};
+    NSDictionary *info = @{@"deparmentId":@"id", @"deparments":@"branchList"};
     
     JSONKeyMapper *mapper = [[JSONKeyMapper alloc] initWithModelToJSONDictionary:info];
     return mapper;

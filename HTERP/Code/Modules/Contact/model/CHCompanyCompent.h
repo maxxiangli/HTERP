@@ -17,6 +17,7 @@
 @interface CHCompanyCompent : CJSONModel
 
 @property(nonatomic, strong)CHCompanyInformation<Optional> *companyInfo;
-@property(nonatomic, strong)CHDeparment<Optional> *deparment;
+@property(nonatomic, strong)NSArray<CHDeparment, Optional> *branchList;
+@property(nonatomic, strong)NSArray<CHUser, Optional> *users;
 
 @end
