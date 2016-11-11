@@ -116,7 +116,7 @@
     CLoginLoginParam *param = [[CLoginLoginParam alloc] init];
     param.mobile = self.phoneNumTextField.text;
     param.passwd = self.pswTextField.text;
-    param.checktype = 1;
+    param.checktype = 2;
     
     [CATradeLoadingView showLoadingViewAddedTo:self.view];
     __weak typeof(self) weakSelf = self;

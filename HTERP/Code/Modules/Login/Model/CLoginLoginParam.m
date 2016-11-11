@@ -11,12 +11,12 @@
 @implementation CLoginLoginParam
 + (NSString *)serverAddress
 {
-    NSString *url = @"http://www.alleasy.com/user";
+    NSString *url = @"http://www.alleasy.com";
     return url;
 }
 
 + (NSString *)path
 {
-    return @"/login?";
+    return @"/user/login";
 }
 @end
