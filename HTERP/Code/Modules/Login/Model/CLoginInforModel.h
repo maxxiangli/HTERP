@@ -13,5 +13,5 @@
 @property(nonatomic, copy) NSString *userId;
 @property(nonatomic, copy) NSString *session;
 
-@property(nonatomic, copy) NSString *phoneNum;
+//@property(nonatomic, copy) NSString<Optional> *phoneNum;
 @end

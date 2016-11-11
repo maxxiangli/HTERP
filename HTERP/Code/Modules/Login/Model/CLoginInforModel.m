@@ -9,5 +9,9 @@
 #import "CLoginInforModel.h"
 
 @implementation CLoginInforModel
-
++ (JSONKeyMapper *)keyMapper
+{
+    return  [[JSONKeyMapper alloc] initWithDictionary:@{@"data.userId":@"userId",
+                                                        @"data.session":@"session"}];
+}
 @end
