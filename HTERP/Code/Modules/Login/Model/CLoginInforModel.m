@@ -14,4 +14,20 @@
     return  [[JSONKeyMapper alloc] initWithDictionary:@{@"data.userId":@"userId",
                                                         @"data.session":@"session"}];
 }
+
+//数据有效性（例如：缺少session）
+- (BOOL)dataIsValid
+{
+    if ( ![self.session isKindOfClass:[NSString class]] )
+    {
+        return NO;
+    }
+    
+    if ( ![self.userId isKindOfClass:[NSString class]] )
+    {
+        return NO;
+    }
+    
+    return YES;
+}
 @end

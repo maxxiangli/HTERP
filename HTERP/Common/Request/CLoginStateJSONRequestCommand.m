@@ -35,38 +35,38 @@
 -(NSString *)setUpUrlParam:(NSString *)url
 {
     
-    NSString *loginTypeStr = nil;;
-    
-//    if ( EloginTypeWx == GLOBEL_LOGIN_OBJECT.portfolioLoginType )
-//    {
-//        loginTypeStr = @"6";
-//    }
-//    else if ( eLoginTypeWT == GLOBEL_LOGIN_OBJECT.portfolioLoginType )
-//    {
-//        loginTypeStr = @"2";
+//    NSString *loginTypeStr = nil;;
+//    
+////    if ( EloginTypeWx == GLOBEL_LOGIN_OBJECT.portfolioLoginType )
+////    {
+////        loginTypeStr = @"6";
+////    }
+////    else if ( eLoginTypeWT == GLOBEL_LOGIN_OBJECT.portfolioLoginType )
+////    {
+////        loginTypeStr = @"2";
+////    }
+////    else
+////    {
+////        loginTypeStr = @"1";
+////    }
+//    NSMutableString *reqUrl = nil;
+//    NSRange range = [url rangeOfString:@"?"];
+//    if (range.length != 0) {
+//        reqUrl = [NSMutableString stringWithFormat:@"%@&check=%@&app=3G",url,loginTypeStr];
 //    }
 //    else
 //    {
-//        loginTypeStr = @"1";
+//        reqUrl = [NSMutableString stringWithFormat:@"%@?check=%@&app=3G",url,loginTypeStr];
 //    }
-    NSMutableString *reqUrl = nil;
-    NSRange range = [url rangeOfString:@"?"];
-    if (range.length != 0) {
-        reqUrl = [NSMutableString stringWithFormat:@"%@&check=%@&app=3G",url,loginTypeStr];
-    }
-    else
-    {
-        reqUrl = [NSMutableString stringWithFormat:@"%@?check=%@&app=3G",url,loginTypeStr];
-    }
-    
-//    if ( EloginTypeWx == GLOBEL_LOGIN_OBJECT.portfolioLoginType )
-//    {
-//        [reqUrl appendString:[NSString stringWithFormat:@"&openid=%@&token=%@&appid=%@",  GLOBEL_LOGIN_OBJECT.openId, GLOBEL_LOGIN_OBJECT.userLoginCookie, WXAPIID]];
-//    }
-//#warning 测试环境
-//    [reqUrl appendString:[NSString stringWithFormat:@"&_appName=%@",@"phpTest"]];
-    
-    return reqUrl;
+//    
+////    if ( EloginTypeWx == GLOBEL_LOGIN_OBJECT.portfolioLoginType )
+////    {
+////        [reqUrl appendString:[NSString stringWithFormat:@"&openid=%@&token=%@&appid=%@",  GLOBEL_LOGIN_OBJECT.openId, GLOBEL_LOGIN_OBJECT.userLoginCookie, WXAPIID]];
+////    }
+////#warning 测试环境
+////    [reqUrl appendString:[NSString stringWithFormat:@"&_appName=%@",@"phpTest"]];
+//    
+    return url;
 }
 
 - (NSDictionary *)setUpHeader

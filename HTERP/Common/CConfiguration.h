@@ -10,6 +10,7 @@
 #import "CThemeManager.h"
 
 #define BUNDLEIMAGE(path) ([[CThemeManager sharedThemeManager] getBundleImageUnderTheme:path])
+#define BUNDLEIMAGE_C(path) ([[CThemeManager sharedThemeManager] getBundleImageUnderTheme:path])
 #define THEMECOLOR(name) ([[CThemeManager sharedThemeManager] getColorUnderTheme:name])
 
 typedef enum
@@ -60,6 +61,10 @@ typedef enum
 
 - (NSString*) getPathByType:(TPathType)type;
 - (UIImage*) getBundleImage:(NSString*)imagePath;
+
+
++ (CGRect)deviceScreenBounds;
++ (CGRect)applicationFrame;
 
 - (NSString *)getReportInfor;
 

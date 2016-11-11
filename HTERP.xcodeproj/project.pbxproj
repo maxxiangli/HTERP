@@ -74,6 +74,7 @@
 		C91ED45A1DCB39BD003688C7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C91ED4591DCB39BD003688C7 /* libz.tbd */; };
 		C92A816A1DD4AEBE00469C52 /* CLoginLoginParam.m in Sources */ = {isa = PBXBuildFile; fileRef = C92A81691DD4AEBE00469C52 /* CLoginLoginParam.m */; };
 		C92A816D1DD4B0E200469C52 /* CLoginInforModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C92A816C1DD4B0E200469C52 /* CLoginInforModel.m */; };
+		C93C9AE61DD58FC700A29F3F /* CAlertWaitingViewStyleOne.m in Sources */ = {isa = PBXBuildFile; fileRef = C93C9AE51DD58FC700A29F3F /* CAlertWaitingViewStyleOne.m */; };
 		C94890091DCC2866002C862F /* HTSecondTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9488FFD1DCC2866002C862F /* HTSecondTabStoryboard.storyboard */; };
 		C948900A1DCC2866002C862F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94890011DCC2866002C862F /* SecondViewController.m */; };
 		C948900B1DCC2866002C862F /* HTThirdTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94890031DCC2866002C862F /* HTThirdTabStoryboard.storyboard */; };
@@ -264,6 +265,8 @@
 		C92A81691DD4AEBE00469C52 /* CLoginLoginParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLoginLoginParam.m; sourceTree = "<group>"; };
 		C92A816B1DD4B0E200469C52 /* CLoginInforModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLoginInforModel.h; sourceTree = "<group>"; };
 		C92A816C1DD4B0E200469C52 /* CLoginInforModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLoginInforModel.m; sourceTree = "<group>"; };
+		C93C9AE41DD58FC700A29F3F /* CAlertWaitingViewStyleOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAlertWaitingViewStyleOne.h; sourceTree = "<group>"; };
+		C93C9AE51DD58FC700A29F3F /* CAlertWaitingViewStyleOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAlertWaitingViewStyleOne.m; sourceTree = "<group>"; };
 		C9488FFD1DCC2866002C862F /* HTSecondTabStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HTSecondTabStoryboard.storyboard; sourceTree = "<group>"; };
 		C94890001DCC2866002C862F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		C94890011DCC2866002C862F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
@@ -641,6 +644,8 @@
 		C91ED4321DCB2EE4003688C7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C93C9AE41DD58FC700A29F3F /* CAlertWaitingViewStyleOne.h */,
+				C93C9AE51DD58FC700A29F3F /* CAlertWaitingViewStyleOne.m */,
 				C94890561DCC367C002C862F /* UIPullingheaderTableView.h */,
 				C94890571DCC367C002C862F /* UIPullingheaderTableView.m */,
 				C94890531DCC3636002C862F /* UIStoryBoardPullingheaderTableView.h */,
@@ -1297,6 +1302,7 @@
 				C91ED3981DCB1644003688C7 /* CRequestJSONModelBase.m in Sources */,
 				C91ED4451DCB3693003688C7 /* UIViewController+ext.m in Sources */,
 				C94890371DCC2FC2002C862F /* CCustomTableViewController.m in Sources */,
+				C93C9AE61DD58FC700A29F3F /* CAlertWaitingViewStyleOne.m in Sources */,
 				C91ED4141DCB2351003688C7 /* HttpDnsUtility.m in Sources */,
 				FA44F07D1DD4543D00985425 /* CHContactList.m in Sources */,
 				C948900C1DCC2866002C862F /* ThirdViewController.m in Sources */,

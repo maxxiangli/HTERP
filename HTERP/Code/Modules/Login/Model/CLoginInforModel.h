@@ -10,8 +10,11 @@
 
 //登录成功，后台返回的数据
 @interface CLoginInforModel : CRequestJSONModelBase
-@property(nonatomic, copy) NSString *userId;
-@property(nonatomic, copy) NSString *session;
+@property(nonatomic, copy) NSString *userId;//后台返回
+@property(nonatomic, copy) NSString *session;//后台返回
 
-//@property(nonatomic, copy) NSString<Optional> *phoneNum;
+@property(nonatomic, copy) NSString<Optional> *uin;
+
+//数据有效性（例如：缺少session）
+- (BOOL)dataIsValid;
 @end

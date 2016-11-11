@@ -31,7 +31,7 @@
 //
 //
 ////    #import "CLogin.h"
-	#import "CPortfolioLoginManager.h"
+	#import "HTLoginManager.h"
 //
 ////	#import "CWtLoginManager.h"
 ////	#import "CWXLoginManager.h"

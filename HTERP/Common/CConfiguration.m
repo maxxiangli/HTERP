@@ -316,6 +316,17 @@ static CConfiguration* _sharedConfiguration = nil;
     return bundleImage;
 }
 
+
++ (CGRect)deviceScreenBounds
+{
+    return [[UIScreen mainScreen] bounds];
+}
+
++ (CGRect)applicationFrame
+{
+    return [[UIScreen mainScreen] applicationFrame];
+}
+
 - (NSString *)getReportInfor
 {
 //    NSMutableDictionary *devideDic = [NSMutableDictionary dictionaryWithCapacity:4];

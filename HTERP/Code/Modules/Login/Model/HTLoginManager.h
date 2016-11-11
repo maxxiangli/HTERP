@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CLoginInforModel.h"
 
 @interface HTLoginManager : NSObject
-@property(nonatomic, copy) NSString *userId;
-@property(nonatomic, copy) NSString *session;
-@property(nonatomic, copy) NSString *phoneNum;
+@property(nonatomic, strong) CLoginInforModel *loginInfor;
 
++ (HTLoginManager *)getInstance;
+
+- (NSString *)uin;
 - (BOOL)isLogin;
+- (void)loadLoginData;
+- (void)saveLoginData:(CLoginInforModel *)loginInfor;
 @end

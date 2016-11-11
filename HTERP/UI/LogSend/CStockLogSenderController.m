@@ -70,9 +70,9 @@
     
 //    NSString * uin = [NSString stringWithFormat:@"10000_%@",[MTA getMtaUDID]];
     NSString * uin = [NSString stringWithFormat:@"10000_%@",@""];
-    if(GLOBEL_LOGIN_OBJECT.userLoginUin)
+    if(GLOBEL_LOGIN_OBJECT.uin)
     {
-        uin = GLOBEL_LOGIN_OBJECT.userLoginUin;
+        uin = GLOBEL_LOGIN_OBJECT.uin;
     }
     NSDateFormatter * format = [[NSDateFormatter alloc] init] ;
     [format setDateFormat:@"yyyy-MM-dd"];
@@ -270,8 +270,8 @@
     NSString *iosV = [UIDevice currentDevice].systemVersion;
 //    NSString *deviceid = [MTA getMtaUDID];
     NSString *deviceid = @"";
-    NSString *uin = GLOBEL_LOGIN_OBJECT.userLoginUin ? GLOBEL_LOGIN_OBJECT.userLoginUin : @"10000";
-    NSString *wxuin = GLOBEL_LOGIN_OBJECT.wxuserLoginUin ? GLOBEL_LOGIN_OBJECT.wxuserLoginUin : @"20000";
+    NSString *uin = GLOBEL_LOGIN_OBJECT.uin ? GLOBEL_LOGIN_OBJECT.uin : @"10000";
+    NSString *wxuin = GLOBEL_LOGIN_OBJECT.uin ? GLOBEL_LOGIN_OBJECT.uin : @"20000";
     
     NSString *head = [NSString stringWithFormat:@"DIAG QQ%@ \n %@ %@ %@ %@ %@\n",
                       uin, deviceid, wxuin, appVersion, model, iosV];

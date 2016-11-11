@@ -11,6 +11,7 @@
 #import "CATradeLoadingView.h"
 #import "CLoginLoginParam.h"
 #import "CLoginInforModel.h"
+#import "CAlertWaitingViewStyleOne.h"
 
 @interface HTLoginLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumTextField;
@@ -124,9 +125,27 @@
         //关闭loading
         [CATradeLoadingView hideLoadingViewForView:weakSelf.view];
         
+        //检测数据有效性
+        CLoginInforModel *model = (CLoginInforModel *)requestCommand.responseModel;
+        if ( ![model isKindOfClass:[CLoginInforModel class]] )
+        {
+            [[[CAlertWaitingViewStyleOne alloc] initFailMessage:@"登录失败" closeAfterDelay:0.3] show];
+            return;
+        }
+        [[[CAlertWaitingViewStyleOne alloc] initSuccessMessage:@"登录成功" closeAfterDelay:0.3] show];
+
+        //保存数据
+        model.uin = param.mobile;
+        [GLOBEL_LOGIN_OBJECT saveLoginData:model];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
     } failure:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand, NSError *dataParseError) {
         //关闭loading
         [CATradeLoadingView hideLoadingViewForView:weakSelf.view];
+        
+        CAlertWaitingViewStyleOne *alertView = [[CAlertWaitingViewStyleOne alloc] initFailMessage:@"登录失败" closeAfterDelay:0.3] ;
+        [alertView show];
 
     }];
 }

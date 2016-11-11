@@ -38,6 +38,10 @@
     [statusBar setStatusBarHidden:NO];
     // add by wangsn end
     [statusBar setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    
+    //加载一些数据
+    [GLOBEL_LOGIN_OBJECT loadLoginData];
     return YES;
 }
 

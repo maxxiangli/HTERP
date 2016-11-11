@@ -13,7 +13,7 @@
 extern int  DISABLE_HTTPDNS;            //关闭HttpDns
 
 #define SharedAPPDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
-#define GLOBEL_LOGIN_OBJECT [CPortfolioLoginManager getInstance]
+#define GLOBEL_LOGIN_OBJECT [HTLoginManager getInstance]
 
 #define iOS7SDK	(__IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1)
 
