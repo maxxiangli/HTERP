@@ -61,4 +61,6 @@ typedef enum
 - (NSString*) getPathByType:(TPathType)type;
 - (UIImage*) getBundleImage:(NSString*)imagePath;
 
+- (NSString *)getReportInfor;
+
 @end

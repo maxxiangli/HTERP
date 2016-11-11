@@ -13,6 +13,8 @@
 //add by maxxiangli for boss reporter on 20130514
 //#import "CMIGReporter.h"
 #import "HttpDnsManager.h"
+#import "CConfiguration.h"
+
 #define kBossDataDicEventID         @"itil_cgi_access_quality"
 #define kBossDataDicKeyResult       @"result"
 #define kBossDataDicKeyTime         @"timeEplase"
@@ -173,7 +175,7 @@ static int requestNum = 0;//add by maxxiangli for boss reporter on 20130709 for 
             [newUrl appendFormat:@"_rndtime=%d&", (unsigned int)[[NSDate date] timeIntervalSince1970]];
         }
         
-//        [newUrl appendString:[CMIGReporter getMIGReportInfor]];
+        [newUrl appendString:[[CConfiguration sharedConfiguration] getReportInfor]];
         
         self.url = newUrl;
     }
@@ -324,7 +326,7 @@ static int requestNum = 0;//add by maxxiangli for boss reporter on 20130709 for 
             [newUrl appendFormat:@"_rndtime=%d&", (unsigned int)[[NSDate date] timeIntervalSince1970]];
         }
         
-//        [newUrl appendString:[CMIGReporter getMIGReportInfor]];
+        [newUrl appendString:[[CConfiguration sharedConfiguration] getReportInfor]];
         
         self.url = newUrl;
     }

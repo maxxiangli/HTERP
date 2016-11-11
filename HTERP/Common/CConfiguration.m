@@ -316,4 +316,21 @@ static CConfiguration* _sharedConfiguration = nil;
     return bundleImage;
 }
 
+- (NSString *)getReportInfor
+{
+//    NSMutableDictionary *devideDic = [NSMutableDictionary dictionaryWithCapacity:4];
+//    
+    NSString *deviceId = [[UIDevice currentDevice].identifierForVendor UUIDString];
+//    NSString *plt = @"ios";
+//    
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+//
+//    [devideDic setObject:deviceId forKey:@"devId"];
+//    [devideDic setObject:plt forKey:@"plt"];
+//    [devideDic setObject:appVersion forKey:@"appver"];
+//    
+//    ;
+    return [NSString stringWithFormat:@"plt=ios&appver=%@&devId=%@",appVersion, deviceId];
+}
 @end
