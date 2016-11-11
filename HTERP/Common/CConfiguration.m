@@ -322,7 +322,7 @@ static CConfiguration* _sharedConfiguration = nil;
 //    
     NSString *deviceId = [[UIDevice currentDevice].identifierForVendor UUIDString];
 //    NSString *plt = @"ios";
-//    
+//
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     NSString *appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
 //
@@ -331,6 +331,6 @@ static CConfiguration* _sharedConfiguration = nil;
 //    [devideDic setObject:appVersion forKey:@"appver"];
 //    
 //    ;
-    return [NSString stringWithFormat:@"plt=ios&appver=%@&devId=%@",appVersion, deviceId];
+    return [NSString stringWithFormat:@"_plt=ios&_appver=%@&_devId=%@",appVersion, deviceId];
 }
 @end
