@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RDVTabBarItem.h"
 #import "CNavigationController.h"
+#import "CHContactsViewController.h"
 #import "CBigEventController.h"
 #import "SecondViewController.h"
 #import "ThirdViewController.h"
@@ -83,10 +84,12 @@
     UIViewController *firstNavigationController = [[CNavigationController alloc]
                                                    initWithRootViewController:bigEventController];
     
-    UIStoryboard *secondstoryboard = [UIStoryboard storyboardWithName:@"HTSecondTabStoryboard" bundle:nil];
-    SecondViewController *secondViewController = [secondstoryboard instantiateViewControllerWithIdentifier:@"secondViewController"];
-    UIViewController *secondNavigationController = [[CNavigationController alloc]
-                                                   initWithRootViewController:secondViewController];
+    
+    
+    //联系人
+    UIStoryboard *contactStoryboard = [UIStoryboard storyboardWithName:@"CHContacts" bundle:nil];
+    CHContactsViewController *contactViewController = [contactStoryboard instantiateViewControllerWithIdentifier:@"CHContacts"];
+    UIViewController *contactNavigationController = [[CNavigationController alloc] initWithRootViewController:contactViewController];
     
     UIStoryboard *thirdStoryboard = [UIStoryboard storyboardWithName:@"HTThirdTabStoryboard" bundle:nil];
     ThirdViewController *thirdViewController = [thirdStoryboard instantiateViewControllerWithIdentifier:@"thirdViewController"];
@@ -99,7 +102,7 @@
                                                    initWithRootViewController:fourthViewController];
     
     RDVTabBarController *tabBarController = [[RDVTabBarController alloc] init];
-    [tabBarController setViewControllers:@[firstNavigationController, secondNavigationController,
+    [tabBarController setViewControllers:@[firstNavigationController, contactNavigationController,
                                            thirdNavigationController, fourthNavigationController]];
     self.tabBarController = tabBarController;
     

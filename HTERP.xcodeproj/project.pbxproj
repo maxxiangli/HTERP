@@ -118,6 +118,8 @@
 		F0E56C7D1DCAF8BE0038ED5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E56C7B1DCAF8BE0038ED5A /* Main.storyboard */; };
 		F0E56C7F1DCAF8BE0038ED5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0E56C7E1DCAF8BE0038ED5A /* Assets.xcassets */; };
 		F0E56C821DCAF8BE0038ED5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E56C801DCAF8BE0038ED5A /* LaunchScreen.storyboard */; };
+		FA43CB751DD5A43F003E0C05 /* CHContacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA43CB741DD5A43F003E0C05 /* CHContacts.storyboard */; };
+		FA43CB781DD5A4E1003E0C05 /* CHContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA43CB771DD5A4E1003E0C05 /* CHContactsViewController.m */; };
 		FA44F06B1DD406C100985425 /* CHGetCompanyParams.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F06A1DD406C100985425 /* CHGetCompanyParams.m */; };
 		FA44F06E1DD4097C00985425 /* CHGetCompanyRequestCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F06D1DD4097C00985425 /* CHGetCompanyRequestCommand.m */; };
 		FA44F0711DD41C6100985425 /* CHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F0701DD41C6100985425 /* CHUser.m */; };
@@ -340,6 +342,9 @@
 		F0E56C7E1DCAF8BE0038ED5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0E56C811DCAF8BE0038ED5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0E56C831DCAF8BE0038ED5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA43CB741DD5A43F003E0C05 /* CHContacts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CHContacts.storyboard; sourceTree = "<group>"; };
+		FA43CB761DD5A4E1003E0C05 /* CHContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHContactsViewController.h; sourceTree = "<group>"; };
+		FA43CB771DD5A4E1003E0C05 /* CHContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHContactsViewController.m; sourceTree = "<group>"; };
 		FA44F0691DD406C100985425 /* CHGetCompanyParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHGetCompanyParams.h; sourceTree = "<group>"; };
 		FA44F06A1DD406C100985425 /* CHGetCompanyParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHGetCompanyParams.m; sourceTree = "<group>"; };
 		FA44F06C1DD4097C00985425 /* CHGetCompanyRequestCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHGetCompanyRequestCommand.h; sourceTree = "<group>"; };
@@ -929,6 +934,9 @@
 		FA44F0661DD4059300985425 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA43CB741DD5A43F003E0C05 /* CHContacts.storyboard */,
+				FA43CB761DD5A4E1003E0C05 /* CHContactsViewController.h */,
+				FA43CB771DD5A4E1003E0C05 /* CHContactsViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1225,6 +1233,7 @@
 				C94890091DCC2866002C862F /* HTSecondTabStoryboard.storyboard in Resources */,
 				F0E56C821DCAF8BE0038ED5A /* LaunchScreen.storyboard in Resources */,
 				C94C82291DD457DA00B1D578 /* HTLogin.storyboard in Resources */,
+				FA43CB751DD5A43F003E0C05 /* CHContacts.storyboard in Resources */,
 				FADA20D01DD2C14600F73DAC /* Storyboard.storyboard in Resources */,
 				C948904C1DCC3548002C862F /* StockDetail.storyboard in Resources */,
 				F0E56C7F1DCAF8BE0038ED5A /* Assets.xcassets in Resources */,
@@ -1341,6 +1350,7 @@
 				C91ED3951DCB1644003688C7 /* CJSONRequestCommand.m in Sources */,
 				C91ED4261DCB2AEF003688C7 /* CNetworkMonitor.m in Sources */,
 				C91ED3D71DCB1B32003688C7 /* CGRect+Extra.m in Sources */,
+				FA43CB781DD5A4E1003E0C05 /* CHContactsViewController.m in Sources */,
 				FA44F0711DD41C6100985425 /* CHUser.m in Sources */,
 				C91ED3DA1DCB1B32003688C7 /* NSDictionary+Extra.m in Sources */,
 				C91ED3E51DCB1B33003688C7 /* UIImage+fixOrientation.m in Sources */,
