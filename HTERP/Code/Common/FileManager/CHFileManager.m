@@ -66,4 +66,33 @@ static CHFileManager *defaultFileManager_ = nil;
     }
 }
 
+#pragma mark - Public function
+- (NSString *)contactsPath:(NSString *)userId
+{
+    if (!userId)
+    {
+        return nil;
+    }
+    
+    NSString *path = [self.rootDirectory stringByAppendingPathComponent:userId];
+    NSFileManager* fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:path])
+    {
+        [fileManager createDirectoryAtPath:path
+               withIntermediateDirectories:YES
+                                attributes:nil
+                                     error:nil];
+    }
+    
+    return path;
+}
+
+
+
+
+
+
+
+
+
 @end

@@ -19,4 +19,7 @@
 
 + (CHFileManager *)defaultManager;
 
+//联系人存储目录
+- (NSString *)contactsPath:(NSString *)userId;
+
 @end
