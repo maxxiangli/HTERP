@@ -44,7 +44,6 @@
 #pragma mark - TableView datasourc and delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSInteger count = [self.contactModel.contactList count];
     return [self.contactModel.contactList count];
 }
 
@@ -119,17 +118,17 @@
             if ([obj isKindOfClass:[CHCompanyInformation class]])
             {
                 CHCompanyInformation *info = (CHCompanyInformation *)[self.tmpList objectAtIndex:indexPath.row];
-                cell.textLabel.text = info.name;
+                cell.textLabel.text = info.itemName;
             }
             else if ([obj isKindOfClass:[CHDeparment class]])
             {
                 CHDeparment *info = (CHDeparment *)[self.tmpList objectAtIndex:indexPath.row];
-                cell.textLabel.text = info.name;
+                cell.textLabel.text = info.itemName;
             }
             else if ([obj isKindOfClass:[CHUser class]])
             {
                 CHUser *user = (CHUser *)[self.tmpList objectAtIndex:indexPath.row];
-                cell.textLabel.text = user.name;
+                cell.textLabel.text = user.itemName;
             }
             else{
                 //Do nothing

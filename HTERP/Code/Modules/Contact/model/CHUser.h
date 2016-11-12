@@ -7,14 +7,15 @@
 //
 
 #import "CJSONModel.h"
+#import "CHItem.h"
 
 @protocol CHUser
 @end
 
-@interface CHUser : CJSONModel
+@interface CHUser : CHItem
 
-@property(nonatomic, copy)NSString<Optional> *userId;
-@property(nonatomic, copy)NSString<Optional> *name;
+//@property(nonatomic, copy)NSString<Optional> *userId;
+//@property(nonatomic, copy)NSString<Optional> *name;
 @property(nonatomic, copy)NSString<Optional> *mobile;
 @property(nonatomic, copy)NSString<Optional> *companyId;
 @property(nonatomic, copy)NSString<Optional> *branchId;

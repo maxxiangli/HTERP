@@ -12,8 +12,8 @@
 
 +(JSONKeyMapper *)keyMapper
 {
-    NSDictionary *info = @{@"userId":@"id",
-                           @"name":@"name",
+    NSDictionary *info = @{@"itemId":@"id",
+                           @"itemName":@"name",
                            @"mobile":@"mobile",
                            @"companyId":@"companyId",
                            @"branchId":@"branchId",

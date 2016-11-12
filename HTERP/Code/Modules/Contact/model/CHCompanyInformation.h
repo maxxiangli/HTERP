@@ -7,14 +7,15 @@
 //
 
 #import "CJSONModel.h"
+#import "CHItem.h"
 
 @protocol CHCompanyInformation
 @end
 
-@interface CHCompanyInformation : CJSONModel
+@interface CHCompanyInformation : CHItem//CJSONModel
 
-@property(nonatomic, copy)NSString<Optional> *companyId;
-@property(nonatomic, copy)NSString<Optional> *name;
+//@property(nonatomic, copy)NSString<Optional> *companyId;
+//@property(nonatomic, copy)NSString<Optional> *name;
 @property(nonatomic, copy)NSString<Optional> *fullName;
 @property(nonatomic, copy)NSString<Optional> *area;
 @property(nonatomic, copy)NSString<Optional> *industry;
