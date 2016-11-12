@@ -7,9 +7,13 @@
 //
 
 #import "CCustomViewController.h"
+#import "CHCompanyCompent.h"
+#import "CHDeparment.h"
 
 @interface CHContactBrowseViewController : CCustomViewController
 
+@property (nonatomic, strong) CHCompanyCompent *company;
+@property (nonatomic, strong) CHDeparment *curDeparment;
 
 
 @end

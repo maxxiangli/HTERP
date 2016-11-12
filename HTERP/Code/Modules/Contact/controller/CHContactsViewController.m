@@ -10,6 +10,7 @@
 #import "CHContactsModel.h"
 #import "CHCompanyCompent.h"
 #import "CHDeparment.h"
+#import "CHContactBrowseViewController.h"
 
 @interface CHContactsViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -143,7 +144,42 @@
     {
         if (self.isOneCompany)
         {
-            CHItem *item = [self.tmpList objectAtIndex:indexPath.row];
+            NSArray *companyList = self.contactModel.contactList[1];
+            CHCompanyCompent *company = [companyList firstObject];
+            CHDeparment *deparment = nil;
+            NSString *title = company.companyInfo.itemName;
+            
+            CHItem *item = self.tmpList[indexPath.row];
+            CHContactType type = [item.itemType integerValue];
+            
+            if (type == CHContactCompanyInfo || type == CHContactDepartment)
+            {
+                if (type == CHContactDepartment)
+                {
+                    deparment = (CHDeparment *)item;
+                    title = deparment.itemName;
+                }
+                
+                UIStoryboard *storyBoard = nil;
+                CHContactBrowseViewController *browserVC = nil;
+                storyBoard = [UIStoryboard storyboardWithName:@"CHContactBrowse" bundle:nil];
+                browserVC = [storyBoard instantiateViewControllerWithIdentifier:@"CHContactBrowse"];
+                browserVC.title = title;
+                browserVC.company = company;
+                browserVC.curDeparment = deparment;
+                [self.navigationController pushViewController:browserVC animated:YES];
+                
+            }else if (type == CHContactUser)
+            {
+                
+            }else
+            {
+                //Do nothing
+            }
+            
+            
+
+            
             NSLog(@"item type = %@", item.itemType);
             UIStoryboard *browseStoryBoard = [UIStoryboard storyboardWithName:@"CHContactBrowse" bundle:nil];
             CHContactsViewController *contactViewController = [browseStoryBoard instantiateViewControllerWithIdentifier:@"CHContactBrowse"];
