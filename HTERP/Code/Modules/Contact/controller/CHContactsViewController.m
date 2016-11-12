@@ -11,6 +11,7 @@
 #import "CHCompanyCompent.h"
 #import "CHDeparment.h"
 #import "CHContactBrowseViewController.h"
+#import "CHUserDetailViewController.h"
 
 @interface CHContactsViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -39,6 +40,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Private function
+- (void)pushUserDetailViewController:(CHUser *)user
+{
+    UIStoryboard *storyBoard = nil;
+    CHUserDetailViewController *userVC = nil;
+    storyBoard = [UIStoryboard storyboardWithName:@"CHUserDetail" bundle:nil];
+    userVC = [storyBoard instantiateViewControllerWithIdentifier:@"CHUserDetail"];
+    userVC.title = user.itemName;
+    [self.navigationController pushViewController:userVC animated:YES];
 }
 
 
@@ -168,32 +180,30 @@
                 browserVC.company = company;
                 browserVC.curDeparment = deparment;
                 [self.navigationController pushViewController:browserVC animated:YES];
-                
-            }else if (type == CHContactUser)
+            }
+            else if (type == CHContactUser)
             {
-                
-            }else
+                CHUser *user = (CHUser *)item;
+                [self pushUserDetailViewController:user];
+            }
+            else
             {
                 //Do nothing
             }
-            
-            
-
-            
-            NSLog(@"item type = %@", item.itemType);
-            UIStoryboard *browseStoryBoard = [UIStoryboard storyboardWithName:@"CHContactBrowse" bundle:nil];
-            CHContactsViewController *contactViewController = [browseStoryBoard instantiateViewControllerWithIdentifier:@"CHContactBrowse"];
-            contactViewController.title = item.itemName;
-            [self.navigationController pushViewController:contactViewController animated:YES];
         }
         else
         {
             NSArray *companyList = [self.contactModel.contactList objectAtIndex:indexPath.section];
-            CHItem *item = [companyList objectAtIndex:indexPath.row];
-            NSLog(@"item type = %@", item.itemType);
+            CHCompanyCompent *company = [companyList objectAtIndex:indexPath.row];
+            UIStoryboard *storyBoard = nil;
+            CHContactBrowseViewController *browserVC = nil;
+            storyBoard = [UIStoryboard storyboardWithName:@"CHContactBrowse" bundle:nil];
+            browserVC = [storyBoard instantiateViewControllerWithIdentifier:@"CHContactBrowse"];
+            browserVC.title = company.companyInfo.itemName;
+            browserVC.company = company;
+            [self.navigationController pushViewController:browserVC animated:YES];
         }
     }
 }
-
 
 @end

@@ -8,6 +8,7 @@
 
 #import "CHContactBrowseViewController.h"
 #import "CHNameBrowseView.h"
+#import "CHUserDetailViewController.h"
 
 @interface CHContactBrowseViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -95,6 +96,16 @@
     }
 }
 
+- (void)pushUserDetailViewController:(CHUser *)user
+{
+    UIStoryboard *storyBoard = nil;
+    CHUserDetailViewController *userVC = nil;
+    storyBoard = [UIStoryboard storyboardWithName:@"CHUserDetail" bundle:nil];
+    userVC = [storyBoard instantiateViewControllerWithIdentifier:@"CHUserDetail"];
+    userVC.title = user.itemName;
+    [self.navigationController pushViewController:userVC animated:YES];
+}
+
 #pragma mark - Property
 - (NSMutableArray *)dataList
 {
@@ -153,18 +164,23 @@
     {
         CHDeparment *deparment = (CHDeparment *)item;
         self.curDeparment = deparment;
+        self.title = self.curDeparment.itemName;
         [self createDataList];
         [self.tableView reloadData];
     }
     else if (type == CHContactUser)
     {
         //Go to detail
+        CHUser *user = (CHUser *)item;
+        [self pushUserDetailViewController:user];
     }
     else
     {
         //Do nothing
     }
 }
+
+
 
 
 @end

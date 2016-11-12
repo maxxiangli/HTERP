@@ -135,6 +135,8 @@
 		FA7031B41DD6EC7300E059F0 /* CHContactBrowse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7031B31DD6EC7300E059F0 /* CHContactBrowse.storyboard */; };
 		FA7031B71DD6ED7500E059F0 /* CHContactBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7031B61DD6ED7500E059F0 /* CHContactBrowseViewController.m */; };
 		FA7031BA1DD6F1EF00E059F0 /* CHNameBrowseView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7031B91DD6F1EF00E059F0 /* CHNameBrowseView.m */; };
+		FA7031BE1DD70F4900E059F0 /* CHUserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7031BD1DD70F4900E059F0 /* CHUserDetail.storyboard */; };
+		FA7031C11DD70FB000E059F0 /* CHUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7031C01DD70FB000E059F0 /* CHUserDetailViewController.m */; };
 		FADA20D01DD2C14600F73DAC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */; };
 		FADA20D31DD2C23900F73DAC /* CHSpashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */; };
 /* End PBXBuildFile section */
@@ -379,6 +381,9 @@
 		FA7031B61DD6ED7500E059F0 /* CHContactBrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHContactBrowseViewController.m; sourceTree = "<group>"; };
 		FA7031B81DD6F1EF00E059F0 /* CHNameBrowseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNameBrowseView.h; sourceTree = "<group>"; };
 		FA7031B91DD6F1EF00E059F0 /* CHNameBrowseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHNameBrowseView.m; sourceTree = "<group>"; };
+		FA7031BD1DD70F4900E059F0 /* CHUserDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CHUserDetail.storyboard; sourceTree = "<group>"; };
+		FA7031BF1DD70FB000E059F0 /* CHUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHUserDetailViewController.h; sourceTree = "<group>"; };
+		FA7031C01DD70FB000E059F0 /* CHUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHUserDetailViewController.m; sourceTree = "<group>"; };
 		FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		FADA20D11DD2C23900F73DAC /* CHSpashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSpashScreenViewController.h; sourceTree = "<group>"; };
 		FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSpashScreenViewController.m; sourceTree = "<group>"; };
@@ -954,6 +959,9 @@
 				FA7031B31DD6EC7300E059F0 /* CHContactBrowse.storyboard */,
 				FA7031B51DD6ED7500E059F0 /* CHContactBrowseViewController.h */,
 				FA7031B61DD6ED7500E059F0 /* CHContactBrowseViewController.m */,
+				FA7031BD1DD70F4900E059F0 /* CHUserDetail.storyboard */,
+				FA7031BF1DD70FB000E059F0 /* CHUserDetailViewController.h */,
+				FA7031C01DD70FB000E059F0 /* CHUserDetailViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1255,6 +1263,7 @@
 				C948906C1DCC42DD002C862F /* t1_colorDic.plist in Resources */,
 				C94890091DCC2866002C862F /* HTSecondTabStoryboard.storyboard in Resources */,
 				F0E56C821DCAF8BE0038ED5A /* LaunchScreen.storyboard in Resources */,
+				FA7031BE1DD70F4900E059F0 /* CHUserDetail.storyboard in Resources */,
 				C94C82291DD457DA00B1D578 /* HTLogin.storyboard in Resources */,
 				FA43CB751DD5A43F003E0C05 /* CHContacts.storyboard in Resources */,
 				FADA20D01DD2C14600F73DAC /* Storyboard.storyboard in Resources */,
@@ -1392,6 +1401,7 @@
 				C948903D1DCC30A2002C862F /* CNoDataView.m in Sources */,
 				C92A816D1DD4B0E200469C52 /* CLoginInforModel.m in Sources */,
 				FA44F0801DD4685400985425 /* CHContactListManager.m in Sources */,
+				FA7031C11DD70FB000E059F0 /* CHUserDetailViewController.m in Sources */,
 				C91ED3E61DCB1B33003688C7 /* UILabel+Extra.m in Sources */,
 				C91ED43C1DCB2FD8003688C7 /* CNavigationController.m in Sources */,
 				C94890491DCC3548002C862F /* CBigEventCell.m in Sources */,
