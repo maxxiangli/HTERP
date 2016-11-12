@@ -15,9 +15,9 @@
 
 @interface CHDeparment : CJSONModel
 
-@property(nonatomic, strong)NSString<Optional> *deparmentId;
-@property(nonatomic, strong)NSString<Optional> *rootId;
-@property(nonatomic, strong)NSString<Optional> *name;
+@property(nonatomic, copy)NSString<Optional> *deparmentId;
+@property(nonatomic, copy)NSString<Optional> *rootId;
+@property(nonatomic, copy)NSString<Optional> *name;
 @property(nonatomic, strong)NSArray<CHDeparment,Optional> *deparments;
 @property(nonatomic, strong)NSArray<CHUser,Optional> *users;
 

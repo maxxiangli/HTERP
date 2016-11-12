@@ -13,15 +13,15 @@
 
 @interface CHUser : CJSONModel
 
-@property(nonatomic, strong)NSString<Optional> *userId;
-@property(nonatomic, strong)NSString<Optional> *name;
-@property(nonatomic, strong)NSString<Optional> *mobile;
-@property(nonatomic, strong)NSString<Optional> *companyId;
-@property(nonatomic, strong)NSString<Optional> *branchId;
-@property(nonatomic, strong)NSString<Optional> *email;
-@property(nonatomic, strong)NSString<Optional> *phone;
-@property(nonatomic, strong)NSString<Optional> *status;
-@property(nonatomic, strong)NSString<Optional> *nickname;
-@property(nonatomic, strong)NSString<Optional> *imgurl;
+@property(nonatomic, copy)NSString<Optional> *userId;
+@property(nonatomic, copy)NSString<Optional> *name;
+@property(nonatomic, copy)NSString<Optional> *mobile;
+@property(nonatomic, copy)NSString<Optional> *companyId;
+@property(nonatomic, copy)NSString<Optional> *branchId;
+@property(nonatomic, copy)NSString<Optional> *email;
+@property(nonatomic, copy)NSString<Optional> *phone;
+@property(nonatomic, copy)NSString<Optional> *status;
+@property(nonatomic, copy)NSString<Optional> *nickname;
+@property(nonatomic, copy)NSString<Optional> *imgurl;
 
 @end
