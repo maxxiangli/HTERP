@@ -120,6 +120,7 @@
 		F0E56C821DCAF8BE0038ED5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E56C801DCAF8BE0038ED5A /* LaunchScreen.storyboard */; };
 		FA43CB751DD5A43F003E0C05 /* CHContacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA43CB741DD5A43F003E0C05 /* CHContacts.storyboard */; };
 		FA43CB781DD5A4E1003E0C05 /* CHContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA43CB771DD5A4E1003E0C05 /* CHContactsViewController.m */; };
+		FA43CB7B1DD5D3D6003E0C05 /* CHContactsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA43CB7A1DD5D3D6003E0C05 /* CHContactsModel.m */; };
 		FA44F06B1DD406C100985425 /* CHGetCompanyParams.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F06A1DD406C100985425 /* CHGetCompanyParams.m */; };
 		FA44F06E1DD4097C00985425 /* CHGetCompanyRequestCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F06D1DD4097C00985425 /* CHGetCompanyRequestCommand.m */; };
 		FA44F0711DD41C6100985425 /* CHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F0701DD41C6100985425 /* CHUser.m */; };
@@ -345,6 +346,8 @@
 		FA43CB741DD5A43F003E0C05 /* CHContacts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CHContacts.storyboard; sourceTree = "<group>"; };
 		FA43CB761DD5A4E1003E0C05 /* CHContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHContactsViewController.h; sourceTree = "<group>"; };
 		FA43CB771DD5A4E1003E0C05 /* CHContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHContactsViewController.m; sourceTree = "<group>"; };
+		FA43CB791DD5D3D6003E0C05 /* CHContactsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHContactsModel.h; sourceTree = "<group>"; };
+		FA43CB7A1DD5D3D6003E0C05 /* CHContactsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHContactsModel.m; sourceTree = "<group>"; };
 		FA44F0691DD406C100985425 /* CHGetCompanyParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHGetCompanyParams.h; sourceTree = "<group>"; };
 		FA44F06A1DD406C100985425 /* CHGetCompanyParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHGetCompanyParams.m; sourceTree = "<group>"; };
 		FA44F06C1DD4097C00985425 /* CHGetCompanyRequestCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHGetCompanyRequestCommand.h; sourceTree = "<group>"; };
@@ -960,6 +963,8 @@
 				FA44F07C1DD4543D00985425 /* CHContactList.m */,
 				FA44F07E1DD4685400985425 /* CHContactListManager.h */,
 				FA44F07F1DD4685400985425 /* CHContactListManager.m */,
+				FA43CB791DD5D3D6003E0C05 /* CHContactsModel.h */,
+				FA43CB7A1DD5D3D6003E0C05 /* CHContactsModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1384,6 +1389,7 @@
 				C91ED3F91DCB1E7A003688C7 /* CMD5Util.m in Sources */,
 				C94890721DCC4EA1002C862F /* CImageHelper.m in Sources */,
 				C94890661DCC3C2C002C862F /* UIViewAdditions.m in Sources */,
+				FA43CB7B1DD5D3D6003E0C05 /* CHContactsModel.m in Sources */,
 				C91ED39A1DCB1644003688C7 /* CThemeManager.m in Sources */,
 				C91ED3D51DCB1B32003688C7 /* UIViewController+Extra.m in Sources */,
 				C948904B1DCC3548002C862F /* CBigEventNoMoreDataTableViewCell.m in Sources */,

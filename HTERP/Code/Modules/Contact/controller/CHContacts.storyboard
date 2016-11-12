@@ -20,12 +20,38 @@
                     <view key="view" contentMode="scaleToFill" id="pdi-PN-JEE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Ai9-nd-cFp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="V5o-ii-rNf"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="NpO-lF-ARD">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NpO-lF-ARD" firstAttribute="leading" secondItem="pdi-PN-JEE" secondAttribute="leading" id="5lq-iP-GFA"/>
+                            <constraint firstItem="Ai9-nd-cFp" firstAttribute="top" secondItem="pdi-PN-JEE" secondAttribute="top" id="9ai-Eb-mJB"/>
+                            <constraint firstItem="cfv-7E-ITF" firstAttribute="top" secondItem="NpO-lF-ARD" secondAttribute="bottom" id="FiA-rj-3KB"/>
+                            <constraint firstAttribute="trailing" secondItem="NpO-lF-ARD" secondAttribute="trailing" id="Sm5-d8-H98"/>
+                            <constraint firstItem="Ai9-nd-cFp" firstAttribute="leading" secondItem="pdi-PN-JEE" secondAttribute="leading" id="dT8-0U-csC"/>
+                            <constraint firstItem="NpO-lF-ARD" firstAttribute="top" secondItem="Ai9-nd-cFp" secondAttribute="bottom" id="e9S-Na-m4V"/>
+                            <constraint firstAttribute="trailing" secondItem="Ai9-nd-cFp" secondAttribute="trailing" id="q9C-3Z-GRT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="Ai9-nd-cFp" id="0C0-1m-WjZ"/>
+                        <outlet property="tableView" destination="NpO-lF-ARD" id="aRS-8F-D1l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4K-AN-ExR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-268" y="79"/>
+            <point key="canvasLocation" x="-534" y="-35"/>
         </scene>
     </scenes>
 </document>

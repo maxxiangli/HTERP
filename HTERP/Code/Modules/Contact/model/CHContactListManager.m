@@ -70,15 +70,15 @@
     }
 }
 
+- (CHContactList *)contactsList
+{
+    return _contactsList;
+}
+
 #pragma mark - Private function
 - (void)postContactsUpdateNotification
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:CHUpdateContactsNotification object:nil];
 }
-
-
-
-
-
 
 @end

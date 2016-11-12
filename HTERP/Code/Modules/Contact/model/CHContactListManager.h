@@ -18,4 +18,6 @@
 
 - (void)stopFetchingContactList;
 
+- (CHContactList *)contactsList;
+
 @end

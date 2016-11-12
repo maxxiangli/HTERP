@@ -18,6 +18,7 @@
 #import "CBigEventNoMoreDataTableViewCell.h"
 //#import "CDragonTigerDetailViewController.h"
 #import "HTLoginLoginViewController.h"
+#import "CHContactListManager.h"
 
 @interface CBigEventController ()
 @property(nonatomic, strong) UIButton *failedButton;
@@ -106,97 +107,100 @@
 
 - (void)requestData
 {
-    CBigEventReminderParam *params = [[CBigEventReminderParam alloc] init];
-    params.symbol = self.stockCode;
-    params.page = self.nextPageIndex;
-
-    [CATradeLoadingView showLoadingViewAddedTo:self.view];
-    __weak typeof(self) weakSelf = self;
-    [CLoginStateJSONRequestCommand getWithParams:params modelClass:[CBigEventReminderModel class] sucess:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand) {
-        //关闭loading
-        
-        if ([weakSelf.tableView isKindOfClass:[UIStoryBoardPullingheaderTableView class]])
-        {
-            [((UIStoryBoardPullingheaderTableView*)weakSelf.tableView) setTimeStampToDate:[NSDate date]];
-            [((UIStoryBoardPullingheaderTableView*)weakSelf.tableView) finishedRefreshLoading:0.0];
-        }
-        
-        [weakSelf doneLoadingTableViewData];
-        [CATradeLoadingView hideLoadingViewForView:weakSelf.view];
-        
-        //更新ui
-        if ( !requestCommand.responseModel )
-        {
-            return;
-        }
-        
-        CBigEventReminderModel *model = (CBigEventReminderModel*)requestCommand.responseModel;
-        if ( ![model isKindOfClass:[CBigEventReminderModel class]] )
-        {
-            return;
-        }
-        
-        //
-        if ( [model.list count] )
-        {
-            self.nextPageIndex++;
-        }
-        
-        //是否还有数据
-        self.totoalPage = model.totalPage;
-        
-        if ([self isLastPage]) {
-            [weakSelf setFooterViewVisibility:NO];
-        }else {
-            [weakSelf setFooterViewVisibility:YES];
-        }
-
-        UITableViewModel *tableModel = [weakSelf tableViewModel];
-        
-        if ( [self isFirstPage] )
-        {
-            [tableModel clear];
-        }
-        
-        if ( !tableModel )
-        {
-            tableModel = [UITableViewModel new] ;
-        }
-        
-        for ( CBigEventReminderItemModel *item in model.list )
-        {
-            [tableModel addRow:TABLEVIEW_ROW(@"bigEventCell", item) forSection:0];
-        }
-        
-        if ([self isLastPage]) {
-            [tableModel addRow:TABLEVIEW_ROW(@"CBigEventNoMoreDataTableViewCell", @"无更多数据") forSection:0];
-        }
-
-        [weakSelf updateModel:tableModel];
-        
-        if ( [self isHaveData] )
-        {
-            [self showLoadDataFail:NO];
-        }
-        else
-        {
-            [self showLoadDataFail:YES];
-        }
-        
-    } failure:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand, NSError *dataParseError) {
-        //关闭loading
-        [weakSelf doneLoadingTableViewData];
-        [CATradeLoadingView hideLoadingViewForView:weakSelf.view];
-        
-        if ( [self isHaveData] )
-        {
-            [self showLoadDataFail:NO];
-        }
-        else
-        {
-            [self showLoadDataFail:YES];
-        }
-    }];
+    
+    [[CHContactListManager defaultManager] startFetchingContactList];
+    
+//    CBigEventReminderParam *params = [[CBigEventReminderParam alloc] init];
+//    params.symbol = self.stockCode;
+//    params.page = self.nextPageIndex;
+//
+//    [CATradeLoadingView showLoadingViewAddedTo:self.view];
+//    __weak typeof(self) weakSelf = self;
+//    [CLoginStateJSONRequestCommand getWithParams:params modelClass:[CBigEventReminderModel class] sucess:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand) {
+//        //关闭loading
+//        
+//        if ([weakSelf.tableView isKindOfClass:[UIStoryBoardPullingheaderTableView class]])
+//        {
+//            [((UIStoryBoardPullingheaderTableView*)weakSelf.tableView) setTimeStampToDate:[NSDate date]];
+//            [((UIStoryBoardPullingheaderTableView*)weakSelf.tableView) finishedRefreshLoading:0.0];
+//        }
+//        
+//        [weakSelf doneLoadingTableViewData];
+//        [CATradeLoadingView hideLoadingViewForView:weakSelf.view];
+//        
+//        //更新ui
+//        if ( !requestCommand.responseModel )
+//        {
+//            return;
+//        }
+//        
+//        CBigEventReminderModel *model = (CBigEventReminderModel*)requestCommand.responseModel;
+//        if ( ![model isKindOfClass:[CBigEventReminderModel class]] )
+//        {
+//            return;
+//        }
+//        
+//        //
+//        if ( [model.list count] )
+//        {
+//            self.nextPageIndex++;
+//        }
+//        
+//        //是否还有数据
+//        self.totoalPage = model.totalPage;
+//        
+//        if ([self isLastPage]) {
+//            [weakSelf setFooterViewVisibility:NO];
+//        }else {
+//            [weakSelf setFooterViewVisibility:YES];
+//        }
+//
+//        UITableViewModel *tableModel = [weakSelf tableViewModel];
+//        
+//        if ( [self isFirstPage] )
+//        {
+//            [tableModel clear];
+//        }
+//        
+//        if ( !tableModel )
+//        {
+//            tableModel = [UITableViewModel new] ;
+//        }
+//        
+//        for ( CBigEventReminderItemModel *item in model.list )
+//        {
+//            [tableModel addRow:TABLEVIEW_ROW(@"bigEventCell", item) forSection:0];
+//        }
+//        
+//        if ([self isLastPage]) {
+//            [tableModel addRow:TABLEVIEW_ROW(@"CBigEventNoMoreDataTableViewCell", @"无更多数据") forSection:0];
+//        }
+//
+//        [weakSelf updateModel:tableModel];
+//        
+//        if ( [self isHaveData] )
+//        {
+//            [self showLoadDataFail:NO];
+//        }
+//        else
+//        {
+//            [self showLoadDataFail:YES];
+//        }
+//        
+//    } failure:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand, NSError *dataParseError) {
+//        //关闭loading
+//        [weakSelf doneLoadingTableViewData];
+//        [CATradeLoadingView hideLoadingViewForView:weakSelf.view];
+//        
+//        if ( [self isHaveData] )
+//        {
+//            [self showLoadDataFail:NO];
+//        }
+//        else
+//        {
+//            [self showLoadDataFail:YES];
+//        }
+//    }];
     
 }
 
