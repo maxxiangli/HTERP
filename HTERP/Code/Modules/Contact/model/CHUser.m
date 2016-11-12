@@ -15,7 +15,7 @@
     self = [super init];
     if (self)
     {
-        self.contactType = [NSNumber numberWithInteger:CHContactUser];
+        self.itemType = [NSNumber numberWithInteger:CHContactUser];
     }
     return self;
 }

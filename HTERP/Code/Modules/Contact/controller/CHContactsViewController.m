@@ -65,19 +65,20 @@
                 self.tmpList = [NSMutableArray arrayWithCapacity:8];
                 
                 CHCompanyCompent *company = [list firstObject];
-                rows += 1;
-                rows += [company.users count];
-                rows += [company.branchList count];
                 
                 [self.tmpList addObject:company.companyInfo];
+                rows += 1;
+
                 if ([company.users count] > 0)
                 {
                     [self.tmpList addObjectsFromArray:company.users];
+                    rows += [company.users count];
                 }
                 
                 if ([company.branchList count] > 0)
                 {
                     [self.tmpList addObjectsFromArray:company.branchList];
+                    rows += [company.branchList count];
                 }
                 
                 self.isOneCompany = YES;
@@ -110,37 +111,52 @@
         NSString *title = [list objectAtIndex:indexPath.row];
         cell.textLabel.text = title;
     }
-    else
+    else if(indexPath.section == 1)
     {
         if (self.isOneCompany)
         {
-            id obj = [self.tmpList objectAtIndex:indexPath.row];
-            if ([obj isKindOfClass:[CHCompanyInformation class]])
-            {
-                CHCompanyInformation *info = (CHCompanyInformation *)[self.tmpList objectAtIndex:indexPath.row];
-                cell.textLabel.text = info.itemName;
-            }
-            else if ([obj isKindOfClass:[CHDeparment class]])
-            {
-                CHDeparment *info = (CHDeparment *)[self.tmpList objectAtIndex:indexPath.row];
-                cell.textLabel.text = info.itemName;
-            }
-            else if ([obj isKindOfClass:[CHUser class]])
-            {
-                CHUser *user = (CHUser *)[self.tmpList objectAtIndex:indexPath.row];
-                cell.textLabel.text = user.itemName;
-            }
-            else{
-                //Do nothing
-            }
+            CHItem *item = [self.tmpList objectAtIndex:indexPath.row];
+            cell.textLabel.text = item.itemName;
         }
         else
         {
-            
+            NSArray *companyList = [self.contactModel.contactList objectAtIndex:indexPath.section];
+            CHCompanyCompent *company = [companyList objectAtIndex:indexPath.row];
+            cell.textLabel.text = company.companyInfo.itemName;
         }
+    }
+    else
+    {
+        //Do nothing
     }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%s", __FUNCTION__);
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == 1)
+    {
+        if (self.isOneCompany)
+        {
+            CHItem *item = [self.tmpList objectAtIndex:indexPath.row];
+            NSLog(@"item type = %@", item.itemType);
+            UIStoryboard *browseStoryBoard = [UIStoryboard storyboardWithName:@"CHContactBrowse" bundle:nil];
+            CHContactsViewController *contactViewController = [browseStoryBoard instantiateViewControllerWithIdentifier:@"CHContactBrowse"];
+            contactViewController.title = item.itemName;
+            [self.navigationController pushViewController:contactViewController animated:YES];
+        }
+        else
+        {
+            NSArray *companyList = [self.contactModel.contactList objectAtIndex:indexPath.section];
+            CHItem *item = [companyList objectAtIndex:indexPath.row];
+            NSLog(@"item type = %@", item.itemType);
+        }
+    }
 }
 
 

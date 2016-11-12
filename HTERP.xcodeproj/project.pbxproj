@@ -132,6 +132,8 @@
 		FA44F0841DD4747F00985425 /* CHGlobalDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F0831DD4747F00985425 /* CHGlobalDefine.m */; };
 		FA44F0881DD493E600985425 /* CHFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F0871DD493E600985425 /* CHFileManager.m */; };
 		FA7031B21DD6C2BC00E059F0 /* CHItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7031B11DD6C2BC00E059F0 /* CHItem.m */; };
+		FA7031B41DD6EC7300E059F0 /* CHContactBrowse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7031B31DD6EC7300E059F0 /* CHContactBrowse.storyboard */; };
+		FA7031B71DD6ED7500E059F0 /* CHContactBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7031B61DD6ED7500E059F0 /* CHContactBrowseViewController.m */; };
 		FADA20D01DD2C14600F73DAC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */; };
 		FADA20D31DD2C23900F73DAC /* CHSpashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */; };
 /* End PBXBuildFile section */
@@ -371,6 +373,9 @@
 		FA44F0871DD493E600985425 /* CHFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHFileManager.m; sourceTree = "<group>"; };
 		FA7031B01DD6C2BC00E059F0 /* CHItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHItem.h; sourceTree = "<group>"; };
 		FA7031B11DD6C2BC00E059F0 /* CHItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHItem.m; sourceTree = "<group>"; };
+		FA7031B31DD6EC7300E059F0 /* CHContactBrowse.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CHContactBrowse.storyboard; sourceTree = "<group>"; };
+		FA7031B51DD6ED7500E059F0 /* CHContactBrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHContactBrowseViewController.h; sourceTree = "<group>"; };
+		FA7031B61DD6ED7500E059F0 /* CHContactBrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHContactBrowseViewController.m; sourceTree = "<group>"; };
 		FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		FADA20D11DD2C23900F73DAC /* CHSpashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSpashScreenViewController.h; sourceTree = "<group>"; };
 		FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSpashScreenViewController.m; sourceTree = "<group>"; };
@@ -943,6 +948,9 @@
 				FA43CB741DD5A43F003E0C05 /* CHContacts.storyboard */,
 				FA43CB761DD5A4E1003E0C05 /* CHContactsViewController.h */,
 				FA43CB771DD5A4E1003E0C05 /* CHContactsViewController.m */,
+				FA7031B31DD6EC7300E059F0 /* CHContactBrowse.storyboard */,
+				FA7031B51DD6ED7500E059F0 /* CHContactBrowseViewController.h */,
+				FA7031B61DD6ED7500E059F0 /* CHContactBrowseViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1251,6 +1259,7 @@
 				C948900B1DCC2866002C862F /* HTThirdTabStoryboard.storyboard in Resources */,
 				C948901C1DCC286C002C862F /* HTFourthTabStoryboard.storyboard in Resources */,
 				C948906B1DCC42DD002C862F /* t0_colorDic.plist in Resources */,
+				FA7031B41DD6EC7300E059F0 /* CHContactBrowse.storyboard in Resources */,
 				C948903E1DCC30A2002C862F /* CNoDataView.xib in Resources */,
 				C94890641DCC372B002C862F /* CATradeLoadingView.xib in Resources */,
 			);
@@ -1385,6 +1394,7 @@
 				F0E56C711DCAF8BE0038ED5A /* main.m in Sources */,
 				C91ED3E71DCB1B33003688C7 /* UITableViewCell+FixUITableViewCellAutolayoutIHope.m in Sources */,
 				FA44F0841DD4747F00985425 /* CHGlobalDefine.m in Sources */,
+				FA7031B71DD6ED7500E059F0 /* CHContactBrowseViewController.m in Sources */,
 				C91ED43F1DCB3311003688C7 /* NSObject+Json.m in Sources */,
 				C91ED4021DCB227B003688C7 /* CWorkedThread.m in Sources */,
 				C91ED4131DCB2351003688C7 /* HttpDnsTable.m in Sources */,

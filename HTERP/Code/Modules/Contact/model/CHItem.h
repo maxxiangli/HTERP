@@ -23,7 +23,7 @@ typedef NS_ENUM(NSInteger, CHContactType)
 
 @interface CHItem : JSONModel
 
-@property(nonatomic, strong)NSNumber<Ignore> *contactType;
+@property(nonatomic, strong)NSNumber<Ignore> *itemType;
 
 //用户 部门 公司 Id
 @property(nonatomic, copy)NSString<Optional> *itemId;
