@@ -9,12 +9,13 @@
 #import "CJSONModel.h"
 #import "CHCompanyInformation.h"
 #import "CHDeparment.h"
+#import "CHItem.h"
 
 @protocol CHCompanyCompent
 
 @end
 
-@interface CHCompanyCompent : CJSONModel
+@interface CHCompanyCompent : CHItem//CJSONModel
 
 @property(nonatomic, strong)CHCompanyInformation<Optional> *companyInfo;
 @property(nonatomic, strong)NSArray<CHDeparment, Optional> *branchList;

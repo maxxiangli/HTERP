@@ -10,6 +10,16 @@
 
 @implementation CHCompanyInformation
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.contactType = [NSNumber numberWithInteger:CHContactCompanyInfo];
+    }
+    return self;
+}
+
 +(JSONKeyMapper *)keyMapper
 {
     NSDictionary *info = @{@"itemId":@"id", @"itemName":@"name"};

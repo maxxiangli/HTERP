@@ -10,4 +10,15 @@
 
 @implementation CHCompanyCompent
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.contactType = [NSNumber numberWithInteger:CHContactCompanyCompent];
+    }
+    
+    return self;
+}
+
 @end

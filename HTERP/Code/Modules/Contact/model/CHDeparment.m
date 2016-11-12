@@ -10,6 +10,17 @@
 
 @implementation CHDeparment
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.contactType = [NSNumber numberWithInteger:CHContactDepartment];
+    }
+    return self;
+}
+
+
 +(JSONKeyMapper *)keyMapper
 {
     NSDictionary *info = @{@"itemId":@"id", @"deparments":@"branchList", @"itemName":@"name"};

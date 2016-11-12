@@ -9,12 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "CJSONModel.h"
 
+//Rainbow colors
+typedef NS_ENUM(NSInteger, CHContactType)
+{
+    CHContactUser = 0, //用户
+    CHContactDepartment = 1, //部门
+    CHContactCompanyInfo  = 3,  //公司信息
+    CHContactCompanyCompent = 4 //公司包括人员和部门
+};
+
 @protocol CHItem
 @end
 
 @interface CHItem : JSONModel
 
-@property(nonatomic, strong)NSNumber<Ignore> *type;
+@property(nonatomic, strong)NSNumber<Ignore> *contactType;
 
 //用户 部门 公司 Id
 @property(nonatomic, copy)NSString<Optional> *itemId;

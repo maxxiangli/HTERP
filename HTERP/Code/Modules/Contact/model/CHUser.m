@@ -10,6 +10,16 @@
 
 @implementation CHUser
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.contactType = [NSNumber numberWithInteger:CHContactUser];
+    }
+    return self;
+}
+
 +(JSONKeyMapper *)keyMapper
 {
     NSDictionary *info = @{@"itemId":@"id",
