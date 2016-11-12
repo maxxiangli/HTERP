@@ -48,9 +48,15 @@
 #pragma mark - Private function
 - (void)createDataList
 {
+    [self.dataList removeAllObjects];
+    
     if (self.curDeparment)
     {
-        [self.selectedItem addObject:self.company];
+        if ([self.selectedItem count] == 0)
+        {
+            [self.selectedItem addObject:self.company];
+        }
+        
         [self.selectedItem addObject:self.curDeparment];
         
         NSArray *users = self.curDeparment.users;
@@ -69,7 +75,10 @@
     {
         if (self.company)
         {
-            [self.selectedItem addObject:self.company];
+            if ([self.selectedItem count] == 0)
+            {
+                [self.selectedItem addObject:self.company];
+            }
             
             NSArray *users = self.company.users;
             if (users && [users count] > 0)
@@ -137,6 +146,24 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    CHItem *item = self.dataList[indexPath.row];
+    CHContactType type = [item.itemType integerValue];
+    if (type == CHContactDepartment)
+    {
+        CHDeparment *deparment = (CHDeparment *)item;
+        self.curDeparment = deparment;
+        [self createDataList];
+        [self.tableView reloadData];
+    }
+    else if (type == CHContactUser)
+    {
+        //Go to detail
+    }
+    else
+    {
+        //Do nothing
+    }
 }
 
 
