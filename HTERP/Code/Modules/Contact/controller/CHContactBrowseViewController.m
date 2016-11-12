@@ -7,8 +7,12 @@
 //
 
 #import "CHContactBrowseViewController.h"
+#import "CHNameBrowseView.h"
 
 @interface CHContactBrowseViewController ()
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet CHNameBrowseView *browseView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 

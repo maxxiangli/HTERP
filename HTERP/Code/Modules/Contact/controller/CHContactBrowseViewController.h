@@ -10,4 +10,6 @@
 
 @interface CHContactBrowseViewController : CCustomViewController
 
+
+
 @end
