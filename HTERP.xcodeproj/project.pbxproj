@@ -118,6 +118,8 @@
 		F0E56C7D1DCAF8BE0038ED5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E56C7B1DCAF8BE0038ED5A /* Main.storyboard */; };
 		F0E56C7F1DCAF8BE0038ED5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0E56C7E1DCAF8BE0038ED5A /* Assets.xcassets */; };
 		F0E56C821DCAF8BE0038ED5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E56C801DCAF8BE0038ED5A /* LaunchScreen.storyboard */; };
+		FA3E97261DD89A51005FAF9D /* CHSearchContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3E97251DD89A51005FAF9D /* CHSearchContact.storyboard */; };
+		FA3E97291DD89ABF005FAF9D /* CHSearchContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3E97281DD89ABF005FAF9D /* CHSearchContactViewController.m */; };
 		FA43CB751DD5A43F003E0C05 /* CHContacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA43CB741DD5A43F003E0C05 /* CHContacts.storyboard */; };
 		FA43CB781DD5A4E1003E0C05 /* CHContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA43CB771DD5A4E1003E0C05 /* CHContactsViewController.m */; };
 		FA43CB7B1DD5D3D6003E0C05 /* CHContactsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA43CB7A1DD5D3D6003E0C05 /* CHContactsModel.m */; };
@@ -349,6 +351,9 @@
 		F0E56C7E1DCAF8BE0038ED5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0E56C811DCAF8BE0038ED5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0E56C831DCAF8BE0038ED5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA3E97251DD89A51005FAF9D /* CHSearchContact.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CHSearchContact.storyboard; sourceTree = "<group>"; };
+		FA3E97271DD89ABF005FAF9D /* CHSearchContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSearchContactViewController.h; sourceTree = "<group>"; };
+		FA3E97281DD89ABF005FAF9D /* CHSearchContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSearchContactViewController.m; sourceTree = "<group>"; };
 		FA43CB741DD5A43F003E0C05 /* CHContacts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CHContacts.storyboard; sourceTree = "<group>"; };
 		FA43CB761DD5A4E1003E0C05 /* CHContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHContactsViewController.h; sourceTree = "<group>"; };
 		FA43CB771DD5A4E1003E0C05 /* CHContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHContactsViewController.m; sourceTree = "<group>"; };
@@ -962,6 +967,9 @@
 				FA7031BD1DD70F4900E059F0 /* CHUserDetail.storyboard */,
 				FA7031BF1DD70FB000E059F0 /* CHUserDetailViewController.h */,
 				FA7031C01DD70FB000E059F0 /* CHUserDetailViewController.m */,
+				FA3E97251DD89A51005FAF9D /* CHSearchContact.storyboard */,
+				FA3E97271DD89ABF005FAF9D /* CHSearchContactViewController.h */,
+				FA3E97281DD89ABF005FAF9D /* CHSearchContactViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1267,6 +1275,7 @@
 				C94C82291DD457DA00B1D578 /* HTLogin.storyboard in Resources */,
 				FA43CB751DD5A43F003E0C05 /* CHContacts.storyboard in Resources */,
 				FADA20D01DD2C14600F73DAC /* Storyboard.storyboard in Resources */,
+				FA3E97261DD89A51005FAF9D /* CHSearchContact.storyboard in Resources */,
 				C948904C1DCC3548002C862F /* StockDetail.storyboard in Resources */,
 				F0E56C7F1DCAF8BE0038ED5A /* Assets.xcassets in Resources */,
 				F0E56C7D1DCAF8BE0038ED5A /* Main.storyboard in Resources */,
@@ -1353,6 +1362,7 @@
 				C948901B1DCC286C002C862F /* FourthViewController.m in Sources */,
 				C948906F1DCC4E63002C862F /* UINavigationBar+Draw.m in Sources */,
 				C94C82261DD452E800B1D578 /* HTLoginManager.m in Sources */,
+				FA3E97291DD89ABF005FAF9D /* CHSearchContactViewController.m in Sources */,
 				C91ED4231DCB2A38003688C7 /* CBossReporter.m in Sources */,
 				C948900A1DCC2866002C862F /* SecondViewController.m in Sources */,
 				C91ED3F41DCB1D68003688C7 /* CURLLoaderProxy.m in Sources */,
