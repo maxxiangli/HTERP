@@ -69,11 +69,12 @@
         if ([self.selectedItem count] == 0)
         {
             [self.selectedItem addObject:self.company];
-//            [self.selectedItem addObject:self.company.companyInfo.itemName];
         }
         
-        [self.selectedItem addObject:self.curDeparment];
-//        [self.selectedItem addObject:self.curDeparment.itemName];
+        if (![self.selectedItem containsObject:self.curDeparment])
+        {
+            [self.selectedItem addObject:self.curDeparment];
+        }
         
         NSArray *users = self.curDeparment.users;
         if (users && [users count] > 0)
@@ -93,7 +94,6 @@
         {
             if ([self.selectedItem count] == 0)
             {
-//                [self.selectedItem addObject:self.company.companyInfo.itemName];
                 [self.selectedItem addObject:self.company];
             }
             
@@ -223,7 +223,42 @@
 #pragma mark - 
 - (void)browseView:(CHNameBrowseView *)browseView didSelectedIndex:(NSInteger)index
 {
-    NSLog(@"index = %@", @(index));
+    if ((index + 1 ) == [self.selectedItem count])
+    {
+        return;
+    }
+    
+//    CHItem *item = self.selectedItem[index];
+    NSRange range = NSMakeRange(index + 1, [self.selectedItem count] - 1 - index);
+    [self.selectedItem removeObjectsInRange:range];
+    [browseView removeTextAfterIndex:index];
+    
+    CHItem *item = [self.selectedItem lastObject];
+    if ([item isKindOfClass:[CHCompanyCompent class]])
+    {
+        self.curDeparment = nil;
+        [self createDataList];
+        [self.tableView reloadData];
+    }
+    else if ([item isKindOfClass:[CHDeparment class]])
+    {
+        CHDeparment *deparment = (CHDeparment *)item;
+        self.curDeparment = deparment;
+        [self createDataList];
+        [self.tableView reloadData];
+    }
+    else
+    {
+        //Do nothing
+    }
+}
+
+- (void)removeSelectedItemAfterIndex:(NSInteger)index
+{
+//    NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSet];
+    
+    
+    
 }
 
 

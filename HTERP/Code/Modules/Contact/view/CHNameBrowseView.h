@@ -26,4 +26,10 @@
 //加在当前文字的末尾
 - (void)addText:(NSString *)text;
 
+//删除index之后的文本
+- (void)removeTextAfterIndex:(NSInteger)index;
+
+
+
+
 @end

@@ -105,6 +105,27 @@ static const NSInteger kLabelFontSize = 20;
     }
 }
 
+- (void)removeTextAfterIndex:(NSInteger)index
+{
+    if ([self.labelList count] == (index + 1))
+    {
+        return;
+    }
+    
+    NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSet];
+    for (NSInteger n = 0; n < [self.labelList count]; n++)
+    {
+        if (n > index)
+        {
+            UILabel *label = self.labelList[n];
+            [label removeFromSuperview];
+            [indexSet addIndex:n];
+        }
+    }
+    
+    [self.labelList removeObjectsAtIndexes:indexSet];
+}
+
 - (UILabel *)makeLabel:(CGRect)rect text:(NSString *)text
 {
     UILabel *label = [[UILabel alloc] initWithFrame:rect];
@@ -129,7 +150,6 @@ static const NSInteger kLabelFontSize = 20;
         NSInteger index = [self.labelList indexOfObject:view];
         if (index != NSNotFound)
         {
-            NSLog(@"index = %@", @(index));
             if (self.delegate &&
                 [self.delegate respondsToSelector:@selector(browseView:didSelectedIndex:)])
             {
