@@ -10,7 +10,7 @@
 #import "CHNameBrowseView.h"
 #import "CHUserDetailViewController.h"
 
-@interface CHContactBrowseViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface CHContactBrowseViewController ()<UITableViewDelegate, UITableViewDataSource, CHNameBrowseViewDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet CHNameBrowseView *browseView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -27,6 +27,7 @@
 {
     _tableView.dataSource = nil;
     _tableView.delegate = nil;
+    _browseView.delegate = nil;
     
     NSLog(@"%s", __FUNCTION__);
 }
@@ -38,7 +39,19 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    self.browseView.delegate = self;
+    
+    [self.selectedItem removeAllObjects];
+    
     [self createDataList];
+    [self updateNameBrowseView];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+//    [self updateNameBrowseView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,9 +69,11 @@
         if ([self.selectedItem count] == 0)
         {
             [self.selectedItem addObject:self.company];
+//            [self.selectedItem addObject:self.company.companyInfo.itemName];
         }
         
         [self.selectedItem addObject:self.curDeparment];
+//        [self.selectedItem addObject:self.curDeparment.itemName];
         
         NSArray *users = self.curDeparment.users;
         if (users && [users count] > 0)
@@ -78,6 +93,7 @@
         {
             if ([self.selectedItem count] == 0)
             {
+//                [self.selectedItem addObject:self.company.companyInfo.itemName];
                 [self.selectedItem addObject:self.company];
             }
             
@@ -104,6 +120,28 @@
     userVC = [storyBoard instantiateViewControllerWithIdentifier:@"CHUserDetail"];
     userVC.title = user.itemName;
     [self.navigationController pushViewController:userVC animated:YES];
+}
+
+- (void)updateNameBrowseView
+{
+    for (CHItem *item in self.selectedItem)
+    {
+        if ([item isKindOfClass:[CHCompanyCompent class]])
+        {
+            CHCompanyCompent *company = (CHCompanyCompent *)item;
+            if (company.companyInfo.itemName)
+            {
+                [self.browseView addText:company.companyInfo.itemName];
+            }
+        }
+        else if ([item isKindOfClass:[CHDeparment class]])
+        {
+            [self.browseView addText:item.itemName];
+        }
+        else{
+            //Do nothing
+        }
+    }
 }
 
 #pragma mark - Property
@@ -167,6 +205,7 @@
         self.title = self.curDeparment.itemName;
         [self createDataList];
         [self.tableView reloadData];
+        [self.browseView addText:deparment.itemName];
     }
     else if (type == CHContactUser)
     {
@@ -180,6 +219,12 @@
     }
 }
 
+
+#pragma mark - 
+- (void)browseView:(CHNameBrowseView *)browseView didSelectedIndex:(NSInteger)index
+{
+    NSLog(@"index = %@", @(index));
+}
 
 
 
