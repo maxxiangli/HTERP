@@ -9,8 +9,11 @@
 #import "CHContactBrowseViewController.h"
 #import "CHNameBrowseView.h"
 #import "CHUserDetailViewController.h"
+#import "CHSearchContactViewController.h"
+#import "CNavigationController.h"
+#import "CHSearchContactMode.h"
 
-@interface CHContactBrowseViewController ()<UITableViewDelegate, UITableViewDataSource, CHNameBrowseViewDelegate, UISearchBarDelegate>
+@interface CHContactBrowseViewController ()<UITableViewDelegate, UITableViewDataSource, CHNameBrowseViewDelegate, UISearchBarDelegate, CHSearchContactViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet CHNameBrowseView *browseView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -28,6 +31,7 @@
     _tableView.dataSource = nil;
     _tableView.delegate = nil;
     _browseView.delegate = nil;
+    _searchBar.delegate = nil;
     
     NSLog(@"%s", __FUNCTION__);
 }
@@ -221,7 +225,6 @@
     }
 }
 
-
 #pragma mark - CHNameBrowseView delegate
 - (void)browseView:(CHNameBrowseView *)browseView didSelectedIndex:(NSInteger)index
 {
@@ -257,10 +260,35 @@
 #pragma mark - UISearchBar delegage
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
+    UIStoryboard *storyBoard = nil;
+    CHSearchContactViewController *searchVC = nil;
+    storyBoard = [UIStoryboard storyboardWithName:@"CHSearchContact" bundle:nil];
+    searchVC = [storyBoard instantiateViewControllerWithIdentifier:@"CHSearchContact"];
+    searchVC.title = @"搜索联系人";
+    searchVC.delegate = self;
+    
+    CNavigationController *nav = [[CNavigationController alloc] initWithRootViewController:searchVC];
+    
+    [self presentViewController:nav animated:YES completion:^{
+        
+    }];
     
     return NO;
 }
 
-
+#pragma mark - CHSearchContactViewControllerDelegate
+- (void)searchController:(CHSearchContactViewController *)searchController didSelectedUsers:(NSArray *)users
+{
+    [searchController resignSearchBarFirstResponder];
+    
+    __weak typeof(self) selfWeak = self;
+    [searchController dismissViewControllerAnimated:NO completion:^{
+        
+        CHSearchContactMode *mode = [users firstObject];
+        CHUser *user = mode.user;
+        [selfWeak pushUserDetailViewController:user];
+        
+    }];
+}
 
 @end

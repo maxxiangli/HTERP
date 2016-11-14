@@ -8,6 +8,18 @@
 
 #import "CCustomViewController.h"
 
+@class CHSearchContactViewController;
+
+@protocol CHSearchContactViewControllerDelegate <NSObject>
+
+- (void)searchController:(CHSearchContactViewController *)searchController didSelectedUsers:(NSArray *)users;
+
+@end
+
 @interface CHSearchContactViewController : CCustomViewController
+
+@property (nonatomic, weak)id <CHSearchContactViewControllerDelegate> delegate;
+
+- (void)resignSearchBarFirstResponder;
 
 @end

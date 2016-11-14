@@ -131,6 +131,20 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSArray *users = self.searchResult[indexPath.section];
+    CHSearchContactMode *mode = users[indexPath.row];
+    if (self.delegate &&
+        [self.delegate respondsToSelector:@selector(searchController:didSelectedUsers:)])
+    {
+        NSArray *selectedUsers = [NSArray arrayWithObject:mode];
+        [self.delegate searchController:self didSelectedUsers:selectedUsers];
+    }
+}
+
 
 #pragma mark - Property function
 - (NSMutableArray *)searchResult
@@ -186,6 +200,12 @@
     [self dismissViewControllerAnimated:YES completion:^{
         //Do noting
     }];
+}
+
+#pragma mark - Public function
+- (void)resignSearchBarFirstResponder
+{
+    [self.searchBar resignFirstResponder];
 }
 
 @end

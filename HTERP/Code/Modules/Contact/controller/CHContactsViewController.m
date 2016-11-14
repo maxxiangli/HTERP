@@ -14,8 +14,9 @@
 #import "CHUserDetailViewController.h"
 #import "CHSearchContactViewController.h"
 #import "CNavigationController.h"
+#import "CHSearchContactMode.h"
 
-@interface CHContactsViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
+@interface CHContactsViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, CHSearchContactViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -210,6 +211,21 @@
     }
 }
 
+#pragma mark - CHSearchContactViewController delegate
+- (void)searchController:(CHSearchContactViewController *)searchController didSelectedUsers:(NSArray *)users
+{
+    [searchController resignSearchBarFirstResponder];
+    
+    __weak typeof(self) selfWeak = self;
+    [searchController dismissViewControllerAnimated:NO completion:^{
+        
+        CHSearchContactMode *mode = [users firstObject];
+        CHUser *user = mode.user;
+        [selfWeak pushUserDetailViewController:user];
+        
+    }];
+}
+
 #pragma mark - UISearchBar delegate
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
@@ -217,6 +233,7 @@
     CHSearchContactViewController *searchVC = nil;
     storyBoard = [UIStoryboard storyboardWithName:@"CHSearchContact" bundle:nil];
     searchVC = [storyBoard instantiateViewControllerWithIdentifier:@"CHSearchContact"];
+    searchVC.delegate = self;
     searchVC.title = @"搜索联系人";
     
     CNavigationController *nav = [[CNavigationController alloc] initWithRootViewController:searchVC];
