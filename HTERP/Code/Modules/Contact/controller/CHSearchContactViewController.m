@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self buildRightItem];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +25,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Private function
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)buildRightItem
+{
+    CCustomButton *cancleButton = [CCustomButton buttonWithTitle:@"取消" style:eCustomButtonStyleSquare];
+    [cancleButton setFrame:CGRectMake(0, 0, 40, 44)];
+    [cancleButton addTarget:self action:@selector(handleCancelClick:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancleButton];
+    self.navigationItem.rightBarButtonItem = cancelButtonItem;
 }
-*/
+
+#pragma mark - Action
+- (void)handleCancelClick:(UIButton *)sender
+{
+    NSLog(@"%s", __FUNCTION__);
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        //Do noting
+    }];
+}
 
 @end

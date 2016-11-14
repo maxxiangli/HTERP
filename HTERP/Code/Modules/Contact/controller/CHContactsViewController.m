@@ -12,8 +12,10 @@
 #import "CHDeparment.h"
 #import "CHContactBrowseViewController.h"
 #import "CHUserDetailViewController.h"
+#import "CHSearchContactViewController.h"
+#import "CNavigationController.h"
 
-@interface CHContactsViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface CHContactsViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -35,6 +37,8 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    self.searchBar.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -204,6 +208,24 @@
             [self.navigationController pushViewController:browserVC animated:YES];
         }
     }
+}
+
+#pragma mark - UISearchBar delegate
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    UIStoryboard *storyBoard = nil;
+    CHSearchContactViewController *searchVC = nil;
+    storyBoard = [UIStoryboard storyboardWithName:@"CHSearchContact" bundle:nil];
+    searchVC = [storyBoard instantiateViewControllerWithIdentifier:@"CHSearchContact"];
+    searchVC.title = @"搜索联系人";
+    
+    CNavigationController *nav = [[CNavigationController alloc] initWithRootViewController:searchVC];
+    
+    [self presentViewController:nav animated:YES completion:^{
+        
+    }];
+    
+    return NO;
 }
 
 @end

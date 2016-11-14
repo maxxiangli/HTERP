@@ -10,7 +10,7 @@
 #import "CHNameBrowseView.h"
 #import "CHUserDetailViewController.h"
 
-@interface CHContactBrowseViewController ()<UITableViewDelegate, UITableViewDataSource, CHNameBrowseViewDelegate>
+@interface CHContactBrowseViewController ()<UITableViewDelegate, UITableViewDataSource, CHNameBrowseViewDelegate, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet CHNameBrowseView *browseView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -40,6 +40,8 @@
     self.tableView.dataSource = self;
     
     self.browseView.delegate = self;
+    
+    self.searchBar.delegate = self;
     
     [self.selectedItem removeAllObjects];
     
@@ -220,7 +222,7 @@
 }
 
 
-#pragma mark - 
+#pragma mark - CHNameBrowseView delegate
 - (void)browseView:(CHNameBrowseView *)browseView didSelectedIndex:(NSInteger)index
 {
     if ((index + 1 ) == [self.selectedItem count])
@@ -228,7 +230,6 @@
         return;
     }
     
-//    CHItem *item = self.selectedItem[index];
     NSRange range = NSMakeRange(index + 1, [self.selectedItem count] - 1 - index);
     [self.selectedItem removeObjectsInRange:range];
     [browseView removeTextAfterIndex:index];
@@ -253,12 +254,11 @@
     }
 }
 
-- (void)removeSelectedItemAfterIndex:(NSInteger)index
+#pragma mark - UISearchBar delegage
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
-//    NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSet];
     
-    
-    
+    return NO;
 }
 
 
