@@ -32,7 +32,7 @@
 }
 
 + (NSMutableArray *)getAllValuesFromDict:(NSDictionary *)dict {
-    NSMutableArray *valuesAry = [NSMutableArray new];
+    NSMutableArray *valuesAry = [NSMutableArray arrayWithCapacity:16];
     NSArray *keyAry = [self sortForStringAry:[dict allKeys]];
     for (NSString *key in keyAry){
         NSArray *value = [dict objectForKey:key];
