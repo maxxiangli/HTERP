@@ -8,6 +8,8 @@
 
 #import "CHGetCompanyRequestCommand.h"
 #import "CJSONRequestCommand.h"
+#import "CHContactList.h"
+#import "CHContactList+sort.h"
 
 @implementation CHGetCompanyRequestCommand
 
@@ -77,24 +79,17 @@
     return [header copy];
 }
 
-//-(void)parserDataInThread:(NSData *)recvData
-//{
-//#ifdef DEBUG_PROFILE
+-(void)parserDataInThread:(NSData *)recvData
+{
+    NSError *error = nil;
+    self.responseModel = [[self.modelClass alloc] initWithData:recvData
+                                                         error:&error];
     
-//    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:recvData options:NSJSONReadingMutableContainers error:nil];
-    
-//    NSString *string = [[NSString alloc] initWithData:recvData encoding:NSUTF8StringEncoding];
-
-//    self.originalData = [CJSONRequestCommand replaceUnicode:string] ;
-//#endif
-    
-//    NSError *error = nil;
-//    self.responseModel = [[self.modelClass alloc] initWithData:recvData error:&error] ;
-//    if (error) {
-//        _dataParseError = [error copy];
-//    }
-//}
-
-
+    if ([self.responseModel isKindOfClass:[CHContactList class]])
+    {
+        CHContactList *list = (CHContactList *)self.responseModel;
+        [list prepareForSort];
+    }
+}
 
 @end

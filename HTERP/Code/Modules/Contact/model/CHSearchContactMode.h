@@ -12,6 +12,8 @@
 @interface CHSearchContactMode : NSObject
 
 @property (nonatomic, copy) NSString *companyId;
+@property (nonatomic, copy) NSString *companyName;
+@property (nonatomic, copy) NSString *userName;
 
 @property (nonatomic, strong) CHUser *user;
 

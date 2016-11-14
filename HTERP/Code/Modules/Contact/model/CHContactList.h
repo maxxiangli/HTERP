@@ -13,4 +13,10 @@
 
 @property(nonatomic, strong)NSArray<CHCompanyCompent, Optional> *contactList;
 
+//排序使用
+@property(nonatomic, strong)NSMutableArray<Ignore> *originalDataSource;
+@property(nonatomic, strong)NSDictionary<Ignore> *allDataSource;
+
+- (instancetype)initWithData:(NSData *)data error:(NSError *__autoreleasing *)err;
+
 @end

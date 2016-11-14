@@ -144,6 +144,7 @@
 		FA6BE4FF1DD9629F00878C03 /* ZYPinYinSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE4F61DD9629F00878C03 /* ZYPinYinSearch.m */; };
 		FA6BE5021DD969C100878C03 /* CHSearchContactMode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE5011DD969C100878C03 /* CHSearchContactMode.m */; };
 		FA6BE5081DD96BE700878C03 /* CHSortString.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE5071DD96BE700878C03 /* CHSortString.m */; };
+		FA6BE50B1DD984D900878C03 /* CHContactList+sort.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE50A1DD984D900878C03 /* CHContactList+sort.m */; };
 		FA7031B21DD6C2BC00E059F0 /* CHItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7031B11DD6C2BC00E059F0 /* CHItem.m */; };
 		FA7031B41DD6EC7300E059F0 /* CHContactBrowse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7031B31DD6EC7300E059F0 /* CHContactBrowse.storyboard */; };
 		FA7031B71DD6ED7500E059F0 /* CHContactBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7031B61DD6ED7500E059F0 /* CHContactBrowseViewController.m */; };
@@ -411,6 +412,8 @@
 		FA6BE5011DD969C100878C03 /* CHSearchContactMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSearchContactMode.m; sourceTree = "<group>"; };
 		FA6BE5061DD96BE700878C03 /* CHSortString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSortString.h; sourceTree = "<group>"; };
 		FA6BE5071DD96BE700878C03 /* CHSortString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSortString.m; sourceTree = "<group>"; };
+		FA6BE5091DD984D900878C03 /* CHContactList+sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CHContactList+sort.h"; sourceTree = "<group>"; };
+		FA6BE50A1DD984D900878C03 /* CHContactList+sort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CHContactList+sort.m"; sourceTree = "<group>"; };
 		FA7031B01DD6C2BC00E059F0 /* CHItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHItem.h; sourceTree = "<group>"; };
 		FA7031B11DD6C2BC00E059F0 /* CHItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHItem.m; sourceTree = "<group>"; };
 		FA7031B31DD6EC7300E059F0 /* CHContactBrowse.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CHContactBrowse.storyboard; sourceTree = "<group>"; };
@@ -1033,6 +1036,8 @@
 				FA7031B11DD6C2BC00E059F0 /* CHItem.m */,
 				FA6BE5001DD969C100878C03 /* CHSearchContactMode.h */,
 				FA6BE5011DD969C100878C03 /* CHSearchContactMode.m */,
+				FA6BE5091DD984D900878C03 /* CHContactList+sort.h */,
+				FA6BE50A1DD984D900878C03 /* CHContactList+sort.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1490,6 +1495,7 @@
 				FA6BE4FD1DD9629F00878C03 /* PinyinHelper.m in Sources */,
 				FA44F0841DD4747F00985425 /* CHGlobalDefine.m in Sources */,
 				FA7031B71DD6ED7500E059F0 /* CHContactBrowseViewController.m in Sources */,
+				FA6BE50B1DD984D900878C03 /* CHContactList+sort.m in Sources */,
 				C91ED43F1DCB3311003688C7 /* NSObject+Json.m in Sources */,
 				C91ED4021DCB227B003688C7 /* CWorkedThread.m in Sources */,
 				C91ED4131DCB2351003688C7 /* HttpDnsTable.m in Sources */,

@@ -10,6 +10,25 @@
 
 @implementation CHContactList
 
+- (instancetype)initWithData:(NSData *)data error:(NSError *__autoreleasing *)err
+{
+    self = [super initWithData:data error:err];
+    if (self)
+    {
+        //Do nothing
+    }
+    return self;
+}
+
+- (NSMutableArray *)originalDataSource
+{
+    if (!_originalDataSource)
+    {
+        _originalDataSource = [NSMutableArray arrayWithCapacity:32];
+    }
+    return _originalDataSource;
+}
+
 +(JSONKeyMapper *)keyMapper
 {
     NSDictionary *info = @{@"contactList":@"data"};
