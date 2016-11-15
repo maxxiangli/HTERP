@@ -32,8 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"联系人";
-    
+    [self setDisplayCustomTitleText:@"联系人"];
     self.contactModel = [[CHContactsModel alloc] init];
     
     self.tableView.dataSource = self;
