@@ -9,7 +9,6 @@
 #import "CHContactListManager.h"
 #import "CHContactList.h"
 #import "CHGetCompanyParams.h"
-#import "CHGetCompanyRequestCommand.h"
 #import "CHGlobalDefine.h"
 #import "CLoginStateJSONRequestCommand.h"
 #import "CHFetchContactRequestCommand.h"
