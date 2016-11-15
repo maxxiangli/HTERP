@@ -12,13 +12,13 @@
 
 + (NSString *)serverAddress
 {
-    NSString *url = @"http://www.alleasy.com/Company/";
+    NSString *url = @"http://182.254.208.132";
     return url;
 }
 
 + (NSString *)path
 {
-    return @"getCompany";
+    return @"/Company/getCompany";
 }
 
 @end

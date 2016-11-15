@@ -7,6 +7,8 @@
 //
 
 #import "CLoginStateJSONRequestCommand.h"
+#import "CLoginInforModel.h"
+#import "HTLoginManager.h"
 
 @implementation CLoginStateJSONRequestCommand
 - (BOOL) urlDataLoadAuthentication:(CURLDataLoader*)loader trustServer:(NSString*)host
@@ -71,16 +73,19 @@
 
 - (NSDictionary *)setUpHeader
 {
-//    NSString *cookieStr = GLOBEL_LOGIN_OBJECT.userLoginCookie;
-    NSString *cookieStr = nil;
-    NSString *encodeCookieStr = [cookieStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    if(!encodeCookieStr)
+    CLoginInforModel *loginInfo = [HTLoginManager getInstance].loginInfor;
+    NSString *luin = (loginInfo.uin && [loginInfo.uin length] > 0) ? loginInfo.uin : @"1478513631836076291";
+    NSString *lskey = (loginInfo.session && [loginInfo.session length] > 0) ? loginInfo.session : @"test";
+    
+    NSString *cookieStr = [NSString stringWithFormat:@"luin:%@;lskey:%@",luin,lskey];;
+    NSString *ecodeCookieStr = [cookieStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    if(!ecodeCookieStr)
     {
-        encodeCookieStr = @"";
+        ecodeCookieStr = @"";
     }
     
-    NSDictionary *header = [NSDictionary dictionaryWithObject:encodeCookieStr forKey:@"Cookie"];
-    
+    NSDictionary *header = [NSDictionary dictionaryWithObject:ecodeCookieStr forKey:@"Cookie"];
+    NSLog(@"hearder = %@", header);
     return header;
 }
 

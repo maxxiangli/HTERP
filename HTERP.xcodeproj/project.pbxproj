@@ -118,6 +118,7 @@
 		F0E56C7D1DCAF8BE0038ED5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E56C7B1DCAF8BE0038ED5A /* Main.storyboard */; };
 		F0E56C7F1DCAF8BE0038ED5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0E56C7E1DCAF8BE0038ED5A /* Assets.xcassets */; };
 		F0E56C821DCAF8BE0038ED5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E56C801DCAF8BE0038ED5A /* LaunchScreen.storyboard */; };
+		FA2200BF1DDA9C4300006236 /* CHFetchContactRequestCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2200BE1DDA9C4300006236 /* CHFetchContactRequestCommand.m */; };
 		FA3E97261DD89A51005FAF9D /* CHSearchContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3E97251DD89A51005FAF9D /* CHSearchContact.storyboard */; };
 		FA3E97291DD89ABF005FAF9D /* CHSearchContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3E97281DD89ABF005FAF9D /* CHSearchContactViewController.m */; };
 		FA43CB751DD5A43F003E0C05 /* CHContacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA43CB741DD5A43F003E0C05 /* CHContacts.storyboard */; };
@@ -363,6 +364,8 @@
 		F0E56C7E1DCAF8BE0038ED5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0E56C811DCAF8BE0038ED5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0E56C831DCAF8BE0038ED5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA2200BD1DDA9C4300006236 /* CHFetchContactRequestCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHFetchContactRequestCommand.h; sourceTree = "<group>"; };
+		FA2200BE1DDA9C4300006236 /* CHFetchContactRequestCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHFetchContactRequestCommand.m; sourceTree = "<group>"; };
 		FA3E97251DD89A51005FAF9D /* CHSearchContact.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CHSearchContact.storyboard; sourceTree = "<group>"; };
 		FA3E97271DD89ABF005FAF9D /* CHSearchContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSearchContactViewController.h; sourceTree = "<group>"; };
 		FA3E97281DD89ABF005FAF9D /* CHSearchContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSearchContactViewController.m; sourceTree = "<group>"; };
@@ -1038,6 +1041,8 @@
 				FA6BE5011DD969C100878C03 /* CHSearchContactMode.m */,
 				FA6BE5091DD984D900878C03 /* CHContactList+sort.h */,
 				FA6BE50A1DD984D900878C03 /* CHContactList+sort.m */,
+				FA2200BD1DDA9C4300006236 /* CHFetchContactRequestCommand.h */,
+				FA2200BE1DDA9C4300006236 /* CHFetchContactRequestCommand.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1305,7 +1310,13 @@
 				TargetAttributes = {
 					F0E56C6B1DCAF8BE0038ED5A = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 5BZRT69W63;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -1479,6 +1490,7 @@
 				C91ED3D81DCB1B32003688C7 /* NSArray+Extra.m in Sources */,
 				C94890351DCC2FC2002C862F /* CCustomBackButtonController.m in Sources */,
 				C94890241DCC2CB3002C862F /* UIViewController+TABLEVIEW_StoryBoard.m in Sources */,
+				FA2200BF1DDA9C4300006236 /* CHFetchContactRequestCommand.m in Sources */,
 				FA6BE4F91DD9629F00878C03 /* HanyuPinyinOutputFormat.m in Sources */,
 				C91ED3941DCB1644003688C7 /* CJSONModel.m in Sources */,
 				C948903D1DCC30A2002C862F /* CNoDataView.m in Sources */,
@@ -1648,6 +1660,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 5BZRT69W63;
 				GCC_PREFIX_HEADER = "HTERP/HT-Prefix.pch";
 				INFOPLIST_FILE = HTERP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1663,6 +1676,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 5BZRT69W63;
 				GCC_PREFIX_HEADER = "HTERP/HT-Prefix.pch";
 				INFOPLIST_FILE = HTERP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

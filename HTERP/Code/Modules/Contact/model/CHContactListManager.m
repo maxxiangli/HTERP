@@ -11,11 +11,15 @@
 #import "CHGetCompanyParams.h"
 #import "CHGetCompanyRequestCommand.h"
 #import "CHGlobalDefine.h"
+#import "CLoginStateJSONRequestCommand.h"
+#import "CHFetchContactRequestCommand.h"
+#import "HTLoginManager.h"
+#import "CLoginInforModel.h"
 
 @interface CHContactListManager()
 
 @property(nonatomic, strong)CHContactList *contactsList;
-@property(nonatomic, strong)CHGetCompanyRequestCommand *requestComment;
+@property(nonatomic, strong)CHFetchContactRequestCommand *requestComment;
 
 @end
 
@@ -40,24 +44,25 @@
         self.requestComment = nil;
     }
     
-    __weak typeof(self) weakSelf = self;
+    CLoginInforModel *loginInfor = [HTLoginManager getInstance].loginInfor;
     CHGetCompanyParams *postParams = [[CHGetCompanyParams alloc] init];
-    postParams.userId = @"1478513631836076291";
-    self.requestComment = [CHGetCompanyRequestCommand postWithParams:postParams
-                                                          modelClass:[CHContactList class]
-                                                              sucess:^(NSInteger code,
+    postParams.userId = loginInfor.userId ? loginInfor.userId : @"1478513631836076291";
+    
+    __weak typeof(self) weakSelf = self;
+    self.requestComment = [CHFetchContactRequestCommand postWithParams:postParams
+                                                           modelClass:[CHContactList class]
+                                                               sucess:^(NSInteger code,
                                                                        NSString *msg,
                                                                        CJSONRequestCommand *requestCommand)
-    {
-        NSLog(@"code = %@ msg = %@", @(code), msg);
-        weakSelf.contactsList = (CHContactList *)requestCommand.responseModel;
-        
-        [weakSelf postContactsUpdateNotification];
-        
-    } failure:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand, NSError *dataParseError) {
-        NSLog(@"dataParseError = %@", dataParseError);
-        NSLog(@"code = %@ msg = %@", @(code), msg);
-    }];
+                           {
+                               NSLog(@"code = %@ msg = %@", @(code), msg);
+                               weakSelf.contactsList = (CHContactList *)requestCommand.responseModel;
+                               [weakSelf postContactsUpdateNotification];
+                               
+                           } failure:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand, NSError *dataParseError) {
+                               NSLog(@"dataParseError = %@", dataParseError);
+                               NSLog(@"code = %@ msg = %@", @(code), msg);
+                           }];
     
 }
 
