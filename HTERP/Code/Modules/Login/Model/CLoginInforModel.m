@@ -11,8 +11,8 @@
 @implementation CLoginInforModel
 + (JSONKeyMapper *)keyMapper
 {
-    return  [[JSONKeyMapper alloc] initWithDictionary:@{@"data.userId":@"userId",
-                                                        @"data.session":@"session"}];
+    return  [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{@"userId":@"data.userId",
+                                        @"session":@"data.session"}];
 }
 
 //数据有效性（例如：缺少session）

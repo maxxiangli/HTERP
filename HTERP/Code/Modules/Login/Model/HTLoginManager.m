@@ -28,6 +28,8 @@
 - (void)saveLoginData:(CLoginInforModel *)loginInfor
 {
     self.loginInfor = loginInfor;
+    //自动归档
+    
 }
 
 
