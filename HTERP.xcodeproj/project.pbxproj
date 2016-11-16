@@ -146,6 +146,27 @@
 		FA6BE5021DD969C100878C03 /* CHSearchContactMode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE5011DD969C100878C03 /* CHSearchContactMode.m */; };
 		FA6BE5081DD96BE700878C03 /* CHSortString.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE5071DD96BE700878C03 /* CHSortString.m */; };
 		FA6BE50B1DD984D900878C03 /* CHContactList+sort.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE50A1DD984D900878C03 /* CHContactList+sort.m */; };
+		FA7019541DDC2E7400344D87 /* GJCFCoreTextContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70193D1DDC2E7400344D87 /* GJCFCoreTextContentView.m */; };
+		FA7019551DDC2E7400344D87 /* GJCFCoreTextFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70193F1DDC2E7400344D87 /* GJCFCoreTextFrame.m */; };
+		FA7019561DDC2E7400344D87 /* GJCFCoreTextLine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019411DDC2E7400344D87 /* GJCFCoreTextLine.m */; };
+		FA7019571DDC2E7400344D87 /* GJCFCoreTextRun.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019431DDC2E7400344D87 /* GJCFCoreTextRun.m */; };
+		FA7019581DDC2E7400344D87 /* GJCFCoreTextParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019461DDC2E7400344D87 /* GJCFCoreTextParagraphStyle.m */; };
+		FA7019591DDC2E7400344D87 /* GJCFCoreTextAttributedStringStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019491DDC2E7400344D87 /* GJCFCoreTextAttributedStringStyle.m */; };
+		FA70195A1DDC2E7400344D87 /* GJCFCoreTextCommonDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70194B1DDC2E7400344D87 /* GJCFCoreTextCommonDefine.m */; };
+		FA70195B1DDC2E7400344D87 /* GJCFCoreTextImageAttributedStringStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70194D1DDC2E7400344D87 /* GJCFCoreTextImageAttributedStringStyle.m */; };
+		FA70195C1DDC2E7400344D87 /* GJCFCoreTextImageScriptParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70194F1DDC2E7400344D87 /* GJCFCoreTextImageScriptParser.m */; };
+		FA70195D1DDC2E7400344D87 /* GJCFCoreTextKeywordAttributedStringStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019511DDC2E7400344D87 /* GJCFCoreTextKeywordAttributedStringStyle.m */; };
+		FA70195E1DDC2E7400344D87 /* NSMutableAttributedString+GJCFCoreText.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019531DDC2E7400344D87 /* NSMutableAttributedString+GJCFCoreText.m */; };
+		FA70197E1DDC2EF400344D87 /* GJCFDateUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019621DDC2EF400344D87 /* GJCFDateUitil.m */; };
+		FA70197F1DDC2EF400344D87 /* GJCFDispatchCenterUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019671DDC2EF400344D87 /* GJCFDispatchCenterUitil.m */; };
+		FA7019801DDC2EF400344D87 /* GJCFQuickCacheUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70196E1DDC2EF400344D87 /* GJCFQuickCacheUitil.m */; };
+		FA7019811DDC2EF400344D87 /* GJCFQuickUIUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019721DDC2EF400344D87 /* GJCFQuickUIUitil.m */; };
+		FA7019821DDC2EF400344D87 /* GJCFStringUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019761DDC2EF400344D87 /* GJCFStringUitil.m */; };
+		FA7019831DDC2EF400344D87 /* GJCFSystemUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70197A1DDC2EF400344D87 /* GJCFSystemUitil.m */; };
+		FA7019841DDC2EF400344D87 /* UIView+GJCFViewFrameUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70197D1DDC2EF400344D87 /* UIView+GJCFViewFrameUitil.m */; };
+		FA7019871DDC307200344D87 /* GJGCLoadingStatusHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019861DDC307200344D87 /* GJGCLoadingStatusHUD.m */; };
+		FA70198A1DDC31EA00344D87 /* GJGCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019891DDC31EA00344D87 /* GJGCBaseViewController.m */; };
+		FA70198D1DDC338D00344D87 /* GJGCCommonFontColorStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70198C1DDC338D00344D87 /* GJGCCommonFontColorStyle.m */; };
 		FA7031B21DD6C2BC00E059F0 /* CHItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7031B11DD6C2BC00E059F0 /* CHItem.m */; };
 		FA7031B41DD6EC7300E059F0 /* CHContactBrowse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7031B31DD6EC7300E059F0 /* CHContactBrowse.storyboard */; };
 		FA7031B71DD6ED7500E059F0 /* CHContactBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7031B61DD6ED7500E059F0 /* CHContactBrowseViewController.m */; };
@@ -417,6 +438,55 @@
 		FA6BE5071DD96BE700878C03 /* CHSortString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSortString.m; sourceTree = "<group>"; };
 		FA6BE5091DD984D900878C03 /* CHContactList+sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CHContactList+sort.h"; sourceTree = "<group>"; };
 		FA6BE50A1DD984D900878C03 /* CHContactList+sort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CHContactList+sort.m"; sourceTree = "<group>"; };
+		FA70193C1DDC2E7400344D87 /* GJCFCoreTextContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFCoreTextContentView.h; sourceTree = "<group>"; };
+		FA70193D1DDC2E7400344D87 /* GJCFCoreTextContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFCoreTextContentView.m; sourceTree = "<group>"; };
+		FA70193E1DDC2E7400344D87 /* GJCFCoreTextFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFCoreTextFrame.h; sourceTree = "<group>"; };
+		FA70193F1DDC2E7400344D87 /* GJCFCoreTextFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFCoreTextFrame.m; sourceTree = "<group>"; };
+		FA7019401DDC2E7400344D87 /* GJCFCoreTextLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFCoreTextLine.h; sourceTree = "<group>"; };
+		FA7019411DDC2E7400344D87 /* GJCFCoreTextLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFCoreTextLine.m; sourceTree = "<group>"; };
+		FA7019421DDC2E7400344D87 /* GJCFCoreTextRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFCoreTextRun.h; sourceTree = "<group>"; };
+		FA7019431DDC2E7400344D87 /* GJCFCoreTextRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFCoreTextRun.m; sourceTree = "<group>"; };
+		FA7019451DDC2E7400344D87 /* GJCFCoreTextParagraphStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFCoreTextParagraphStyle.h; sourceTree = "<group>"; };
+		FA7019461DDC2E7400344D87 /* GJCFCoreTextParagraphStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFCoreTextParagraphStyle.m; sourceTree = "<group>"; };
+		FA7019481DDC2E7400344D87 /* GJCFCoreTextAttributedStringStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFCoreTextAttributedStringStyle.h; sourceTree = "<group>"; };
+		FA7019491DDC2E7400344D87 /* GJCFCoreTextAttributedStringStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFCoreTextAttributedStringStyle.m; sourceTree = "<group>"; };
+		FA70194A1DDC2E7400344D87 /* GJCFCoreTextCommonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFCoreTextCommonDefine.h; sourceTree = "<group>"; };
+		FA70194B1DDC2E7400344D87 /* GJCFCoreTextCommonDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFCoreTextCommonDefine.m; sourceTree = "<group>"; };
+		FA70194C1DDC2E7400344D87 /* GJCFCoreTextImageAttributedStringStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFCoreTextImageAttributedStringStyle.h; sourceTree = "<group>"; };
+		FA70194D1DDC2E7400344D87 /* GJCFCoreTextImageAttributedStringStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFCoreTextImageAttributedStringStyle.m; sourceTree = "<group>"; };
+		FA70194E1DDC2E7400344D87 /* GJCFCoreTextImageScriptParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFCoreTextImageScriptParser.h; sourceTree = "<group>"; };
+		FA70194F1DDC2E7400344D87 /* GJCFCoreTextImageScriptParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFCoreTextImageScriptParser.m; sourceTree = "<group>"; };
+		FA7019501DDC2E7400344D87 /* GJCFCoreTextKeywordAttributedStringStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFCoreTextKeywordAttributedStringStyle.h; sourceTree = "<group>"; };
+		FA7019511DDC2E7400344D87 /* GJCFCoreTextKeywordAttributedStringStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFCoreTextKeywordAttributedStringStyle.m; sourceTree = "<group>"; };
+		FA7019521DDC2E7400344D87 /* NSMutableAttributedString+GJCFCoreText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+GJCFCoreText.h"; sourceTree = "<group>"; };
+		FA7019531DDC2E7400344D87 /* NSMutableAttributedString+GJCFCoreText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+GJCFCoreText.m"; sourceTree = "<group>"; };
+		FA7019611DDC2EF400344D87 /* GJCFDateUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFDateUitil.h; sourceTree = "<group>"; };
+		FA7019621DDC2EF400344D87 /* GJCFDateUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFDateUitil.m; sourceTree = "<group>"; };
+		FA7019631DDC2EF400344D87 /* GJCFDateUitilMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFDateUitilMacrocDefine.h; sourceTree = "<group>"; };
+		FA7019661DDC2EF400344D87 /* GJCFDispatchCenterUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFDispatchCenterUitil.h; sourceTree = "<group>"; };
+		FA7019671DDC2EF400344D87 /* GJCFDispatchCenterUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFDispatchCenterUitil.m; sourceTree = "<group>"; };
+		FA7019681DDC2EF400344D87 /* GJCFDispatchMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFDispatchMacrocDefine.h; sourceTree = "<group>"; };
+		FA7019691DDC2EF400344D87 /* GJCFUitils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFUitils.h; sourceTree = "<group>"; };
+		FA70196C1DDC2EF400344D87 /* GJCFQuickCacheMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFQuickCacheMacrocDefine.h; sourceTree = "<group>"; };
+		FA70196D1DDC2EF400344D87 /* GJCFQuickCacheUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFQuickCacheUitil.h; sourceTree = "<group>"; };
+		FA70196E1DDC2EF400344D87 /* GJCFQuickCacheUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFQuickCacheUitil.m; sourceTree = "<group>"; };
+		FA7019701DDC2EF400344D87 /* GJCFQuickUIMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFQuickUIMacrocDefine.h; sourceTree = "<group>"; };
+		FA7019711DDC2EF400344D87 /* GJCFQuickUIUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFQuickUIUitil.h; sourceTree = "<group>"; };
+		FA7019721DDC2EF400344D87 /* GJCFQuickUIUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFQuickUIUitil.m; sourceTree = "<group>"; };
+		FA7019741DDC2EF400344D87 /* GJCFStringMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFStringMacrocDefine.h; sourceTree = "<group>"; };
+		FA7019751DDC2EF400344D87 /* GJCFStringUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFStringUitil.h; sourceTree = "<group>"; };
+		FA7019761DDC2EF400344D87 /* GJCFStringUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFStringUitil.m; sourceTree = "<group>"; };
+		FA7019781DDC2EF400344D87 /* GJCFSystemMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFSystemMacrocDefine.h; sourceTree = "<group>"; };
+		FA7019791DDC2EF400344D87 /* GJCFSystemUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFSystemUitil.h; sourceTree = "<group>"; };
+		FA70197A1DDC2EF400344D87 /* GJCFSystemUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFSystemUitil.m; sourceTree = "<group>"; };
+		FA70197C1DDC2EF400344D87 /* UIView+GJCFViewFrameUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GJCFViewFrameUitil.h"; sourceTree = "<group>"; };
+		FA70197D1DDC2EF400344D87 /* UIView+GJCFViewFrameUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GJCFViewFrameUitil.m"; sourceTree = "<group>"; };
+		FA7019851DDC307200344D87 /* GJGCLoadingStatusHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCLoadingStatusHUD.h; sourceTree = "<group>"; };
+		FA7019861DDC307200344D87 /* GJGCLoadingStatusHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCLoadingStatusHUD.m; sourceTree = "<group>"; };
+		FA7019881DDC31EA00344D87 /* GJGCBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCBaseViewController.h; sourceTree = "<group>"; };
+		FA7019891DDC31EA00344D87 /* GJGCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCBaseViewController.m; sourceTree = "<group>"; };
+		FA70198B1DDC338D00344D87 /* GJGCCommonFontColorStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCCommonFontColorStyle.h; sourceTree = "<group>"; };
+		FA70198C1DDC338D00344D87 /* GJGCCommonFontColorStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCCommonFontColorStyle.m; sourceTree = "<group>"; };
 		FA7031B01DD6C2BC00E059F0 /* CHItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHItem.h; sourceTree = "<group>"; };
 		FA7031B11DD6C2BC00E059F0 /* CHItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHItem.m; sourceTree = "<group>"; };
 		FA7031B31DD6EC7300E059F0 /* CHContactBrowse.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CHContactBrowse.storyboard; sourceTree = "<group>"; };
@@ -1101,6 +1171,8 @@
 		FA7019351DDC165700344D87 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA7019881DDC31EA00344D87 /* GJGCBaseViewController.h */,
+				FA7019891DDC31EA00344D87 /* GJGCBaseViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1122,8 +1194,158 @@
 		FA7019381DDC165700344D87 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				FA70198B1DDC338D00344D87 /* GJGCCommonFontColorStyle.h */,
+				FA70198C1DDC338D00344D87 /* GJGCCommonFontColorStyle.m */,
+				FA7019851DDC307200344D87 /* GJGCLoadingStatusHUD.h */,
+				FA7019861DDC307200344D87 /* GJGCLoadingStatusHUD.m */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		FA7019391DDC2E5E00344D87 /* dependcy */ = {
+			isa = PBXGroup;
+			children = (
+				FA70195F1DDC2EF400344D87 /* GJCFUitils */,
+				FA70193A1DDC2E7400344D87 /* GJCFCoreText */,
+			);
+			path = dependcy;
+			sourceTree = "<group>";
+		};
+		FA70193A1DDC2E7400344D87 /* GJCFCoreText */ = {
+			isa = PBXGroup;
+			children = (
+				FA70193B1DDC2E7400344D87 /* Base */,
+				FA7019441DDC2E7400344D87 /* ParagraphStyle */,
+				FA7019471DDC2E7400344D87 /* StringStyle */,
+			);
+			path = GJCFCoreText;
+			sourceTree = "<group>";
+		};
+		FA70193B1DDC2E7400344D87 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FA70193C1DDC2E7400344D87 /* GJCFCoreTextContentView.h */,
+				FA70193D1DDC2E7400344D87 /* GJCFCoreTextContentView.m */,
+				FA70193E1DDC2E7400344D87 /* GJCFCoreTextFrame.h */,
+				FA70193F1DDC2E7400344D87 /* GJCFCoreTextFrame.m */,
+				FA7019401DDC2E7400344D87 /* GJCFCoreTextLine.h */,
+				FA7019411DDC2E7400344D87 /* GJCFCoreTextLine.m */,
+				FA7019421DDC2E7400344D87 /* GJCFCoreTextRun.h */,
+				FA7019431DDC2E7400344D87 /* GJCFCoreTextRun.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FA7019441DDC2E7400344D87 /* ParagraphStyle */ = {
+			isa = PBXGroup;
+			children = (
+				FA7019451DDC2E7400344D87 /* GJCFCoreTextParagraphStyle.h */,
+				FA7019461DDC2E7400344D87 /* GJCFCoreTextParagraphStyle.m */,
+			);
+			path = ParagraphStyle;
+			sourceTree = "<group>";
+		};
+		FA7019471DDC2E7400344D87 /* StringStyle */ = {
+			isa = PBXGroup;
+			children = (
+				FA7019481DDC2E7400344D87 /* GJCFCoreTextAttributedStringStyle.h */,
+				FA7019491DDC2E7400344D87 /* GJCFCoreTextAttributedStringStyle.m */,
+				FA70194A1DDC2E7400344D87 /* GJCFCoreTextCommonDefine.h */,
+				FA70194B1DDC2E7400344D87 /* GJCFCoreTextCommonDefine.m */,
+				FA70194C1DDC2E7400344D87 /* GJCFCoreTextImageAttributedStringStyle.h */,
+				FA70194D1DDC2E7400344D87 /* GJCFCoreTextImageAttributedStringStyle.m */,
+				FA70194E1DDC2E7400344D87 /* GJCFCoreTextImageScriptParser.h */,
+				FA70194F1DDC2E7400344D87 /* GJCFCoreTextImageScriptParser.m */,
+				FA7019501DDC2E7400344D87 /* GJCFCoreTextKeywordAttributedStringStyle.h */,
+				FA7019511DDC2E7400344D87 /* GJCFCoreTextKeywordAttributedStringStyle.m */,
+				FA7019521DDC2E7400344D87 /* NSMutableAttributedString+GJCFCoreText.h */,
+				FA7019531DDC2E7400344D87 /* NSMutableAttributedString+GJCFCoreText.m */,
+			);
+			path = StringStyle;
+			sourceTree = "<group>";
+		};
+		FA70195F1DDC2EF400344D87 /* GJCFUitils */ = {
+			isa = PBXGroup;
+			children = (
+				FA7019601DDC2EF400344D87 /* DateUitil */,
+				FA7019651DDC2EF400344D87 /* DispatchCenterUitil */,
+				FA7019691DDC2EF400344D87 /* GJCFUitils.h */,
+				FA70196B1DDC2EF400344D87 /* QuickCacheUitil */,
+				FA70196F1DDC2EF400344D87 /* QuickUIUitil */,
+				FA7019731DDC2EF400344D87 /* StringUitil */,
+				FA7019771DDC2EF400344D87 /* SystemUitil */,
+				FA70197B1DDC2EF400344D87 /* UitilCategory */,
+			);
+			path = GJCFUitils;
+			sourceTree = "<group>";
+		};
+		FA7019601DDC2EF400344D87 /* DateUitil */ = {
+			isa = PBXGroup;
+			children = (
+				FA7019611DDC2EF400344D87 /* GJCFDateUitil.h */,
+				FA7019621DDC2EF400344D87 /* GJCFDateUitil.m */,
+				FA7019631DDC2EF400344D87 /* GJCFDateUitilMacrocDefine.h */,
+			);
+			path = DateUitil;
+			sourceTree = "<group>";
+		};
+		FA7019651DDC2EF400344D87 /* DispatchCenterUitil */ = {
+			isa = PBXGroup;
+			children = (
+				FA7019661DDC2EF400344D87 /* GJCFDispatchCenterUitil.h */,
+				FA7019671DDC2EF400344D87 /* GJCFDispatchCenterUitil.m */,
+				FA7019681DDC2EF400344D87 /* GJCFDispatchMacrocDefine.h */,
+			);
+			path = DispatchCenterUitil;
+			sourceTree = "<group>";
+		};
+		FA70196B1DDC2EF400344D87 /* QuickCacheUitil */ = {
+			isa = PBXGroup;
+			children = (
+				FA70196C1DDC2EF400344D87 /* GJCFQuickCacheMacrocDefine.h */,
+				FA70196D1DDC2EF400344D87 /* GJCFQuickCacheUitil.h */,
+				FA70196E1DDC2EF400344D87 /* GJCFQuickCacheUitil.m */,
+			);
+			path = QuickCacheUitil;
+			sourceTree = "<group>";
+		};
+		FA70196F1DDC2EF400344D87 /* QuickUIUitil */ = {
+			isa = PBXGroup;
+			children = (
+				FA7019701DDC2EF400344D87 /* GJCFQuickUIMacrocDefine.h */,
+				FA7019711DDC2EF400344D87 /* GJCFQuickUIUitil.h */,
+				FA7019721DDC2EF400344D87 /* GJCFQuickUIUitil.m */,
+			);
+			path = QuickUIUitil;
+			sourceTree = "<group>";
+		};
+		FA7019731DDC2EF400344D87 /* StringUitil */ = {
+			isa = PBXGroup;
+			children = (
+				FA7019741DDC2EF400344D87 /* GJCFStringMacrocDefine.h */,
+				FA7019751DDC2EF400344D87 /* GJCFStringUitil.h */,
+				FA7019761DDC2EF400344D87 /* GJCFStringUitil.m */,
+			);
+			path = StringUitil;
+			sourceTree = "<group>";
+		};
+		FA7019771DDC2EF400344D87 /* SystemUitil */ = {
+			isa = PBXGroup;
+			children = (
+				FA7019781DDC2EF400344D87 /* GJCFSystemMacrocDefine.h */,
+				FA7019791DDC2EF400344D87 /* GJCFSystemUitil.h */,
+				FA70197A1DDC2EF400344D87 /* GJCFSystemUitil.m */,
+			);
+			path = SystemUitil;
+			sourceTree = "<group>";
+		};
+		FA70197B1DDC2EF400344D87 /* UitilCategory */ = {
+			isa = PBXGroup;
+			children = (
+				FA70197C1DDC2EF400344D87 /* UIView+GJCFViewFrameUitil.h */,
+				FA70197D1DDC2EF400344D87 /* UIView+GJCFViewFrameUitil.m */,
+			);
+			path = UitilCategory;
 			sourceTree = "<group>";
 		};
 		FAA232BD1DD332510037B33E /* Function */ = {
@@ -1245,6 +1467,7 @@
 		FADA20C71DD2BE5900F73DAC /* IM */ = {
 			isa = PBXGroup;
 			children = (
+				FA7019391DDC2E5E00344D87 /* dependcy */,
 				FA7019351DDC165700344D87 /* controller */,
 				FA7019361DDC165700344D87 /* model */,
 				FA7019371DDC165700344D87 /* utility */,
@@ -1465,19 +1688,24 @@
 				C94890371DCC2FC2002C862F /* CCustomTableViewController.m in Sources */,
 				FA6BE5021DD969C100878C03 /* CHSearchContactMode.m in Sources */,
 				C93C9AE61DD58FC700A29F3F /* CAlertWaitingViewStyleOne.m in Sources */,
+				FA70197F1DDC2EF400344D87 /* GJCFDispatchCenterUitil.m in Sources */,
+				FA7019811DDC2EF400344D87 /* GJCFQuickUIUitil.m in Sources */,
 				C91ED4141DCB2351003688C7 /* HttpDnsUtility.m in Sources */,
+				FA7019561DDC2E7400344D87 /* GJCFCoreTextLine.m in Sources */,
 				FA44F07D1DD4543D00985425 /* CHContactList.m in Sources */,
 				C948900C1DCC2866002C862F /* ThirdViewController.m in Sources */,
 				C91ED3F31DCB1D68003688C7 /* CURLLoaderCache.m in Sources */,
 				C94890511DCC354E002C862F /* CBigEventReminderModel.m in Sources */,
 				C948901B1DCC286C002C862F /* FourthViewController.m in Sources */,
 				C948906F1DCC4E63002C862F /* UINavigationBar+Draw.m in Sources */,
+				FA70198A1DDC31EA00344D87 /* GJGCBaseViewController.m in Sources */,
 				C94C82261DD452E800B1D578 /* HTLoginManager.m in Sources */,
 				FA3E97291DD89ABF005FAF9D /* CHSearchContactViewController.m in Sources */,
 				C91ED4231DCB2A38003688C7 /* CBossReporter.m in Sources */,
 				C948900A1DCC2866002C862F /* SecondViewController.m in Sources */,
 				C91ED3F41DCB1D68003688C7 /* CURLLoaderProxy.m in Sources */,
 				C948902D1DCC2F95002C862F /* UIStoryBoardTableView.m in Sources */,
+				FA7019801DDC2EF400344D87 /* GJCFQuickCacheUitil.m in Sources */,
 				C91ED4351DCB2EE4003688C7 /* CCustomViewController.m in Sources */,
 				C94890631DCC372B002C862F /* CATradeLoadingView.m in Sources */,
 				C91ED41C1DCB2820003688C7 /* CStopWatch.m in Sources */,
@@ -1488,7 +1716,9 @@
 				FA44F06B1DD406C100985425 /* CHGetCompanyParams.m in Sources */,
 				FA7031B21DD6C2BC00E059F0 /* CHItem.m in Sources */,
 				C91ED39D1DCB1664003688C7 /* CConfiguration.m in Sources */,
+				FA7019581DDC2E7400344D87 /* GJCFCoreTextParagraphStyle.m in Sources */,
 				FA44F0771DD449E500985425 /* CHDeparment.m in Sources */,
+				FA7019551DDC2E7400344D87 /* GJCFCoreTextFrame.m in Sources */,
 				FA44F0741DD4465400985425 /* CHCompanyInformation.m in Sources */,
 				C91ED3961DCB1644003688C7 /* CLoginStateJSONRequestCommand.m in Sources */,
 				F0E56C741DCAF8BE0038ED5A /* AppDelegate.m in Sources */,
@@ -1498,28 +1728,37 @@
 				C948905B1DCC3700002C862F /* EGORefreshTableHeaderView.m in Sources */,
 				C91ED3D41DCB1B32003688C7 /* NotificationDefines.m in Sources */,
 				C91ED3A41DCB1AC0003688C7 /* CRequestCommand.m in Sources */,
+				FA70195E1DDC2E7400344D87 /* NSMutableAttributedString+GJCFCoreText.m in Sources */,
 				C94890751DCC532E002C862F /* CCustomUILabel.m in Sources */,
 				C91ED3E21DCB1B33003688C7 /* UIStoryboard+Extra.m in Sources */,
 				C94890581DCC367C002C862F /* UIPullingheaderTableView.m in Sources */,
 				C91ED3E01DCB1B33003688C7 /* NSString+UrlEncode.m in Sources */,
 				C91ED3951DCB1644003688C7 /* CJSONRequestCommand.m in Sources */,
 				C91ED4261DCB2AEF003688C7 /* CNetworkMonitor.m in Sources */,
+				FA7019591DDC2E7400344D87 /* GJCFCoreTextAttributedStringStyle.m in Sources */,
 				C91ED3D71DCB1B32003688C7 /* CGRect+Extra.m in Sources */,
 				FA6BE4F81DD9629F00878C03 /* ChineseToPinyinResource.m in Sources */,
 				FA7031BA1DD6F1EF00E059F0 /* CHNameBrowseView.m in Sources */,
 				FA6BE4F71DD9629F00878C03 /* ChineseInclude.m in Sources */,
+				FA7019871DDC307200344D87 /* GJGCLoadingStatusHUD.m in Sources */,
 				FA43CB781DD5A4E1003E0C05 /* CHContactsViewController.m in Sources */,
+				FA7019841DDC2EF400344D87 /* UIView+GJCFViewFrameUitil.m in Sources */,
 				FA44F0711DD41C6100985425 /* CHUser.m in Sources */,
 				FA6BE4FF1DD9629F00878C03 /* ZYPinYinSearch.m in Sources */,
+				FA7019541DDC2E7400344D87 /* GJCFCoreTextContentView.m in Sources */,
+				FA70195C1DDC2E7400344D87 /* GJCFCoreTextImageScriptParser.m in Sources */,
 				C91ED3DA1DCB1B32003688C7 /* NSDictionary+Extra.m in Sources */,
 				C91ED3E51DCB1B33003688C7 /* UIImage+fixOrientation.m in Sources */,
 				C91ED3DD1DCB1B33003688C7 /* NSString+GTMNSStringHTMLAdditions.m in Sources */,
 				FA6BE4FA1DD9629F00878C03 /* NSString+PinYin4Cocoa.m in Sources */,
 				C94890361DCC2FC2002C862F /* CCustomTableViewBackButtonController.m in Sources */,
 				C94890251DCC2CB3002C862F /* CLoadMoreTableFooterView.m in Sources */,
+				FA70195B1DDC2E7400344D87 /* GJCFCoreTextImageAttributedStringStyle.m in Sources */,
 				C91ED3DF1DCB1B33003688C7 /* NSString+numberValid.m in Sources */,
+				FA7019571DDC2E7400344D87 /* GJCFCoreTextRun.m in Sources */,
 				C948904A1DCC3548002C862F /* CBigEventController.m in Sources */,
 				C91ED3D81DCB1B32003688C7 /* NSArray+Extra.m in Sources */,
+				FA70195D1DDC2E7400344D87 /* GJCFCoreTextKeywordAttributedStringStyle.m in Sources */,
 				C94890351DCC2FC2002C862F /* CCustomBackButtonController.m in Sources */,
 				C94890241DCC2CB3002C862F /* UIViewController+TABLEVIEW_StoryBoard.m in Sources */,
 				FA2200BF1DDA9C4300006236 /* CHFetchContactRequestCommand.m in Sources */,
@@ -1545,6 +1784,9 @@
 				C91ED4021DCB227B003688C7 /* CWorkedThread.m in Sources */,
 				C91ED4131DCB2351003688C7 /* HttpDnsTable.m in Sources */,
 				FA6BE4FB1DD9629F00878C03 /* PinyinFormatter.m in Sources */,
+				FA70198D1DDC338D00344D87 /* GJGCCommonFontColorStyle.m in Sources */,
+				FA70197E1DDC2EF400344D87 /* GJCFDateUitil.m in Sources */,
+				FA7019821DDC2EF400344D87 /* GJCFStringUitil.m in Sources */,
 				C91ED3991DCB1644003688C7 /* CRequestParams.m in Sources */,
 				FA44F07A1DD450CD00985425 /* CHCompanyCompent.m in Sources */,
 				C94890261DCC2CB3002C862F /* UIViewController_TABLEVIEW_LoadMore.m in Sources */,
@@ -1566,8 +1808,10 @@
 				C94890621DCC372B002C862F /* CATradeAlertLoadingObject.m in Sources */,
 				C91ED3D91DCB1B32003688C7 /* NSDate+Utilities.m in Sources */,
 				C91ED4121DCB2351003688C7 /* HttpDnsRecordRequest.m in Sources */,
+				FA7019831DDC2EF400344D87 /* GJCFSystemUitil.m in Sources */,
 				FA6BE4FC1DD9629F00878C03 /* PinYinForObjc.m in Sources */,
 				C91ED3DC1DCB1B32003688C7 /* NSString+FirstCharacter.m in Sources */,
+				FA70195A1DDC2E7400344D87 /* GJCFCoreTextCommonDefine.m in Sources */,
 				C91ED4421DCB33F2003688C7 /* CCustomButton.m in Sources */,
 				C91ED41F1DCB293F003688C7 /* CStockLog.m in Sources */,
 			);
