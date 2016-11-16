@@ -115,6 +115,7 @@
 		C94C822C1DD4594A00B1D578 /* HTLoginLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C822B1DD4594A00B1D578 /* HTLoginLoginViewController.m */; };
 		C9AEBE0C1DDC597D00A94F29 /* CLoginRegisterParam.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AEBE0B1DDC597D00A94F29 /* CLoginRegisterParam.m */; };
 		C9AEBE0F1DDC5A3000A94F29 /* CLoginSmsCodeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AEBE0E1DDC5A3000A94F29 /* CLoginSmsCodeParam.m */; };
+		C9BB4BD11DDC8CA5007D8718 /* CLoginVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BB4BD01DDC8CA5007D8718 /* CLoginVerifyViewController.m */; };
 		C9CB2C361DDB3D8100260DF7 /* CRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CB2C351DDB3D8100260DF7 /* CRegisterViewController.m */; };
 		F0E56C711DCAF8BE0038ED5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E56C701DCAF8BE0038ED5A /* main.m */; };
 		F0E56C741DCAF8BE0038ED5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E56C731DCAF8BE0038ED5A /* AppDelegate.m */; };
@@ -409,6 +410,8 @@
 		C9AEBE0B1DDC597D00A94F29 /* CLoginRegisterParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLoginRegisterParam.m; sourceTree = "<group>"; };
 		C9AEBE0D1DDC5A3000A94F29 /* CLoginSmsCodeParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLoginSmsCodeParam.h; sourceTree = "<group>"; };
 		C9AEBE0E1DDC5A3000A94F29 /* CLoginSmsCodeParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLoginSmsCodeParam.m; sourceTree = "<group>"; };
+		C9BB4BCF1DDC8CA5007D8718 /* CLoginVerifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLoginVerifyViewController.h; sourceTree = "<group>"; };
+		C9BB4BD01DDC8CA5007D8718 /* CLoginVerifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLoginVerifyViewController.m; sourceTree = "<group>"; };
 		C9CB2C341DDB3D8100260DF7 /* CRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRegisterViewController.h; sourceTree = "<group>"; };
 		C9CB2C351DDB3D8100260DF7 /* CRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRegisterViewController.m; sourceTree = "<group>"; };
 		F0E56C6C1DCAF8BE0038ED5A /* HTERP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTERP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1069,6 +1072,8 @@
 				C94C822B1DD4594A00B1D578 /* HTLoginLoginViewController.m */,
 				C9CB2C341DDB3D8100260DF7 /* CRegisterViewController.h */,
 				C9CB2C351DDB3D8100260DF7 /* CRegisterViewController.m */,
+				C9BB4BCF1DDC8CA5007D8718 /* CLoginVerifyViewController.h */,
+				C9BB4BD01DDC8CA5007D8718 /* CLoginVerifyViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1859,6 +1864,7 @@
 				C94890521DCC354E002C862F /* CBigEventReminderParam.m in Sources */,
 				FA44F0881DD493E600985425 /* CHFileManager.m in Sources */,
 				C91ED3981DCB1644003688C7 /* CRequestJSONModelBase.m in Sources */,
+				C9BB4BD11DDC8CA5007D8718 /* CLoginVerifyViewController.m in Sources */,
 				FA7019C51DDC44C000344D87 /* GJGCMessageExtendModel.m in Sources */,
 				C91ED4451DCB3693003688C7 /* UIViewController+ext.m in Sources */,
 				C94890371DCC2FC2002C862F /* CCustomTableViewController.m in Sources */,
