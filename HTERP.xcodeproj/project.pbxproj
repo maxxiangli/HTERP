@@ -134,6 +134,9 @@
 		FA44F0801DD4685400985425 /* CHContactListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F07F1DD4685400985425 /* CHContactListManager.m */; };
 		FA44F0841DD4747F00985425 /* CHGlobalDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F0831DD4747F00985425 /* CHGlobalDefine.m */; };
 		FA44F0881DD493E600985425 /* CHFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44F0871DD493E600985425 /* CHFileManager.m */; };
+		FA4A61011DDC5CFE00487D65 /* GJGCRecentChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4A61001DDC5CFE00487D65 /* GJGCRecentChatViewController.m */; };
+		FA4A61041DDC5D4300487D65 /* GJGCRecentChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4A61031DDC5D4300487D65 /* GJGCRecentChatCell.m */; };
+		FA4A61071DDC5DA200487D65 /* GJGCCommonHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4A61061DDC5DA200487D65 /* GJGCCommonHeadView.m */; };
 		FA6BE4F71DD9629F00878C03 /* ChineseInclude.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE4E71DD9629F00878C03 /* ChineseInclude.m */; };
 		FA6BE4F81DD9629F00878C03 /* ChineseToPinyinResource.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE4E91DD9629F00878C03 /* ChineseToPinyinResource.m */; };
 		FA6BE4F91DD9629F00878C03 /* HanyuPinyinOutputFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6BE4EB1DD9629F00878C03 /* HanyuPinyinOutputFormat.m */; };
@@ -438,6 +441,12 @@
 		FA44F0831DD4747F00985425 /* CHGlobalDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHGlobalDefine.m; sourceTree = "<group>"; };
 		FA44F0861DD493E600985425 /* CHFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHFileManager.h; sourceTree = "<group>"; };
 		FA44F0871DD493E600985425 /* CHFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHFileManager.m; sourceTree = "<group>"; };
+		FA4A60FF1DDC5CFE00487D65 /* GJGCRecentChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCRecentChatViewController.h; sourceTree = "<group>"; };
+		FA4A61001DDC5CFE00487D65 /* GJGCRecentChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCRecentChatViewController.m; sourceTree = "<group>"; };
+		FA4A61021DDC5D4300487D65 /* GJGCRecentChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCRecentChatCell.h; sourceTree = "<group>"; };
+		FA4A61031DDC5D4300487D65 /* GJGCRecentChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCRecentChatCell.m; sourceTree = "<group>"; };
+		FA4A61051DDC5DA200487D65 /* GJGCCommonHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCCommonHeadView.h; sourceTree = "<group>"; };
+		FA4A61061DDC5DA200487D65 /* GJGCCommonHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCCommonHeadView.m; sourceTree = "<group>"; };
 		FA6BE4E61DD9629F00878C03 /* ChineseInclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseInclude.h; sourceTree = "<group>"; };
 		FA6BE4E71DD9629F00878C03 /* ChineseInclude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseInclude.m; sourceTree = "<group>"; };
 		FA6BE4E81DD9629F00878C03 /* ChineseToPinyinResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseToPinyinResource.h; sourceTree = "<group>"; };
@@ -1240,6 +1249,8 @@
 		FA7019351DDC165700344D87 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA4A60FF1DDC5CFE00487D65 /* GJGCRecentChatViewController.h */,
+				FA4A61001DDC5CFE00487D65 /* GJGCRecentChatViewController.m */,
 				FA7019881DDC31EA00344D87 /* GJGCBaseViewController.h */,
 				FA7019891DDC31EA00344D87 /* GJGCBaseViewController.m */,
 			);
@@ -1266,6 +1277,10 @@
 		FA7019381DDC165700344D87 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				FA4A61051DDC5DA200487D65 /* GJGCCommonHeadView.h */,
+				FA4A61061DDC5DA200487D65 /* GJGCCommonHeadView.m */,
+				FA4A61021DDC5D4300487D65 /* GJGCRecentChatCell.h */,
+				FA4A61031DDC5D4300487D65 /* GJGCRecentChatCell.m */,
 				FA7019971DDC3C6F00344D87 /* GJGCRecentChatTitleView.h */,
 				FA7019981DDC3C6F00344D87 /* GJGCRecentChatTitleView.m */,
 				FA70198B1DDC338D00344D87 /* GJGCCommonFontColorStyle.h */,
@@ -1825,6 +1840,7 @@
 			files = (
 				C91ED4481DCB3737003688C7 /* SizeDefine.m in Sources */,
 				C94890551DCC3636002C862F /* UIStoryBoardPullingheaderTableView.m in Sources */,
+				FA4A61041DDC5D4300487D65 /* GJGCRecentChatCell.m in Sources */,
 				C94C822C1DD4594A00B1D578 /* HTLoginLoginViewController.m in Sources */,
 				C91ED3A01DCB16B9003688C7 /* HTGlobal.m in Sources */,
 				FA7019E81DDC553B00344D87 /* GJCFCachePathManager.m in Sources */,
@@ -1958,6 +1974,7 @@
 				FA44F07A1DD450CD00985425 /* CHCompanyCompent.m in Sources */,
 				C94890261DCC2CB3002C862F /* UIViewController_TABLEVIEW_LoadMore.m in Sources */,
 				C91ED3E11DCB1B33003688C7 /* UIColor+Extra.m in Sources */,
+				FA4A61071DDC5DA200487D65 /* GJGCCommonHeadView.m in Sources */,
 				C91ED3F91DCB1E7A003688C7 /* CMD5Util.m in Sources */,
 				C94890721DCC4EA1002C862F /* CImageHelper.m in Sources */,
 				C94890661DCC3C2C002C862F /* UIViewAdditions.m in Sources */,
@@ -1979,6 +1996,7 @@
 				C91ED4121DCB2351003688C7 /* HttpDnsRecordRequest.m in Sources */,
 				FA7019831DDC2EF400344D87 /* GJCFSystemUitil.m in Sources */,
 				FA6BE4FC1DD9629F00878C03 /* PinYinForObjc.m in Sources */,
+				FA4A61011DDC5CFE00487D65 /* GJGCRecentChatViewController.m in Sources */,
 				C91ED3DC1DCB1B32003688C7 /* NSString+FirstCharacter.m in Sources */,
 				FA70195A1DDC2E7400344D87 /* GJCFCoreTextCommonDefine.m in Sources */,
 				C91ED4421DCB33F2003688C7 /* CCustomButton.m in Sources */,

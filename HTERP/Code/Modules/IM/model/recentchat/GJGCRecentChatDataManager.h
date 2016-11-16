@@ -13,6 +13,8 @@
 @class GJGCRecentChatDataManager;
 @protocol GJGCRecentChatDataManagerDelegate <NSObject>
 
+@optional
+
 - (void)dataManagerRequireRefresh:(GJGCRecentChatDataManager *)dataManager;
 
 - (void)dataManagerRequireRefresh:(GJGCRecentChatDataManager *)dataManager requireDeletePaths:(NSArray *)paths;
