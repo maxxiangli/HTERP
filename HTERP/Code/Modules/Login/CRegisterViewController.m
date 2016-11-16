@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *pswTextField;
 @property (weak, nonatomic) IBOutlet UITextField *pswTwiceTextField;
 @property (weak, nonatomic) IBOutlet UIButton *smsCodeBtn;
-
+@property (weak, nonatomic) IBOutlet UIButton *registerBtn;
 @end
 
 @implementation CRegisterViewController
@@ -27,13 +27,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setDisplayCustomTitleText:@"注册"];
+    [self setDisplayCustomTitleText:[self typeStr]];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    if ( self.isRegister )
+    {
+        [self.registerBtn setTitle:@"注册" forState:UIControlStateNormal];
+        [self.registerBtn setTitle:@"注册" forState:UIControlStateHighlighted];
+    }
+    else
+    {
+        [self.registerBtn setTitle:@"重置密码" forState:UIControlStateNormal];
+        [self.registerBtn setTitle:@"重置密码" forState:UIControlStateHighlighted];
+    }
     
     [self.phoneNumTextField addTarget:self action:@selector(phoneNumTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self.verifyTextField addTarget:self action:@selector(verifyTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self.pswTextField addTarget:self action:@selector(pswTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self.pswTwiceTextField addTarget:self action:@selector(pswTwiceTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+}
+
+- (NSString *)typeStr
+{
+    if ( self.isRegister )
+    {
+        return @"注册";
+    }
+    else
+    {
+        return @"重置密码";
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -145,6 +168,8 @@
         return;
     }
     
+    NSString *tipsStr = [self typeStr];
+    
     CLoginRegisterParam *param = [[CLoginRegisterParam alloc] init];
     param.mobile = self.phoneNumTextField.text;
     param.passwd = self.pswTextField.text;
@@ -159,10 +184,10 @@
         CLoginInforModel *model = (CLoginInforModel *)requestCommand.responseModel;
         if ( ![model isKindOfClass:[CLoginInforModel class]] )
         {
-            [[[CAlertWaitingViewStyleOne alloc] initFailMessage:@"注册失败" closeAfterDelay:0.3] show];
+            [[[CAlertWaitingViewStyleOne alloc] initFailMessage:[NSString stringWithFormat:@"%@失败", tipsStr] closeAfterDelay:0.3] show];
             return;
         }
-        [[[CAlertWaitingViewStyleOne alloc] initSuccessMessage:@"注册成功" closeAfterDelay:0.3] show];
+        [[[CAlertWaitingViewStyleOne alloc] initSuccessMessage:[NSString stringWithFormat:@"%@成功", tipsStr] closeAfterDelay:0.3] show];
         
         //保存数据
         model.uin = param.mobile;
@@ -174,7 +199,7 @@
         //关闭loading
         [CATradeLoadingView hideLoadingViewForView:weakSelf.view];
         
-        CAlertWaitingViewStyleOne *alertView = [[CAlertWaitingViewStyleOne alloc] initFailMessage:@"注册失败" closeAfterDelay:0.3] ;
+        CAlertWaitingViewStyleOne *alertView = [[CAlertWaitingViewStyleOne alloc] initFailMessage:[NSString stringWithFormat:@"%@失败", tipsStr] closeAfterDelay:0.3] ;
         [alertView show];
         
     }];

@@ -12,6 +12,7 @@
 #import "CLoginLoginParam.h"
 #import "CLoginInforModel.h"
 #import "CAlertWaitingViewStyleOne.h"
+#import "CRegisterViewController.h"
 
 @interface HTLoginLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumTextField;
@@ -94,11 +95,6 @@
 
 }
 
-//忘记密码
-- (IBAction)onClickForgetPswBtn:(id)sender
-{
-}
-
 //登录
 - (IBAction)onLoginBtn:(id)sender
 {
@@ -154,12 +150,19 @@
 //注册
 - (IBAction)onRegisterBtn:(id)sender
 {
-    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"HTLogin" bundle:nil];
+    CRegisterViewController *registerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"registerViewController"];
+    registerViewController.isRegister = YES;
+    [self.navigationController pushViewController:registerViewController animated:YES];
 }
 
 //重置密码
 - (IBAction)onVefifyLoginBtn:(id)sender
 {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"HTLogin" bundle:nil];
+    CRegisterViewController *resetViewController = [storyBoard instantiateViewControllerWithIdentifier:@"registerViewController"];
+    resetViewController.isRegister = NO;
+    [self.navigationController pushViewController:resetViewController animated:YES];
 }
 
 @end

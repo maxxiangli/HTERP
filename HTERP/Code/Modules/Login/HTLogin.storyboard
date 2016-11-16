@@ -46,7 +46,7 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="onClickForgetPswBtn:" destination="o0w-S2-Ni3" eventType="touchUpInside" id="gXO-NF-lF8"/>
+                                            <action selector="onVefifyLoginBtn:" destination="o0w-S2-Ni3" eventType="touchUpInside" id="YXg-QL-eaf"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1L-mK-E0r" userLabel="splitLine">
@@ -147,8 +147,7 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onVefifyLoginBtn:" destination="o0w-S2-Ni3" eventType="touchUpInside" id="EJP-ne-fdt"/>
-                                    <segue destination="Lku-H7-GPf" kind="show" id="uBc-OZ-4aF"/>
+                                    <segue destination="Lku-H7-GPf" kind="show" id="AlZ-g9-ctA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6h-UB-T8d">
@@ -158,8 +157,7 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onRegisterBtn:" destination="o0w-S2-Ni3" eventType="touchUpInside" id="JQB-Ej-luN"/>
-                                    <segue destination="Fzd-Hz-uwQ" kind="show" id="G9U-gp-qgJ"/>
+                                    <action selector="onRegisterBtn:" destination="o0w-S2-Ni3" eventType="touchUpInside" id="hq5-XK-DDZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -180,7 +178,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="forgetPswBtn" destination="TIq-wY-w5z" id="8cJ-1e-pcR"/>
                         <outlet property="loginBtn" destination="7Xf-cY-ds9" id="uTN-Ue-J0O"/>
                         <outlet property="phoneNumTextField" destination="Xar-Re-iVa" id="uoG-RP-VSs"/>
                         <outlet property="pswTextField" destination="8h3-ny-XcV" id="oYw-wF-RlM"/>
@@ -452,6 +449,7 @@
                         <outlet property="phoneNumTextField" destination="Y9d-cs-hYT" id="okl-eN-bVk"/>
                         <outlet property="pswTextField" destination="uDy-KC-mGO" id="IJa-Ub-PSs"/>
                         <outlet property="pswTwiceTextField" destination="9sB-q2-kXU" id="Ib0-Qy-vAc"/>
+                        <outlet property="registerBtn" destination="PnA-YA-j4U" id="7wF-Sl-MTQ"/>
                         <outlet property="smsCodeBtn" destination="nUY-gX-Ced" id="Vcs-YH-XLx"/>
                         <outlet property="verifyTextField" destination="mFM-cx-eSR" id="nOy-si-M3s"/>
                     </connections>

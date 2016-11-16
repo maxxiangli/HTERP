@@ -12,6 +12,8 @@
 #import "CLoginLoginParam.h"
 #import "CLoginInforModel.h"
 #import "CAlertWaitingViewStyleOne.h"
+#import "CRegisterViewController.h"
+#import "CLoginSmsCodeParam.h"
 
 @interface CLoginVerifyViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumTextField;
@@ -141,11 +143,30 @@
 //注册
 - (IBAction)onRegisterBtn:(id)sender
 {
-    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"HTLogin" bundle:nil];
+    CRegisterViewController *registerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"registerViewController"];
+    registerViewController.isRegister = YES;
+    [self.navigationController pushViewController:registerViewController animated:YES];
 }
 
 //发送验证码
 - (IBAction)onVefifyLoginBtn:(id)sender
 {
+    CLoginSmsCodeParam *param = [[CLoginSmsCodeParam alloc] init];
+    param.mobile = self.phoneNumTextField.text;
+    
+    __weak typeof(self) weakSelf = self;
+    [CLoginStateJSONRequestCommand getWithParams:param modelClass:[CRequestJSONModelBase class] sucess:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand) {
+        //关闭loading
+        [CATradeLoadingView hideLoadingViewForView:weakSelf.view];
+        
+        if ( 0 == code )
+        {
+            [[[UIAlertView alloc] initWithTitle:@"验证码发送成功" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
+        }
+        
+    } failure:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand, NSError *dataParseError) {
+        
+    }];
 }
 @end
