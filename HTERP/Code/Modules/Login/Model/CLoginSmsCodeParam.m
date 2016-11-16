@@ -9,5 +9,14 @@
 #import "CLoginSmsCodeParam.h"
 
 @implementation CLoginSmsCodeParam
++ (NSString *)serverAddress
+{
+    NSString *url = @"http://182.254.208.132";
+    return url;
+}
 
++ (NSString *)path
+{
+    return @"/sms/sendCode";
+}
 @end

@@ -158,6 +158,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onRegisterBtn:" destination="o0w-S2-Ni3" eventType="touchUpInside" id="JQB-Ej-luN"/>
+                                    <segue destination="Fzd-Hz-uwQ" kind="show" id="G9U-gp-qgJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -211,7 +212,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epi-aP-RvG" userLabel="spliteview">
-                                                <rect key="frame" x="0.0" y="59.5" width="375" height="0.5"/>
+                                                <rect key="frame" x="15" y="59.5" width="345" height="0.5"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="0.5" id="q7z-S9-hOK"/>
@@ -247,8 +248,8 @@
                                             <constraint firstItem="2JI-Zv-z8n" firstAttribute="leading" secondItem="Mpf-iP-2gF" secondAttribute="leading" constant="100" id="Dkx-0q-g8p"/>
                                             <constraint firstAttribute="bottom" secondItem="epi-aP-RvG" secondAttribute="bottom" id="G4j-Y9-rVW"/>
                                             <constraint firstAttribute="height" constant="60" id="S9u-mx-c0Q"/>
-                                            <constraint firstAttribute="trailing" secondItem="epi-aP-RvG" secondAttribute="trailing" id="YVS-qH-Jgy"/>
-                                            <constraint firstItem="epi-aP-RvG" firstAttribute="leading" secondItem="Mpf-iP-2gF" secondAttribute="leading" id="crO-Rb-3BW"/>
+                                            <constraint firstAttribute="trailing" secondItem="epi-aP-RvG" secondAttribute="trailing" constant="15" id="YVS-qH-Jgy"/>
+                                            <constraint firstItem="epi-aP-RvG" firstAttribute="leading" secondItem="Mpf-iP-2gF" secondAttribute="leading" constant="15" id="crO-Rb-3BW"/>
                                             <constraint firstItem="vp2-ws-v1T" firstAttribute="leading" secondItem="Mpf-iP-2gF" secondAttribute="leading" constant="15" id="gvE-dx-QWz"/>
                                             <constraint firstAttribute="trailing" secondItem="Y9d-cs-hYT" secondAttribute="trailing" constant="-10.5" id="pd2-uQ-zhK"/>
                                             <constraint firstItem="2JI-Zv-z8n" firstAttribute="centerY" secondItem="vp2-ws-v1T" secondAttribute="centerY" id="urD-42-L0M"/>
@@ -258,7 +259,7 @@
                                         <rect key="frame" x="0.0" y="60" width="375" height="60"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5h-s7-5CZ" userLabel="spliteview">
-                                                <rect key="frame" x="0.0" y="59.5" width="375" height="0.5"/>
+                                                <rect key="frame" x="15" y="59.5" width="345" height="0.5"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="0.5" id="IVD-Ja-7vg"/>
@@ -288,12 +289,15 @@
                                                 <rect key="frame" x="287" y="21" width="71" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="点击发送"/>
+                                                <connections>
+                                                    <action selector="onClickSendCodeBtn:" destination="Fzd-Hz-uwQ" eventType="touchUpInside" id="Mio-Hf-pWl"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="i5h-s7-5CZ" secondAttribute="trailing" id="JlU-vj-9i5"/>
-                                            <constraint firstItem="i5h-s7-5CZ" firstAttribute="leading" secondItem="C4p-g3-4kr" secondAttribute="leading" id="Lu0-RF-nZP"/>
+                                            <constraint firstAttribute="trailing" secondItem="i5h-s7-5CZ" secondAttribute="trailing" constant="15" id="JlU-vj-9i5"/>
+                                            <constraint firstItem="i5h-s7-5CZ" firstAttribute="leading" secondItem="C4p-g3-4kr" secondAttribute="leading" constant="15" id="Lu0-RF-nZP"/>
                                             <constraint firstItem="swX-dS-mDu" firstAttribute="leading" secondItem="C4p-g3-4kr" secondAttribute="leading" constant="15" id="NZ5-p2-Hqp"/>
                                             <constraint firstAttribute="height" constant="60" id="NfB-5T-792"/>
                                             <constraint firstItem="swX-dS-mDu" firstAttribute="leading" secondItem="C4p-g3-4kr" secondAttribute="leading" constant="15" id="XpU-i7-wEt"/>
@@ -310,7 +314,7 @@
                                         <rect key="frame" x="0.0" y="120" width="375" height="60"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0a7-hh-oo4" userLabel="spliteview">
-                                                <rect key="frame" x="0.0" y="59.5" width="375" height="0.5"/>
+                                                <rect key="frame" x="15" y="59.5" width="345" height="0.5"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="0.5" id="QDB-cX-TNh"/>
@@ -339,12 +343,12 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="0a7-hh-oo4" secondAttribute="trailing" id="AEv-2Y-Qaq"/>
+                                            <constraint firstAttribute="trailing" secondItem="0a7-hh-oo4" secondAttribute="trailing" constant="15" id="AEv-2Y-Qaq"/>
                                             <constraint firstAttribute="bottom" secondItem="0a7-hh-oo4" secondAttribute="bottom" id="CAQ-nn-VK6"/>
                                             <constraint firstAttribute="trailing" secondItem="uDy-KC-mGO" secondAttribute="trailing" constant="-10.5" id="ETC-Zh-4PY"/>
                                             <constraint firstAttribute="height" constant="60" id="FsY-oz-eX1"/>
                                             <constraint firstItem="uDy-KC-mGO" firstAttribute="leading" secondItem="Fsf-W3-oM9" secondAttribute="trailing" constant="15" id="HYf-dg-rU0"/>
-                                            <constraint firstItem="0a7-hh-oo4" firstAttribute="leading" secondItem="6Jr-Bc-ZTC" secondAttribute="leading" id="MWw-Yf-BvK"/>
+                                            <constraint firstItem="0a7-hh-oo4" firstAttribute="leading" secondItem="6Jr-Bc-ZTC" secondAttribute="leading" constant="15" id="MWw-Yf-BvK"/>
                                             <constraint firstItem="0a7-hh-oo4" firstAttribute="top" secondItem="iYT-3h-v3B" secondAttribute="bottom" constant="12" id="S95-P5-eZC"/>
                                             <constraint firstItem="iYT-3h-v3B" firstAttribute="leading" secondItem="6Jr-Bc-ZTC" secondAttribute="leading" constant="15" id="Wdh-jg-n78"/>
                                             <constraint firstItem="uDy-KC-mGO" firstAttribute="centerY" secondItem="iYT-3h-v3B" secondAttribute="centerY" id="cY9-fu-kTe"/>
@@ -354,10 +358,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIH-Y7-jBy" userLabel="blankview4">
-                                        <rect key="frame" x="0.0" y="180" width="375" height="60"/>
+                                        <rect key="frame" x="15" y="180" width="345" height="60"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJO-f5-fMd" userLabel="spliteview">
-                                                <rect key="frame" x="0.0" y="59.5" width="375" height="0.5"/>
+                                                <rect key="frame" x="0.0" y="59.5" width="345" height="0.5"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="0.5" id="M16-22-kgM"/>
@@ -378,7 +382,7 @@
                                                 </constraints>
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请再输入一遍" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9sB-q2-kXU">
-                                                <rect key="frame" x="116" y="26" width="269.5" height="22"/>
+                                                <rect key="frame" x="116" y="26" width="239.5" height="22"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
@@ -401,9 +405,9 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.98750735919999999" green="0.94370862950000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="hIH-Y7-jBy" firstAttribute="leading" secondItem="1lp-Im-4Tf" secondAttribute="leading" id="4sL-pq-PDr"/>
+                                    <constraint firstItem="hIH-Y7-jBy" firstAttribute="leading" secondItem="1lp-Im-4Tf" secondAttribute="leading" constant="15" id="4sL-pq-PDr"/>
                                     <constraint firstItem="C4p-g3-4kr" firstAttribute="top" secondItem="Mpf-iP-2gF" secondAttribute="bottom" id="6oj-Vp-Zfm"/>
                                     <constraint firstAttribute="height" constant="250" id="BCl-1A-osA"/>
                                     <constraint firstAttribute="trailing" secondItem="6Jr-Bc-ZTC" secondAttribute="trailing" id="CPb-Ux-eUX"/>
@@ -415,7 +419,7 @@
                                     <constraint firstItem="Mpf-iP-2gF" firstAttribute="leading" secondItem="1lp-Im-4Tf" secondAttribute="leading" id="Xr9-EJ-hYu"/>
                                     <constraint firstItem="hIH-Y7-jBy" firstAttribute="top" secondItem="6Jr-Bc-ZTC" secondAttribute="bottom" id="cit-cM-4B5"/>
                                     <constraint firstItem="6Jr-Bc-ZTC" firstAttribute="leading" secondItem="1lp-Im-4Tf" secondAttribute="leading" id="xmI-O1-7fV"/>
-                                    <constraint firstAttribute="trailing" secondItem="hIH-Y7-jBy" secondAttribute="trailing" id="y5t-8T-dyR"/>
+                                    <constraint firstAttribute="trailing" secondItem="hIH-Y7-jBy" secondAttribute="trailing" constant="15" id="y5t-8T-dyR"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnA-YA-j4U">
@@ -429,6 +433,9 @@
                                 <state key="normal" title="注册">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickRegisterBtn:" destination="Fzd-Hz-uwQ" eventType="touchUpInside" id="kqF-W7-koa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -443,10 +450,17 @@
                             <constraint firstAttribute="trailing" secondItem="1lp-Im-4Tf" secondAttribute="trailing" id="y8X-qX-H2m"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="phoneNumTextField" destination="Y9d-cs-hYT" id="okl-eN-bVk"/>
+                        <outlet property="pswTextField" destination="uDy-KC-mGO" id="IJa-Ub-PSs"/>
+                        <outlet property="pswTwiceTextField" destination="9sB-q2-kXU" id="Ib0-Qy-vAc"/>
+                        <outlet property="smsCodeBtn" destination="nUY-gX-Ced" id="Vcs-YH-XLx"/>
+                        <outlet property="verifyTextField" destination="mFM-cx-eSR" id="nOy-si-M3s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agW-uX-EEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-212" y="138.98050974512745"/>
+            <point key="canvasLocation" x="-887" y="162"/>
         </scene>
     </scenes>
     <resources>

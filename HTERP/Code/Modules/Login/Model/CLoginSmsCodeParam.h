@@ -9,5 +9,5 @@
 #import "CRequestParams.h"
 
 @interface CLoginSmsCodeParam : CRequestBaseParams
-
+@property(nonatomic, copy) NSString *mobile;
 @end
