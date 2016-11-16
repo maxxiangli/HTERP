@@ -28,6 +28,7 @@
 
     // Do any additional setup after loading the view.
     [self setDisplayCustomTitleText:@"登录"];
+    self.view.backgroundColor = [UIColor whiteColor];
     //圆角
     self.loginBtn.layer.cornerRadius = 8;
     self.loginBtn.layer.masksToBounds = YES;

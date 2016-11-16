@@ -113,6 +113,8 @@
 		C94C82261DD452E800B1D578 /* HTLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C82251DD452E800B1D578 /* HTLoginManager.m */; };
 		C94C82291DD457DA00B1D578 /* HTLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94C82281DD457DA00B1D578 /* HTLogin.storyboard */; };
 		C94C822C1DD4594A00B1D578 /* HTLoginLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C822B1DD4594A00B1D578 /* HTLoginLoginViewController.m */; };
+		C9AEBE0C1DDC597D00A94F29 /* CLoginRegisterParam.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AEBE0B1DDC597D00A94F29 /* CLoginRegisterParam.m */; };
+		C9AEBE0F1DDC5A3000A94F29 /* CLoginSmsCodeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AEBE0E1DDC5A3000A94F29 /* CLoginSmsCodeParam.m */; };
 		C9CB2C361DDB3D8100260DF7 /* CRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CB2C351DDB3D8100260DF7 /* CRegisterViewController.m */; };
 		F0E56C711DCAF8BE0038ED5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E56C701DCAF8BE0038ED5A /* main.m */; };
 		F0E56C741DCAF8BE0038ED5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E56C731DCAF8BE0038ED5A /* AppDelegate.m */; };
@@ -377,6 +379,10 @@
 		C94C82281DD457DA00B1D578 /* HTLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HTLogin.storyboard; sourceTree = "<group>"; };
 		C94C822A1DD4594A00B1D578 /* HTLoginLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLoginLoginViewController.h; sourceTree = "<group>"; };
 		C94C822B1DD4594A00B1D578 /* HTLoginLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLoginLoginViewController.m; sourceTree = "<group>"; };
+		C9AEBE0A1DDC597D00A94F29 /* CLoginRegisterParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLoginRegisterParam.h; sourceTree = "<group>"; };
+		C9AEBE0B1DDC597D00A94F29 /* CLoginRegisterParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLoginRegisterParam.m; sourceTree = "<group>"; };
+		C9AEBE0D1DDC5A3000A94F29 /* CLoginSmsCodeParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLoginSmsCodeParam.h; sourceTree = "<group>"; };
+		C9AEBE0E1DDC5A3000A94F29 /* CLoginSmsCodeParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLoginSmsCodeParam.m; sourceTree = "<group>"; };
 		C9CB2C341DDB3D8100260DF7 /* CRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRegisterViewController.h; sourceTree = "<group>"; };
 		C9CB2C351DDB3D8100260DF7 /* CRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRegisterViewController.m; sourceTree = "<group>"; };
 		F0E56C6C1DCAF8BE0038ED5A /* HTERP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTERP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -998,6 +1004,10 @@
 				C92A81691DD4AEBE00469C52 /* CLoginLoginParam.m */,
 				C92A816B1DD4B0E200469C52 /* CLoginInforModel.h */,
 				C92A816C1DD4B0E200469C52 /* CLoginInforModel.m */,
+				C9AEBE0A1DDC597D00A94F29 /* CLoginRegisterParam.h */,
+				C9AEBE0B1DDC597D00A94F29 /* CLoginRegisterParam.m */,
+				C9AEBE0D1DDC5A3000A94F29 /* CLoginSmsCodeParam.h */,
+				C9AEBE0E1DDC5A3000A94F29 /* CLoginSmsCodeParam.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1677,6 +1687,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C91ED4481DCB3737003688C7 /* SizeDefine.m in Sources */,
+				C9AEBE0C1DDC597D00A94F29 /* CLoginRegisterParam.m in Sources */,
 				C94890551DCC3636002C862F /* UIStoryBoardPullingheaderTableView.m in Sources */,
 				C94C822C1DD4594A00B1D578 /* HTLoginLoginViewController.m in Sources */,
 				C91ED3A01DCB16B9003688C7 /* HTGlobal.m in Sources */,
@@ -1713,6 +1724,7 @@
 				C91ED3F11DCB1D68003688C7 /* CURLDataDownloader.m in Sources */,
 				C91ED3DB1DCB1B32003688C7 /* NSString+Draw.m in Sources */,
 				C91ED3F21DCB1D68003688C7 /* CURLDataLoader.m in Sources */,
+				C9AEBE0F1DDC5A3000A94F29 /* CLoginSmsCodeParam.m in Sources */,
 				FA44F06B1DD406C100985425 /* CHGetCompanyParams.m in Sources */,
 				FA7031B21DD6C2BC00E059F0 /* CHItem.m in Sources */,
 				C91ED39D1DCB1664003688C7 /* CConfiguration.m in Sources */,

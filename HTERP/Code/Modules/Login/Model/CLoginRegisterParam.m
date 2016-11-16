@@ -1,14 +1,14 @@
 //
-//  CLoginLoginParam.m
+//  CLoginRegisterParam.m
 //  HTERP
 //
-//  Created by li xiang on 2016/11/10.
+//  Created by li xiang on 16/11/16.
 //  Copyright © 2016年 Max. All rights reserved.
 //
 
-#import "CLoginLoginParam.h"
+#import "CLoginRegisterParam.h"
 
-@implementation CLoginLoginParam
+@implementation CLoginRegisterParam
 + (NSString *)serverAddress
 {
     NSString *url = @"http://182.254.208.132";
@@ -17,6 +17,6 @@
 
 + (NSString *)path
 {
-    return @"/user/login";
+    return @"/user/register";
 }
 @end
