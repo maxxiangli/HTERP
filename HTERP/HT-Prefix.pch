@@ -36,4 +36,12 @@
 ////	#import "CWtLoginManager.h"
 ////	#import "CWXLoginManager.h"
 //    #import "NullSafe.h"//[保证PHP后台返回的null 不崩]
+
+
+   #import "GJCFQuickCacheMacrocDefine.h"
+   #import "GJCFStringMacrocDefine.h"
+   #import "GJGCCommonFontColorStyle.h"
+   #import "GJCFQuickUIMacrocDefine.h"
+   #import "GJCFSystemMacrocDefine.h"
+   #import "GJGCMessageExtendConst.h"
 #endif
