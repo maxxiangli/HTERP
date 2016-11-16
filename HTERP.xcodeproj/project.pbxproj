@@ -167,6 +167,29 @@
 		FA7019871DDC307200344D87 /* GJGCLoadingStatusHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019861DDC307200344D87 /* GJGCLoadingStatusHUD.m */; };
 		FA70198A1DDC31EA00344D87 /* GJGCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019891DDC31EA00344D87 /* GJGCBaseViewController.m */; };
 		FA70198D1DDC338D00344D87 /* GJGCCommonFontColorStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70198C1DDC338D00344D87 /* GJGCCommonFontColorStyle.m */; };
+		FA7019991DDC3C6F00344D87 /* GJGCRecentChatTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019981DDC3C6F00344D87 /* GJGCRecentChatTitleView.m */; };
+		FA7019B01DDC3F3A00344D87 /* GJGCGroupInfoExtendConst.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019A51DDC3F3A00344D87 /* GJGCGroupInfoExtendConst.m */; };
+		FA7019B11DDC3F3A00344D87 /* GJGCGroupInfoExtendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019A71DDC3F3A00344D87 /* GJGCGroupInfoExtendModel.m */; };
+		FA7019B21DDC3F3A00344D87 /* GJGCMessageExtendConst.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019A91DDC3F3A00344D87 /* GJGCMessageExtendConst.m */; };
+		FA7019B31DDC3F3A00344D87 /* GJGCMessageExtendGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019AB1DDC3F3A00344D87 /* GJGCMessageExtendGroupModel.m */; };
+		FA7019B41DDC3F3A00344D87 /* GJGCRecentChatDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019AD1DDC3F3A00344D87 /* GJGCRecentChatDataManager.m */; };
+		FA7019B51DDC3F3A00344D87 /* GJGCRecentChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019AF1DDC3F3A00344D87 /* GJGCRecentChatModel.m */; };
+		FA7019B81DDC406000344D87 /* GJGCRecentChatStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019B71DDC406000344D87 /* GJGCRecentChatStyle.m */; };
+		FA7019BB1DDC411800344D87 /* GJGCChatSystemNotiCellStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019BA1DDC411800344D87 /* GJGCChatSystemNotiCellStyle.m */; };
+		FA7019BF1DDC42A800344D87 /* GJGCChatContentEmojiParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019BE1DDC42A800344D87 /* GJGCChatContentEmojiParser.m */; };
+		FA7019C21DDC42EE00344D87 /* GJGCChatFriendCellStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019C11DDC42EE00344D87 /* GJGCChatFriendCellStyle.m */; };
+		FA7019C51DDC44C000344D87 /* GJGCMessageExtendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019C41DDC44C000344D87 /* GJGCMessageExtendModel.m */; };
+		FA7019C81DDC450D00344D87 /* GJGCMessageExtendUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019C71DDC450D00344D87 /* GJGCMessageExtendUserModel.m */; };
+		FA7019CB1DDC454100344D87 /* GJGCMessageExtendContentGIFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019CA1DDC454100344D87 /* GJGCMessageExtendContentGIFModel.m */; };
+		FA7019CE1DDC457600344D87 /* GJGCMessageExtendContentWebPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019CD1DDC457600344D87 /* GJGCMessageExtendContentWebPageModel.m */; };
+		FA7019D11DDC463500344D87 /* GJGCChatFriendConstans.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019D01DDC463500344D87 /* GJGCChatFriendConstans.m */; };
+		FA7019D41DDC468500344D87 /* GJGCGIFLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019D31DDC468500344D87 /* GJGCGIFLoadManager.m */; };
+		FA7019D71DDC46E200344D87 /* GJGCMessageExtendMusicShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019D61DDC46E200344D87 /* GJGCMessageExtendMusicShareModel.m */; };
+		FA7019DA1DDC47AB00344D87 /* GJGCMessageExtendSendFlowerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019D91DDC47AB00344D87 /* GJGCMessageExtendSendFlowerModel.m */; };
+		FA7019DD1DDC480500344D87 /* GJGCMessageExtendMiniMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019DC1DDC480500344D87 /* GJGCMessageExtendMiniMessageModel.m */; };
+		FA7019E11DDC4E6A00344D87 /* ZYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019E01DDC4E6A00344D87 /* ZYUserModel.m */; };
+		FA7019E41DDC4FA600344D87 /* ZYUserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019E31DDC4FA600344D87 /* ZYUserCenter.m */; };
+		FA7019E81DDC553B00344D87 /* GJCFCachePathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7019E71DDC553B00344D87 /* GJCFCachePathManager.m */; };
 		FA7031B21DD6C2BC00E059F0 /* CHItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7031B11DD6C2BC00E059F0 /* CHItem.m */; };
 		FA7031B41DD6EC7300E059F0 /* CHContactBrowse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7031B31DD6EC7300E059F0 /* CHContactBrowse.storyboard */; };
 		FA7031B71DD6ED7500E059F0 /* CHContactBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7031B61DD6ED7500E059F0 /* CHContactBrowseViewController.m */; };
@@ -487,6 +510,52 @@
 		FA7019891DDC31EA00344D87 /* GJGCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCBaseViewController.m; sourceTree = "<group>"; };
 		FA70198B1DDC338D00344D87 /* GJGCCommonFontColorStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCCommonFontColorStyle.h; sourceTree = "<group>"; };
 		FA70198C1DDC338D00344D87 /* GJGCCommonFontColorStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCCommonFontColorStyle.m; sourceTree = "<group>"; };
+		FA7019971DDC3C6F00344D87 /* GJGCRecentChatTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCRecentChatTitleView.h; sourceTree = "<group>"; };
+		FA7019981DDC3C6F00344D87 /* GJGCRecentChatTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCRecentChatTitleView.m; sourceTree = "<group>"; };
+		FA7019A41DDC3F3A00344D87 /* GJGCGroupInfoExtendConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCGroupInfoExtendConst.h; sourceTree = "<group>"; };
+		FA7019A51DDC3F3A00344D87 /* GJGCGroupInfoExtendConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCGroupInfoExtendConst.m; sourceTree = "<group>"; };
+		FA7019A61DDC3F3A00344D87 /* GJGCGroupInfoExtendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCGroupInfoExtendModel.h; sourceTree = "<group>"; };
+		FA7019A71DDC3F3A00344D87 /* GJGCGroupInfoExtendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCGroupInfoExtendModel.m; sourceTree = "<group>"; };
+		FA7019A81DDC3F3A00344D87 /* GJGCMessageExtendConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCMessageExtendConst.h; sourceTree = "<group>"; };
+		FA7019A91DDC3F3A00344D87 /* GJGCMessageExtendConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCMessageExtendConst.m; sourceTree = "<group>"; };
+		FA7019AA1DDC3F3A00344D87 /* GJGCMessageExtendGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCMessageExtendGroupModel.h; sourceTree = "<group>"; };
+		FA7019AB1DDC3F3A00344D87 /* GJGCMessageExtendGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCMessageExtendGroupModel.m; sourceTree = "<group>"; };
+		FA7019AC1DDC3F3A00344D87 /* GJGCRecentChatDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCRecentChatDataManager.h; sourceTree = "<group>"; };
+		FA7019AD1DDC3F3A00344D87 /* GJGCRecentChatDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCRecentChatDataManager.m; sourceTree = "<group>"; };
+		FA7019AE1DDC3F3A00344D87 /* GJGCRecentChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCRecentChatModel.h; sourceTree = "<group>"; };
+		FA7019AF1DDC3F3A00344D87 /* GJGCRecentChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCRecentChatModel.m; sourceTree = "<group>"; };
+		FA7019B61DDC406000344D87 /* GJGCRecentChatStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCRecentChatStyle.h; sourceTree = "<group>"; };
+		FA7019B71DDC406000344D87 /* GJGCRecentChatStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCRecentChatStyle.m; sourceTree = "<group>"; };
+		FA7019B91DDC411800344D87 /* GJGCChatSystemNotiCellStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCChatSystemNotiCellStyle.h; sourceTree = "<group>"; };
+		FA7019BA1DDC411800344D87 /* GJGCChatSystemNotiCellStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCChatSystemNotiCellStyle.m; sourceTree = "<group>"; };
+		FA7019BD1DDC42A800344D87 /* GJGCChatContentEmojiParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCChatContentEmojiParser.h; sourceTree = "<group>"; };
+		FA7019BE1DDC42A800344D87 /* GJGCChatContentEmojiParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCChatContentEmojiParser.m; sourceTree = "<group>"; };
+		FA7019C01DDC42EE00344D87 /* GJGCChatFriendCellStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCChatFriendCellStyle.h; sourceTree = "<group>"; };
+		FA7019C11DDC42EE00344D87 /* GJGCChatFriendCellStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCChatFriendCellStyle.m; sourceTree = "<group>"; };
+		FA7019C31DDC44C000344D87 /* GJGCMessageExtendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCMessageExtendModel.h; sourceTree = "<group>"; };
+		FA7019C41DDC44C000344D87 /* GJGCMessageExtendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCMessageExtendModel.m; sourceTree = "<group>"; };
+		FA7019C61DDC450D00344D87 /* GJGCMessageExtendUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCMessageExtendUserModel.h; sourceTree = "<group>"; };
+		FA7019C71DDC450D00344D87 /* GJGCMessageExtendUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCMessageExtendUserModel.m; sourceTree = "<group>"; };
+		FA7019C91DDC454100344D87 /* GJGCMessageExtendContentGIFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCMessageExtendContentGIFModel.h; sourceTree = "<group>"; };
+		FA7019CA1DDC454100344D87 /* GJGCMessageExtendContentGIFModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCMessageExtendContentGIFModel.m; sourceTree = "<group>"; };
+		FA7019CC1DDC457600344D87 /* GJGCMessageExtendContentWebPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCMessageExtendContentWebPageModel.h; sourceTree = "<group>"; };
+		FA7019CD1DDC457600344D87 /* GJGCMessageExtendContentWebPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCMessageExtendContentWebPageModel.m; sourceTree = "<group>"; };
+		FA7019CF1DDC463500344D87 /* GJGCChatFriendConstans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCChatFriendConstans.h; sourceTree = "<group>"; };
+		FA7019D01DDC463500344D87 /* GJGCChatFriendConstans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCChatFriendConstans.m; sourceTree = "<group>"; };
+		FA7019D21DDC468500344D87 /* GJGCGIFLoadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCGIFLoadManager.h; sourceTree = "<group>"; };
+		FA7019D31DDC468500344D87 /* GJGCGIFLoadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCGIFLoadManager.m; sourceTree = "<group>"; };
+		FA7019D51DDC46E200344D87 /* GJGCMessageExtendMusicShareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCMessageExtendMusicShareModel.h; sourceTree = "<group>"; };
+		FA7019D61DDC46E200344D87 /* GJGCMessageExtendMusicShareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCMessageExtendMusicShareModel.m; sourceTree = "<group>"; };
+		FA7019D81DDC47AB00344D87 /* GJGCMessageExtendSendFlowerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCMessageExtendSendFlowerModel.h; sourceTree = "<group>"; };
+		FA7019D91DDC47AB00344D87 /* GJGCMessageExtendSendFlowerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCMessageExtendSendFlowerModel.m; sourceTree = "<group>"; };
+		FA7019DB1DDC480500344D87 /* GJGCMessageExtendMiniMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCMessageExtendMiniMessageModel.h; sourceTree = "<group>"; };
+		FA7019DC1DDC480500344D87 /* GJGCMessageExtendMiniMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCMessageExtendMiniMessageModel.m; sourceTree = "<group>"; };
+		FA7019DF1DDC4E6A00344D87 /* ZYUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYUserModel.h; sourceTree = "<group>"; };
+		FA7019E01DDC4E6A00344D87 /* ZYUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYUserModel.m; sourceTree = "<group>"; };
+		FA7019E21DDC4FA600344D87 /* ZYUserCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYUserCenter.h; sourceTree = "<group>"; };
+		FA7019E31DDC4FA600344D87 /* ZYUserCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYUserCenter.m; sourceTree = "<group>"; };
+		FA7019E61DDC553B00344D87 /* GJCFCachePathManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFCachePathManager.h; sourceTree = "<group>"; };
+		FA7019E71DDC553B00344D87 /* GJCFCachePathManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFCachePathManager.m; sourceTree = "<group>"; };
 		FA7031B01DD6C2BC00E059F0 /* CHItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHItem.h; sourceTree = "<group>"; };
 		FA7031B11DD6C2BC00E059F0 /* CHItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHItem.m; sourceTree = "<group>"; };
 		FA7031B31DD6EC7300E059F0 /* CHContactBrowse.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CHContactBrowse.storyboard; sourceTree = "<group>"; };
@@ -1180,6 +1249,9 @@
 		FA7019361DDC165700344D87 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				FA7019DE1DDC4E6A00344D87 /* relation */,
+				FA7019BC1DDC427F00344D87 /* friendchat */,
+				FA7019A31DDC3EFC00344D87 /* recentchat */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1194,6 +1266,8 @@
 		FA7019381DDC165700344D87 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				FA7019971DDC3C6F00344D87 /* GJGCRecentChatTitleView.h */,
+				FA7019981DDC3C6F00344D87 /* GJGCRecentChatTitleView.m */,
 				FA70198B1DDC338D00344D87 /* GJGCCommonFontColorStyle.h */,
 				FA70198C1DDC338D00344D87 /* GJGCCommonFontColorStyle.m */,
 				FA7019851DDC307200344D87 /* GJGCLoadingStatusHUD.h */,
@@ -1205,6 +1279,7 @@
 		FA7019391DDC2E5E00344D87 /* dependcy */ = {
 			isa = PBXGroup;
 			children = (
+				FA7019E51DDC553B00344D87 /* GJCFCachePathManager */,
 				FA70195F1DDC2EF400344D87 /* GJCFUitils */,
 				FA70193A1DDC2E7400344D87 /* GJCFCoreText */,
 			);
@@ -1346,6 +1421,78 @@
 				FA70197D1DDC2EF400344D87 /* UIView+GJCFViewFrameUitil.m */,
 			);
 			path = UitilCategory;
+			sourceTree = "<group>";
+		};
+		FA7019A31DDC3EFC00344D87 /* recentchat */ = {
+			isa = PBXGroup;
+			children = (
+				FA7019B91DDC411800344D87 /* GJGCChatSystemNotiCellStyle.h */,
+				FA7019BA1DDC411800344D87 /* GJGCChatSystemNotiCellStyle.m */,
+				FA7019B61DDC406000344D87 /* GJGCRecentChatStyle.h */,
+				FA7019B71DDC406000344D87 /* GJGCRecentChatStyle.m */,
+				FA7019A41DDC3F3A00344D87 /* GJGCGroupInfoExtendConst.h */,
+				FA7019A51DDC3F3A00344D87 /* GJGCGroupInfoExtendConst.m */,
+				FA7019A61DDC3F3A00344D87 /* GJGCGroupInfoExtendModel.h */,
+				FA7019A71DDC3F3A00344D87 /* GJGCGroupInfoExtendModel.m */,
+				FA7019A81DDC3F3A00344D87 /* GJGCMessageExtendConst.h */,
+				FA7019A91DDC3F3A00344D87 /* GJGCMessageExtendConst.m */,
+				FA7019AA1DDC3F3A00344D87 /* GJGCMessageExtendGroupModel.h */,
+				FA7019AB1DDC3F3A00344D87 /* GJGCMessageExtendGroupModel.m */,
+				FA7019AC1DDC3F3A00344D87 /* GJGCRecentChatDataManager.h */,
+				FA7019AD1DDC3F3A00344D87 /* GJGCRecentChatDataManager.m */,
+				FA7019AE1DDC3F3A00344D87 /* GJGCRecentChatModel.h */,
+				FA7019AF1DDC3F3A00344D87 /* GJGCRecentChatModel.m */,
+			);
+			path = recentchat;
+			sourceTree = "<group>";
+		};
+		FA7019BC1DDC427F00344D87 /* friendchat */ = {
+			isa = PBXGroup;
+			children = (
+				FA7019DB1DDC480500344D87 /* GJGCMessageExtendMiniMessageModel.h */,
+				FA7019DC1DDC480500344D87 /* GJGCMessageExtendMiniMessageModel.m */,
+				FA7019D81DDC47AB00344D87 /* GJGCMessageExtendSendFlowerModel.h */,
+				FA7019D91DDC47AB00344D87 /* GJGCMessageExtendSendFlowerModel.m */,
+				FA7019D51DDC46E200344D87 /* GJGCMessageExtendMusicShareModel.h */,
+				FA7019D61DDC46E200344D87 /* GJGCMessageExtendMusicShareModel.m */,
+				FA7019D21DDC468500344D87 /* GJGCGIFLoadManager.h */,
+				FA7019D31DDC468500344D87 /* GJGCGIFLoadManager.m */,
+				FA7019CF1DDC463500344D87 /* GJGCChatFriendConstans.h */,
+				FA7019D01DDC463500344D87 /* GJGCChatFriendConstans.m */,
+				FA7019CC1DDC457600344D87 /* GJGCMessageExtendContentWebPageModel.h */,
+				FA7019CD1DDC457600344D87 /* GJGCMessageExtendContentWebPageModel.m */,
+				FA7019C91DDC454100344D87 /* GJGCMessageExtendContentGIFModel.h */,
+				FA7019CA1DDC454100344D87 /* GJGCMessageExtendContentGIFModel.m */,
+				FA7019C61DDC450D00344D87 /* GJGCMessageExtendUserModel.h */,
+				FA7019C71DDC450D00344D87 /* GJGCMessageExtendUserModel.m */,
+				FA7019C31DDC44C000344D87 /* GJGCMessageExtendModel.h */,
+				FA7019C41DDC44C000344D87 /* GJGCMessageExtendModel.m */,
+				FA7019C01DDC42EE00344D87 /* GJGCChatFriendCellStyle.h */,
+				FA7019C11DDC42EE00344D87 /* GJGCChatFriendCellStyle.m */,
+				FA7019BD1DDC42A800344D87 /* GJGCChatContentEmojiParser.h */,
+				FA7019BE1DDC42A800344D87 /* GJGCChatContentEmojiParser.m */,
+			);
+			path = friendchat;
+			sourceTree = "<group>";
+		};
+		FA7019DE1DDC4E6A00344D87 /* relation */ = {
+			isa = PBXGroup;
+			children = (
+				FA7019E21DDC4FA600344D87 /* ZYUserCenter.h */,
+				FA7019E31DDC4FA600344D87 /* ZYUserCenter.m */,
+				FA7019DF1DDC4E6A00344D87 /* ZYUserModel.h */,
+				FA7019E01DDC4E6A00344D87 /* ZYUserModel.m */,
+			);
+			path = relation;
+			sourceTree = "<group>";
+		};
+		FA7019E51DDC553B00344D87 /* GJCFCachePathManager */ = {
+			isa = PBXGroup;
+			children = (
+				FA7019E61DDC553B00344D87 /* GJCFCachePathManager.h */,
+				FA7019E71DDC553B00344D87 /* GJCFCachePathManager.m */,
+			);
+			path = GJCFCachePathManager;
 			sourceTree = "<group>";
 		};
 		FAA232BD1DD332510037B33E /* Function */ = {
@@ -1680,10 +1827,12 @@
 				C94890551DCC3636002C862F /* UIStoryBoardPullingheaderTableView.m in Sources */,
 				C94C822C1DD4594A00B1D578 /* HTLoginLoginViewController.m in Sources */,
 				C91ED3A01DCB16B9003688C7 /* HTGlobal.m in Sources */,
+				FA7019E81DDC553B00344D87 /* GJCFCachePathManager.m in Sources */,
 				C91ED3FF1DCB217E003688C7 /* GTMBase64.m in Sources */,
 				C94890521DCC354E002C862F /* CBigEventReminderParam.m in Sources */,
 				FA44F0881DD493E600985425 /* CHFileManager.m in Sources */,
 				C91ED3981DCB1644003688C7 /* CRequestJSONModelBase.m in Sources */,
+				FA7019C51DDC44C000344D87 /* GJGCMessageExtendModel.m in Sources */,
 				C91ED4451DCB3693003688C7 /* UIViewController+ext.m in Sources */,
 				C94890371DCC2FC2002C862F /* CCustomTableViewController.m in Sources */,
 				FA6BE5021DD969C100878C03 /* CHSearchContactMode.m in Sources */,
@@ -1697,6 +1846,7 @@
 				C91ED3F31DCB1D68003688C7 /* CURLLoaderCache.m in Sources */,
 				C94890511DCC354E002C862F /* CBigEventReminderModel.m in Sources */,
 				C948901B1DCC286C002C862F /* FourthViewController.m in Sources */,
+				FA7019B01DDC3F3A00344D87 /* GJGCGroupInfoExtendConst.m in Sources */,
 				C948906F1DCC4E63002C862F /* UINavigationBar+Draw.m in Sources */,
 				FA70198A1DDC31EA00344D87 /* GJGCBaseViewController.m in Sources */,
 				C94C82261DD452E800B1D578 /* HTLoginManager.m in Sources */,
@@ -1704,16 +1854,20 @@
 				C91ED4231DCB2A38003688C7 /* CBossReporter.m in Sources */,
 				C948900A1DCC2866002C862F /* SecondViewController.m in Sources */,
 				C91ED3F41DCB1D68003688C7 /* CURLLoaderProxy.m in Sources */,
+				FA7019D71DDC46E200344D87 /* GJGCMessageExtendMusicShareModel.m in Sources */,
 				C948902D1DCC2F95002C862F /* UIStoryBoardTableView.m in Sources */,
 				FA7019801DDC2EF400344D87 /* GJCFQuickCacheUitil.m in Sources */,
 				C91ED4351DCB2EE4003688C7 /* CCustomViewController.m in Sources */,
 				C94890631DCC372B002C862F /* CATradeLoadingView.m in Sources */,
 				C91ED41C1DCB2820003688C7 /* CStopWatch.m in Sources */,
+				FA7019C81DDC450D00344D87 /* GJGCMessageExtendUserModel.m in Sources */,
 				C948902E1DCC2F95002C862F /* UITableViewCell_StoryBoard.m in Sources */,
+				FA7019BB1DDC411800344D87 /* GJGCChatSystemNotiCellStyle.m in Sources */,
 				C91ED3F11DCB1D68003688C7 /* CURLDataDownloader.m in Sources */,
 				C91ED3DB1DCB1B32003688C7 /* NSString+Draw.m in Sources */,
 				C91ED3F21DCB1D68003688C7 /* CURLDataLoader.m in Sources */,
 				FA44F06B1DD406C100985425 /* CHGetCompanyParams.m in Sources */,
+				FA7019E11DDC4E6A00344D87 /* ZYUserModel.m in Sources */,
 				FA7031B21DD6C2BC00E059F0 /* CHItem.m in Sources */,
 				C91ED39D1DCB1664003688C7 /* CConfiguration.m in Sources */,
 				FA7019581DDC2E7400344D87 /* GJCFCoreTextParagraphStyle.m in Sources */,
@@ -1724,6 +1878,7 @@
 				F0E56C741DCAF8BE0038ED5A /* AppDelegate.m in Sources */,
 				C91ED4111DCB2351003688C7 /* HttpDnsManager.m in Sources */,
 				C91ED3DE1DCB1B33003688C7 /* NSString+HTML.m in Sources */,
+				FA7019CE1DDC457600344D87 /* GJGCMessageExtendContentWebPageModel.m in Sources */,
 				FADA20D31DD2C23900F73DAC /* CHSpashScreenViewController.m in Sources */,
 				C948905B1DCC3700002C862F /* EGORefreshTableHeaderView.m in Sources */,
 				C91ED3D41DCB1B32003688C7 /* NotificationDefines.m in Sources */,
@@ -1739,12 +1894,18 @@
 				C91ED3D71DCB1B32003688C7 /* CGRect+Extra.m in Sources */,
 				FA6BE4F81DD9629F00878C03 /* ChineseToPinyinResource.m in Sources */,
 				FA7031BA1DD6F1EF00E059F0 /* CHNameBrowseView.m in Sources */,
+				FA7019C21DDC42EE00344D87 /* GJGCChatFriendCellStyle.m in Sources */,
+				FA7019B41DDC3F3A00344D87 /* GJGCRecentChatDataManager.m in Sources */,
+				FA7019DD1DDC480500344D87 /* GJGCMessageExtendMiniMessageModel.m in Sources */,
+				FA7019D41DDC468500344D87 /* GJGCGIFLoadManager.m in Sources */,
 				FA6BE4F71DD9629F00878C03 /* ChineseInclude.m in Sources */,
 				FA7019871DDC307200344D87 /* GJGCLoadingStatusHUD.m in Sources */,
 				FA43CB781DD5A4E1003E0C05 /* CHContactsViewController.m in Sources */,
 				FA7019841DDC2EF400344D87 /* UIView+GJCFViewFrameUitil.m in Sources */,
 				FA44F0711DD41C6100985425 /* CHUser.m in Sources */,
+				FA7019991DDC3C6F00344D87 /* GJGCRecentChatTitleView.m in Sources */,
 				FA6BE4FF1DD9629F00878C03 /* ZYPinYinSearch.m in Sources */,
+				FA7019D11DDC463500344D87 /* GJGCChatFriendConstans.m in Sources */,
 				FA7019541DDC2E7400344D87 /* GJCFCoreTextContentView.m in Sources */,
 				FA70195C1DDC2E7400344D87 /* GJCFCoreTextImageScriptParser.m in Sources */,
 				C91ED3DA1DCB1B32003688C7 /* NSDictionary+Extra.m in Sources */,
@@ -1754,13 +1915,17 @@
 				C94890361DCC2FC2002C862F /* CCustomTableViewBackButtonController.m in Sources */,
 				C94890251DCC2CB3002C862F /* CLoadMoreTableFooterView.m in Sources */,
 				FA70195B1DDC2E7400344D87 /* GJCFCoreTextImageAttributedStringStyle.m in Sources */,
+				FA7019BF1DDC42A800344D87 /* GJGCChatContentEmojiParser.m in Sources */,
 				C91ED3DF1DCB1B33003688C7 /* NSString+numberValid.m in Sources */,
 				FA7019571DDC2E7400344D87 /* GJCFCoreTextRun.m in Sources */,
 				C948904A1DCC3548002C862F /* CBigEventController.m in Sources */,
 				C91ED3D81DCB1B32003688C7 /* NSArray+Extra.m in Sources */,
 				FA70195D1DDC2E7400344D87 /* GJCFCoreTextKeywordAttributedStringStyle.m in Sources */,
+				FA7019CB1DDC454100344D87 /* GJGCMessageExtendContentGIFModel.m in Sources */,
 				C94890351DCC2FC2002C862F /* CCustomBackButtonController.m in Sources */,
+				FA7019B81DDC406000344D87 /* GJGCRecentChatStyle.m in Sources */,
 				C94890241DCC2CB3002C862F /* UIViewController+TABLEVIEW_StoryBoard.m in Sources */,
+				FA7019B11DDC3F3A00344D87 /* GJGCGroupInfoExtendModel.m in Sources */,
 				FA2200BF1DDA9C4300006236 /* CHFetchContactRequestCommand.m in Sources */,
 				FA6BE4F91DD9629F00878C03 /* HanyuPinyinOutputFormat.m in Sources */,
 				C91ED3941DCB1644003688C7 /* CJSONModel.m in Sources */,
@@ -1777,11 +1942,13 @@
 				C91ED3E71DCB1B33003688C7 /* UITableViewCell+FixUITableViewCellAutolayoutIHope.m in Sources */,
 				FA6BE4FD1DD9629F00878C03 /* PinyinHelper.m in Sources */,
 				FA44F0841DD4747F00985425 /* CHGlobalDefine.m in Sources */,
+				FA7019B51DDC3F3A00344D87 /* GJGCRecentChatModel.m in Sources */,
 				FA7031B71DD6ED7500E059F0 /* CHContactBrowseViewController.m in Sources */,
 				FA6BE50B1DD984D900878C03 /* CHContactList+sort.m in Sources */,
 				C91ED43F1DCB3311003688C7 /* NSObject+Json.m in Sources */,
 				C9CB2C361DDB3D8100260DF7 /* CRegisterViewController.m in Sources */,
 				C91ED4021DCB227B003688C7 /* CWorkedThread.m in Sources */,
+				FA7019E41DDC4FA600344D87 /* ZYUserCenter.m in Sources */,
 				C91ED4131DCB2351003688C7 /* HttpDnsTable.m in Sources */,
 				FA6BE4FB1DD9629F00878C03 /* PinyinFormatter.m in Sources */,
 				FA70198D1DDC338D00344D87 /* GJGCCommonFontColorStyle.m in Sources */,
@@ -1797,7 +1964,9 @@
 				FA43CB7B1DD5D3D6003E0C05 /* CHContactsModel.m in Sources */,
 				C91ED39A1DCB1644003688C7 /* CThemeManager.m in Sources */,
 				C91ED3D51DCB1B32003688C7 /* UIViewController+Extra.m in Sources */,
+				FA7019B21DDC3F3A00344D87 /* GJGCMessageExtendConst.m in Sources */,
 				C948904B1DCC3548002C862F /* CBigEventNoMoreDataTableViewCell.m in Sources */,
+				FA7019DA1DDC47AB00344D87 /* GJGCMessageExtendSendFlowerModel.m in Sources */,
 				C92A816A1DD4AEBE00469C52 /* CLoginLoginParam.m in Sources */,
 				C91ED4181DCB239C003688C7 /* Reachability.m in Sources */,
 				C91ED4301DCB2E7C003688C7 /* CStockLogSenderController.m in Sources */,
@@ -1814,6 +1983,7 @@
 				FA70195A1DDC2E7400344D87 /* GJCFCoreTextCommonDefine.m in Sources */,
 				C91ED4421DCB33F2003688C7 /* CCustomButton.m in Sources */,
 				C91ED41F1DCB293F003688C7 /* CStockLog.m in Sources */,
+				FA7019B31DDC3F3A00344D87 /* GJGCMessageExtendGroupModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
