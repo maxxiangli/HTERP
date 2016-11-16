@@ -1098,6 +1098,34 @@
 			path = ZYPinYInSearchLib;
 			sourceTree = "<group>";
 		};
+		FA7019351DDC165700344D87 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		FA7019361DDC165700344D87 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		FA7019371DDC165700344D87 /* utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = utility;
+			sourceTree = "<group>";
+		};
+		FA7019381DDC165700344D87 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		FAA232BD1DD332510037B33E /* Function */ = {
 			isa = PBXGroup;
 			children = (
@@ -1217,6 +1245,10 @@
 		FADA20C71DD2BE5900F73DAC /* IM */ = {
 			isa = PBXGroup;
 			children = (
+				FA7019351DDC165700344D87 /* controller */,
+				FA7019361DDC165700344D87 /* model */,
+				FA7019371DDC165700344D87 /* utility */,
+				FA7019381DDC165700344D87 /* view */,
 			);
 			path = IM;
 			sourceTree = "<group>";
