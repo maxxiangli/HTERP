@@ -44,4 +44,6 @@
    #import "GJCFQuickUIMacrocDefine.h"
    #import "GJCFSystemMacrocDefine.h"
    #import "GJGCMessageExtendConst.h"
+   #import "UIView+GJCFViewFrameUitil.h"
+
 #endif
