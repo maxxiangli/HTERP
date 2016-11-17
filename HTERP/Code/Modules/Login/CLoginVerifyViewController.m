@@ -14,11 +14,12 @@
 #import "CAlertWaitingViewStyleOne.h"
 #import "CRegisterViewController.h"
 #import "CLoginSmsCodeParam.h"
+#import "IDCountDownButton.h"
 
 @interface CLoginVerifyViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumTextField;
 @property (weak, nonatomic) IBOutlet UITextField *pswTextField;//验证码
-@property (weak, nonatomic) IBOutlet UIButton *sendSmsBtn;
+@property (weak, nonatomic) IBOutlet IDCountDownButton *sendSmsBtn;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
 @end

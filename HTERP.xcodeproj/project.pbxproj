@@ -113,6 +113,7 @@
 		C94C82261DD452E800B1D578 /* HTLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C82251DD452E800B1D578 /* HTLoginManager.m */; };
 		C94C82291DD457DA00B1D578 /* HTLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94C82281DD457DA00B1D578 /* HTLogin.storyboard */; };
 		C94C822C1DD4594A00B1D578 /* HTLoginLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C822B1DD4594A00B1D578 /* HTLoginLoginViewController.m */; };
+		C961AC7E1DDD85430001E0B2 /* IDCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C961AC7D1DDD85430001E0B2 /* IDCountDownButton.m */; };
 		C9AEBE0C1DDC597D00A94F29 /* CLoginRegisterParam.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AEBE0B1DDC597D00A94F29 /* CLoginRegisterParam.m */; };
 		C9AEBE0F1DDC5A3000A94F29 /* CLoginSmsCodeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AEBE0E1DDC5A3000A94F29 /* CLoginSmsCodeParam.m */; };
 		C9BB4BD11DDC8CA5007D8718 /* CLoginVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BB4BD01DDC8CA5007D8718 /* CLoginVerifyViewController.m */; };
@@ -646,6 +647,8 @@
 		C94C82281DD457DA00B1D578 /* HTLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HTLogin.storyboard; sourceTree = "<group>"; };
 		C94C822A1DD4594A00B1D578 /* HTLoginLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLoginLoginViewController.h; sourceTree = "<group>"; };
 		C94C822B1DD4594A00B1D578 /* HTLoginLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLoginLoginViewController.m; sourceTree = "<group>"; };
+		C961AC7C1DDD85430001E0B2 /* IDCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDCountDownButton.h; path = HTERP/Code/Modules/Login/IDCountDownButton.h; sourceTree = SOURCE_ROOT; };
+		C961AC7D1DDD85430001E0B2 /* IDCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDCountDownButton.m; path = HTERP/Code/Modules/Login/IDCountDownButton.m; sourceTree = SOURCE_ROOT; };
 		C9AEBE0A1DDC597D00A94F29 /* CLoginRegisterParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLoginRegisterParam.h; sourceTree = "<group>"; };
 		C9AEBE0B1DDC597D00A94F29 /* CLoginRegisterParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLoginRegisterParam.m; sourceTree = "<group>"; };
 		C9AEBE0D1DDC5A3000A94F29 /* CLoginSmsCodeParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLoginSmsCodeParam.h; sourceTree = "<group>"; };
@@ -2559,6 +2562,8 @@
 		FAA232C01DD332510037B33E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C961AC7C1DDD85430001E0B2 /* IDCountDownButton.h */,
+				C961AC7D1DDD85430001E0B2 /* IDCountDownButton.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -3153,6 +3158,7 @@
 				FA7019871DDC307200344D87 /* GJGCLoadingStatusHUD.m in Sources */,
 				FA43CB781DD5A4E1003E0C05 /* CHContactsViewController.m in Sources */,
 				FA7019841DDC2EF400344D87 /* UIView+GJCFViewFrameUitil.m in Sources */,
+				C961AC7E1DDD85430001E0B2 /* IDCountDownButton.m in Sources */,
 				FA44F0711DD41C6100985425 /* CHUser.m in Sources */,
 				FA7019991DDC3C6F00344D87 /* GJGCRecentChatTitleView.m in Sources */,
 				FA4A64E41DDC8BE000487D65 /* GJCFAlbumsViewController.m in Sources */,

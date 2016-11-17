@@ -282,7 +282,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUY-gX-Ced">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUY-gX-Ced" customClass="IDCountDownButton">
                                                 <rect key="frame" x="293" y="22" width="62" height="30"/>
                                                 <state key="normal" title="点击发送"/>
                                                 <connections>
@@ -530,7 +530,7 @@
                                             <constraint firstAttribute="height" constant="0.5" id="lLi-P9-wu9"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMV-to-e0r">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMV-to-e0r" customClass="IDCountDownButton">
                                         <rect key="frame" x="293" y="68" width="62" height="30"/>
                                         <state key="normal" title="点击发送"/>
                                         <connections>

@@ -12,13 +12,14 @@
 #import "CATradeLoadingView.h"
 #import "CAlertWaitingViewStyleOne.h"
 #import "CLoginRegisterParam.h"
+#import "IDCountDownButton.h"
 
 @interface CRegisterViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumTextField;
 @property (weak, nonatomic) IBOutlet UITextField *verifyTextField;
 @property (weak, nonatomic) IBOutlet UITextField *pswTextField;
 @property (weak, nonatomic) IBOutlet UITextField *pswTwiceTextField;
-@property (weak, nonatomic) IBOutlet UIButton *smsCodeBtn;
+@property (weak, nonatomic) IBOutlet IDCountDownButton *smsCodeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *registerBtn;
 @end
 
