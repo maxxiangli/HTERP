@@ -7,13 +7,25 @@
 #warning "This project uses features only available in iOS SDK 3.0 and later."
 #endif
 
+#ifndef TARGET_OS_IOS
+
+#define TARGET_OS_IOS TARGET_OS_IPHONE
+
+#endif
+
+#ifndef TARGET_OS_WATCH
+
+#define TARGET_OS_WATCH 0
+
+#endif
+
 
 #ifdef __OBJC__
 	#import <UIKit/UIKit.h>
 	#import <Foundation/Foundation.h>
 	//自定义类
     #import "CCustomButton.h"
-    #import "NSObject+Json.h"
+//    #import "NSObject+Json.h"
     #import "AppDelegate.h"
     #import "HTGlobal.h"
     #import "CCommon.h"
@@ -38,5 +50,23 @@
 ////	#import "CWXLoginManager.h"
 //    #import "NullSafe.h"//[保证PHP后台返回的null 不崩]
 
+    #import "GJCFStringMacrocDefine.h"
+    #import "GJCFQuickUIMacrocDefine.h"
+    #import "JSONModel.h"
+    #import "GJCFSystemMacrocDefine.h"
+    #import "GJCFQuickCacheMacrocDefine.h"
+    #import "GJGCCommonFontColorStyle.h"
+    #import "GJCFSystemMacrocDefine.h"
+    #import "UIView+GJCFViewFrameUitil.h"
+    #import "GJGCMessageExtendConst.h"
+    #import "GJCFDispatchMacrocDefine.h"
+    #import "GJCFCoreTextAttributedStringStyle.h"
+    #import "BTToast.h"
+    #import "GJCFDateUitilMacrocDefine.h"
+    #import "NSString+Json.h"
+    #import "NSDictionary+Json.h"
+    #import "GJCFCoreTextParagraphStyle.h"
+
+    #import "UIImageView+WebCache.h"
 
 #endif

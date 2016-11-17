@@ -9,6 +9,7 @@
 #import "CStockLogSenderController.h"
 #include <zlib.h>
 #import "AppDelegate.h"
+#import "NSObject+Json.h"
 
 @protocol CPostFileRequestDelegate <NSObject>
 @optional
