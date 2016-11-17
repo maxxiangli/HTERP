@@ -74,7 +74,7 @@
 - (NSDictionary *)setUpHeader
 {
     CLoginInforModel *loginInfo = [HTLoginManager getInstance].loginInfor;
-    NSString *luin = (loginInfo.uin && [loginInfo.uin length] > 0) ? loginInfo.uin : @"1478513631836076291";
+    NSString *luin = (loginInfo.uin && [loginInfo.uin length] > 0) ? loginInfo.uin : @"1479369785138084301";
     NSString *lskey = (loginInfo.session && [loginInfo.session length] > 0) ? loginInfo.session : @"test";
     
     NSString *cookieStr = [NSString stringWithFormat:@"luin:%@;lskey:%@",luin,lskey];;

@@ -45,7 +45,7 @@
     
     CLoginInforModel *loginInfor = [HTLoginManager getInstance].loginInfor;
     CHGetCompanyParams *postParams = [[CHGetCompanyParams alloc] init];
-    postParams.userId = loginInfor.userId ? loginInfor.userId : @"1478513631836076291";
+    postParams.userId = loginInfor.userId ? loginInfor.userId : @"1479369785138084301";
     
     __weak typeof(self) weakSelf = self;
     self.requestComment = [CHFetchContactRequestCommand postWithParams:postParams
