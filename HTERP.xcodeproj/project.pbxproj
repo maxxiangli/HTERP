@@ -156,6 +156,7 @@
 		FA7031BA1DD6F1EF00E059F0 /* CHNameBrowseView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7031B91DD6F1EF00E059F0 /* CHNameBrowseView.m */; };
 		FA7031BE1DD70F4900E059F0 /* CHUserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7031BD1DD70F4900E059F0 /* CHUserDetail.storyboard */; };
 		FA7031C11DD70FB000E059F0 /* CHUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7031C01DD70FB000E059F0 /* CHUserDetailViewController.m */; };
+		FAA8B2571DDDA890001AD05F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA8B2561DDDA890001AD05F /* libsqlite3.tbd */; };
 		FADA20D01DD2C14600F73DAC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */; };
 		FADA20D31DD2C23900F73DAC /* CHSpashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */; };
 /* End PBXBuildFile section */
@@ -439,6 +440,7 @@
 		FA7031BD1DD70F4900E059F0 /* CHUserDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CHUserDetail.storyboard; sourceTree = "<group>"; };
 		FA7031BF1DD70FB000E059F0 /* CHUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHUserDetailViewController.h; sourceTree = "<group>"; };
 		FA7031C01DD70FB000E059F0 /* CHUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHUserDetailViewController.m; sourceTree = "<group>"; };
+		FAA8B2561DDDA890001AD05F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		FADA20D11DD2C23900F73DAC /* CHSpashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSpashScreenViewController.h; sourceTree = "<group>"; };
 		FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSpashScreenViewController.m; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA8B2571DDDA890001AD05F /* libsqlite3.tbd in Frameworks */,
 				C91ED45A1DCB39BD003688C7 /* libz.tbd in Frameworks */,
 				C91ED4581DCB38FF003688C7 /* WebKit.framework in Frameworks */,
 				C91ED4561DCB38F8003688C7 /* JavaScriptCore.framework in Frameworks */,
@@ -468,6 +471,7 @@
 		34E1822EDCC11A5CB58C7709 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAA8B2561DDDA890001AD05F /* libsqlite3.tbd */,
 				C91ED4591DCB39BD003688C7 /* libz.tbd */,
 				C91ED4571DCB38FF003688C7 /* WebKit.framework */,
 				C91ED4551DCB38F8003688C7 /* JavaScriptCore.framework */,
