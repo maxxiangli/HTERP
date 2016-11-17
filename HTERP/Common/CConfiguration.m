@@ -327,6 +327,11 @@ static CConfiguration* _sharedConfiguration = nil;
     return [[UIScreen mainScreen] applicationFrame];
 }
 
+- (NSString *)getCurrentVersion
+{
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+}
+
 - (NSString *)getReportInfor
 {
 //    NSMutableDictionary *devideDic = [NSMutableDictionary dictionaryWithCapacity:4];
@@ -334,8 +339,7 @@ static CConfiguration* _sharedConfiguration = nil;
     NSString *deviceId = [[UIDevice currentDevice].identifierForVendor UUIDString];
 //    NSString *plt = @"ios";
 //
-    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    NSString *appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    NSString *appVersion = [self getCurrentVersion];
 //
 //    [devideDic setObject:deviceId forKey:@"devId"];
 //    [devideDic setObject:plt forKey:@"plt"];

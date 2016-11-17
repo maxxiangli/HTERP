@@ -10,10 +10,14 @@
 #import "RDVTabBarItem.h"
 #import "CNavigationController.h"
 #import "CHContactsViewController.h"
+#import "CGuideFirstManager.h"
+#import "CGuideFirstView.h"
+
 #import "CBigEventController.h"
 #import "SecondViewController.h"
 #import "ThirdViewController.h"
 #import "FourthViewController.h"
+
 
 @implementation AppDelegate
 
@@ -40,7 +44,13 @@
     // add by wangsn end
     [statusBar setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    
+    //引导页
+    BOOL canShow = [[CGuideFirstManager getInstance] canShowFistView];
+    if ( canShow )
+    {
+        CGuideFirstView *firstView = [[CGuideFirstView alloc] initWithFrame:[CConfiguration deviceScreenBounds]];
+        [self.window addSubview:firstView];
+    }
     //加载一些数据
     [GLOBEL_LOGIN_OBJECT loadLoginData];
     return YES;
@@ -172,5 +182,11 @@
         return (UINavigationController *) self.tabBarController.selectedViewController;
     }
     return nil;
+}
+
+- (UIViewController *)getAppRootController
+{
+    //	return self.window.rootViewController.tabBarController;
+    return self.window.rootViewController;
 }
 @end

@@ -114,6 +114,8 @@
 		C94C82291DD457DA00B1D578 /* HTLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94C82281DD457DA00B1D578 /* HTLogin.storyboard */; };
 		C94C822C1DD4594A00B1D578 /* HTLoginLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C822B1DD4594A00B1D578 /* HTLoginLoginViewController.m */; };
 		C961AC7E1DDD85430001E0B2 /* IDCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C961AC7D1DDD85430001E0B2 /* IDCountDownButton.m */; };
+		C961AC811DDD8BF60001E0B2 /* CGuideFirstView.m in Sources */ = {isa = PBXBuildFile; fileRef = C961AC801DDD8BF60001E0B2 /* CGuideFirstView.m */; };
+		C961AC841DDD8DF50001E0B2 /* CGuideFirstManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C961AC831DDD8DF50001E0B2 /* CGuideFirstManager.m */; };
 		C9AEBE0C1DDC597D00A94F29 /* CLoginRegisterParam.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AEBE0B1DDC597D00A94F29 /* CLoginRegisterParam.m */; };
 		C9AEBE0F1DDC5A3000A94F29 /* CLoginSmsCodeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AEBE0E1DDC5A3000A94F29 /* CLoginSmsCodeParam.m */; };
 		C9BB4BD11DDC8CA5007D8718 /* CLoginVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BB4BD01DDC8CA5007D8718 /* CLoginVerifyViewController.m */; };
@@ -649,6 +651,10 @@
 		C94C822B1DD4594A00B1D578 /* HTLoginLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLoginLoginViewController.m; sourceTree = "<group>"; };
 		C961AC7C1DDD85430001E0B2 /* IDCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDCountDownButton.h; path = HTERP/Code/Modules/Login/IDCountDownButton.h; sourceTree = SOURCE_ROOT; };
 		C961AC7D1DDD85430001E0B2 /* IDCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDCountDownButton.m; path = HTERP/Code/Modules/Login/IDCountDownButton.m; sourceTree = SOURCE_ROOT; };
+		C961AC7F1DDD8BF60001E0B2 /* CGuideFirstView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CGuideFirstView.h; path = HTERP/Code/Modules/Login/CGuideFirstView.h; sourceTree = SOURCE_ROOT; };
+		C961AC801DDD8BF60001E0B2 /* CGuideFirstView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CGuideFirstView.m; path = HTERP/Code/Modules/Login/CGuideFirstView.m; sourceTree = SOURCE_ROOT; };
+		C961AC821DDD8DF50001E0B2 /* CGuideFirstManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CGuideFirstManager.h; path = HTERP/Code/Modules/Login/CGuideFirstManager.h; sourceTree = SOURCE_ROOT; };
+		C961AC831DDD8DF50001E0B2 /* CGuideFirstManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CGuideFirstManager.m; path = HTERP/Code/Modules/Login/CGuideFirstManager.m; sourceTree = SOURCE_ROOT; };
 		C9AEBE0A1DDC597D00A94F29 /* CLoginRegisterParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLoginRegisterParam.h; sourceTree = "<group>"; };
 		C9AEBE0B1DDC597D00A94F29 /* CLoginRegisterParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLoginRegisterParam.m; sourceTree = "<group>"; };
 		C9AEBE0D1DDC5A3000A94F29 /* CLoginSmsCodeParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLoginSmsCodeParam.h; sourceTree = "<group>"; };
@@ -1658,6 +1664,10 @@
 		C94C82271DD4560100B1D578 /* GuidePage */ = {
 			isa = PBXGroup;
 			children = (
+				C961AC7F1DDD8BF60001E0B2 /* CGuideFirstView.h */,
+				C961AC801DDD8BF60001E0B2 /* CGuideFirstView.m */,
+				C961AC821DDD8DF50001E0B2 /* CGuideFirstManager.h */,
+				C961AC831DDD8DF50001E0B2 /* CGuideFirstManager.m */,
 			);
 			path = GuidePage;
 			sourceTree = "<group>";
@@ -3063,6 +3073,7 @@
 				C9BB4BD11DDC8CA5007D8718 /* CLoginVerifyViewController.m in Sources */,
 				FA7019C51DDC44C000344D87 /* GJGCMessageExtendModel.m in Sources */,
 				C91ED4451DCB3693003688C7 /* UIViewController+ext.m in Sources */,
+				C961AC811DDD8BF60001E0B2 /* CGuideFirstView.m in Sources */,
 				FA4A63A71DDC802900487D65 /* GJGCChatInputExpandMenuPanelConfigModel.m in Sources */,
 				FA4A64DE1DDC8BE000487D65 /* GJCFAsset.m in Sources */,
 				FA4A64961DDC835800487D65 /* GJCFAudioRecord.m in Sources */,
@@ -3153,6 +3164,7 @@
 				FA7019DD1DDC480500344D87 /* GJGCMessageExtendMiniMessageModel.m in Sources */,
 				FA4A64651DDC80FC00487D65 /* GJGCChatFriendTalkModel.m in Sources */,
 				FA4A639E1DDC802900487D65 /* GJGCChatInputConst.m in Sources */,
+				C961AC841DDD8DF50001E0B2 /* CGuideFirstManager.m in Sources */,
 				FA7019D41DDC468500344D87 /* GJGCGIFLoadManager.m in Sources */,
 				FA6BE4F71DD9629F00878C03 /* ChineseInclude.m in Sources */,
 				FA7019871DDC307200344D87 /* GJGCLoadingStatusHUD.m in Sources */,

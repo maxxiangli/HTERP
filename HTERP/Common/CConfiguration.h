@@ -66,6 +66,7 @@ typedef enum
 + (CGRect)deviceScreenBounds;
 + (CGRect)applicationFrame;
 
+- (NSString *)getCurrentVersion;
 - (NSString *)getReportInfor;
 
 @end

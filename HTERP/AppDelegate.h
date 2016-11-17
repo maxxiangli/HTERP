@@ -16,5 +16,6 @@
 @property (strong, nonatomic) RDVTabBarController *tabBarController;
 
 -(UINavigationController*) currentController;
+- (UIViewController *)getAppRootController;
 @end
 

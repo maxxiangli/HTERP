@@ -14,6 +14,7 @@
 	//自定义类
     #import "CCustomButton.h"
     #import "NSObject+Json.h"
+    #import "AppDelegate.h"
     #import "HTGlobal.h"
     #import "CCommon.h"
 	#import "CConfiguration.h"
