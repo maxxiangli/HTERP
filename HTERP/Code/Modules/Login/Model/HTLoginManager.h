@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "CLoginInforModel.h"
 
+extern NSString *const kHTLoginSession;
+extern NSString *const kHTLoginUserId;
+extern NSString *const kHTIMToken;
+
 @interface HTLoginManager : NSObject
 @property(nonatomic, strong) CLoginInforModel *loginInfor;
 

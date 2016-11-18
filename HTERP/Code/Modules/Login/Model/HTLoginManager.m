@@ -6,6 +6,11 @@
 //  Copyright © 2016年 Max. All rights reserved.
 //
 
+
+NSString *const kHTLoginSession = @"HTLoginSession";
+NSString *const kHTLoginUserId = @"HTLoginUserId";
+NSString *const kHTIMToken = @"HTIMToken";
+
 #import "HTLoginManager.h"
 
 @implementation HTLoginManager
@@ -28,8 +33,25 @@
 - (void)saveLoginData:(CLoginInforModel *)loginInfor
 {
     self.loginInfor = loginInfor;
-    //自动归档
     
+    //自动归档(暂且使用NSUserDefault)
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (self.loginInfor.userId && [self.loginInfor.userId length] > 0)
+    {
+        [userDefaults setObject:self.loginInfor.userId forKey:kHTLoginUserId];
+    }
+    
+    if (self.loginInfor.session && [self.loginInfor.session length])
+    {
+        [userDefaults setObject:self.loginInfor.session forKey:kHTLoginSession];
+    }
+    
+    if (self.loginInfor.token && [self.loginInfor.token length] > 0)
+    {
+        [userDefaults setObject:self.loginInfor.token forKey:kHTIMToken];
+    }
+    
+    [userDefaults synchronize];
 }
 
 

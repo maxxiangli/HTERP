@@ -13,4 +13,5 @@
 @property(nonatomic, copy) NSString *passwd;
 @property(nonatomic, assign) NSInteger checktype;
 @property(nonatomic, copy) NSString *smscode;
+@property(nonatomic, assign) NSInteger needtoken;
 @end

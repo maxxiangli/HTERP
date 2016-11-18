@@ -141,6 +141,7 @@
 		FA11BB311DDE9FB900CCAF8E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA11BB301DDE9FB900CCAF8E /* OpenGLES.framework */; };
 		FA11BB331DDE9FC200CCAF8E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA11BB321DDE9FC200CCAF8E /* QuartzCore.framework */; };
 		FA11BB351DDE9FF900CCAF8E /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA11BB341DDE9FF900CCAF8E /* CoreMotion.framework */; };
+		FA11BB381DDEB1DE00CCAF8E /* CLoginUserInforMode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA11BB371DDEB1DE00CCAF8E /* CLoginUserInforMode.m */; };
 		FA2200BF1DDA9C4300006236 /* CHFetchContactRequestCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2200BE1DDA9C4300006236 /* CHFetchContactRequestCommand.m */; };
 		FA3E97261DD89A51005FAF9D /* CHSearchContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3E97251DD89A51005FAF9D /* CHSearchContact.storyboard */; };
 		FA3E97291DD89ABF005FAF9D /* CHSearchContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3E97281DD89ABF005FAF9D /* CHSearchContactViewController.m */; };
@@ -1022,6 +1023,8 @@
 		FA11BB301DDE9FB900CCAF8E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		FA11BB321DDE9FC200CCAF8E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FA11BB341DDE9FF900CCAF8E /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		FA11BB361DDEB1DE00CCAF8E /* CLoginUserInforMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLoginUserInforMode.h; sourceTree = "<group>"; };
+		FA11BB371DDEB1DE00CCAF8E /* CLoginUserInforMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLoginUserInforMode.m; sourceTree = "<group>"; };
 		FA2200BD1DDA9C4300006236 /* CHFetchContactRequestCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHFetchContactRequestCommand.h; sourceTree = "<group>"; };
 		FA2200BE1DDA9C4300006236 /* CHFetchContactRequestCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHFetchContactRequestCommand.m; sourceTree = "<group>"; };
 		FA3E97251DD89A51005FAF9D /* CHSearchContact.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CHSearchContact.storyboard; sourceTree = "<group>"; };
@@ -2595,6 +2598,8 @@
 				C9AEBE0B1DDC597D00A94F29 /* CLoginRegisterParam.m */,
 				C9AEBE0D1DDC5A3000A94F29 /* CLoginSmsCodeParam.h */,
 				C9AEBE0E1DDC5A3000A94F29 /* CLoginSmsCodeParam.m */,
+				FA11BB361DDEB1DE00CCAF8E /* CLoginUserInforMode.h */,
+				FA11BB371DDEB1DE00CCAF8E /* CLoginUserInforMode.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -5594,6 +5599,7 @@
 				FAA8BDFA1DDDB2A2001AD05F /* GJGCProgressView.m in Sources */,
 				FAA8BFC81DDDB2A3001AD05F /* GJGCCreateGroupInputTextCell.m in Sources */,
 				FAA8BDF21DDDB2A1001AD05F /* GJGCBaseViewController.m in Sources */,
+				FA11BB381DDEB1DE00CCAF8E /* CLoginUserInforMode.m in Sources */,
 				C94890261DCC2CB3002C862F /* UIViewController_TABLEVIEW_LoadMore.m in Sources */,
 				FAA8BE601DDDB2A2001AD05F /* GJCFSystemUitil.m in Sources */,
 				FAA8BDE21DDDB2A1001AD05F /* GJGCChatSystemNotiModel.m in Sources */,

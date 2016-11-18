@@ -12,7 +12,8 @@
 + (JSONKeyMapper *)keyMapper
 {
     return  [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{@"userId":@"data.userId",
-                                        @"session":@"data.session"}];
+                                        @"session":@"data.session",
+                                        @"token":@"data.token", @"userInfo":@"data.userInfo"}];
 }
 
 //数据有效性（例如：缺少session）

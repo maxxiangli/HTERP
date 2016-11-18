@@ -24,5 +24,6 @@
 @property(nonatomic, copy)NSString<Optional> *status;
 @property(nonatomic, copy)NSString<Optional> *nickname;
 @property(nonatomic, copy)NSString<Optional> *imgurl;
+@property(nonatomic, copy)NSString<Optional> *sex;
 
 @end

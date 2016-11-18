@@ -31,7 +31,8 @@
                            @"phone":@"phone",
                            @"status":@"status",
                            @"nickname":@"nickname",
-                           @"imgurl":@"imgurl"};
+                           @"imgurl":@"imgurl",
+                           @"sex":@"sex"};
     
     JSONKeyMapper *mapper = [[JSONKeyMapper alloc] initWithModelToJSONDictionary:info];
     return mapper;

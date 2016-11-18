@@ -115,6 +115,7 @@
     param.mobile = self.phoneNumTextField.text;
     param.passwd = self.pswTextField.text;
     param.checktype = 2;
+    param.needtoken = 1;
     
     [CATradeLoadingView showLoadingViewAddedTo:self.view];
     __weak typeof(self) weakSelf = self;
