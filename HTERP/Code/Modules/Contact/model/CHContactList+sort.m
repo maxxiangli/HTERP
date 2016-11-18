@@ -28,7 +28,7 @@
                 mode.userName = user.itemName;
                 mode.user = user;
                 
-                NSLog(@"cid = %@ - uid = %@ name = %@", companyId, companyName, user.itemId);
+//                NSLog(@"cid = %@ - uid = %@ name = %@", companyId, companyName, user.itemId);
                 
                 [self.originalDataSource addObject:mode];
             }
@@ -66,7 +66,7 @@
                 mode.userName = user.itemName;
                 mode.user = user;
                 
-                NSLog(@"uid = %@ id = %@ name = %@",companyName, user.itemId, user.itemName);
+//                NSLog(@"uid = %@ id = %@ name = %@",companyName, user.itemId, user.itemName);
                 
                 [self.originalDataSource addObject:mode];
             }

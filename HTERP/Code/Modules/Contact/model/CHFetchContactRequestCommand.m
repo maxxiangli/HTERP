@@ -22,11 +22,11 @@
 -(void)parserDataInThread:(NSData *)recvData
 {
     
-#ifdef DEBUG_PROFILE
-    
-    NSString *string = [[NSString alloc] initWithData:recvData encoding:NSUTF8StringEncoding];
-    NSLog(@"=%@=", string);
-#endif
+//#ifdef DEBUG_PROFILE
+//    
+//    NSString *string = [[NSString alloc] initWithData:recvData encoding:NSUTF8StringEncoding];
+//    NSLog(@"=%@=", string);
+//#endif
     
     NSError *error = nil;
     self.responseModel = [[self.modelClass alloc] initWithData:recvData
