@@ -15,7 +15,7 @@
 #import "GJGCChatSystemNotiReciever.h"
 #import "GJGCChatSystemNotiViewController.h"
 
-//#import "EMClient.h"
+#import <RongIMLib/RongIMLib.h>
 
 @interface GJGCRecentChatViewController ()<UITableViewDelegate,UITableViewDataSource,GJGCRecentChatDataManagerDelegate>
 
@@ -24,7 +24,6 @@
 @property (nonatomic,strong)UITableView *listTable;
 
 @property (nonatomic,strong)GJGCRecentChatTitleView *titleView;
-
 
 @end
 
@@ -39,9 +38,9 @@
     self.titleView = [[GJGCRecentChatTitleView alloc]init];
     self.navigationItem.titleView = self.titleView;
     
-    //TODO:WXT
-//    GJGCRecentChatConnectState result = [[EMClient sharedClient] isConnected]? GJGCRecentChatConnectStateSuccess:GJGCRecentChatConnectStateFaild;
-//    self.titleView.connectState = result;
+    RCConnectionStatus states = [[RCIMClient sharedRCIMClient] getConnectionStatus];
+    GJGCRecentChatConnectState result = [self chatConnectStateFromRCStatus:states];
+    self.titleView.connectState = result;
     
     self.listTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, GJCFSystemScreenWidth, GJCFSystemScreenHeight - self.tabBarController.tabBar.gjcf_height - self.contentOriginY) style:UITableViewStylePlain];
     self.listTable.delegate = self;
@@ -49,7 +48,9 @@
     self.listTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.listTable];
     
-    [self.dataManager performSelector:@selector(loadRecentConversations) withObject:nil afterDelay:2.0];
+    [self.dataManager performSelector:@selector(loadRecentConversations)
+                           withObject:nil
+                           afterDelay:2.0];
 }
 
 - (NSArray *)allConversationModels
@@ -193,5 +194,32 @@
     self.titleView.connectState = connectState;
 }
 
+#pragma mark - Private function
+
+- (GJGCRecentChatConnectState)chatConnectStateFromRCStatus:(RCConnectionStatus)status
+{
+    GJGCRecentChatConnectState result = GJGCRecentChatConnectStateFaild;
+    
+    if (status == ConnectionStatus_Connected)
+    {
+        result = GJGCRecentChatConnectStateSuccess;
+    }
+    else if (status == ConnectionStatus_Connecting)
+    {
+        result = GJGCRecentChatConnectStateConnecting;
+    }
+    else if (status == ConnectionStatus_SignUp ||
+             status == ConnectionStatus_KICKED_OFFLINE_BY_OTHER_CLIENT ||
+             status == ConnectionStatus_TOKEN_INCORRECT)
+    {
+        result = GJGCRecentChatConnectStateFaild;
+    }
+    else
+    {
+        result = GJGCRecentChatConnectStateConnecting;
+    }
+    
+    return result;
+}
 
 @end

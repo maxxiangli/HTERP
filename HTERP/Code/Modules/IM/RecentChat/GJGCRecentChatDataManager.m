@@ -12,18 +12,17 @@
 #import "GJGCMessageExtendModel.h"
 #import "ZYUserCenter.h"
 
-//#import "EMClientDelegate.h"
-//#import "EMChatManagerDelegate.h"
-//#import "EMClient.h"
+#import "HTLoginManager.h"
 
+#import <RongIMLib/RongIMLib.h>
 
 #define GJGCRecentConversationNicknameListUDF @"GJGCRecentConversationNicknameListUDF"
 
 #define GJGCRecentConversationHeadListUDF @"GJGCRecentConversationHeadListUDF"
 
 //@interface GJGCRecentChatDataManager ()<EMChatManagerDelegate,EMClientDelegate>
-@interface GJGCRecentChatDataManager ()
 
+@interface GJGCRecentChatDataManager ()<RCConnectionStatusChangeDelegate>
 
 @property (nonatomic,strong)NSMutableArray *sourceArray;
 
@@ -52,7 +51,12 @@
 //        [[EMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
 //        [[EMClient sharedClient] addDelegate:self delegateQueue:nil];
         
-        [GJCFNotificationCenter addObserver:self selector:@selector(observeLoginSuccess:) name:ZYUserCenterLoginEaseMobSuccessNoti object:nil];
+        [[RCIMClient sharedRCIMClient] setRCConnectionStatusChangeDelegate:self];
+        
+        [GJCFNotificationCenter addObserver:self
+                                   selector:@selector(observeLoginSuccess:)
+                                       name:ZYUserCenterLoginEaseMobSuccessNoti
+                                     object:nil];
 
     }
     return self;
@@ -62,6 +66,7 @@
 {
 //    [[EMClient sharedClient].chatManager removeDelegate:self];
     
+    [[RCIMClient sharedRCIMClient] setRCConnectionStatusChangeDelegate:nil];
     [GJCFNotificationCenter removeObserver:self];
 }
 
@@ -102,14 +107,33 @@
 
 - (void)loadRecentConversations
 {
-    if ([[ZYUserCenter shareCenter] isLogin]) {
+    RCConnectionStatus state = [[RCIMClient sharedRCIMClient] getConnectionStatus];
+    NSLog(@"state = %@", @(state));
+    
+    BOOL isLogin = [[HTLoginManager getInstance] isLogin];
+    if (YES)
+    {
+        NSArray *types = @[@(ConversationType_PRIVATE),
+                           @(ConversationType_DISCUSSION),
+                           @(ConversationType_APPSERVICE),
+                           @(ConversationType_PUBLICSERVICE),
+                           @(ConversationType_GROUP)];
         
-        //TODO:WXT
-//       NSArray *allConversation = [[EMClient sharedClient].chatManager loadAllConversationsFromDB];
-//       [self didUpdateConversationList:allConversation];
-        
+        NSArray *allConversation = [[RCIMClient sharedRCIMClient] getConversationList:types];
+        [self didUpdateConversationList:allConversation];
     }
 }
+
+//- (void)loadRecentConversations
+//{
+//    if ([[ZYUserCenter shareCenter] isLogin]) {
+//        
+//        //TODO:WXT
+////       NSArray *allConversation = [[EMClient sharedClient].chatManager loadAllConversationsFromDB];
+////       [self didUpdateConversationList:allConversation];
+//        
+//    }
+//}
 
 - (GJGCMessageExtendUserModel *)userInfoFromMessage:(EMMessage *)theMessage
 {
@@ -338,6 +362,32 @@
 
 
 #pragma mark - 监听网络变化，尝试重新登录
+- (void)onConnectionStatusChanged:(RCConnectionStatus)status
+{
+    if (status == ConnectionStatus_Connected)
+    {
+        //DO something
+        //如果未连接成功连接
+    }
+    
+    switch (status)
+    {
+        case ConnectionStatus_Connected:
+            [self.delegate dataManager:self requireUpdateTitleViewState:GJGCRecentChatConnectStateSuccess];
+            break;
+        case ConnectionStatus_Connecting:
+            [self.delegate dataManager:self requireUpdateTitleViewState:GJGCRecentChatConnectStateConnecting];
+            break;
+        case ConnectionStatus_Unconnected:
+        case ConnectionStatus_SignUp: //已注销
+        case ConnectionStatus_KICKED_OFFLINE_BY_OTHER_CLIENT: //Token错误
+            [self.delegate dataManager:self requireUpdateTitleViewState:GJGCRecentChatConnectStateFaild];
+            break;
+        default:
+            [self.delegate dataManager:self requireUpdateTitleViewState:GJGCRecentChatConnectStateConnecting];
+            break;
+    }
+}
 
 - (void)didConnectionStateChanged:(EMConnectionState)connectionState
 {
