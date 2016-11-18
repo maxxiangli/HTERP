@@ -50,19 +50,6 @@
     [self.view addSubview:self.listTable];
     
     [self.dataManager performSelector:@selector(loadRecentConversations) withObject:nil afterDelay:2.0];
-    
-    {
-        UITapGestureRecognizer *reg = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-        [self.listTable addGestureRecognizer:reg];
-    }
-}
-
-- (void)handleTap:(UITapGestureRecognizer *)sender
-{
-    if (sender.state == UIGestureRecognizerStateEnded) {
-        GJGCChatFriendViewController *privateChat = [[GJGCChatFriendViewController alloc]initWithTalkInfo:nil];
-        [self.navigationController pushViewController:privateChat animated:YES];
-    }
 }
 
 - (NSArray *)allConversationModels

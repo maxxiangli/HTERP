@@ -164,9 +164,6 @@
     // Add as the nav bar's titleview
     [titleView addSubview:titleLabel];
     self.navigationItem.titleView = titleView;
-    
-    
-    
 }
 
 //自定义的titleview

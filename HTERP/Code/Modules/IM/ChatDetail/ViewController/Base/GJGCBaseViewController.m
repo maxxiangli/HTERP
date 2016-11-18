@@ -40,6 +40,7 @@
     self.tipLabel.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.65];
     self.tipLabel.font = [GJGCCommonFontColorStyle detailBigTitleFont];
     self.tipLabel.textColor = [UIColor whiteColor];
+    self.tipLabel.backgroundColor = [UIColor redColor];
     self.tipLabel.textAlignment = NSTextAlignmentCenter;
     self.tipLabel.layer.cornerRadius = 3.f;
     [self.view addSubview:self.tipLabel];

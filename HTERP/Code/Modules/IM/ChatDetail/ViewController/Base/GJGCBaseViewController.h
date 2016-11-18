@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "GJGCLoadingStatusHUD.h"
+#import "CCustomViewController.h"
 
-@interface GJGCBaseViewController : UIViewController
+@interface GJGCBaseViewController : UIViewController//CCustomViewController
 
 @property (nonatomic,readonly)CGFloat contentOriginY;
 

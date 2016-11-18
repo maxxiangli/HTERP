@@ -18,6 +18,9 @@
 #import "ThirdViewController.h"
 #import "FourthViewController.h"
 
+#import "CHContactListManager.h"
+#import "GJGCRecentChatViewController.h"
+
 #import <RongIMLib/RongIMLib.h>
 
 static NSString *const kCHIMAppKey = @"82hegw5uhgzrx";
@@ -60,6 +63,9 @@ static NSString *const kCHIMAppKey = @"82hegw5uhgzrx";
     //配置融云
     [self configRCIM];
     
+    //获取联系人
+    [[CHContactListManager defaultManager] startFetchingContactList];
+    
     return YES;
 }
 
@@ -92,16 +98,22 @@ static NSString *const kCHIMAppKey = @"82hegw5uhgzrx";
 
 #pragma mark - Methods
 
-- (void)setupViewControllers {
-    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"StockDetail" bundle:nil];
-    CBigEventController *bigEventController = [storyBoard instantiateViewControllerWithIdentifier:@"CBigEventController"];
-    bigEventController.stockCode = @"sz002816";
-    bigEventController.stockName = @"海汽集团";
-
+- (void)setupViewControllers
+{
+    
+    
+//    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"StockDetail" bundle:nil];
+//    CBigEventController *bigEventController = [storyBoard instantiateViewControllerWithIdentifier:@"CBigEventController"];
+//    bigEventController.stockCode = @"sz002816";
+//    bigEventController.stockName = @"海汽集团";
+//
+//    UIViewController *firstNavigationController = [[CNavigationController alloc]
+//                                                   initWithRootViewController:bigEventController];
+    
+    //会话列表
+    GJGCRecentChatViewController *chatController = [[GJGCRecentChatViewController alloc] init];
     UIViewController *firstNavigationController = [[CNavigationController alloc]
-                                                   initWithRootViewController:bigEventController];
-    
-    
+                                                   initWithRootViewController:chatController];
     
     //联系人
     UIStoryboard *contactStoryboard = [UIStoryboard storyboardWithName:@"CHContacts" bundle:nil];

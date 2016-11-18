@@ -108,7 +108,7 @@
 - (void)requestData
 {
     
-    [[CHContactListManager defaultManager] startFetchingContactList];
+//    [[CHContactListManager defaultManager] startFetchingContactList];
     
 //    CBigEventReminderParam *params = [[CBigEventReminderParam alloc] init];
 //    params.symbol = self.stockCode;
