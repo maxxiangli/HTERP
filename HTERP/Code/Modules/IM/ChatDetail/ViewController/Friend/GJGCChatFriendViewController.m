@@ -77,6 +77,11 @@ static NSString * const GJGCActionSheetAssociateKey = @"GJIMSimpleCellActionShee
 
 @implementation GJGCChatFriendViewController
 
+- (void)dealloc
+{
+    //Do nothing
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -105,6 +110,9 @@ static NSString * const GJGCActionSheetAssociateKey = @"GJIMSimpleCellActionShee
     NSString *formateNoti = [GJGCChatInputConst panelNoti:GJGCChatInputPanelBeginRecordNoti formateWithIdentifier:self.inputPanel.panelIndentifier];
     [GJCFNotificationCenter addObserver:self selector:@selector(observeChatInputPanelBeginRecord:) name:formateNoti object:nil];
     [GJCFNotificationCenter addObserver:self selector:@selector(observeApplicationResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
+    
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    delegate.tabBarController.tabBarHidden = YES;
 }
 
 #pragma mark - 应用程序事件
@@ -141,6 +149,14 @@ static NSString * const GJGCActionSheetAssociateKey = @"GJIMSimpleCellActionShee
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.26 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self reserveChatInputPanelState];
     });
+}
+
+- (void)leftButtonPressed:(UIButton *)sender
+{
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    delegate.tabBarController.tabBarHidden = NO;
+    
+    [super leftButtonPressed:sender];
 }
 
 #pragma mark - 观察输入工具开始录音的通知

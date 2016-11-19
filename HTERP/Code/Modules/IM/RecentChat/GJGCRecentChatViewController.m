@@ -136,9 +136,6 @@
     talk.toId = contenModel.toId;
     talk.toUserName = contenModel.name.string;
     talk.converstation = contenModel.conversation;
-
-    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    delegate.tabBarController.tabBarHidden = YES;
     
     GJGCChatFriendViewController *privateChat = [[GJGCChatFriendViewController alloc]initWithTalkInfo:talk];
     [self.navigationController pushViewController:privateChat animated:YES];
