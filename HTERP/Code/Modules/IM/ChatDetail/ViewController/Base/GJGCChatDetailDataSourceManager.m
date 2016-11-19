@@ -1528,11 +1528,27 @@ typedef int EMConnectionState;
 #pragma mark - RCIMClientReceiveMessageDelegate
 - (void)onReceived:(RCMessage *)message left:(int)nLeft object:(id)object
 {
-    if ([message.targetId isEqualToString:self.taklInfo.converstation.targetId])
-    {
-         GJGCChatContentBaseModel *contenModel = [self addEaseMessage:message];
-    }
+//    if ([message.targetId isEqualToString:self.taklInfo.converstation.targetId])
+//    {
+//         GJGCChatContentBaseModel *contenModel = [self addEaseMessage:message];
+//    }
 }
+
+- (void)onMessageRecalled:(long)messageId
+{
+    int i = 0;
+}
+
+- (void)onMessageReceiptRequest:(RCConversationType)conversationType targetId:(NSString *)targetId messageUId:(NSString *)messageUId
+{
+    int m = 0;
+}
+
+- (void)onMessageReceiptResponse:(RCConversationType)conversationType targetId:(NSString *)targetId messageUId:(NSString *)messageUId readerList:(NSMutableDictionary *)userIdList
+{
+    int k = 0;
+}
+
 
 //    for (EMMessage *message in aMessages) {
 //

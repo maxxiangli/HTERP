@@ -334,18 +334,8 @@ static CConfiguration* _sharedConfiguration = nil;
 
 - (NSString *)getReportInfor
 {
-//    NSMutableDictionary *devideDic = [NSMutableDictionary dictionaryWithCapacity:4];
-//    
     NSString *deviceId = [[UIDevice currentDevice].identifierForVendor UUIDString];
-//    NSString *plt = @"ios";
-//
     NSString *appVersion = [self getCurrentVersion];
-//
-//    [devideDic setObject:deviceId forKey:@"devId"];
-//    [devideDic setObject:plt forKey:@"plt"];
-//    [devideDic setObject:appVersion forKey:@"appver"];
-//    
-//    ;
-    return [NSString stringWithFormat:@"_plt=ios&_appver=%@&_devId=%@",appVersion, deviceId];
+    return [NSString stringWithFormat:@"_plt=app&_appver=%@&_devId=%@&_app=ios",appVersion, deviceId];
 }
 @end
