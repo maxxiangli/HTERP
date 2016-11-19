@@ -14,6 +14,7 @@
 #import "GJGCRecentChatTitleView.h"
 #import "GJGCChatSystemNotiReciever.h"
 #import "GJGCChatSystemNotiViewController.h"
+#import "AppDelegate.h"
 
 #import <RongIMLib/RongIMLib.h>
 
@@ -106,7 +107,7 @@
         talk.talkType = GJGCChatFriendTalkTypeGroup;
         talk.toId = contenModel.toId;
         talk.toUserName = contenModel.name.string;
-        talk.conversation = contenModel.conversation;
+        talk.converstation = contenModel.conversation;
         talk.groupInfo = contenModel.groupInfo;
         
         GJGCChatGroupViewController *groupChat = [[GJGCChatGroupViewController alloc]initWithTalkInfo:talk];
@@ -123,7 +124,7 @@
         talk.talkType = GJGCChatFriendTalkSystemAssist;
         talk.toId = contenModel.toId;
         talk.toUserName = contenModel.name.string;
-        talk.conversation = contenModel.conversation;
+        talk.converstation = contenModel.conversation;
         
         GJGCChatSystemNotiViewController *systemVC = [[GJGCChatSystemNotiViewController alloc]initWithTalkInfo:talk];
         [self.navigationController pushViewController:systemVC animated:YES];
@@ -134,8 +135,11 @@
     talk.talkType = GJGCChatFriendTalkTypePrivate;
     talk.toId = contenModel.toId;
     talk.toUserName = contenModel.name.string;
-    talk.conversation = contenModel.conversation;
+    talk.converstation = contenModel.conversation;
 
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    delegate.tabBarController.tabBarHidden = YES;
+    
     GJGCChatFriendViewController *privateChat = [[GJGCChatFriendViewController alloc]initWithTalkInfo:talk];
     [self.navigationController pushViewController:privateChat animated:YES];
     

@@ -67,19 +67,6 @@
         [self setLeftButtonWithImageName:@"title-icon-向左返回" bgImageName:nil];
     }
     
-    BTTabBarRootController *tabBarController = (BTTabBarRootController *)self.tabBarController;
-    if ([tabBarController.class isSubclassOfClass:[BTTabBarRootController class]]) {
-        
-        if (self.isMainMoudle) {
-            
-            [tabBarController showTabBar];
-            
-        }else{
-            
-            [tabBarController hiddenTabBar];
-        }
-    }
-    
     [super viewWillAppear:animated];
 }
 

@@ -204,14 +204,12 @@ extern NSString * GJGCChatForwardMessageDidSendNoti;
 /**
  *  重新尝试取历史消息，当历史消息和本地区间消息有交集了
  *
- *  @return
  */
 - (NSArray *)reTryGetLocalMessageWhileHistoryMessageIsSubMessagesOfLocalMessages;
 
 /**
  *  收到消息加入到数据源
  *
- *  @param aMessage
  */
 - (GJGCChatFriendContentModel *)addEaseMessage:(EMMessage *)aMessage;
 

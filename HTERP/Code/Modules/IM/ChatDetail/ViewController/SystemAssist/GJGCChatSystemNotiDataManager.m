@@ -52,7 +52,7 @@
     EMConversation *systemConversation = [[GJGCChatSystemNotiReciever shareReciever] systemAssistConversation];
     
     //如果会话不存在
-    if (!self.taklInfo.conversation) {
+    if (!self.taklInfo.converstation) {
         self.isFinishFirstHistoryLoad = YES;
         self.isFinishLoadAllHistoryMsg = YES;
         return;

@@ -36,10 +36,31 @@
 }
 
 #pragma mark - 观察本地发送消息创建成功和消息状态更新通知
-
-- (GJGCChatFriendContentModel *)addEaseMessage:(EMMessage *)aMessage
+- (GJGCChatFriendContentModel *)addEaseMessage:(RCMessage *)aMessage
 {
-    return nil;
+    GJGCChatFriendContentModel *chatContentModel = [[GJGCChatFriendContentModel alloc] init];
+    
+    chatContentModel.baseMessageType = GJGCChatBaseMessageTypeChatMessage;
+    chatContentModel.toId = self.taklInfo.toId;
+    chatContentModel.toUserName = self.taklInfo.toUserName;
+    chatContentModel.sendStatus = GJGCChatFriendSendMessageStatusSuccess;
+    chatContentModel.sendTime = (NSInteger)(aMessage.sentTime/1000);
+    chatContentModel.senderId = aMessage.content.senderUserInfo.userId;
+    chatContentModel.senderName = [[NSAttributedString alloc] initWithString:aMessage.content.senderUserInfo.name];
+    chatContentModel.localMsgId =  [NSString stringWithFormat:@"%ld",aMessage.messageId];
+    chatContentModel.faildReason = @"";
+    chatContentModel.faildType = 0;
+    chatContentModel.talkType = self.taklInfo.talkType;
+    chatContentModel.contentHeight = 0.f;
+    chatContentModel.contentSize = CGSizeZero;
+    
+    return chatContentModel;
+}
+
+
+//- (GJGCChatFriendContentModel *)addEaseMessage:(EMMessage *)aMessage
+//{
+//    return nil;
     /* 格式化消息 */
     //TODO:WXT
 //    GJGCChatFriendContentModel *chatContentModel = [[GJGCChatFriendContentModel alloc]init];
@@ -68,14 +89,15 @@
 //    }
 //    
 //    return chatContentModel;
-}
+//}
 
 #pragma mark - 数据库读取最后二十条信息
 
 - (void)readLastMessagesFromDB
 {
     //如果会话不存在
-    if (!self.taklInfo.conversation) {
+    if (!self.taklInfo.converstation)
+    {
         self.isFinishFirstHistoryLoad = YES;
         self.isFinishLoadAllHistoryMsg = YES;
         return;

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "GJGCInfoBaseListConst.h"
 
+#import <RongIMLib/RongIMLib.h>
+
 @class EMConversation;
 
 @interface GJGCInfoBaseListContentModel : NSObject
@@ -43,7 +45,8 @@
 
 @property (nonatomic,strong)NSString *chatter;
 
-@property (nonatomic,assign)EMConversation *conversation;
+//@property (nonatomic,assign)EMConversation *conversation;
+@property (nonatomic, strong)RCConversation *conversation;
 
 #pragma mark - App Store信息
 

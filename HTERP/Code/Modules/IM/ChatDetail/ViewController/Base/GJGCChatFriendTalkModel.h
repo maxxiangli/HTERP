@@ -10,9 +10,9 @@
 #import "GJGCChatFriendContentModel.h"
 #import "GJGCGroupInfoExtendModel.h"
 
-#define GJGCTalkTypeString(talkType) [GJGCChatFriendTalkModel talkTypeString:talkType]
+#import <RongIMLib/RongIMLib.h>
 
-@class EMConversation;
+#define GJGCTalkTypeString(talkType) [GJGCChatFriendTalkModel talkTypeString:talkType]
 
 @interface GJGCChatFriendTalkModel : NSObject
 
@@ -26,7 +26,7 @@
 
 @property (nonatomic,assign)NSInteger msgCount;
 
-@property (nonatomic,strong)EMConversation *conversation;
+@property (nonatomic, strong)RCConversation *converstation;
 
 @property (nonatomic,strong)GJGCMessageExtendGroupModel *groupInfo;
 

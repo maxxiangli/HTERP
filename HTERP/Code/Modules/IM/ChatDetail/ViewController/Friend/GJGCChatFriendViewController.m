@@ -58,7 +58,7 @@ static NSString * const GJGCActionSheetAssociateKey = @"GJIMSimpleCellActionShee
                                             WechatShortVideoDelegate
                                           >
 
-@property (nonatomic,strong)GJCFAudioPlayer *audioPlayer;
+//@property (nonatomic,strong)GJCFAudioPlayer *audioPlayer;
 
 @property (nonatomic,strong)NSString *playingAudioMsgId;
 
@@ -1065,6 +1065,7 @@ static NSString * const GJGCActionSheetAssociateKey = @"GJIMSimpleCellActionShee
     chatContentModel.sendStatus = GJGCChatFriendSendMessageStatusSuccess;
     chatContentModel.isFromSelf = YES;
     chatContentModel.talkType = self.taklInfo.talkType;
+    chatContentModel.localMsgId = [NSUUID UUID].UUIDString;
     
     /* 从talkInfo中绑定更多信息给待发送内容 */
     [self setSendChatContentModelWithTalkInfo:chatContentModel];
@@ -1681,5 +1682,14 @@ static NSString * const GJGCActionSheetAssociateKey = @"GJIMSimpleCellActionShee
         
     }];
 }
+
+#pragma mark - GJGCVideoPlayerViewController delegate
+- (void)videoPlayerDidTapped:(GJGCVideoPlayerViewController *)playerViewController
+{
+    
+}
+
+
+
 
 @end
