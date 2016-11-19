@@ -10,8 +10,8 @@
 #import "GJGCGroupInfoExtendModel.h"
 #import "GJGCMessageExtendGroupModel.h"
 
+#import <RongIMLib/RongIMLib.h>
 
-@class EMConversation;
 @interface GJGCRecentChatModel : NSObject
 
 @property (nonatomic,strong)NSString *headUrl;
@@ -32,7 +32,7 @@
 
 @property (nonatomic,assign)NSInteger unReadCount;
 
-@property (nonatomic,strong)EMConversation *conversation;
+@property (nonatomic,strong)RCConversation *conversation;
 
 @property (nonatomic,strong)GJGCMessageExtendGroupModel *groupInfo;
 
