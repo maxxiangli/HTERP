@@ -22,7 +22,7 @@
 #define GJGCRecentConversationHeadListUDF @"GJGCRecentConversationHeadListUDF"
 
 
-@interface GJGCRecentChatDataManager ()<RCConnectionStatusChangeDelegate, RCIMClientReceiveMessageDelegate>
+@interface GJGCRecentChatDataManager ()
 
 @property (nonatomic,strong)NSMutableArray *sourceArray;
 
@@ -46,20 +46,18 @@
         });
         dispatch_resume(self.updateListSource);
         
-        self.sourceArray = [[NSMutableArray alloc]init];
+        self.sourceArray = [[NSMutableArray alloc] init];
         
         [[CHRCIMDataSource sharedRCIMDataSource] configRCIMDelegate];
-        
-        [[RCIMClient sharedRCIMClient] setReceiveMessageDelegate:self object:nil];
-        
-//        [GJCFNotificationCenter addObserver:self
-//                                   selector:@selector(observeLoginSuccess:)
-//                                       name:ZYUserCenterLoginEaseMobSuccessNoti
-//                                     object:nil];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(handleConnectionStatusChanged:)
                                                      name:CHRCIMConnectionStatsChangedNotification
+                                                   object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleReceiveMessage:)
+                                                     name:CHRCIMReceiveMessageNotification
                                                    object:nil];
         
 
@@ -100,8 +98,10 @@
 {
     GJGCRecentChatModel *chatModel = [self contentModelAtIndexPath:indexPath];
     
-    //TODO:WXT
-//    [[EMClient sharedClient].chatManager deleteConversation:chatModel.conversation.conversationId deleteMessages:NO];
+    //TODO:WXT(为了测试暂时不删除)
+//    [[RCIMClient sharedRCIMClient] removeConversation:chatModel.conversation.conversationType
+//                                             targetId:chatModel.conversation.targetId];
+    
     
     [self.sourceArray removeObject:chatModel];
 
@@ -117,42 +117,25 @@
     isLogin = YES;
     if (isLogin)
     {
-        NSArray *types = @[@(ConversationType_PRIVATE),
-                           @(ConversationType_DISCUSSION),
-                           @(ConversationType_APPSERVICE),
-                           @(ConversationType_PUBLICSERVICE),
-                           @(ConversationType_GROUP),
-                           @(ConversationType_SYSTEM)];
-        
-        NSArray *allConversation = [[RCIMClient sharedRCIMClient] getConversationList:types];
+        NSArray *allConversation = [self getConversations];
         [self didUpdateConversationList:allConversation];
     }
 }
 
-
-- (GJGCMessageExtendUserModel *)userInfoFromUserInfo:(RCUserInfo *)userInfo
-{
-    GJGCMessageExtendUserModel *model = [[GJGCMessageExtendUserModel alloc] init];
-    model.userName = userInfo.name;
-    model.headThumb = userInfo.portraitUri;
-    return model;
-}
-
-
-- (NSString *)displayContentFromMessageBody:(RCMessageContent *)theMessage
+- (NSString *)displayContentFromConversation:(RCConversation *)theConversation
 {
     NSString *result = nil;
-    NSString *identifier = [RCMessageContent getObjectName];
-    if ([identifier isEqualToString:RCTextMessageTypeIdentifier])
+    NSString *objectName = theConversation.objectName;
+    if ([objectName isEqualToString:RCTextMessageTypeIdentifier])
     {
-        RCTextMessage *textMessage = (RCTextMessage *)theMessage;
+        RCTextMessage *textMessage = (RCTextMessage *)theConversation.lastestMessage;
         result = textMessage.content;
     }
-    else if ([identifier isEqualToString:RCVoiceMessageTypeIdentifier])
+    else if ([objectName isEqualToString:RCVoiceMessageTypeIdentifier])
     {
         result = @"[语音]";
     }
-    else if([identifier isEqualToString:RCImageMessageTypeIdentifier])
+    else if([objectName isEqualToString:RCImageMessageTypeIdentifier])
     {
         result = @"[图片]";
     }
@@ -163,21 +146,7 @@
     return result;
 }
 
-- (void)observeLoginSuccess:(NSNotification *)noti
-{
-    GJGCRecentChatConnectState state = [[(NSDictionary *)noti.object objectForKey:@"state"]integerValue];
-    
-    [self.delegate dataManager:self requireUpdateTitleViewState:state];
-    
-    if (state == GJGCRecentChatConnectStateSuccess) {
-        
-        [self loadRecentConversations];
-
-    }
-}
-
-#pragma mark - 环信监听会话生成的回调
-
+#pragma mark - Private function
 - (void)didUpdateConversationList:(NSArray *)aConversationList
 {
     if (aConversationList.count > 0) {
@@ -185,66 +154,47 @@
     }
 }
 
-- (void)didReceiveMessages:(NSArray *)aMessages
+- (NSArray *)getConversations
 {
-    //TODO:WXT
-//    [self updateConversationList:[[EMClient sharedClient].chatManager getAllConversations]];
-}
-
-#pragma mark - 环信监听链接服务器状态
-
-//- (void)didAutoLoginWithError:(EMError *)aError
-//{
-//    GJGCRecentChatConnectState resultState = aError? GJGCRecentChatConnectStateFaild:GJGCRecentChatConnectStateSuccess;
-//    [self.delegate dataManager:self requireUpdateTitleViewState:resultState];
-//}
-//
-//- (void)didLoginFromOtherDevice
-//{
-//    
-//}
-
-#pragma mark - 监听会话未读数的变化
-
-//- (void)didUnreadMessagesCountChanged
-//{
-    //TODO:WXT
-//    NSArray *conversations = [[EMClient sharedClient].chatManager getAllConversations];
-//    if (self.sourceArray.count == 0 && conversations.count == 0) {
-//        return;
-//    }
-//    
-//    [self updateConversationList:conversations];
-//}
-
-- (void)onReceived:(RCMessage *)message left:(int)nLeft object:(id)object
-{
-    [self loadRecentConversations];
+    NSArray *types = @[@(ConversationType_PRIVATE),
+                       @(ConversationType_DISCUSSION),
+                       @(ConversationType_APPSERVICE),
+                       @(ConversationType_PUBLICSERVICE),
+                       @(ConversationType_GROUP),
+                       @(ConversationType_SYSTEM)];
+    
+    NSArray *allConversations = [[RCIMClient sharedRCIMClient] getConversationList:types];
+    
+    return allConversations;
 }
 
 
-
+#pragma mark - 更新列表
 - (void)updateConversationList:(NSArray *)conversationList
 {
+    
+    NSLog(@"conversation count = %@", @([conversationList count]));
+    
         dispatch_async(dispatch_get_main_queue(), ^{
     
-            if (conversationList.count == 0) {
+            if (conversationList.count == 0)
+            {
                 return;
             }
     
             //重新载入一次会话列表
-            if (self.sourceArray.count > 0) {
+            if (self.sourceArray.count > 0)
+            {
                 [self.sourceArray removeAllObjects];
             }
     
             //按最后一条消息排序
             NSArray *sortConversationList = [conversationList sortedArrayUsingComparator:^NSComparisonResult(RCConversation *obj1, RCConversation *obj2) {
     
-                long long timestamp1 = (obj1.sentTime > obj1.receivedTime) ? obj1.sentTime : obj1.receivedTime;
-                long long timestamp2 = (obj2.sentTime > obj2.receivedTime) ? obj2.sentTime : obj2.receivedTime;
+                long long time1 = [[RCIMClient sharedRCIMClient] getMessageSendTime:obj1.lastestMessageId];
+                long long time2 = [[RCIMClient sharedRCIMClient] getMessageSendTime:obj2.lastestMessageId];
                 
-                
-                NSComparisonResult result = (timestamp1 > timestamp2) ? NSOrderedAscending : NSOrderedDescending;
+                NSComparisonResult result = (time1 > time2) ? NSOrderedAscending : NSOrderedDescending;
                 return result;
     
             }];
@@ -256,60 +206,46 @@
                 chatModel.toId = conversation.targetId;
                 chatModel.unReadCount = conversation.unreadMessageCount;
                 
-                NSString *title = (conversation.conversationTitle && [conversation.conversationTitle length] > 0) ? conversation.conversationTitle : @"MYTEST";
-                chatModel.name = [GJGCRecentChatStyle formateName:title];
+                NSString *name = conversation.conversationTitle;
+                name = (name && [name length] > 0) ? name : @"群聊";
+                chatModel.name = [GJGCRecentChatStyle formateName:name];
+                
+                RCMessageDirection direction = conversation.lastestMessageDirection;
+                
+                long long timeStamp = (direction == MessageDirection_SEND) ? conversation.sentTime : conversation.receivedTime;
+                chatModel.content = [self displayContentFromConversation:conversation];
+                [GJGCChatFriendCellStyle formateSimpleTextMessage:chatModel.content];
+
+                chatModel.time = [GJGCRecentChatStyle formateTime:timeStamp/1000];
+                [GJGCChatFriendCellStyle formateSimpleTextMessage:chatModel.content];
                 
                 if (conversation.conversationType == ConversationType_GROUP)
                 {
                     chatModel.isGroupChat = YES;
-                    
-                    RCMessageContent *lastMessage = conversation.lastestMessage;
-                    if (lastMessage)
+                    if (conversation.lastestMessage)
                     {
-                        chatModel.headUrl = lastMessage.senderUserInfo.portraitUri;
+                        chatModel.headUrl = conversation.lastestMessage.senderUserInfo.portraitUri;
                         chatModel.groupInfo = nil;
                     }
-                    
-                    GJGCMessageExtendUserModel *userInfo = [[GJGCMessageExtendUserModel alloc] init];
-                    userInfo.userName = conversation.lastestMessage.senderUserInfo.name;
-                    userInfo.headThumb = conversation.lastestMessage.senderUserInfo.portraitUri;
-                    NSString *displayContent = [self displayContentFromMessageBody:conversation.lastestMessage];
-                    chatModel.content = displayContent;
-                    chatModel.time = [GJGCRecentChatStyle formateTime:conversation.sentTime/1000];
-                    [GJGCChatFriendCellStyle formateSimpleTextMessage:chatModel.content];
-    
                 }
     
-                if (conversation.conversationType == ConversationType_PRIVATE) {
-    
+                if (conversation.conversationType == ConversationType_PRIVATE)
+                {
                     //对方的最近一条消息
                     chatModel.isGroupChat = NO;
                     RCMessageContent *lastMessage = conversation.lastestMessage;
-    
                     if (lastMessage)
                     {
+                        NSString *name = lastMessage.senderUserInfo.name ? lastMessage.senderUserInfo.name : conversation.targetId;
+                        chatModel.name = [GJGCRecentChatStyle formateName:name];
+                        chatModel.headUrl = lastMessage.senderUserInfo.portraitUri;
     
-                        GJGCMessageExtendUserModel *userInfo = [self userInfoFromUserInfo:lastMessage.senderUserInfo];
-                        if (userInfo.userName && [userInfo.userName length] > 0)
-                        {
-                            chatModel.name = [GJGCRecentChatStyle formateName:userInfo.userName];
-                           
-                        }else{
-                            chatModel.name = [GJGCRecentChatStyle formateName:conversation.targetId];
-                        }
-                        
-                        chatModel.headUrl = userInfo.headThumb;
-    
-                    }else{
-    
+                    }
+                    else
+                    {
                         chatModel.name = [GJGCRecentChatStyle formateName:conversation.targetId];
                         chatModel.headUrl = @"";
                     }
-                    
-                    long long timeStamp = (conversation.sentTime > conversation.receivedTime) ? conversation.sentTime : conversation.receivedTime;
-                    chatModel.content = [self displayContentFromMessageBody:conversation.lastestMessage];
-                    chatModel.time = [GJGCRecentChatStyle formateTime:timeStamp/1000];
-                    [GJGCChatFriendCellStyle formateSimpleTextMessage:chatModel.content];
                 }
                 
                 [self.sourceArray addObject:chatModel];
@@ -330,8 +266,7 @@
     
 }
 
-
-#pragma mark - 监听网络变化，尝试重新登录
+#pragma mark - 监听网络变化，未登录尝试重新登录
 - (void)handleConnectionStatusChanged:(NSNotification *)notifcation
 {
     NSNumber *objStatus = (NSNumber *)notifcation.object;
@@ -361,77 +296,61 @@
     }
 }
 
-- (void)onConnectionStatusChanged:(RCConnectionStatus)status
+#pragma mark - 监控收到新消息
+- (void)handleReceiveMessage:(NSNotification *)notification
 {
-    if (status == ConnectionStatus_Connected)
-    {
-        //如果用户未登录重新登录
-    }
-    
-    switch (status)
-    {
-        case ConnectionStatus_Connected:
-            [self.delegate dataManager:self requireUpdateTitleViewState:GJGCRecentChatConnectStateSuccess];
-            break;
-        case ConnectionStatus_Connecting:
-            [self.delegate dataManager:self requireUpdateTitleViewState:GJGCRecentChatConnectStateConnecting];
-            break;
-        case ConnectionStatus_Unconnected:
-        case ConnectionStatus_SignUp: //已注销
-        case ConnectionStatus_KICKED_OFFLINE_BY_OTHER_CLIENT: //Token错误
-            [self.delegate dataManager:self requireUpdateTitleViewState:GJGCRecentChatConnectStateFaild];
-            break;
-        default:
-            [self.delegate dataManager:self requireUpdateTitleViewState:GJGCRecentChatConnectStateConnecting];
-            break;
-    }
+    [self loadRecentConversations];
 }
-
-//- (void)didConnectionStateChanged:(EMConnectionState)connectionState
-//{
-    //TODO:WXT
-//    if (connectionState == EMConnectionConnected) {
-//        
-//        if (![[EMClient sharedClient] isLoggedIn]) {
-//            
-//            [[ZYUserCenter shareCenter] autoLogin];
-//        }
-//    }
-//    
-//    switch (connectionState) {
-//        case EMConnectionConnected:
-//        {
-//            [self.delegate dataManager:self requireUpdateTitleViewState:GJGCRecentChatConnectStateSuccess];
-//        }
-//            break;
-//        case EMConnectionDisconnected:
-//        {
-//            [self.delegate dataManager:self requireUpdateTitleViewState:GJGCRecentChatConnectStateConnecting];
-//        }
-//            break;
-//        default:
-//            break;
-//    }
-//}
 
 #pragma mark - 检测会话是否已经存在
-
 + (BOOL)isConversationHasBeenExist:(NSString *)chatter
 {
-    //TODO:WXT
-    return nil;
-//    NSInteger findIndex = NSNotFound;
-
-//    for (EMConversation *conversation in [[EMClient sharedClient].chatManager getAllConversations]) {
-//        
-//        if ([conversation.conversationId isEqualToString:chatter]) {
-//            
-//            findIndex = 1;
-//            break;
-//        }
-//    }
-//    
-//    return findIndex == NSNotFound? NO:YES;
+    NSArray *types = @[@(ConversationType_PRIVATE),
+                       @(ConversationType_DISCUSSION),
+                       @(ConversationType_APPSERVICE),
+                       @(ConversationType_PUBLICSERVICE),
+                       @(ConversationType_GROUP),
+                       @(ConversationType_SYSTEM)];
+    
+    NSArray *allConversation = [[RCIMClient sharedRCIMClient] getConversationList:types];
+    
+    BOOL find = NO;
+    for (RCConversation *conversation in allConversation)
+    {
+        if ([conversation.targetId isEqualToString:chatter])
+        {
+            find = YES;
+            break;
+        }
+    }
+    
+    return find;
 }
+
+#pragma mark - Discard
+//- (NSString *)displayContentFromMessageBody:(RCMessageContent *)theMessage
+//{
+//    NSString *result = nil;
+//    NSString *identifier = [RCMessageContent getObjectName];
+//    if ([identifier isEqualToString:RCTextMessageTypeIdentifier])
+//    {
+//        RCTextMessage *textMessage = (RCTextMessage *)theMessage;
+//        result = textMessage.content;
+//    }
+//    else if ([identifier isEqualToString:RCVoiceMessageTypeIdentifier])
+//    {
+//        result = @"[语音]";
+//    }
+//    else if([identifier isEqualToString:RCImageMessageTypeIdentifier])
+//    {
+//        result = @"[图片]";
+//    }
+//    else
+//    {
+//        //Do nothing
+//    }
+//    return result;
+//}
+
 
 @end

@@ -11,6 +11,9 @@
 #import <RongIMLib/RongIMLib.h>
 
 FOUNDATION_EXPORT NSString *const CHRCIMConnectionStatsChangedNotification;
+FOUNDATION_EXPORT NSString *const CHRCIMReceiveMessageNotification;
+FOUNDATION_EXPORT NSString *const CHRCIMRCMessageKey;
+FOUNDATION_EXPORT NSString *const CHRCIMLeftMessageKey;
 
 @interface CHRCIMDataSource : NSObject
 

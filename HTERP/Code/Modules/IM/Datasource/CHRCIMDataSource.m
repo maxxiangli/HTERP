@@ -12,8 +12,11 @@
 //融云APPKey
 static NSString *const kCHIMAppKey = @"82hegw5uhgzrx";
 
-//融云连接消息
+//融云连接状态变化消息
 NSString *const CHRCIMConnectionStatsChangedNotification = @"CHRCIMConnectionStatsChangedNotification";
+NSString *const CHRCIMReceiveMessageNotification = @"CHRCIMReceiveMessageNotification";
+NSString *const CHRCIMRCMessageKey = @"CHRCIMRCMessageKey";
+NSString *const CHRCIMLeftMessageKey = @"CHRCIMLeftMessageKey";
 
 @interface CHRCIMDataSource()<RCConnectionStatusChangeDelegate, RCIMClientReceiveMessageDelegate>
 
@@ -91,7 +94,9 @@ NSString *const CHRCIMConnectionStatsChangedNotification = @"CHRCIMConnectionSta
 //接收消息的回调方法
 - (void)onReceived:(RCMessage *)message left:(int)nLeft object:(id)object
 {
-    
+    NSDictionary *userInfo = @{CHRCIMRCMessageKey:message,
+                               CHRCIMLeftMessageKey:@(nLeft)};
+    [[NSNotificationCenter defaultCenter] postNotificationName:CHRCIMReceiveMessageNotification object:nil userInfo:userInfo];
 }
 
 //消息被撤回的回调方法
