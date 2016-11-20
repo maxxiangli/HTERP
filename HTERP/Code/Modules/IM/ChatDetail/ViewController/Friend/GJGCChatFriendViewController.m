@@ -89,7 +89,7 @@ static NSString * const GJGCActionSheetAssociateKey = @"GJIMSimpleCellActionShee
     [self setRightButtonWithStateImage:@"title-icon-个人资料" stateHighlightedImage:nil stateDisabledImage:nil titleName:nil];
     
     /* 语音播放工具 */
-    self.audioPlayer = [[GJCFAudioPlayer alloc]init];
+    self.audioPlayer = [[GJCFAudioPlayer alloc] init];
     self.audioPlayer.delegate = self;
     
     [self setStrNavTitle:self.dataSourceManager.title];

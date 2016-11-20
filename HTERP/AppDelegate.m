@@ -20,6 +20,7 @@
 
 #import "CHContactListManager.h"
 #import "GJGCRecentChatViewController.h"
+#import "CHRCIMDataSource.h"
 
 #import <RongIMLib/RongIMLib.h>
 
@@ -61,7 +62,7 @@ static NSString *const kCHIMAppKey = @"82hegw5uhgzrx";
     [GLOBEL_LOGIN_OBJECT loadLoginData];
     
     //配置融云
-    [self configRCIM];
+    [[CHRCIMDataSource sharedRCIMDataSource] configRCIM];
     
     //获取联系人
     [[CHContactListManager defaultManager] startFetchingContactList];
@@ -208,29 +209,5 @@ static NSString *const kCHIMAppKey = @"82hegw5uhgzrx";
     //	return self.window.rootViewController.tabBarController;
     return self.window.rootViewController;
 }
-
-
-//初始化融云
-- (void)configRCIM
-{
-    //初始化SDK
-    [[RCIMClient sharedRCIMClient] initWithAppKey:kCHIMAppKey];
-    
-    //连接服务器
-    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:kHTIMToken];
-    [[RCIMClient sharedRCIMClient] connectWithToken:token success:^(NSString *userId) {
-        NSLog(@"连接融云成功:%@", userId);
-    } error:^(RCConnectErrorCode status) {
-        NSLog(@"连接融云错误:%@", @(status));
-    } tokenIncorrect:^{
-        NSLog(@"Token 错误");
-    }];
-}
-
-
-
-
-
-
 
 @end

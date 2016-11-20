@@ -25,12 +25,6 @@
 
 @end
 
-@class EMMessage;
-@class EMMessageBody;
-@class EMError;
-
-typedef NSInteger EMConnectionState;
-
 @interface GJGCRecentChatDataManager : NSObject
 
 @property (nonatomic,readonly)NSInteger totalCount;

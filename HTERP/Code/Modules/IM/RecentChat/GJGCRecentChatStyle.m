@@ -17,7 +17,7 @@
     stringStyle.foregroundColor = [GJGCCommonFontColorStyle listTitleAndDetailTextColor];
     stringStyle.font = [UIFont boldSystemFontOfSize:16];
     
-    return [[NSAttributedString alloc]initWithString:name attributes:[stringStyle attributedDictionary]];
+    return [[NSAttributedString alloc] initWithString:name attributes:[stringStyle attributedDictionary]];
 }
 
 + (NSAttributedString*)formateTime:(long long)time

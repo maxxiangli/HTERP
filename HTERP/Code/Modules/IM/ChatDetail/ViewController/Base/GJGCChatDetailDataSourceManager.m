@@ -1120,7 +1120,13 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
     
     GJCFWeakSelf weakSelf = self;
         sendMessage.sentStatus = SentStatus_SENDING;
-    [[RCIMClient sharedRCIMClient] sendMessage:sendMessage.conversationType targetId:sendMessage.targetId content:sendMessage.content pushContent:nil pushData:nil success:^(long messageId) {
+    RCMessage *message = [[RCIMClient sharedRCIMClient] sendMessage:sendMessage.conversationType
+                                                           targetId:sendMessage.targetId
+                                                            content:sendMessage.content
+                                                        pushContent:nil
+                                                           pushData:nil
+                                                            success:^(long messageId) {
+                                           [weakSelf updateMessageState:message state:GJGCChatFriendSendMessageStatusSuccess];
         NSLog(@"message Id = %@", @(messageId));
     } error:^(RCErrorCode nErrorCode, long messageId) {
         NSLog(@"============%@", @(nErrorCode));
@@ -1395,9 +1401,17 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
 }
 
 #pragma mark - 聊天消息发送回调
-
-- (void)updateMessageState:(EMMessage *)theMessage state:(GJGCChatFriendSendMessageStatus)status
+- (void)updateMessageState:(RCMessage *)theMessage state:(GJGCChatFriendSendMessageStatus)status
 {
+//    [self.chatListArray replaceObjectAtIndex:0 withObject:findContent];
+    
+    [self.delegate dataSourceManagerRequireUpdateListTable:self reloadAtIndex:0];
+    
+}
+
+
+//- (void)updateMessageState:(EMMessage *)theMessage state:(GJGCChatFriendSendMessageStatus)status
+//{
 //    GJGCChatFriendContentModel *findContent = nil;
 //    NSInteger findIndex = NSNotFound;
 //    
@@ -1421,7 +1435,7 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
 //        
 //        [self.delegate dataSourceManagerRequireUpdateListTable:self reloadAtIndex:findIndex];
 //    }
-}
+//}
 
 #pragma mark - Dispatch 缓冲刷新会话列表
 

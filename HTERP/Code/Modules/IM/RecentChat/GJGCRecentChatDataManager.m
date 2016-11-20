@@ -13,6 +13,7 @@
 #import "ZYUserCenter.h"
 
 #import "HTLoginManager.h"
+#import "CHRCIMDataSource.h"
 
 #import <RongIMLib/RongIMLib.h>
 
@@ -47,25 +48,29 @@
         
         self.sourceArray = [[NSMutableArray alloc]init];
         
-        [[RCIMClient sharedRCIMClient] setRCConnectionStatusChangeDelegate:self];
+        [[CHRCIMDataSource sharedRCIMDataSource] configRCIMDelegate];
         
         [[RCIMClient sharedRCIMClient] setReceiveMessageDelegate:self object:nil];
         
-        [GJCFNotificationCenter addObserver:self
-                                   selector:@selector(observeLoginSuccess:)
-                                       name:ZYUserCenterLoginEaseMobSuccessNoti
-                                     object:nil];
+//        [GJCFNotificationCenter addObserver:self
+//                                   selector:@selector(observeLoginSuccess:)
+//                                       name:ZYUserCenterLoginEaseMobSuccessNoti
+//                                     object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleConnectionStatusChanged:)
+                                                     name:CHRCIMConnectionStatsChangedNotification
+                                                   object:nil];
+        
+
 
     }
     return self;
 }
 
 - (void)dealloc
-{
-//    [[EMClient sharedClient].chatManager removeDelegate:self];
-    
-    [[RCIMClient sharedRCIMClient] setRCConnectionStatusChangeDelegate:nil];
-    [GJCFNotificationCenter removeObserver:self];
+{    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (NSArray *)allConversationModels
@@ -109,7 +114,8 @@
     NSLog(@"state = %@", @(state));
     
     BOOL isLogin = [[HTLoginManager getInstance] isLogin];
-    if (YES)
+    isLogin = YES;
+    if (isLogin)
     {
         NSArray *types = @[@(ConversationType_PRIVATE),
                            @(ConversationType_DISCUSSION),
@@ -137,16 +143,16 @@
 {
     NSString *result = nil;
     NSString *identifier = [RCMessageContent getObjectName];
-    if ([identifier isEqualToString:@"RC:TxtMsg"])
+    if ([identifier isEqualToString:RCTextMessageTypeIdentifier])
     {
         RCTextMessage *textMessage = (RCTextMessage *)theMessage;
         result = textMessage.content;
     }
-    else if ([identifier isEqualToString:@"RC:VcMsg"])
+    else if ([identifier isEqualToString:RCVoiceMessageTypeIdentifier])
     {
         result = @"[语音]";
     }
-    else if([identifier isEqualToString:@"RC:ImgMsg"])
+    else if([identifier isEqualToString:RCImageMessageTypeIdentifier])
     {
         result = @"[图片]";
     }
@@ -245,7 +251,7 @@
     
             for (RCConversation *conversation in sortConversationList)
             {
-                GJGCRecentChatModel *chatModel = [[GJGCRecentChatModel alloc]init];
+                GJGCRecentChatModel *chatModel = [[GJGCRecentChatModel alloc] init];
                 chatModel.conversation = conversation;
                 chatModel.toId = conversation.targetId;
                 chatModel.unReadCount = conversation.unreadMessageCount;
@@ -326,12 +332,40 @@
 
 
 #pragma mark - 监听网络变化，尝试重新登录
+- (void)handleConnectionStatusChanged:(NSNotification *)notifcation
+{
+    NSNumber *objStatus = (NSNumber *)notifcation.object;
+    RCConnectionStatus status = [objStatus integerValue];
+    
+    if (status == ConnectionStatus_Connected)
+    {
+        //如果用户未登录重新登录
+    }
+    
+    switch (status)
+    {
+        case ConnectionStatus_Connected:
+            [self.delegate dataManager:self requireUpdateTitleViewState:GJGCRecentChatConnectStateSuccess];
+            break;
+        case ConnectionStatus_Connecting:
+            [self.delegate dataManager:self requireUpdateTitleViewState:GJGCRecentChatConnectStateConnecting];
+            break;
+        case ConnectionStatus_Unconnected:
+        case ConnectionStatus_SignUp: //已注销
+        case ConnectionStatus_KICKED_OFFLINE_BY_OTHER_CLIENT: //Token错误
+            [self.delegate dataManager:self requireUpdateTitleViewState:GJGCRecentChatConnectStateFaild];
+            break;
+        default:
+            [self.delegate dataManager:self requireUpdateTitleViewState:GJGCRecentChatConnectStateConnecting];
+            break;
+    }
+}
+
 - (void)onConnectionStatusChanged:(RCConnectionStatus)status
 {
     if (status == ConnectionStatus_Connected)
     {
-        //DO something
-        //如果未连接成功连接
+        //如果用户未登录重新登录
     }
     
     switch (status)

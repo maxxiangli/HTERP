@@ -782,6 +782,7 @@
 		FAA8C0041DDDD96B001AD05F /* RongIMLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA8BFFF1DDDD96B001AD05F /* RongIMLib.framework */; };
 		FADA20D01DD2C14600F73DAC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */; };
 		FADA20D31DD2C23900F73DAC /* CHSpashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */; };
+		FAF727841DE14A110086DF05 /* CHRCIMDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF727831DE14A110086DF05 /* CHRCIMDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -2051,6 +2052,8 @@
 		FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		FADA20D11DD2C23900F73DAC /* CHSpashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSpashScreenViewController.h; sourceTree = "<group>"; };
 		FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSpashScreenViewController.m; sourceTree = "<group>"; };
+		FAF727821DE14A110086DF05 /* CHRCIMDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRCIMDataSource.h; sourceTree = "<group>"; };
+		FAF727831DE14A110086DF05 /* CHRCIMDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRCIMDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4747,6 +4750,7 @@
 		FADA20C71DD2BE5900F73DAC /* IM */ = {
 			isa = PBXGroup;
 			children = (
+				FAF727811DE149000086DF05 /* Datasource */,
 				FAA8BFF81DDDD95B001AD05F /* Lib */,
 				FAA8B9271DDDB2A0001AD05F /* ChatDetail */,
 				FAA8BA0A1DDDB2A0001AD05F /* Contacts */,
@@ -4816,6 +4820,15 @@
 			children = (
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		FAF727811DE149000086DF05 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				FAF727821DE14A110086DF05 /* CHRCIMDataSource.h */,
+				FAF727831DE14A110086DF05 /* CHRCIMDataSource.m */,
+			);
+			path = Datasource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -5447,6 +5460,7 @@
 				FA43CB781DD5A4E1003E0C05 /* CHContactsViewController.m in Sources */,
 				FAA8BE6B1DDDB2A2001AD05F /* GJCUImageBrowserNavigationViewController.m in Sources */,
 				FAA8BDCF1DDDB2A1001AD05F /* GJGCChatFriendImageMessageCell.m in Sources */,
+				FAF727841DE14A110086DF05 /* CHRCIMDataSource.m in Sources */,
 				FAA8BDD81DDDB2A1001AD05F /* GJGCChatFriendWebPageCell.m in Sources */,
 				FAA8BF4F1DDDB2A3001AD05F /* SCFilter+UIImage.m in Sources */,
 				FAA8BFB31DDDB2A3001AD05F /* ZYNetWorkManager.m in Sources */,

@@ -24,7 +24,7 @@
 
 @property (nonatomic,assign)CGFloat contentHeight;
 
-@property (nonatomic,strong)NSString *toId;
+@property (nonatomic,strong)NSString *toId; //目标会话ID
 
 @property (nonatomic,assign)BOOL isGroupChat;
 
