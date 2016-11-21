@@ -99,11 +99,18 @@
     GJGCChatFriendContentModel *chatContentModel = (GJGCChatFriendContentModel *)contentModel;
     self.isFromSelf = chatContentModel.isFromSelf;
     
-    //TODO:WXT
-//    EMImageMessageBody *imageMessageBody = (EMImageMessageBody *)chatContentModel.message.body;
-//    
-//    [self resetStateWithPrepareSize:imageMessageBody.thumbnailSize];
-//    
+    RCImageMessage *imageMessage = (RCImageMessage *)chatContentModel.message.content;
+    CGSize thumbnailSize = imageMessage.thumbnailImage.size;
+    
+    [self resetStateWithPrepareSize:thumbnailSize];
+    
+    if (chatContentModel.isFromSelf)
+    {
+        self.contentSize = thumbnailSize;
+        self.contentImageView.gjcf_size = self.contentSize;
+        self.contentImageView.image = imageMessage.thumbnailImage;
+    }
+
 //    if (chatContentModel.isFromSelf || imageMessageBody.thumbnailDownloadStatus == EMDownloadStatusSuccessed) {
 //        
 //        self.contentSize = imageMessageBody.thumbnailSize;

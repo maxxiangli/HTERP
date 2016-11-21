@@ -1041,18 +1041,48 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
 {
     RCConversationType conversationType = [self typeFromMessageContent:messageContent];
     RCMessageContent *msgContent = [self messageFromMessageContent:messageContent];
-    
     GJCFWeakSelf weakSelf = self;
-    RCMessage *message = [[RCIMClient sharedRCIMClient] sendMessage:conversationType
-                                                           targetId:messageContent.toId
-                                                            content:msgContent
-                                                        pushContent:nil
-                                                           pushData:nil
-                                                            success:^(long messageId) {
-                                                                [weakSelf handleSendMessageSucess:messageId];
-    } error:^(RCErrorCode nErrorCode, long messageId) {
-        [weakSelf handleSendMessageError:messageId];
-    }];
+    RCMessage *message = nil;
+    if (messageContent.contentType == GJGCChatFriendContentTypeText)
+    {
+        message = [[RCIMClient sharedRCIMClient] sendMessage:conversationType
+                                                    targetId:messageContent.toId
+                                                     content:msgContent
+                                                 pushContent:nil
+                                                    pushData:nil
+                                                     success:^(long messageId) {
+                                                         [weakSelf handleSendMessageSucess:messageId];
+                                                     } error:^(RCErrorCode nErrorCode, long messageId) {
+                                                         [weakSelf handleSendMessageError:messageId];
+                                                     }];
+        
+    }
+    else if (messageContent.contentType == GJGCChatFriendContentTypeImage)
+    {
+        message = [[RCIMClient sharedRCIMClient] sendMediaMessage:conversationType targetId:messageContent.toId content:msgContent pushContent:nil pushData:nil progress:^(int progress, long messageId) {
+            
+            NSLog(@"progress = %@", @(progress));
+            
+        } success:^(long messageId) {
+            
+            NSLog(@"success = %@", @(messageId));
+            [weakSelf handleSendMessageSucess:messageId];
+            
+        } error:^(RCErrorCode errorCode, long messageId) {
+            
+            NSLog(@"error = %@", @(errorCode));
+            [weakSelf handleSendMessageError:messageId];
+            
+        } cancel:^(long messageId) {
+            
+            NSLog(@"cancel = %@", @(messageId));
+            
+        }];
+    }
+    else
+    {
+        
+    }
     
     return message;
 }
@@ -1076,12 +1106,12 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
 
 - (RCMessageContent *)messageFromMessageContent:(GJGCChatFriendContentModel *)messageContent
 {
-    RCMessageContent *msgContent = nil;
+    RCMessageContent *content = nil;
     switch (messageContent.contentType)
     {
         case GJGCChatFriendContentTypeText:
         {
-            msgContent = [RCTextMessage messageWithContent:messageContent.originTextMessage];
+            content = [RCTextMessage messageWithContent:messageContent.originTextMessage];
         }
             break;
         case GJGCChatFriendContentTypeAudio:
@@ -1091,7 +1121,8 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
             break;
         case GJGCChatFriendContentTypeImage:
         {
-            //                sendMessage = [self sendImageMessage:messageContent];
+            NSString *filePath = [[GJCFCachePathManager shareManager] mainImageCacheFilePath:messageContent.imageLocalCachePath];
+            content = [RCImageMessage messageWithImageURI:filePath];
         }
             break;
         case GJGCChatFriendContentTypeLimitVideo:
@@ -1102,7 +1133,7 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
         default:
             break;
     }
-    return msgContent;
+    return content;
 }
 
 - (void)handleResendMessageSucess:(long)newMsgId oldMsgId:(long)oldMsgId

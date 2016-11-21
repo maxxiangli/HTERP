@@ -71,11 +71,10 @@ NSString *const CHRCIMLeftMessageKey = @"CHRCIMLeftMessageKey";
     }];
 }
 
-
-
 - (void)configRCIMDelegate
 {
     [[RCIMClient sharedRCIMClient] setRCConnectionStatusChangeDelegate:self];
+    [[RCIMClient sharedRCIMClient] setReceiveMessageDelegate:self object:nil];
 }
 
 #pragma mark - RCConnectionStatusChangeDelegate
@@ -83,10 +82,11 @@ NSString *const CHRCIMLeftMessageKey = @"CHRCIMLeftMessageKey";
 //IMLib连接状态的的监听器
 - (void)onConnectionStatusChanged:(RCConnectionStatus)status
 {
-    NSNumber *objStatus = @(status);
-    [[NSNotificationCenter defaultCenter] postNotificationName:CHRCIMConnectionStatsChangedNotification
-                                                        object:objStatus];
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSNumber *objStatus = @(status);
+        [[NSNotificationCenter defaultCenter] postNotificationName:CHRCIMConnectionStatsChangedNotification
+                                                            object:objStatus];
+    });
 }
 
 #pragma mark - RCIMClientReceiveMessageDelegate
@@ -94,9 +94,13 @@ NSString *const CHRCIMLeftMessageKey = @"CHRCIMLeftMessageKey";
 //接收消息的回调方法
 - (void)onReceived:(RCMessage *)message left:(int)nLeft object:(id)object
 {
-    NSDictionary *userInfo = @{CHRCIMRCMessageKey:message,
-                               CHRCIMLeftMessageKey:@(nLeft)};
-    [[NSNotificationCenter defaultCenter] postNotificationName:CHRCIMReceiveMessageNotification object:nil userInfo:userInfo];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        NSDictionary *userInfo = @{CHRCIMRCMessageKey:message,
+                                   CHRCIMLeftMessageKey:@(nLeft)};
+        [[NSNotificationCenter defaultCenter] postNotificationName:CHRCIMReceiveMessageNotification
+                                                            object:nil userInfo:userInfo];
+    });
 }
 
 //消息被撤回的回调方法

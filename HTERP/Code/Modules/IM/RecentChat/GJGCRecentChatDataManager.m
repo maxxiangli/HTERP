@@ -111,11 +111,10 @@
 - (void)loadRecentConversations
 {
     RCConnectionStatus state = [[RCIMClient sharedRCIMClient] getConnectionStatus];
-    NSLog(@"state = %@", @(state));
-    
+    NSLog(@"connection state = %@", @(state));
     BOOL isLogin = [[HTLoginManager getInstance] isLogin];
     isLogin = YES;
-    if (isLogin)
+    if (isLogin && state == ConnectionStatus_Connected)
     {
         NSArray *allConversation = [self getConversations];
         [self didUpdateConversationList:allConversation];
@@ -281,6 +280,7 @@
     {
         case ConnectionStatus_Connected:
             [self.delegate dataManager:self requireUpdateTitleViewState:GJGCRecentChatConnectStateSuccess];
+            [self loadRecentConversations];
             break;
         case ConnectionStatus_Connecting:
             [self.delegate dataManager:self requireUpdateTitleViewState:GJGCRecentChatConnectStateConnecting];

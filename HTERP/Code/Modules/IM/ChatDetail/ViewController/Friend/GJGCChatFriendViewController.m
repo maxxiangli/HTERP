@@ -1339,10 +1339,9 @@ static NSString * const GJGCActionSheetAssociateKey = @"GJIMSimpleCellActionShee
             
         }
         
-
-        [self sendImages:images];
-        
         dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self sendImages:images];
             
             [self removeCropingImageOnView:pickerViewController.view];
             
@@ -1474,7 +1473,7 @@ static NSString * const GJGCActionSheetAssociateKey = @"GJIMSimpleCellActionShee
 {
     NSString *fileName = [NSString stringWithFormat:@"local_file_%@",GJCFStringCurrentTimeStamp];
     
-    NSString *filePath = [[GJCFCachePathManager shareManager]mainImageCacheFilePath:fileName];
+    NSString *filePath = [[GJCFCachePathManager shareManager] mainImageCacheFilePath:fileName];
     
     NSData *imageData = UIImageJPEGRepresentation(originImage, 0.8);
 

@@ -77,7 +77,7 @@ static NSString *  GJCFAudioFileCacheSubTempEncodeFileDirectory = @"GJCFAudioFil
     if (GJCFStringIsNull(fileName)) {
         return nil;
     }
-    return [[self mainImageCacheDirectory]stringByAppendingPathComponent:fileName];
+    return [[self mainImageCacheDirectory] stringByAppendingPathComponent:fileName];
 }
 
 /* 主音频缓存下文件路径 */
