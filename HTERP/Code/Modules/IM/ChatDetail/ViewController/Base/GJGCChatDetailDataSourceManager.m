@@ -1013,36 +1013,16 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
 
 - (void)reSendMesssage:(GJGCChatFriendContentModel *)messageContent
 {
-//    GJCFWeakSelf weakSelf = self;
-//    [[EMClient sharedClient].chatManager asyncResendMessage:messageContent.message progress:^(int progress) {
-//        
-//    } completion:^(EMMessage *message, EMError *error) {
-//        
-//        GJGCChatFriendSendMessageStatus status = GJGCChatFriendSendMessageStatusSending;
-//        switch (message.status) {
-//            case EMMessageStatusPending:
-//            case EMMessageStatusDelivering:
-//            {
-//                status = GJGCChatFriendSendMessageStatusSending;
-//            }
-//            break;
-//            case EMMessageStatusSuccessed:
-//            {
-//                status = GJGCChatFriendSendMessageStatusSuccess;
-//            }
-//            break;
-//            case EMMessageStatusFailed:
-//            {
-//                status = GJGCChatFriendSendMessageStatusFaild;
-//            }
-//            break;
-//            default:
-//            break;
-//        }
-//        
-//        [weakSelf updateMessageState:message state:status];
-//        
-//    }];
+    GJCFWeakSelf weakSelf = self;
+    
+    RCMessage *oldMessage = messageContent.message;
+    RCMessage *newMessage = [[RCIMClient sharedRCIMClient] sendMessage:oldMessage.conversationType targetId:oldMessage.targetId content:oldMessage.content pushContent:nil pushData:nil success:^(long messageId) {
+        [weakSelf handleSendMessageSucess:messageId];
+    } error:^(RCErrorCode nErrorCode, long messageId) {
+        [weakSelf handleSendMessageError:messageId];
+    }];
+    
+    messageContent.message = newMessage;
 }
 
 #pragma mark - 收环信消息到数据源，子类具体实现
@@ -1323,37 +1303,12 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
     return conversationType;
 }
 
-- (RCMessage *)sendTextMessage:(GJGCChatFriendContentModel *)messageContent
-{
-    RCConversationType type = [self conversationTypeFromTalkType:messageContent.talkType];
-    NSString *targetId = messageContent.toId;
-    RCMessageDirection direction = MessageDirection_SEND;
-    RCTextMessage *textMessage = [RCTextMessage messageWithContent:messageContent.originTextMessage];
-    long messgeId = (long)arc4random();
-    RCMessage *message = [[RCMessage alloc] initWithType:type
-                                                targetId:targetId
-                                               direction:direction
-                                               messageId:messgeId
-                                                 content:textMessage];
-    
-    return message;
-}
-
-
-//- (EMMessage *)sendTextMessage:(GJGCChatFriendContentModel *)messageContent
-//{
-//    return nil;
-//    EMTextMessageBody *messageBody = [[EMTextMessageBody alloc]initWithText:messageContent.originTextMessage];
-//    
-//    return [self buildMessageWithBody:messageBody];
-//}
-
 - (EMMessage *)sendAudioMessage:(GJGCChatFriendContentModel *)messageContent
 {
     return nil;
 //    EMVoiceMessageBody *messageBody = [[EMVoiceMessageBody alloc] initWithLocalPath:messageContent.audioModel.localStorePath displayName:@"[语音]"];
 //    messageBody.duration = messageContent.audioModel.duration;
-//    
+//
 //    return [self buildMessageWithBody:messageBody];
 
 }
