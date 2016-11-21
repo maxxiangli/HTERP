@@ -72,40 +72,6 @@ static const NSInteger kGetMessageCount = 20;
     return chatContentModel;
 }
 
-
-//- (GJGCChatFriendContentModel *)addEaseMessage:(EMMessage *)aMessage
-//{
-//    return nil;
-    /* 格式化消息 */
-    //TODO:WXT
-//    GJGCChatFriendContentModel *chatContentModel = [[GJGCChatFriendContentModel alloc]init];
-//    chatContentModel.baseMessageType = GJGCChatBaseMessageTypeChatMessage;
-//    chatContentModel.toId = aMessage.to;
-//    chatContentModel.toUserName = aMessage.to;
-//    chatContentModel.isFromSelf = [aMessage.from isEqualToString:[ZYUserCenter shareCenter].currentLoginUser.mobile]? YES:NO;
-//    chatContentModel.sendStatus = [[self easeMessageStateRleations][@(aMessage.status)]integerValue];
-//    chatContentModel.sendTime = (NSInteger)(aMessage.timestamp/1000);
-//    chatContentModel.senderId = aMessage.from;
-//    chatContentModel.localMsgId = aMessage.messageId;
-//    chatContentModel.faildReason = @"";
-//    chatContentModel.faildType = 0;
-//    chatContentModel.talkType = self.taklInfo.talkType;
-//    chatContentModel.contentHeight = 0.f;
-//    chatContentModel.contentSize = CGSizeZero;
-//
-//    /* 格式内容字段 */
-//    GJGCChatFriendContentType contentType = [self formateChatFriendContent:chatContentModel withMsgModel:aMessage];
-//
-//    if (contentType != GJGCChatFriendContentTypeNotFound) {
-//        [self addChatContentModel:chatContentModel];
-//        
-//        //置为已读
-//        [self.taklInfo.conversation markMessageAsReadWithId:aMessage.messageId];
-//    }
-//    
-//    return chatContentModel;
-//}
-
 #pragma mark - 数据库读取最后二十条信息
 
 - (void)readLastMessagesFromDB
@@ -206,5 +172,39 @@ static const NSInteger kGetMessageCount = 20;
     
     return status;
 }
+
+#pragma mark - Discard
+//- (GJGCChatFriendContentModel *)addEaseMessage:(EMMessage *)aMessage
+//{
+//    return nil;
+/* 格式化消息 */
+//TODO:WXT
+//    GJGCChatFriendContentModel *chatContentModel = [[GJGCChatFriendContentModel alloc]init];
+//    chatContentModel.baseMessageType = GJGCChatBaseMessageTypeChatMessage;
+//    chatContentModel.toId = aMessage.to;
+//    chatContentModel.toUserName = aMessage.to;
+//    chatContentModel.isFromSelf = [aMessage.from isEqualToString:[ZYUserCenter shareCenter].currentLoginUser.mobile]? YES:NO;
+//    chatContentModel.sendStatus = [[self easeMessageStateRleations][@(aMessage.status)]integerValue];
+//    chatContentModel.sendTime = (NSInteger)(aMessage.timestamp/1000);
+//    chatContentModel.senderId = aMessage.from;
+//    chatContentModel.localMsgId = aMessage.messageId;
+//    chatContentModel.faildReason = @"";
+//    chatContentModel.faildType = 0;
+//    chatContentModel.talkType = self.taklInfo.talkType;
+//    chatContentModel.contentHeight = 0.f;
+//    chatContentModel.contentSize = CGSizeZero;
+//
+//    /* 格式内容字段 */
+//    GJGCChatFriendContentType contentType = [self formateChatFriendContent:chatContentModel withMsgModel:aMessage];
+//
+//    if (contentType != GJGCChatFriendContentTypeNotFound) {
+//        [self addChatContentModel:chatContentModel];
+//
+//        //置为已读
+//        [self.taklInfo.conversation markMessageAsReadWithId:aMessage.messageId];
+//    }
+//
+//    return chatContentModel;
+//}
 
 @end

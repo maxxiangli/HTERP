@@ -331,9 +331,9 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
         NSLog(@"不需要计算内容高度:%f",contentModel.contentHeight);
         
     }
-    
+    NSLog(@"=================");
     [self.chatListArray addObject:contentModel];
-    
+    NSLog(@"=================");
     if ([contentModel.class isSubclassOfClass:[GJGCChatFriendContentModel class]]) {
         [self.delegate dataSourceManagerDidRecievedChatContent:(GJGCChatFriendContentModel *)contentModel];
     }
@@ -1056,150 +1056,93 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
     return nil;
 }
 
-#pragma mark - 环信发送消息过程
+#pragma mark - 融云发送消息过程
 - (RCMessage *)sendMessageContent:(GJGCChatFriendContentModel *)messageContent
 {
-//    如果当前会话信息不存在，创建一个
-        if (!self.taklInfo.converstation)
-        {
-            RCConversationType conversationType;
-            switch (self.taklInfo.talkType)
-            {
-                case GJGCChatFriendTalkTypePrivate:
-                    conversationType = ConversationType_PRIVATE;
-                    break;
-                case GJGCChatFriendTalkTypeGroup:
-                    conversationType = ConversationType_GROUP;
-                    break;
-                default:
-                    break;
-            }
-            
-            self.taklInfo.converstation = [[RCConversation alloc] init];
-        }
-    
-        RCMessage *sendMessage = nil;
-        switch (messageContent.contentType) {
-            case GJGCChatFriendContentTypeText:
-            {
-                sendMessage = [self sendTextMessage:messageContent];
-            }
-                break;
-            case GJGCChatFriendContentTypeAudio:
-            {
-//                sendMessage = [self sendAudioMessage:messageContent];
-            }
-                break;
-            case GJGCChatFriendContentTypeImage:
-            {
-//                sendMessage = [self sendImageMessage:messageContent];
-            }
-                break;
-            case GJGCChatFriendContentTypeLimitVideo:
-            {
-//                sendMessage = [self sendVideoMessage:messageContent];
-            }
-                break;
-            default:
-                break;
-        }
-    
-        //添加用户扩展信息
-//        GJGCMessageExtendModel *extendInfo = [[GJGCMessageExtendModel alloc]init];
-//        extendInfo.userInfo = [[ZYUserCenter shareCenter]extendUserInfo];
-//        extendInfo.isExtendMessageContent = NO;
-//        sendMessage.ext = [extendInfo contentDictionary];
-    
-        //添加群组扩展信息
-//        if (self.taklInfo.talkType == GJGCChatFriendTalkTypeGroup) {
-//            GJGCMessageExtendGroupModel *groupInfo = [[GJGCMessageExtendGroupModel alloc]init];
-//    
-//            //是否有扩展信息
-//            if (self.taklInfo.groupInfo) {
-//    
-//                groupInfo.groupName = self.taklInfo.groupInfo.groupName;
-//                groupInfo.groupHeadThumb = self.taklInfo.groupInfo.groupHeadThumb;
-//    
-//            }else{
-//    
-//                groupInfo.groupName = self.taklInfo.toUserName;
-//                groupInfo.groupHeadThumb = @"";
-//    
-//            }
-//    
-//    
-//            extendInfo.isGroupMessage = YES;
-//            extendInfo.groupInfo = groupInfo;
-//        }
-    
-        //发送扩展类型的消息
-        switch (messageContent.contentType) {
-            case GJGCChatFriendContentTypeGif:
-            {
-//                extendInfo.isExtendMessageContent = YES;
-//    
-//                GJGCMessageExtendContentGIFModel *gifContent = [[GJGCMessageExtendContentGIFModel alloc]init];
-//                gifContent.emojiCode = messageContent.gifLocalId;
-//                gifContent.emojiVersion = GJCFSystemAppStringVersion;
-//                gifContent.displayText = [GJGCGIFLoadManager gifNameById:messageContent.gifLocalId];
-//                gifContent.notSupportDisplayText = [NSString stringWithFormat:@"[GIF:%@]请更新你的源代码以支持此表情显示",gifContent.displayText];
-//    
-//                messageContent.originTextMessage = gifContent.notSupportDisplayText;
-//                sendMessage = [self sendTextMessage:messageContent];
-//    
-//                extendInfo.messageContent = gifContent;
-//                extendInfo.chatFriendContentType = messageContent.contentType;
-            }
-                break;
-            case GJGCChatFriendContentTypeMini:
-            {
-    
-            }
-                break;
-            default:
-                break;
-        }
-    
-        //设置消息类型
-//        switch (messageContent.talkType) {
-//            case GJGCChatFriendTalkTypePrivate:
-//                sendMessage.chatType = EMChatTypeChat;
-//                break;
-//            case GJGCChatFriendTalkTypeGroup:
-//                sendMessage.chatType = EMChatTypeGroupChat;
-//                break;
-//            default:
-//                break;
-//        }
-//        sendMessage.ext = [extendInfo contentDictionary];
-//        NSLog(@"sendMessage Ext:%@",sendMessage.ext);
+    RCConversationType conversationType = [self typeFromMessageContent:messageContent];
+    RCMessageContent *msgContent = [self messageFromMessageContent:messageContent];
     
     GJCFWeakSelf weakSelf = self;
-        sendMessage.sentStatus = SentStatus_SENDING;
-    RCMessage *message = [[RCIMClient sharedRCIMClient] sendMessage:sendMessage.conversationType
-                                                           targetId:sendMessage.targetId
-                                                            content:sendMessage.content
+    RCMessage *message = [[RCIMClient sharedRCIMClient] sendMessage:conversationType
+                                                           targetId:messageContent.toId
+                                                            content:msgContent
                                                         pushContent:nil
                                                            pushData:nil
                                                             success:^(long messageId) {
-                                           [weakSelf updateMessageState:message state:GJGCChatFriendSendMessageStatusSuccess];
-        NSLog(@"message Id = %@", @(messageId));
+                                                                [weakSelf handleSendMessageSucess:messageId];
     } error:^(RCErrorCode nErrorCode, long messageId) {
-        NSLog(@"============%@", @(nErrorCode));
+        [weakSelf handleSendMessageError:messageId];
     }];
     
-    return sendMessage;
+    return message;
+}
+
+- (RCConversationType)typeFromMessageContent:(GJGCChatFriendContentModel *)messageContent
+{
+    RCConversationType conversationType = ConversationType_PRIVATE;
+    switch (self.taklInfo.talkType)
+    {
+        case GJGCChatFriendTalkTypePrivate:
+            conversationType = ConversationType_PRIVATE;
+            break;
+        case GJGCChatFriendTalkTypeGroup:
+            conversationType = ConversationType_GROUP;
+            break;
+        default:
+            break;
+    }
+    return conversationType;
+}
+
+- (RCMessageContent *)messageFromMessageContent:(GJGCChatFriendContentModel *)messageContent
+{
+    RCMessageContent *msgContent = nil;
+    switch (messageContent.contentType)
+    {
+        case GJGCChatFriendContentTypeText:
+        {
+            msgContent = [RCTextMessage messageWithContent:messageContent.originTextMessage];
+        }
+            break;
+        case GJGCChatFriendContentTypeAudio:
+        {
+            //                sendMessage = [self sendAudioMessage:messageContent];
+        }
+            break;
+        case GJGCChatFriendContentTypeImage:
+        {
+            //                sendMessage = [self sendImageMessage:messageContent];
+        }
+            break;
+        case GJGCChatFriendContentTypeLimitVideo:
+        {
+            //                sendMessage = [self sendVideoMessage:messageContent];
+        }
+            break;
+        default:
+            break;
+    }
+    return msgContent;
+}
+
+- (void)handleSendMessageSucess:(long)msgId
+{
+    GJCFWeakSelf weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        RCMessage *message = [[RCIMClient sharedRCIMClient] getMessage:msgId];
+        [weakSelf updateMessageState:message state:GJGCChatFriendSendMessageStatusSuccess];
+    });
 }
 
 
-//- (RCMessage *)sendMessage:(RCConversationType)conversationType
-//                  targetId:(NSString *)targetId
-//                   content:(RCMessageContent *)content
-//               pushContent:(NSString *)pushContent
-//                  pushData:(NSString *)pushData
-//                   success:(void (^)(long messageId))successBlock
-//                     error:(void (^)(RCErrorCode nErrorCode, long messageId))errorBlock;
-
+- (void)handleSendMessageError:(long)msgId
+{
+    GJCFWeakSelf weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        RCMessage *message = [[RCIMClient sharedRCIMClient] getMessage:msgId];
+        [weakSelf updateMessageState:message state:GJGCChatFriendSendMessageStatusFaild];
+    });
+}
 
 #pragma mark -  环信发送消息过程
 
@@ -1459,10 +1402,27 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
 #pragma mark - 聊天消息发送回调
 - (void)updateMessageState:(RCMessage *)theMessage state:(GJGCChatFriendSendMessageStatus)status
 {
-//    [self.chatListArray replaceObjectAtIndex:0 withObject:findContent];
+    GJGCChatFriendContentModel *findContent = nil;
+    NSInteger findIndex = NSNotFound;
     
-    [self.delegate dataSourceManagerRequireUpdateListTable:self reloadAtIndex:0];
+    for (NSInteger index =0 ;index < self.chatListArray.count;index++) {
+        
+        GJGCChatFriendContentModel *content = [self.chatListArray objectAtIndex:index];
+        
+        if (content.message.messageId == theMessage.messageId)
+        {
+            findContent = content;
+            findIndex = index;
+            break;
+        }
+    }
     
+    if (findContent && findIndex !=NSNotFound)
+    {
+        findContent.sendStatus = status;
+        [self.chatListArray replaceObjectAtIndex:findIndex withObject:findContent];
+        [self.delegate dataSourceManagerRequireUpdateListTable:self reloadAtIndex:findIndex];
+    }
 }
 
 
@@ -1483,7 +1443,7 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
 //            break;
 //        }
 //    }
-//    
+//
 //    if (findContent && findIndex !=NSNotFound) {
 //        
 //        findContent.sendStatus = status;
