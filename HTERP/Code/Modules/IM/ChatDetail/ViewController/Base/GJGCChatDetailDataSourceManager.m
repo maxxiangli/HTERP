@@ -323,6 +323,7 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
         contentModel.contentHeight = [[contentHeightArray firstObject] floatValue];
         contentModel.contentSize = [[contentHeightArray lastObject] CGSizeValue];
         
+        //更新数据库中的接口暂且不看:TODO
         [self updateMsgContentHeightWithContentModel:contentModel];
         
     }else{
@@ -979,7 +980,8 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
      * 如果不加这个判定的话，在发送多张图片的时候，
      * 分割成单张，会被认为间隔时间太短
      */
-     if (messageContent.contentType == GJGCChatFriendContentTypeText || messageContent.contentType == GJGCChatFriendContentTypeGif ) {
+     if (messageContent.contentType == GJGCChatFriendContentTypeText ||
+         messageContent.contentType == GJGCChatFriendContentTypeGif ) {
          if (self.lastSendMsgTime != 0) {
             
             //间隔太短
@@ -991,22 +993,19 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
     }
     
     messageContent.sendStatus = GJGCChatFriendSendMessageStatusSending;
-    [self sendMessageContent:messageContent];
-//    EMMessage *mesage = [self sendMessageContent:messageContent];
-//    messageContent.message = mesage;
-//    messageContent.localMsgId = mesage.messageId;
-//    messageContent.easeMessageTime = mesage.timestamp;
-//    messageContent.sendTime = (NSInteger)(mesage.timestamp/1000);
-//    [messageContent setupUserInfoByExtendUserContent:[[ZYUserCenter shareCenter]extendUserInfo]];
-//
-//    //收到消息
+    RCMessage *message = [self sendMessageContent:messageContent];
+    messageContent.message = message;
+    messageContent.localMsgId = [NSString stringWithFormat:@"%ld", message.messageId];
+    messageContent.easeMessageTime = message.sentTime;
+    messageContent.sendTime = (NSInteger)(message.sentTime/1000);
+    messageContent.headUrl = message.content.senderUserInfo.portraitUri;
+    
+    //收到消息
     [self addChatContentModel:messageContent];
-//
     [self updateTheNewMsgTimeString:messageContent];
-//
-//    //缓冲刷新
+    
+    //缓冲刷新
     dispatch_source_merge_data(_refreshListSource, 1);
-//
     self.lastSendMsgTime = [[NSDate date]timeIntervalSince1970]*1000;
     
     return YES;
@@ -1057,7 +1056,7 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
     return nil;
 }
 
-#pragma mark - 融云发送消息过程
+#pragma mark - 环信发送消息过程
 - (RCMessage *)sendMessageContent:(GJGCChatFriendContentModel *)messageContent
 {
 //    如果当前会话信息不存在，创建一个

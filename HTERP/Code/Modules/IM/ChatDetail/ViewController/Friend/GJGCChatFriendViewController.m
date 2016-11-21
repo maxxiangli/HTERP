@@ -1067,7 +1067,7 @@ static NSString * const GJGCActionSheetAssociateKey = @"GJIMSimpleCellActionShee
     [self clearAllEarlyMessage];
     
     /* 创建内容 */
-    GJGCChatFriendContentModel *chatContentModel = [[GJGCChatFriendContentModel alloc]init];
+    GJGCChatFriendContentModel *chatContentModel = [[GJGCChatFriendContentModel alloc] init];
     chatContentModel.baseMessageType = GJGCChatBaseMessageTypeChatMessage;
     chatContentModel.contentType = GJGCChatFriendContentTypeText;
     NSDictionary *parseTextDict = [GJGCChatFriendCellStyle formateSimpleTextMessage:text];
@@ -1110,7 +1110,7 @@ static NSString * const GJGCActionSheetAssociateKey = @"GJIMSimpleCellActionShee
     chatContentModel.isFromSelf = YES;
     chatContentModel.gifLocalId = gifCode;
     chatContentModel.talkType = self.taklInfo.talkType;
-
+    
     /* 从talkInfo中绑定更多信息给待发送内容 */
     [self setSendChatContentModelWithTalkInfo:chatContentModel];
     
