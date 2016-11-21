@@ -1014,12 +1014,12 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
 - (void)reSendMesssage:(GJGCChatFriendContentModel *)messageContent
 {
     GJCFWeakSelf weakSelf = self;
-    
     RCMessage *oldMessage = messageContent.message;
+    long oldMsgId = oldMessage.messageId;
     RCMessage *newMessage = [[RCIMClient sharedRCIMClient] sendMessage:oldMessage.conversationType targetId:oldMessage.targetId content:oldMessage.content pushContent:nil pushData:nil success:^(long messageId) {
-        [weakSelf handleSendMessageSucess:messageId];
+        [weakSelf handleResendMessageSucess:messageId oldMsgId:oldMsgId];
     } error:^(RCErrorCode nErrorCode, long messageId) {
-        [weakSelf handleSendMessageError:messageId];
+        [weakSelf handleReSendMessageError:messageId oldMsgId:oldMsgId];
     }];
     
     messageContent.message = newMessage;
@@ -1105,20 +1105,44 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
     return msgContent;
 }
 
+- (void)handleResendMessageSucess:(long)newMsgId oldMsgId:(long)oldMsgId
+{
+    GJCFWeakSelf weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[RCIMClient sharedRCIMClient] setMessageSentStatus:oldMsgId sentStatus:SentStatus_SENT];
+        RCMessage *message = [[RCIMClient sharedRCIMClient] getMessage:oldMsgId];
+        [weakSelf updateMessageState:message state:GJGCChatFriendSendMessageStatusSuccess];
+        [[RCIMClient sharedRCIMClient] deleteMessages:@[@(newMsgId)]];
+    });
+}
+
 - (void)handleSendMessageSucess:(long)msgId
 {
     GJCFWeakSelf weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
+        [[RCIMClient sharedRCIMClient] setMessageSentStatus:msgId sentStatus:SentStatus_SENT];
         RCMessage *message = [[RCIMClient sharedRCIMClient] getMessage:msgId];
         [weakSelf updateMessageState:message state:GJGCChatFriendSendMessageStatusSuccess];
     });
 }
 
 
+- (void)handleReSendMessageError:(long)newMsgId oldMsgId:(long)oldMsgId
+{
+    GJCFWeakSelf weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[RCIMClient sharedRCIMClient] setMessageSentStatus:oldMsgId sentStatus:SentStatus_FAILED];
+        RCMessage *message = [[RCIMClient sharedRCIMClient] getMessage:oldMsgId];
+        [weakSelf updateMessageState:message state:GJGCChatFriendSendMessageStatusFaild];
+        [[RCIMClient sharedRCIMClient] deleteMessages:@[@(newMsgId)]];
+    });
+}
+
 - (void)handleSendMessageError:(long)msgId
 {
     GJCFWeakSelf weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
+        [[RCIMClient sharedRCIMClient] setMessageSentStatus:msgId sentStatus:SentStatus_FAILED];
         RCMessage *message = [[RCIMClient sharedRCIMClient] getMessage:msgId];
         [weakSelf updateMessageState:message state:GJGCChatFriendSendMessageStatusFaild];
     });
