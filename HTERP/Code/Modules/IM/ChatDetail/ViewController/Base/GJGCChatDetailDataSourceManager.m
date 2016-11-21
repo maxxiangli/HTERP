@@ -331,10 +331,10 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
         NSLog(@"不需要计算内容高度:%f",contentModel.contentHeight);
         
     }
-    NSLog(@"=================");
     [self.chatListArray addObject:contentModel];
-    NSLog(@"=================");
-    if ([contentModel.class isSubclassOfClass:[GJGCChatFriendContentModel class]]) {
+    
+    if ([contentModel.class isSubclassOfClass:[GJGCChatFriendContentModel class]])
+    {
         [self.delegate dataSourceManagerDidRecievedChatContent:(GJGCChatFriendContentModel *)contentModel];
     }
 
