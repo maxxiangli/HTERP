@@ -194,7 +194,7 @@
         model.uin = param.mobile;
         [GLOBEL_LOGIN_OBJECT saveLoginData:model];
         
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [weakSelf.navigationController popToRootViewControllerAnimated:YES];
         
     } failure:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand, NSError *dataParseError) {
         //关闭loading
