@@ -10,6 +10,8 @@
 #import "GJGCMessageExtendModel.h"
 #import "ZYUserCenter.h"
 
+static const NSInteger kGetMessageCount = 20;
+
 @interface GJGCChatFriendDataSourceManager ()
 {
     
@@ -36,23 +38,36 @@
 }
 
 #pragma mark - 观察本地发送消息创建成功和消息状态更新通知
-- (GJGCChatFriendContentModel *)addEaseMessage:(RCMessage *)aMessage
+- (GJGCChatFriendContentModel *)addEasyMessage:(RCMessage *)aMessage
 {
     GJGCChatFriendContentModel *chatContentModel = [[GJGCChatFriendContentModel alloc] init];
     
     chatContentModel.baseMessageType = GJGCChatBaseMessageTypeChatMessage;
     chatContentModel.toId = self.taklInfo.toId;
     chatContentModel.toUserName = self.taklInfo.toUserName;
-    chatContentModel.sendStatus = GJGCChatFriendSendMessageStatusSuccess;
+    chatContentModel.isFromSelf = [self isFromSelf:aMessage];
+    chatContentModel.sendStatus = [self sendStatusFromMessage:aMessage];
     chatContentModel.sendTime = (NSInteger)(aMessage.sentTime/1000);
-    chatContentModel.senderId = aMessage.content.senderUserInfo.userId;
-    chatContentModel.senderName = [[NSAttributedString alloc] initWithString:aMessage.content.senderUserInfo.name];
+    chatContentModel.senderId = aMessage.senderUserId;
     chatContentModel.localMsgId =  [NSString stringWithFormat:@"%ld",aMessage.messageId];
     chatContentModel.faildReason = @"";
     chatContentModel.faildType = 0;
     chatContentModel.talkType = self.taklInfo.talkType;
     chatContentModel.contentHeight = 0.f;
     chatContentModel.contentSize = CGSizeZero;
+    
+    GJGCChatFriendContentType contentType = [self formateChatFriendContent:chatContentModel withMessage:aMessage];
+    
+    if (contentType != GJGCChatFriendContentTypeNotFound) {
+        [self addChatContentModel:chatContentModel];
+        
+        //置为已读
+        [[RCIMClient sharedRCIMClient] clearMessagesUnreadStatus:self.taklInfo.converstation.conversationType targetId:self.taklInfo.converstation.targetId];
+        
+        [[RCIMClient sharedRCIMClient] setMessageReceivedStatus:aMessage.messageId
+                                                 receivedStatus:ReceivedStatus_READ];
+
+    }
     
     return chatContentModel;
 }
@@ -80,7 +95,7 @@
 //
 //    /* 格式内容字段 */
 //    GJGCChatFriendContentType contentType = [self formateChatFriendContent:chatContentModel withMsgModel:aMessage];
-//    
+//
 //    if (contentType != GJGCChatFriendContentTypeNotFound) {
 //        [self addChatContentModel:chatContentModel];
 //        
@@ -104,14 +119,16 @@
     }
     
     //读取最近的20条消息
-    //TODO:WXT
-//    long long beforeTime = [[NSDate date]timeIntervalSince1970]*1000;
-//    NSArray *messages = [self.taklInfo.conversation loadMoreMessagesContain:nil before:beforeTime limit:10 from:nil direction:EMMessageSearchDirectionUp];
-//    
-//    for (EMMessage *theMessage in messages) {
-//        
-//        [self addEaseMessage:theMessage];
-//    }
+    RCConversationType type = self.taklInfo.converstation.conversationType;
+    NSString *targetId = self.taklInfo.toId;
+    NSArray *latestMessages = [[RCIMClient sharedRCIMClient] getLatestMessages:type
+                                                                      targetId:targetId
+                                                                         count:kGetMessageCount];
+    
+    for (RCMessage *message in latestMessages)
+    {
+        [self addEasyMessage:message];
+    }
     
     /* 更新时间区间 */
     [self updateAllMsgTimeShowString];
@@ -124,8 +141,6 @@
 }
 
 #pragma mark - 删除消息
-
-
 - (void)pushAddMoreMsg:(NSArray *)array
 {
     /* 分发到UI层，添加一组消息 */
@@ -156,6 +171,40 @@
 - (void)updateAudioFinishRead:(NSString *)localMsgId
 {
 //    [[GJGCFriendMsgDBAPI share] updateAudioMsgFinishRead:[localMsgId longLongValue] toId:self.taklInfo.toId];
+}
+
+#pragma mark - Private function
+- (BOOL)isFromSelf:(RCMessage *)message
+{
+    RCUserInfo *userInfo = [[RCIMClient sharedRCIMClient] currentUserInfo];
+    if ([userInfo.userId isEqualToString:message.senderUserId])
+    {
+        return YES;
+    }
+    return NO;
+}
+
+- (GJGCChatFriendSendMessageStatus)sendStatusFromMessage:(RCMessage *)message
+{
+    GJGCChatFriendSendMessageStatus status = GJGCChatFriendSendMessageStatusFaild;
+    if (message.sentStatus == SentStatus_SENDING)
+    {
+        status = GJGCChatFriendSendMessageStatusSending;
+    }
+    else if (message.sentStatus == SentStatus_SENT)
+    {
+        status = GJGCChatFriendSendMessageStatusSuccess;
+    }
+    else if (message.sentStatus == SentStatus_FAILED)
+    {
+        status = GJGCChatFriendSendMessageStatusFaild;
+    }
+    else
+    {
+        status = GJGCChatFriendSendMessageStatusSuccess;
+    }
+    
+    return status;
 }
 
 @end

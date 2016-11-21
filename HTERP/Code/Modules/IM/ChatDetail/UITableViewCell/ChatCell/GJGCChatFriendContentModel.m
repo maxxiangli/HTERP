@@ -50,7 +50,7 @@
 
 + (GJGCChatFriendContentModel *)timeSubModel
 {
-    GJGCChatFriendContentModel *timeSubModel = [[GJGCChatFriendContentModel alloc]init];
+    GJGCChatFriendContentModel *timeSubModel = [[GJGCChatFriendContentModel alloc] init];
     timeSubModel.isTimeSubModel = YES;
     
     return timeSubModel;

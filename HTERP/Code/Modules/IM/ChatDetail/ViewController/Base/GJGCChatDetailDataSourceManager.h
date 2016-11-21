@@ -225,6 +225,13 @@ extern NSString * GJGCChatForwardMessageDidSendNoti;
 - (GJGCChatFriendContentType)formateChatFriendContent:(GJGCChatFriendContentModel *)chatContentModel withMsgModel:(EMMessage *)msgModel;
 
 /**
+ *  根据融云消息格式内容展示
+ *
+ */
+- (GJGCChatFriendContentType)formateChatFriendContent:(GJGCChatFriendContentModel *)chatContentModel
+                                          withMessage:(RCMessage *)message;
+
+/**
  *  发送一条消息
  *
  *  @param messageContent

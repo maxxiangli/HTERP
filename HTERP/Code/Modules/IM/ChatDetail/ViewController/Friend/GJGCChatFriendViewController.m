@@ -79,7 +79,7 @@ static NSString * const GJGCActionSheetAssociateKey = @"GJIMSimpleCellActionShee
 
 - (void)dealloc
 {
-    //Do nothing
+    NSLog(@"%s", __FUNCTION__);
 }
 
 - (void)viewDidLoad {

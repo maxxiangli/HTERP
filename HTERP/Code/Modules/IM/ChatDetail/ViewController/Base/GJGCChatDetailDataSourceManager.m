@@ -17,13 +17,13 @@
 #import "GJCFCachePathManager.h"
 #import "ZYUserCenter.h"
 
+#import "CHRCIMDataSource.h"
+
 #import <RongIMLib/RongIMLib.h>
 
 NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNoti";
 
-//@interface GJGCChatDetailDataSourceManager ()<EMChatManagerDelegate>
-@interface GJGCChatDetailDataSourceManager ()<RCIMClientReceiveMessageDelegate>
-
+@interface GJGCChatDetailDataSourceManager ()
 
 @property (nonatomic,strong)dispatch_source_t refreshListSource;
 
@@ -42,17 +42,29 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
         self.delegate = aDelegate;
         self.taskQueue = dispatch_queue_create("GJGCChatDetailBaseTaskQueue", DISPATCH_QUEUE_SERIAL);
         
-        //注册监听消息
-        NSString *userData = NSStringFromClass([self class]);
-        [[RCIMClient sharedRCIMClient] setReceiveMessageDelegate:self
-                                                          object:userData];
+        //注册监听新消息
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleReceiveMessage:)
+                                                     name:CHRCIMReceiveMessageNotification
+                                                   object:nil];
+        
+        //注册监听网络变化
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleConnectionStateChanged:)
+                                                     name:CHRCIMConnectionStatsChangedNotification
+                                                   object:nil];
+        
 
         //观察转发消息
-        [GJCFNotificationCenter addObserver:self selector:@selector(observeForwardSendMessage:) name:GJGCChatForwardMessageDidSendNoti object:nil];
+        [GJCFNotificationCenter addObserver:self
+                                   selector:@selector(observeForwardSendMessage:)
+                                       name:GJGCChatForwardMessageDidSendNoti
+                                     object:nil];
         
         //清除会话的未读数
-        //TODO:WXT
-//        [self.taklInfo.conversation markAllMessagesAsRead];
+        RCConversation *conversation = self.taklInfo.converstation;
+        [[RCIMClient sharedRCIMClient] clearMessagesUnreadStatus:conversation.conversationType
+                                                        targetId:conversation.targetId];
         
         //最短消息间隔500毫秒
         self.lastSendMsgTime = 0;
@@ -130,7 +142,8 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
 - (void)initState
 {
     //缓冲刷新
-    if (!self.refreshListSource) {
+    if (!self.refreshListSource)
+    {
         self.refreshListSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_DATA_ADD, 0, 0, dispatch_get_main_queue());
         GJCFWeakSelf weakSelf = self;
         dispatch_source_set_event_handler(_refreshListSource, ^{
@@ -735,6 +748,45 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
 }
 
 #pragma mark - 格式化消息内容
+- (GJGCChatFriendContentType)formateChatFriendContent:(GJGCChatFriendContentModel *)chatContentModel
+                                          withMessage:(RCMessage *)message
+{
+    GJGCChatFriendContentType type = GJGCChatFriendContentTypeNotFound;
+    
+    chatContentModel.message = message;
+    chatContentModel.contentType = type;
+    
+    NSString *objName = message.objectName;
+    if ([objName isEqualToString:RCImageMessageTypeIdentifier])
+    {
+        //Do nothing
+    }
+    else if ([objName isEqualToString:RCTextMessageTypeIdentifier])
+    {
+        chatContentModel.contentType = GJGCChatFriendContentTypeText;
+        RCTextMessage *textMessge = (RCTextMessage *)message.content;
+        if (!GJCFNSCacheGetValue(textMessge.content))
+        {
+            [GJGCChatFriendCellStyle formateSimpleTextMessage:textMessge.content];
+        }
+        chatContentModel.originTextMessage = textMessge.content;
+    }
+    else if ([objName isEqualToString:RCVoiceMessageTypeIdentifier])
+    {
+        
+    }else{
+        
+    }
+    
+    //解析用户信息
+    chatContentModel.headUrl = message.content.senderUserInfo.portraitUri;
+    if (chatContentModel.talkType == GJGCChatFriendTalkTypeGroup)
+    {
+        chatContentModel.senderName = [GJGCChatFriendCellStyle formateGroupChatSenderName:message.content.senderUserInfo.name];
+    }
+    return chatContentModel.contentType;
+}
+
 
 - (GJGCChatFriendContentType)formateChatFriendContent:(GJGCChatFriendContentModel *)chatContentModel withMsgModel:(EMMessage *)msgModel
 {
@@ -996,6 +1048,11 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
 
 #pragma mark - 收环信消息到数据源，子类具体实现
 - (GJGCChatFriendContentModel *)addEaseMessage:(EMMessage *)aMessage
+{
+    return nil;
+}
+
+- (GJGCChatFriendContentModel *)addEasyMessage:(RCMessage *)aMessage
 {
     return nil;
 }
@@ -1539,42 +1596,19 @@ typedef int EMConnectionState;
 }
 
 
-#pragma mark - RCIMClientReceiveMessageDelegate
-- (void)onReceived:(RCMessage *)message left:(int)nLeft object:(id)object
+#pragma mark - Notification for handle connection state changed
+- (void)handleConnectionStateChanged:(NSNotification *)notification
 {
-//    if ([message.targetId isEqualToString:self.taklInfo.converstation.targetId])
-//    {
-//         GJGCChatContentBaseModel *contenModel = [self addEaseMessage:message];
-//    }
+    
 }
 
-- (void)onMessageRecalled:(long)messageId
+#pragma mark - Notification for handle receive message
+- (void)handleReceiveMessage:(NSNotification *)notification
 {
-    int i = 0;
-}
-
-- (void)onMessageReceiptRequest:(RCConversationType)conversationType targetId:(NSString *)targetId messageUId:(NSString *)messageUId
-{
-    int m = 0;
-}
-
-- (void)onMessageReceiptResponse:(RCConversationType)conversationType targetId:(NSString *)targetId messageUId:(NSString *)messageUId readerList:(NSMutableDictionary *)userIdList
-{
-    int k = 0;
+    
 }
 
 
-//    for (EMMessage *message in aMessages) {
-//
-//        if ([message.conversationId isEqualToString:self.taklInfo.conversation.conversationId]) {
-//
-//            GJGCChatContentBaseModel *contenModel = [self addEaseMessage:message];
-//
-//            [self updateTheNewMsgTimeString:contenModel];
-//
-//            dispatch_source_merge_data(_refreshListSource, 1);
-//        }
-//    }
 
 
 

@@ -9,9 +9,6 @@
 #import "GJGCChatDetailViewController.h"
 #import "GJGCChatFriendDataSourceManager.h"
 
-@class EMMessage;
-@class EMMessageBody;
-
 @interface GJGCChatFriendViewController : GJGCChatDetailViewController<UIActionSheetDelegate>
 
 /* 从talkInfo中绑定更多信息给待发送内容,子类可以复写实现更多的绑定 */

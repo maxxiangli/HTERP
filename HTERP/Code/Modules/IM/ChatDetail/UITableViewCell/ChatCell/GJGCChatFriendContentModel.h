@@ -11,6 +11,8 @@
 #import "GJCFAudioModel.h"
 #import "GJGCMessageExtendModel.h"
 
+#import <RongIMLib/RongIMLib.h>
+
 @class EMMessage;
 
 @interface GJGCChatFriendContentModel : GJGCChatContentBaseModel
@@ -129,7 +131,8 @@
 
 @property (nonatomic,assign)long long easeMessageTime;
 
-@property (nonatomic,strong)EMMessage *message;
+//@property (nonatomic,strong)EMMessage *message;
+@property (nonatomic, strong)RCMessage *message;
 
 #pragma mark - 扩展网页消息
 
