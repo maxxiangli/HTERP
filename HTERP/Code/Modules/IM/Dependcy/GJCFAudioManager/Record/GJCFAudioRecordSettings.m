@@ -69,8 +69,8 @@
                                    AVNumberOfChannelsKey:@(self.numberOfChnnels),
                                    AVLinearPCMIsBigEndianKey:@(self.LinearPCMIsBigEndian),
                                    AVLinearPCMIsFloatKey:@(self.LinearPCMIsFloat),
-                                   AVEncoderAudioQualityKey:@(self.EncoderAudioQuality)
-                                   
+                                   AVEncoderAudioQualityKey:@(self.EncoderAudioQuality),
+                                   AVLinearPCMIsNonInterleaved:@(NO)
                                    };
     
     return aSettingDict;

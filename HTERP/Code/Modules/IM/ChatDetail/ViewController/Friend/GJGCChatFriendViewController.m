@@ -413,12 +413,6 @@ static NSString * const GJGCActionSheetAssociateKey = @"GJIMSimpleCellActionShee
     GJCUImageBrowserNavigationViewController *imageBrowser = [[GJCUImageBrowserNavigationViewController alloc] initWithImageUrls:imageUrls];
     imageBrowser.pageIndex = currentImageIndex;
     [self presentViewController:imageBrowser animated:YES completion:nil];
-    
-    
-    
-//    GJCUImageBrowserNavigationViewController *imageBrowser = [[GJCUImageBrowserNavigationViewController alloc]initWithEaseImageMessageBodys:imageUrls];
-//    imageBrowser.pageIndex = currentImageIndex;
-//    [self presentViewController:imageBrowser animated:YES completion:nil];
 }
 
 - (void)textMessageCellDidTapOnPhoneNumber:(GJGCChatBaseCell *)tapedCell withPhoneNumber:(NSString *)phoneNumber

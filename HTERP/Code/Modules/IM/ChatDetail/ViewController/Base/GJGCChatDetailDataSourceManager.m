@@ -1040,7 +1040,8 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
     RCMessageContent *msgContent = [self messageFromMessageContent:messageContent];
     GJCFWeakSelf weakSelf = self;
     RCMessage *message = nil;
-    if (messageContent.contentType == GJGCChatFriendContentTypeText)
+    if (messageContent.contentType == GJGCChatFriendContentTypeText ||
+        messageContent.contentType == GJGCChatFriendContentTypeAudio)
     {
         message = [[RCIMClient sharedRCIMClient] sendMessage:conversationType
                                                     targetId:messageContent.toId
@@ -1056,11 +1057,7 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
     }
     else if (messageContent.contentType == GJGCChatFriendContentTypeImage)
     {
-        message = [[RCIMClient sharedRCIMClient] sendMediaMessage:conversationType targetId:messageContent.toId content:msgContent pushContent:nil pushData:nil progress:^(int progress, long messageId) {
-            
-            NSLog(@"progress = %@", @(progress));
-            
-        } success:^(long messageId) {
+        message = [[RCIMClient sharedRCIMClient] sendMediaMessage:conversationType targetId:messageContent.toId content:msgContent pushContent:nil pushData:nil progress:nil success:^(long messageId) {
             
             NSLog(@"success = %@", @(messageId));
             [weakSelf handleSendMessageSucess:messageId];
@@ -1076,9 +1073,8 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
             
         }];
     }
-    else
-    {
-        
+    else{
+        //Do nothing
     }
     
     return message;
@@ -1113,7 +1109,9 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
             break;
         case GJGCChatFriendContentTypeAudio:
         {
-            //                sendMessage = [self sendAudioMessage:messageContent];
+            NSData *voiceData = [NSData dataWithContentsOfFile:messageContent.audioModel.localStorePath];
+            NSInteger duration = messageContent.audioModel.duration;
+            content = [RCVoiceMessage messageWithAudio:voiceData duration:duration];
         }
             break;
         case GJGCChatFriendContentTypeImage:

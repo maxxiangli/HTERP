@@ -56,12 +56,12 @@
     NSError *err = nil;
     [audioSession setCategory:AVAudioSessionCategoryRecord error:&err];
     if(err){
-        NSLog(@"GJCFAudioRecord audioSession: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
+        NSLog(@"GJCFAudioRecord audioSession: %@ %ld %@", [err domain], [err code], [[err userInfo] description]);
         return;
     }
     [audioSession setActive:YES error:&err];
     if(err){
-        NSLog(@"GJCFAudioRecord audioSession: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
+        NSLog(@"GJCFAudioRecord audioSession: %@ %ld %@", [err domain], [err code], [[err userInfo] description]);
         return;
     }
 

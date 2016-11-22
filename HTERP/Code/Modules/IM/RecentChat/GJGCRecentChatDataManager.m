@@ -138,9 +138,11 @@
     {
         result = @"[图片]";
     }
-    else
+    else if([objectName isEqualToString:RCFileMessageTypeIdentifier])
     {
-        //Do nothing
+        result = @"[文件]";
+    }else{
+        result = @"[未知]";
     }
     return result;
 }
