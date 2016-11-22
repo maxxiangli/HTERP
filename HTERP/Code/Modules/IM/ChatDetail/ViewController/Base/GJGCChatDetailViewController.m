@@ -643,7 +643,7 @@
 
         if (!baseCell) {
             
-            baseCell = [[GJGCChatBaseCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            baseCell = [[GJGCChatBaseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
         
         return baseCell;

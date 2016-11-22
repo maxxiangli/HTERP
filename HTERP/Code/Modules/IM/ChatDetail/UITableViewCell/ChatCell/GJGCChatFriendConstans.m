@@ -85,19 +85,19 @@
 
 + (NSString *)identifierForCellClass:(NSString *)className
 {
-    return  [[GJGCChatFriendConstans chatCellIdentifierDict]objectForKey:className];
+    return  [[GJGCChatFriendConstans chatCellIdentifierDict] objectForKey:className];
 }
 
 + (Class)classForContentType:(GJGCChatFriendContentType)contentType
 {
-    NSString *className = [[GJGCChatFriendConstans chatCellContentTypeDict]objectForKey:@(contentType)];
+    NSString *className = [[GJGCChatFriendConstans chatCellContentTypeDict] objectForKey:@(contentType)];
     
     return NSClassFromString(className);
 }
 
 + (NSString *)identifierForContentType:(GJGCChatFriendContentType)contentType
 {
-    NSString *className = [[GJGCChatFriendConstans chatCellContentTypeDict]objectForKey:@(contentType)];
+    NSString *className = [[GJGCChatFriendConstans chatCellContentTypeDict] objectForKey:@(contentType)];
     
     return [GJGCChatFriendConstans identifierForCellClass:className];
 }

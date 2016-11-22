@@ -760,7 +760,7 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
     NSString *objName = message.objectName;
     if ([objName isEqualToString:RCImageMessageTypeIdentifier])
     {
-        //Do nothing
+        chatContentModel.contentType = GJGCChatFriendContentTypeImage;
     }
     else if ([objName isEqualToString:RCTextMessageTypeIdentifier])
     {
@@ -1574,11 +1574,16 @@ typedef int EMConnectionState;
 #pragma mark - Notification for handle receive message
 - (void)handleReceiveMessage:(NSNotification *)notification
 {
-    
+    NSDictionary *userInfo = notification.userInfo;
+    RCMessage *message = [userInfo objectForKey:CHRCIMRCMessageKey];
+//    NSNumber *number = [userInfo objectForKey:CHRCIMLeftMessageKey];
+//    NSInteger nLeft = [number integerValue];
+    if ([message.targetId isEqualToString:self.taklInfo.toId])
+    {
+        GJGCChatContentBaseModel *contenModel = [self addEasyMessage:message];
+        [self updateTheNewMsgTimeString:contenModel];
+        dispatch_source_merge_data(_refreshListSource, 1);
+    }
 }
-
-
-
-
 
 @end
