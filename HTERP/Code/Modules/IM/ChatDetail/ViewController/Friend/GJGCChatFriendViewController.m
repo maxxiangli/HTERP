@@ -384,38 +384,41 @@ static NSString * const GJGCActionSheetAssociateKey = @"GJIMSimpleCellActionShee
     
     GJGCChatFriendContentModel *contentModel = (GJGCChatFriendContentModel *)[self.dataSourceManager contentModelAtIndex:indexPath.row];
     
-    EMMessage *tappedMessage = contentModel.message;
-    
+    NSInteger currentImageIndex = 0;
+    RCMessage *tappedMessage = contentModel.message;
     NSMutableArray *imageUrls = [NSMutableArray array];
     
-    NSInteger currentImageIndex = 0;
-    
-    //TODO:WXT
-//    for (int i = 0; i < [self.dataSourceManager totalCount]; i++) {
-//        
-//        GJGCChatFriendContentModel *itemModel = (GJGCChatFriendContentModel *)[self.dataSourceManager contentModelAtIndex:i];
-//        
-//        if (itemModel.contentType == GJGCChatFriendContentTypeImage) {
-//            
-//            EMMessage *imageMessage = itemModel.message;
-//
-//            NSLog(@"imageMessageBody:%@",imageMessage);
-//            
-//            [imageUrls addObject:imageMessage.body];
-//
-//            if ([imageMessage.messageId isEqualToString:tappedMessage.messageId]) {
-//                
-//                currentImageIndex = imageUrls.count - 1;
-//                
-//            }
-//        }
-//        
-//    }
+    for (int i = 0; i < [self.dataSourceManager totalCount]; i++) {
+        
+        GJGCChatFriendContentModel *itemModel = (GJGCChatFriendContentModel *)[self.dataSourceManager contentModelAtIndex:i];
+        
+        if (itemModel.contentType == GJGCChatFriendContentTypeImage) {
+            
+            RCMessage *imageMessage = itemModel.message;
+            RCImageMessage *content = (RCImageMessage *)imageMessage.content;
+            
+            [imageUrls addObject:content.imageUrl];
+
+            if (imageMessage.messageId == tappedMessage.messageId)
+            {
+                
+                currentImageIndex = imageUrls.count - 1;
+                
+            }
+        }
+        
+    }
     
     /* 进入大图浏览模式 */
-    GJCUImageBrowserNavigationViewController *imageBrowser = [[GJCUImageBrowserNavigationViewController alloc]initWithEaseImageMessageBodys:imageUrls];
+    GJCUImageBrowserNavigationViewController *imageBrowser = [[GJCUImageBrowserNavigationViewController alloc] initWithImageUrls:imageUrls];
     imageBrowser.pageIndex = currentImageIndex;
     [self presentViewController:imageBrowser animated:YES completion:nil];
+    
+    
+    
+//    GJCUImageBrowserNavigationViewController *imageBrowser = [[GJCUImageBrowserNavigationViewController alloc]initWithEaseImageMessageBodys:imageUrls];
+//    imageBrowser.pageIndex = currentImageIndex;
+//    [self presentViewController:imageBrowser animated:YES completion:nil];
 }
 
 - (void)textMessageCellDidTapOnPhoneNumber:(GJGCChatBaseCell *)tapedCell withPhoneNumber:(NSString *)phoneNumber

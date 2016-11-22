@@ -174,7 +174,7 @@
 
 - (void)initBrowserViewControllerWithImageUrls:(NSArray *)imageUrls
 {
-    self.imageBrowserController = [[GJCUImageBrowserViewController alloc]initWithImageUrls:imageUrls];
+    self.imageBrowserController = [[GJCUImageBrowserViewController alloc] initWithImageUrls:imageUrls];
     self.imageBrowserController.isPresentModelState = YES;
     [self setViewControllers:@[self.imageBrowserController] animated:NO];
 }
@@ -202,7 +202,7 @@
 
 - (void)initBrowserViewControllerWithEaseImageMessageBodys:(NSArray *)messageBodys
 {
-    self.imageBrowserController = [[GJCUImageBrowserViewController alloc]initWithEaseImageMessageBody:messageBodys];
+    self.imageBrowserController = [[GJCUImageBrowserViewController alloc] initWithEaseImageMessageBody:messageBodys];
     self.imageBrowserController.isPresentModelState = YES;
     [self setViewControllers:@[self.imageBrowserController] animated:NO];
 }

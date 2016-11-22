@@ -73,7 +73,7 @@
     NSMutableArray *imageModels = [NSMutableArray array];
     for (NSString *url in imageUrls) {
         
-        GJCUImageBrowserModel *aImageModel = [[GJCUImageBrowserModel alloc]init];
+        GJCUImageBrowserModel *aImageModel = [[GJCUImageBrowserModel alloc] init];
         aImageModel.imageUrl = url;
         
         [imageModels addObject:aImageModel];
@@ -449,7 +449,7 @@
     GJCFWeakSelf weakSelf = self;
     
     /* 完成下载 */
-    [[GJCFFileDownloadManager shareDownloadManager]setDownloadCompletionBlock:^(GJCFFileDownloadTask *task, NSData *fileData, BOOL isFinishCache) {
+    [[GJCFFileDownloadManager shareDownloadManager] setDownloadCompletionBlock:^(GJCFFileDownloadTask *task, NSData *fileData, BOOL isFinishCache) {
         
         NSInteger imageIndex = [task.userInfo[@"index"]intValue];
         [weakSelf downloadCompletion:fileData cacheState:isFinishCache withIndex:imageIndex];
@@ -457,7 +457,7 @@
     } forObserver:self];
     
     /* 下载失败 */
-    [[GJCFFileDownloadManager shareDownloadManager]setDownloadFaildBlock:^(GJCFFileDownloadTask *task, NSError *error) {
+    [[GJCFFileDownloadManager shareDownloadManager] setDownloadFaildBlock:^(GJCFFileDownloadTask *task, NSError *error) {
         
         NSInteger imageIndex = [task.userInfo[@"index"]intValue];
 
@@ -466,7 +466,7 @@
     } forObserver:self];
     
     /* 下载进度 */
-    [[GJCFFileDownloadManager shareDownloadManager]setDownloadProgressBlock:^(GJCFFileDownloadTask *task, CGFloat progress) {
+    [[GJCFFileDownloadManager shareDownloadManager] setDownloadProgressBlock:^(GJCFFileDownloadTask *task, CGFloat progress) {
         
         [weakSelf downloadProgress:progress];
         

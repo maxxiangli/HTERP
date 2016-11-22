@@ -104,7 +104,7 @@
     
     [self resetStateWithPrepareSize:thumbnailSize];
     
-    if (chatContentModel.isFromSelf)
+    if (imageMessage.thumbnailImage/*chatContentModel.isFromSelf*/)
     {
         self.contentSize = thumbnailSize;
         self.contentImageView.gjcf_size = self.contentSize;
