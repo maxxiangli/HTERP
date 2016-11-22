@@ -24,6 +24,9 @@
 /* 文件在服务器的远程地址 */
 @property (nonatomic,strong)NSString *remotePath;
 
+/*当本地没有文件时使用*/
+@property (nonatomic, strong)NSData *waveData;
+
 /* 临时转换编码时候的文件,默认iOS本地应该保存wav格式的文件，
  * 但是在上传服务器可能要求是别的格式，比如AMR,所以，
  * 我们提供一个属性，来保存我们临时转换的文件路径 

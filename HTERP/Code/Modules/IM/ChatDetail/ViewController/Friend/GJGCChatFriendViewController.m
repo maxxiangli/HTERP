@@ -616,9 +616,17 @@ static NSString * const GJGCActionSheetAssociateKey = @"GJIMSimpleCellActionShee
     GJGCChatFriendContentModel *contentModel = (GJGCChatFriendContentModel *)[self.dataSourceManager contentModelAtIndex:playingIndex];
     
     NSString *localStorePath = contentModel.audioModel.localStorePath;
-
     NSIndexPath *playingIndexPath = [NSIndexPath indexPathForRow:playingIndex inSection:0];
-    if (GJCFFileIsExist(localStorePath)) {
+    
+    if (!GJCFFileIsExist(localStorePath))
+    {
+        RCVoiceMessage *message = (RCVoiceMessage *)contentModel.message.content;
+        contentModel.audioModel.waveData = [message.wavAudioData copy];
+        contentModel.audioModel.duration = message.duration;
+    }
+    
+    if (GJCFFileIsExist(localStorePath) || contentModel.audioModel.waveData)
+    {
         
         [self.audioPlayer playAudioFile:contentModel.audioModel];
         contentModel.isPlayingAudio = YES;

@@ -74,7 +74,19 @@
     }
     
     NSError *playerError = nil;
-    self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL URLWithString:self.currentPlayAudioFile.localStorePath] error:&playerError];
+    
+    NSData *wavData = nil;
+    if (GJCFFileIsExist(self.currentPlayAudioFile.localStorePath))
+    {
+        wavData = [NSData dataWithContentsOfFile:self.currentPlayAudioFile.localStorePath];
+    }
+    else
+    {
+        wavData = self.currentPlayAudioFile.waveData;
+    }
+    
+//    self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL URLWithString:self.currentPlayAudioFile.localStorePath] error:&playerError];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithData:wavData error:&playerError];
     if (playerError) {
         _isPlaying = NO;
         NSError *faildError = [NSError errorWithDomain:@"gjcf.AudioManager.com" code:-234 userInfo:@{@"msg": @"GJCFAuidoPlayer播放失败"}];
@@ -101,7 +113,17 @@
     
     _isPlaying = [self.audioPlayer play];
     /* 获取当前播放文件得时间总长度 */
-    self.currentPlayAudioDuration = [self getLocalWavFileDuration:self.currentPlayAudioFile.localStorePath];
+    
+    if (GJCFFileIsExist(self.currentPlayAudioFile.localStorePath))
+    {
+        self.currentPlayAudioDuration = [self getLocalWavFileDuration:self.currentPlayAudioFile.localStorePath];
+    }
+    else
+    {
+        self.currentPlayAudioDuration = self.currentPlayAudioFile.duration;
+    }
+
+//    self.currentPlayAudioDuration = [self getLocalWavFileDuration:self.currentPlayAudioFile.localStorePath];
     
     if (_isPlaying) {
         

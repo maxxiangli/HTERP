@@ -771,8 +771,14 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
     }
     else if ([objName isEqualToString:RCVoiceMessageTypeIdentifier])
     {
+        chatContentModel.contentType = GJGCChatFriendContentTypeAudio;
         
-    }else{
+        RCVoiceMessage *voiceMessage = (RCVoiceMessage *)chatContentModel.message.content;
+        chatContentModel.audioModel.duration = voiceMessage.duration;
+        chatContentModel.audioDuration = [GJGCChatFriendCellStyle formateAudioDuration:GJCFStringFromInt(chatContentModel.audioModel.duration)];
+    }
+    else
+    {
         
     }
     
@@ -783,191 +789,6 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
         chatContentModel.senderName = [GJGCChatFriendCellStyle formateGroupChatSenderName:message.content.senderUserInfo.name];
     }
     return chatContentModel.contentType;
-}
-
-
-- (GJGCChatFriendContentType)formateChatFriendContent:(GJGCChatFriendContentModel *)chatContentModel withMsgModel:(EMMessage *)msgModel
-{
-    return 0;
-//    GJGCChatFriendContentType type = GJGCChatFriendContentTypeNotFound;
-//    
-//    EMMessageBody *messageBody = msgModel.body;
-//    chatContentModel.message = msgModel;
-//    chatContentModel.contentType = type;
-//    
-//    //普通文本消息和依靠普通文本消息扩展出来的消息类型
-//    GJGCMessageExtendModel *extendModel = [[GJGCMessageExtendModel alloc]initWithDictionary:msgModel.ext];
-//    
-//    switch (messageBody.type) {
-//        case EMMessageBodyTypeImage:
-//        {
-//            chatContentModel.contentType = GJGCChatFriendContentTypeImage;
-//            EMImageMessageBody *imageBody = (EMImageMessageBody *)messageBody;
-//            if (imageBody.thumbnailLocalPath && CGSizeEqualToSize(CGSizeZero, imageBody.thumbnailSize)) {
-//                UIImage *thumb = [UIImage imageWithContentsOfFile:imageBody.thumbnailLocalPath];
-//                CGSize size = thumb.size;
-//                CGFloat maxScale = size.width * size.height > 200 * 200 ? sqrt((200 * 200) / (size.width * size.height)):1.0;
-//                CGFloat thumbWidth = thumb.size.width*maxScale;
-//                CGFloat thumbHeight = thumb.size.height*maxScale;
-//                imageBody.thumbnailSize = CGSizeMake(thumbWidth, thumbHeight);
-//                msgModel.body = imageBody;
-//            }
-//        }
-//            break;
-//        case EMMessageBodyTypeText:
-//        {
-//            NSLog(@"解析扩展内容:%@",[extendModel contentDictionary]);
-//            
-//            //普通文本消息
-//            if (!extendModel.isExtendMessageContent) {
-//                
-//                chatContentModel.contentType = GJGCChatFriendContentTypeText;
-//                
-//                EMTextMessageBody *textMessageBody = (EMTextMessageBody *)messageBody;
-//                
-//                if (!GJCFNSCacheGetValue(textMessageBody.text)) {
-//                    [GJGCChatFriendCellStyle formateSimpleTextMessage:textMessageBody.text];
-//                }
-//                chatContentModel.originTextMessage = textMessageBody.text;
-//                
-//            }
-//            
-//            //扩展消息类型
-//            if (extendModel.isExtendMessageContent) {
-//                
-//                chatContentModel.contentType = extendModel.chatFriendContentType;
-//                
-//                //是否支持显示的扩展消息
-//                if (extendModel.isSupportDisplay) {
-//                    
-//                    //进一步解析消息内容
-//                    switch (extendModel.chatFriendContentType) {
-//                        case GJGCChatFriendContentTypeGif:
-//                        {
-//                            GJGCMessageExtendContentGIFModel *gifContent = (GJGCMessageExtendContentGIFModel *)extendModel.messageContent;
-//                            chatContentModel.gifLocalId = gifContent.emojiCode;
-//                        }
-//                            break;
-//                        case GJGCChatFriendContentTypeMusicShare:
-//                        {
-//                            GJGCMessageExtendMusicShareModel  *musicContent = (GJGCMessageExtendMusicShareModel *)extendModel.messageContent;
-//                            chatContentModel.audioModel.remotePath = musicContent.songUrl;
-//                            chatContentModel.audioModel.localStorePath = [[GJCFCachePathManager shareManager]mainAudioCacheFilePathForUrl:musicContent.songId];
-//                            chatContentModel.audioModel.isNeedConvertEncodeToSave = NO;
-//                            chatContentModel.musicSongId = musicContent.songId;
-//                            chatContentModel.musicSongName = musicContent.title;
-//                            chatContentModel.musicSongUrl = musicContent.songUrl;
-//                            chatContentModel.musicSongAuthor = musicContent.author;
-//                        }
-//                            break;
-//                        case GJGCChatFriendContentTypeWebPage:
-//                        {
-//                            GJGCMessageExtendContentWebPageModel *webPageContent = (GJGCMessageExtendContentWebPageModel *)extendModel.messageContent;
-//                            chatContentModel.webPageThumbImageData = [webPageContent.thumbImageBase64 base64DecodedData];
-//                            chatContentModel.webPageTitle = webPageContent.title;
-//                            chatContentModel.webPageSumary = webPageContent.sumary;
-//                            chatContentModel.webPageUrl = webPageContent.url;
-//                            
-//                        }
-//                            break;
-//                        case GJGCChatFriendContentTypeSendFlower:
-//                        {
-//                            GJGCMessageExtendSendFlowerModel *flowerContent = (GJGCMessageExtendSendFlowerModel *)extendModel.messageContent;
-//                            chatContentModel.flowerTitle = flowerContent.title;
-//                            
-//                        }
-//                            break;
-//                        case GJGCChatFriendContentTypeMini:
-//                        {
-//                            GJGCMessageExtendMiniMessageModel *miniContent = (GJGCMessageExtendMiniMessageModel *)extendModel.messageContent;
-//                            chatContentModel.originTextMessage = miniContent.displayText;
-//                            chatContentModel.simpleTextMessage = [GJGCChatFriendCellStyle formateMinMessage:miniContent.displayText];
-//                        }
-//                            break;
-//                        default:
-//                            break;
-//                    }
-//                }
-//                
-//                //如果不支持，需要将消息显示成文本消息
-//                if (![extendModel isSupportDisplay]) {
-//                    
-//                    chatContentModel.contentType = GJGCChatFriendContentTypeText;
-//                    
-//                    EMTextMessageBody *textMessageBody = (EMTextMessageBody *)messageBody;
-//                    
-//                    if (!GJCFNSCacheGetValue(textMessageBody.text)) {
-//                        [GJGCChatFriendCellStyle formateSimpleTextMessage:textMessageBody.text];
-//                    }
-//                    chatContentModel.originTextMessage = textMessageBody.text;
-//                }
-//            }
-//        }
-//            break;
-//        case EMMessageBodyTypeCmd:
-//        {
-//            
-//        }
-//            break;
-//        case EMMessageBodyTypeFile:
-//        {
-//            
-//        }
-//            break;
-//        case EMMessageBodyTypeLocation:
-//        {
-//            
-//        }
-//            break;
-//        case EMMessageBodyTypeVideo:
-//        {
-//            chatContentModel.contentType = GJGCChatFriendContentTypeLimitVideo;
-//            
-//            EMVideoMessageBody *voiceMessageBody = (EMVideoMessageBody *)messageBody;
-//            if (voiceMessageBody.thumbnailLocalPath && CGSizeEqualToSize(CGSizeZero, voiceMessageBody.thumbnailSize)) {
-//                UIImage *thumb = [UIImage imageWithContentsOfFile:voiceMessageBody.thumbnailLocalPath];
-//                CGSize size = thumb.size;
-//                CGFloat maxScale = size.width * size.height > 200 * 200 ? sqrt((200 * 200) / (size.width * size.height)):1.0;
-//                CGFloat thumbWidth = thumb.size.width*maxScale;
-//                CGFloat thumbHeight = thumb.size.height*maxScale;
-//                voiceMessageBody.thumbnailSize = CGSizeMake(thumbWidth, thumbHeight);
-//                msgModel.body = voiceMessageBody;
-//            }
-//            
-//            NSString *nLocalPath = voiceMessageBody.localPath;
-//            if (![voiceMessageBody.localPath.lastPathComponent hasSuffix:@"mp4"]) {
-//                nLocalPath = [voiceMessageBody.localPath stringByAppendingPathExtension:@"mp4"];
-//                [GJCFFileManager moveItemAtURL:[NSURL fileURLWithPath:voiceMessageBody.localPath] toURL:[NSURL fileURLWithPath:nLocalPath] error:nil];
-//                voiceMessageBody.localPath = nLocalPath;
-//                [self.taklInfo.conversation updateMessage:msgModel];
-//            }
-//            chatContentModel.videoUrl = [NSURL fileURLWithPath:voiceMessageBody.localPath];
-//            
-//        }
-//            break;
-//        case EMMessageBodyTypeVoice:
-//        {
-//            chatContentModel.contentType = GJGCChatFriendContentTypeAudio;
-//            
-//            EMVoiceMessageBody *voiceMessageBody = (EMVoiceMessageBody *)messageBody;
-//            
-//            chatContentModel.audioModel.localStorePath = voiceMessageBody.localPath;
-//            chatContentModel.audioModel.duration = voiceMessageBody.duration;
-//            chatContentModel.audioDuration =  [GJGCChatFriendCellStyle formateAudioDuration:GJCFStringFromInt(chatContentModel.audioModel.duration)];
-//        }
-//            break;
-//        default:
-//            break;
-//    }
-//    type = chatContentModel.contentType;
-//    
-//    //解析用户信息
-//    chatContentModel.headUrl = extendModel.userInfo.headThumb;
-//    if (chatContentModel.talkType == GJGCChatFriendTalkTypeGroup) {
-//        chatContentModel.senderName = [GJGCChatFriendCellStyle formateGroupChatSenderName:extendModel.userInfo.nickName];
-//    }
-//    
-//    return type;
 }
 
 - (BOOL)sendMesssage:(GJGCChatFriendContentModel *)messageContent
@@ -1013,14 +834,78 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
     GJCFWeakSelf weakSelf = self;
     RCMessage *oldMessage = messageContent.message;
     long oldMsgId = oldMessage.messageId;
-    RCMessage *newMessage = [[RCIMClient sharedRCIMClient] sendMessage:oldMessage.conversationType targetId:oldMessage.targetId content:oldMessage.content pushContent:nil pushData:nil success:^(long messageId) {
-        [weakSelf handleResendMessageSucess:messageId oldMsgId:oldMsgId];
-    } error:^(RCErrorCode nErrorCode, long messageId) {
-        [weakSelf handleReSendMessageError:messageId oldMsgId:oldMsgId];
-    }];
+    if (messageContent.contentType == GJGCChatFriendContentTypeText ||
+        messageContent.contentType == GJGCChatFriendContentTypeAudio)
+    {
+        [[RCIMClient sharedRCIMClient] sendMessage:oldMessage.conversationType targetId:oldMessage.targetId content:oldMessage.content pushContent:nil pushData:nil success:^(long messageId) {
+            [weakSelf handleResendMessageSucess:messageId oldMsgId:oldMsgId];
+        } error:^(RCErrorCode nErrorCode, long messageId) {
+            [weakSelf handleReSendMessageError:messageId oldMsgId:oldMsgId];
+        }];
+    }
+    else if (messageContent.contentType == GJGCChatFriendContentTypeImage)
+    {
+        [[RCIMClient sharedRCIMClient] sendMediaMessage:oldMessage.conversationType targetId:oldMessage.targetId content:oldMessage.content pushContent:nil pushData:nil progress:nil success:^(long messageId) {
+            
+            [weakSelf handleResendMessageSucess:messageId oldMsgId:oldMsgId];
+            
+        } error:^(RCErrorCode errorCode, long messageId) {
+            
+            [weakSelf handleReSendMessageError:messageId oldMsgId:oldMsgId];
+            
+        } cancel:^(long messageId) {
+            
+        }];
+    }
+    else
+    {
+        //Do nothing
+    }
     
-    messageContent.message = newMessage;
+//    messageContent.message = newMessage;
 }
+
+
+
+//if (messageContent.contentType == GJGCChatFriendContentTypeText ||
+//    messageContent.contentType == GJGCChatFriendContentTypeAudio)
+//{
+//    message = [[RCIMClient sharedRCIMClient] sendMessage:conversationType
+//                                                targetId:messageContent.toId
+//                                                 content:msgContent
+//                                             pushContent:nil
+//                                                pushData:nil
+//                                                 success:^(long messageId) {
+//                                                     [weakSelf handleSendMessageSucess:messageId];
+//                                                 } error:^(RCErrorCode nErrorCode, long messageId) {
+//                                                     [weakSelf handleSendMessageError:messageId];
+//                                                 }];
+//    
+//}
+//else if (messageContent.contentType == GJGCChatFriendContentTypeImage)
+//{
+//    message = [[RCIMClient sharedRCIMClient] sendMediaMessage:conversationType targetId:messageContent.toId content:msgContent pushContent:nil pushData:nil progress:nil success:^(long messageId) {
+//        
+//        NSLog(@"success = %@", @(messageId));
+//        [weakSelf handleSendMessageSucess:messageId];
+//        
+//    } error:^(RCErrorCode errorCode, long messageId) {
+//        
+//        NSLog(@"error = %@", @(errorCode));
+//        [weakSelf handleSendMessageError:messageId];
+//        
+//    } cancel:^(long messageId) {
+//        
+//        NSLog(@"cancel = %@", @(messageId));
+//        
+//    }];
+//}
+//else{
+//    //Do nothing
+//}
+
+
+
 
 #pragma mark - 收环信消息到数据源，子类具体实现
 - (GJGCChatFriendContentModel *)addEaseMessage:(EMMessage *)aMessage
@@ -1580,5 +1465,193 @@ typedef int EMConnectionState;
         dispatch_source_merge_data(_refreshListSource, 1);
     }
 }
+
+
+
+#pragma mark - Discard
+- (GJGCChatFriendContentType)formateChatFriendContent:(GJGCChatFriendContentModel *)chatContentModel withMsgModel:(EMMessage *)msgModel
+{
+    return 0;
+    //    GJGCChatFriendContentType type = GJGCChatFriendContentTypeNotFound;
+    //
+    //    EMMessageBody *messageBody = msgModel.body;
+    //    chatContentModel.message = msgModel;
+    //    chatContentModel.contentType = type;
+    //
+    //    //普通文本消息和依靠普通文本消息扩展出来的消息类型
+    //    GJGCMessageExtendModel *extendModel = [[GJGCMessageExtendModel alloc]initWithDictionary:msgModel.ext];
+    //
+    //    switch (messageBody.type) {
+    //        case EMMessageBodyTypeImage:
+    //        {
+    //            chatContentModel.contentType = GJGCChatFriendContentTypeImage;
+    //            EMImageMessageBody *imageBody = (EMImageMessageBody *)messageBody;
+    //            if (imageBody.thumbnailLocalPath && CGSizeEqualToSize(CGSizeZero, imageBody.thumbnailSize)) {
+    //                UIImage *thumb = [UIImage imageWithContentsOfFile:imageBody.thumbnailLocalPath];
+    //                CGSize size = thumb.size;
+    //                CGFloat maxScale = size.width * size.height > 200 * 200 ? sqrt((200 * 200) / (size.width * size.height)):1.0;
+    //                CGFloat thumbWidth = thumb.size.width*maxScale;
+    //                CGFloat thumbHeight = thumb.size.height*maxScale;
+    //                imageBody.thumbnailSize = CGSizeMake(thumbWidth, thumbHeight);
+    //                msgModel.body = imageBody;
+    //            }
+    //        }
+    //            break;
+    //        case EMMessageBodyTypeText:
+    //        {
+    //            NSLog(@"解析扩展内容:%@",[extendModel contentDictionary]);
+    //
+    //            //普通文本消息
+    //            if (!extendModel.isExtendMessageContent) {
+    //
+    //                chatContentModel.contentType = GJGCChatFriendContentTypeText;
+    //
+    //                EMTextMessageBody *textMessageBody = (EMTextMessageBody *)messageBody;
+    //
+    //                if (!GJCFNSCacheGetValue(textMessageBody.text)) {
+    //                    [GJGCChatFriendCellStyle formateSimpleTextMessage:textMessageBody.text];
+    //                }
+    //                chatContentModel.originTextMessage = textMessageBody.text;
+    //
+    //            }
+    //
+    //            //扩展消息类型
+    //            if (extendModel.isExtendMessageContent) {
+    //
+    //                chatContentModel.contentType = extendModel.chatFriendContentType;
+    //
+    //                //是否支持显示的扩展消息
+    //                if (extendModel.isSupportDisplay) {
+    //
+    //                    //进一步解析消息内容
+    //                    switch (extendModel.chatFriendContentType) {
+    //                        case GJGCChatFriendContentTypeGif:
+    //                        {
+    //                            GJGCMessageExtendContentGIFModel *gifContent = (GJGCMessageExtendContentGIFModel *)extendModel.messageContent;
+    //                            chatContentModel.gifLocalId = gifContent.emojiCode;
+    //                        }
+    //                            break;
+    //                        case GJGCChatFriendContentTypeMusicShare:
+    //                        {
+    //                            GJGCMessageExtendMusicShareModel  *musicContent = (GJGCMessageExtendMusicShareModel *)extendModel.messageContent;
+    //                            chatContentModel.audioModel.remotePath = musicContent.songUrl;
+    //                            chatContentModel.audioModel.localStorePath = [[GJCFCachePathManager shareManager]mainAudioCacheFilePathForUrl:musicContent.songId];
+    //                            chatContentModel.audioModel.isNeedConvertEncodeToSave = NO;
+    //                            chatContentModel.musicSongId = musicContent.songId;
+    //                            chatContentModel.musicSongName = musicContent.title;
+    //                            chatContentModel.musicSongUrl = musicContent.songUrl;
+    //                            chatContentModel.musicSongAuthor = musicContent.author;
+    //                        }
+    //                            break;
+    //                        case GJGCChatFriendContentTypeWebPage:
+    //                        {
+    //                            GJGCMessageExtendContentWebPageModel *webPageContent = (GJGCMessageExtendContentWebPageModel *)extendModel.messageContent;
+    //                            chatContentModel.webPageThumbImageData = [webPageContent.thumbImageBase64 base64DecodedData];
+    //                            chatContentModel.webPageTitle = webPageContent.title;
+    //                            chatContentModel.webPageSumary = webPageContent.sumary;
+    //                            chatContentModel.webPageUrl = webPageContent.url;
+    //
+    //                        }
+    //                            break;
+    //                        case GJGCChatFriendContentTypeSendFlower:
+    //                        {
+    //                            GJGCMessageExtendSendFlowerModel *flowerContent = (GJGCMessageExtendSendFlowerModel *)extendModel.messageContent;
+    //                            chatContentModel.flowerTitle = flowerContent.title;
+    //
+    //                        }
+    //                            break;
+    //                        case GJGCChatFriendContentTypeMini:
+    //                        {
+    //                            GJGCMessageExtendMiniMessageModel *miniContent = (GJGCMessageExtendMiniMessageModel *)extendModel.messageContent;
+    //                            chatContentModel.originTextMessage = miniContent.displayText;
+    //                            chatContentModel.simpleTextMessage = [GJGCChatFriendCellStyle formateMinMessage:miniContent.displayText];
+    //                        }
+    //                            break;
+    //                        default:
+    //                            break;
+    //                    }
+    //                }
+    //
+    //                //如果不支持，需要将消息显示成文本消息
+    //                if (![extendModel isSupportDisplay]) {
+    //
+    //                    chatContentModel.contentType = GJGCChatFriendContentTypeText;
+    //
+    //                    EMTextMessageBody *textMessageBody = (EMTextMessageBody *)messageBody;
+    //
+    //                    if (!GJCFNSCacheGetValue(textMessageBody.text)) {
+    //                        [GJGCChatFriendCellStyle formateSimpleTextMessage:textMessageBody.text];
+    //                    }
+    //                    chatContentModel.originTextMessage = textMessageBody.text;
+    //                }
+    //            }
+    //        }
+    //            break;
+    //        case EMMessageBodyTypeCmd:
+    //        {
+    //
+    //        }
+    //            break;
+    //        case EMMessageBodyTypeFile:
+    //        {
+    //
+    //        }
+    //            break;
+    //        case EMMessageBodyTypeLocation:
+    //        {
+    //
+    //        }
+    //            break;
+    //        case EMMessageBodyTypeVideo:
+    //        {
+    //            chatContentModel.contentType = GJGCChatFriendContentTypeLimitVideo;
+    //
+    //            EMVideoMessageBody *voiceMessageBody = (EMVideoMessageBody *)messageBody;
+    //            if (voiceMessageBody.thumbnailLocalPath && CGSizeEqualToSize(CGSizeZero, voiceMessageBody.thumbnailSize)) {
+    //                UIImage *thumb = [UIImage imageWithContentsOfFile:voiceMessageBody.thumbnailLocalPath];
+    //                CGSize size = thumb.size;
+    //                CGFloat maxScale = size.width * size.height > 200 * 200 ? sqrt((200 * 200) / (size.width * size.height)):1.0;
+    //                CGFloat thumbWidth = thumb.size.width*maxScale;
+    //                CGFloat thumbHeight = thumb.size.height*maxScale;
+    //                voiceMessageBody.thumbnailSize = CGSizeMake(thumbWidth, thumbHeight);
+    //                msgModel.body = voiceMessageBody;
+    //            }
+    //
+    //            NSString *nLocalPath = voiceMessageBody.localPath;
+    //            if (![voiceMessageBody.localPath.lastPathComponent hasSuffix:@"mp4"]) {
+    //                nLocalPath = [voiceMessageBody.localPath stringByAppendingPathExtension:@"mp4"];
+    //                [GJCFFileManager moveItemAtURL:[NSURL fileURLWithPath:voiceMessageBody.localPath] toURL:[NSURL fileURLWithPath:nLocalPath] error:nil];
+    //                voiceMessageBody.localPath = nLocalPath;
+    //                [self.taklInfo.conversation updateMessage:msgModel];
+    //            }
+    //            chatContentModel.videoUrl = [NSURL fileURLWithPath:voiceMessageBody.localPath];
+    //
+    //        }
+    //            break;
+    //        case EMMessageBodyTypeVoice:
+    //        {
+    //            chatContentModel.contentType = GJGCChatFriendContentTypeAudio;
+    //
+    //            EMVoiceMessageBody *voiceMessageBody = (EMVoiceMessageBody *)messageBody;
+    //
+    //            chatContentModel.audioModel.localStorePath = voiceMessageBody.localPath;
+    //            chatContentModel.audioModel.duration = voiceMessageBody.duration;
+    //            chatContentModel.audioDuration =  [GJGCChatFriendCellStyle formateAudioDuration:GJCFStringFromInt(chatContentModel.audioModel.duration)];
+    //        }
+    //            break;
+    //        default:
+    //            break;
+    //    }
+    //    type = chatContentModel.contentType;
+    //    
+    //    //解析用户信息
+    //    chatContentModel.headUrl = extendModel.userInfo.headThumb;
+    //    if (chatContentModel.talkType == GJGCChatFriendTalkTypeGroup) {
+    //        chatContentModel.senderName = [GJGCChatFriendCellStyle formateGroupChatSenderName:extendModel.userInfo.nickName];
+    //    }
+    //    
+    //    return type;
+}
+
 
 @end
