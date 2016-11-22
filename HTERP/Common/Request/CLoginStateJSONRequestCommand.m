@@ -73,12 +73,10 @@
 
 - (NSDictionary *)setUpHeader
 {
-    
     CLoginInforModel *loginInfo = [HTLoginManager getInstance].loginInfor;
-    if (!loginInfo.userId) {
-        return nil;
-    }
-    
+//    if (!loginInfo.userId) {
+//        return nil;
+//    }
     
     NSString *luin = (loginInfo.uin && [loginInfo.uin length] > 0) ? loginInfo.uin : @"1479369785138084301";
     NSString *lskey = (loginInfo.session && [loginInfo.session length] > 0) ? loginInfo.session : @"test";

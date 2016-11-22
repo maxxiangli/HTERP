@@ -25,4 +25,7 @@ FOUNDATION_EXPORT NSString *const CHRCIMLeftMessageKey;
 //配置融云Delegate
 - (void)configRCIMDelegate;
 
+//创建群组
+- (void)createChatRoom:(NSString *)roomName users:(NSArray *)users;
+
 @end

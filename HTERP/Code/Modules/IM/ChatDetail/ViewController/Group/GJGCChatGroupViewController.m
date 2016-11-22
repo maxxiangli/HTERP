@@ -31,11 +31,7 @@
     
 }
 
-
-
-
 #pragma mark - 数据源
-
 - (void)initDataManager
 {
     self.dataSourceManager = [[GJGCChatGroupDataSourceManager alloc]initWithTalk:self.taklInfo withDelegate:self];

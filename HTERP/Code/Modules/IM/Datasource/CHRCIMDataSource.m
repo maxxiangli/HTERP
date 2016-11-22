@@ -8,6 +8,9 @@
 
 #import "CHRCIMDataSource.h"
 #import "HTLoginManager.h"
+#import "CHCreateGroupParam.h"
+#import "CHCreateGroupModel.h"
+#import "CLoginStateJSONRequestCommand.h"
 
 //融云APPKey
 static NSString *const kCHIMAppKey = @"82hegw5uhgzrx";
@@ -125,6 +128,44 @@ NSString *const CHRCIMLeftMessageKey = @"CHRCIMLeftMessageKey";
                       readerList:(NSMutableDictionary *)userIdList
 {
     
+}
+
+#pragma mark - Public function
+- (void)createChatRoom:(NSString *)roomName users:(NSArray *)users
+{
+    if (!roomName || [roomName length] == 0)
+    {
+        return;
+    }
+    
+    if (!users || [users count] <= 2)
+    {
+        return;
+    }
+    
+    NSUInteger count = [users count];
+    NSMutableString *strUsers = [NSMutableString stringWithCapacity:128];
+    for (NSUInteger i = 0; i < count; i++)
+    {
+        NSString *content = (i != 0) ? [NSString stringWithFormat:@",%@",users[i]] : users[i];
+        [strUsers appendString:content];
+    }
+    
+    CHCreateGroupParam *getParam = [[CHCreateGroupParam alloc] init];
+    getParam.userId = @"1479369785138084301";//[HTLoginManager getInstance].loginInfor.userId;
+    
+    NSDictionary *postParam = @{@"name":roomName, @"userIds":strUsers};
+    
+    [CLoginStateJSONRequestCommand getWithParams:getParam modelClass:[CHCreateGroupModel class] postOtherParams:postParam header:nil sucess:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand) {
+        
+        CHCreateGroupModel *groupModel = (CHCreateGroupModel *)requestCommand.responseModel;
+        NSLog(@"groupModel = %@", groupModel.groupId);
+        
+    } failure:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand, NSError *dataParseError) {
+        
+        NSLog(@"msg==========");
+        
+    }];
 }
 
 

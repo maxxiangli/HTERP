@@ -175,6 +175,8 @@
 		FA7031BA1DD6F1EF00E059F0 /* CHNameBrowseView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7031B91DD6F1EF00E059F0 /* CHNameBrowseView.m */; };
 		FA7031BE1DD70F4900E059F0 /* CHUserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7031BD1DD70F4900E059F0 /* CHUserDetail.storyboard */; };
 		FA7031C11DD70FB000E059F0 /* CHUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7031C01DD70FB000E059F0 /* CHUserDetailViewController.m */; };
+		FA8497231DE45139005E6155 /* CHCreateGroupParam.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8497221DE45139005E6155 /* CHCreateGroupParam.m */; };
+		FA8497261DE4560C005E6155 /* CHCreateGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8497251DE4560C005E6155 /* CHCreateGroupModel.m */; };
 		FAA8B2571DDDA890001AD05F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA8B2561DDDA890001AD05F /* libsqlite3.tbd */; };
 		FAA8BD881DDDB2A1001AD05F /* buddy_header_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA8B9291DDDB2A0001AD05F /* buddy_header_arrow.png */; };
 		FAA8BD891DDDB2A1001AD05F /* buddy_header_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA8B92A1DDDB2A0001AD05F /* buddy_header_bg.png */; };
@@ -1087,6 +1089,10 @@
 		FA7031BD1DD70F4900E059F0 /* CHUserDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CHUserDetail.storyboard; sourceTree = "<group>"; };
 		FA7031BF1DD70FB000E059F0 /* CHUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHUserDetailViewController.h; sourceTree = "<group>"; };
 		FA7031C01DD70FB000E059F0 /* CHUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHUserDetailViewController.m; sourceTree = "<group>"; };
+		FA8497211DE45139005E6155 /* CHCreateGroupParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCreateGroupParam.h; sourceTree = "<group>"; };
+		FA8497221DE45139005E6155 /* CHCreateGroupParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCreateGroupParam.m; sourceTree = "<group>"; };
+		FA8497241DE4560C005E6155 /* CHCreateGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCreateGroupModel.h; sourceTree = "<group>"; };
+		FA8497251DE4560C005E6155 /* CHCreateGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCreateGroupModel.m; sourceTree = "<group>"; };
 		FAA8B2561DDDA890001AD05F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		FAA8B9291DDDB2A0001AD05F /* buddy_header_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buddy_header_arrow.png; sourceTree = "<group>"; };
 		FAA8B92A1DDDB2A0001AD05F /* buddy_header_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buddy_header_bg.png; sourceTree = "<group>"; };
@@ -4827,6 +4833,10 @@
 			children = (
 				FAF727821DE14A110086DF05 /* CHRCIMDataSource.h */,
 				FAF727831DE14A110086DF05 /* CHRCIMDataSource.m */,
+				FA8497211DE45139005E6155 /* CHCreateGroupParam.h */,
+				FA8497221DE45139005E6155 /* CHCreateGroupParam.m */,
+				FA8497241DE4560C005E6155 /* CHCreateGroupModel.h */,
+				FA8497251DE4560C005E6155 /* CHCreateGroupModel.m */,
 			);
 			path = Datasource;
 			sourceTree = "<group>";
@@ -5369,6 +5379,7 @@
 				FAA8BFD41DDDB2A3001AD05F /* GJGCInfoBaseListBaseCell.m in Sources */,
 				FAA8BE2B1DDDB2A2001AD05F /* GJCFUploadFileModel.m in Sources */,
 				FAA8BFCD1DDDB2A3001AD05F /* GJGCCreateGroupTypeSheetDataManager.m in Sources */,
+				FA8497231DE45139005E6155 /* CHCreateGroupParam.m in Sources */,
 				C91ED3F21DCB1D68003688C7 /* CURLDataLoader.m in Sources */,
 				FAA8BFA81DDDB2A3001AD05F /* ZYDataCenterInterface.m in Sources */,
 				C9AEBE0F1DDC5A3000A94F29 /* CLoginSmsCodeParam.m in Sources */,
@@ -5599,6 +5610,7 @@
 				FAA8BFDE1DDDB2A3001AD05F /* GJGCRecentChatForwardContentModel.m in Sources */,
 				FAA8BE301DDDB2A2001AD05F /* FMDatabasePool.m in Sources */,
 				FAA8BE541DDDB2A2001AD05F /* GJCFCoreTextParagraphStyle.m in Sources */,
+				FA8497261DE4560C005E6155 /* CHCreateGroupModel.m in Sources */,
 				FAA8BFBE1DDDB2A3001AD05F /* BTDateActionSheetViewController.m in Sources */,
 				FAA8BE281DDDB2A2001AD05F /* GJCFFileDownloadTask.m in Sources */,
 				FAA8BF581DDDB2A3001AD05F /* SCPlayer.m in Sources */,

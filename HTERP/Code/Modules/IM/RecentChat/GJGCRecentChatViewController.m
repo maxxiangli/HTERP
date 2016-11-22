@@ -16,6 +16,8 @@
 #import "GJGCChatSystemNotiViewController.h"
 #import "AppDelegate.h"
 
+#import "CHRCIMDataSource.h"
+
 #import <RongIMLib/RongIMLib.h>
 
 @interface GJGCRecentChatViewController ()<UITableViewDelegate,UITableViewDataSource,GJGCRecentChatDataManagerDelegate>
@@ -52,7 +54,20 @@
     [self.dataManager performSelector:@selector(loadRecentConversations)
                            withObject:nil
                            afterDelay:2.0];
+    
+    //TODO:测试使用
+    {
+        [self setRightButtonWithStateImage:@"title-icon-个人资料" stateHighlightedImage:nil stateDisabledImage:nil titleName:nil];
+    }
 }
+
+//TODO:测试使用
+- (void)rightButtonPressed:(UIButton *)sender
+{
+    NSArray *users = @[@"1479369785100021571",@"1478743481879054151",@"1478933128765095651"];
+    [[CHRCIMDataSource sharedRCIMDataSource] createChatRoom:@"聊天室" users:users];
+}
+
 
 - (NSArray *)allConversationModels
 {
@@ -103,7 +118,7 @@
     
     if (contenModel.isGroupChat) {
         
-        GJGCChatFriendTalkModel *talk = [[GJGCChatFriendTalkModel alloc]init];
+        GJGCChatFriendTalkModel *talk = [[GJGCChatFriendTalkModel alloc] init];
         talk.talkType = GJGCChatFriendTalkTypeGroup;
         talk.toId = contenModel.toId;
         talk.toUserName = contenModel.name.string;
