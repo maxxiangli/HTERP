@@ -98,13 +98,10 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
 
 - (void)dealloc
 {
-    //TODO:WXT
-//    [[EMClient sharedClient].chatManager removeDelegate:self];
     [GJCFNotificationCenter removeObserver:self];
 }
 
 #pragma mark - 内部接口
-
 - (NSArray *)heightForContentModel:(GJGCChatContentBaseModel *)contentModel
 {
     if (!contentModel) {
