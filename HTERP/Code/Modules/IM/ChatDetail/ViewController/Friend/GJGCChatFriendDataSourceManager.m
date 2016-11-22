@@ -87,10 +87,11 @@ static const NSInteger kGetMessageCount = 20;
     //读取最近的20条消息
     RCConversationType type = self.taklInfo.converstation.conversationType;
     NSString *targetId = self.taklInfo.toId;
-    NSArray *latestMessages = [[RCIMClient sharedRCIMClient] getLatestMessages:type
-                                                                      targetId:targetId
-                                                                         count:kGetMessageCount];
+    NSArray *tmp = [[RCIMClient sharedRCIMClient] getLatestMessages:type
+                                                           targetId:targetId
+                                                              count:kGetMessageCount];
     
+    NSArray *latestMessages = [[tmp reverseObjectEnumerator] allObjects];
     for (RCMessage *message in latestMessages)
     {
         [self addEasyMessage:message];
