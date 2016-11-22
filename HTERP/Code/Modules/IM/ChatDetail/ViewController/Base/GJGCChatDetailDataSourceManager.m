@@ -349,50 +349,45 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
 }
 
 #pragma mark - 删除消息
-
 - (NSArray *)deleteMessageAtIndex:(NSInteger)index
-{
-    return nil;
-//    BOOL isDelete = YES;//数据库完成删除动作
-//    GJGCChatFriendContentModel *deleteContentModel = [self.chatListArray objectAtIndex:index];
-//    isDelete = [self.taklInfo.conversation deleteMessageWithId:deleteContentModel.message.messageId];
-//    
-//    NSMutableArray *willDeletePaths = [NSMutableArray array];
-//    
-//    if (isDelete) {
-//        
-//        /* 更新最近联系人列表得最后一条消息 */
-//        if (index == self.totalCount - 1 && self.chatContentTotalCount > 1) {
-//            
-//            GJGCChatFriendContentModel *lastContentAfterDelete = nil;
-//            lastContentAfterDelete = (GJGCChatFriendContentModel *)[self contentModelAtIndex:index-1];
-//            if (lastContentAfterDelete.isTimeSubModel) {
-//                
-//                if (self.chatContentTotalCount - 1 >= 1) {
-//                    
-//                    lastContentAfterDelete = (GJGCChatFriendContentModel *)[self contentModelAtIndex:index - 2];
-//                    
-//                }
-//                
-//            }
-//            
-//        }
-//        
-//        NSString *willDeleteTimeSubIdentifier = [self updateMsgContentTimeStringAtDeleteIndex:index];
-//        
-//        [self removeChatContentModelAtIndex:index];
-//        
-//        [willDeletePaths addObject:[NSIndexPath indexPathForRow:index inSection:0]];
-//        
-//        if (willDeleteTimeSubIdentifier) {
-//            
-//            [willDeletePaths addObject:[NSIndexPath indexPathForRow:index - 1 inSection:0]];
-//            
-//            [self removeTimeSubByIdentifier:willDeleteTimeSubIdentifier];
-//        }
-//    }
-//    
-//    return willDeletePaths;
+{    
+    BOOL isDelete = YES;//数据库完成删除动作
+    GJGCChatFriendContentModel *deleteContentModel = [self.chatListArray objectAtIndex:index];
+    NSInteger messageId = deleteContentModel.message.messageId;
+    isDelete = [[RCIMClient sharedRCIMClient] deleteMessages:@[@(messageId)]];
+
+    NSMutableArray *willDeletePaths = [NSMutableArray array];
+    if(isDelete)
+    {
+        /* 更新最近联系人列表得最后一条消息 */
+        if (index == self.totalCount - 1 && self.chatContentTotalCount > 1) {
+            
+            GJGCChatFriendContentModel *lastContentAfterDelete = nil;
+            lastContentAfterDelete = (GJGCChatFriendContentModel *)[self contentModelAtIndex:index-1];
+            if (lastContentAfterDelete.isTimeSubModel)
+            {
+                if ((self.chatContentTotalCount - 1) >= 1)
+                {
+                    lastContentAfterDelete = (GJGCChatFriendContentModel *)[self contentModelAtIndex:index - 2];
+                }
+            }
+        }
+        
+        NSString *willDeleteTimeSubIdentifier = [self updateMsgContentTimeStringAtDeleteIndex:index];
+        
+        [self removeChatContentModelAtIndex:index];
+        
+        [willDeletePaths addObject:[NSIndexPath indexPathForRow:index inSection:0]];
+        
+        if (willDeleteTimeSubIdentifier) {
+            
+            [willDeletePaths addObject:[NSIndexPath indexPathForRow:index - 1 inSection:0]];
+            
+            [self removeTimeSubByIdentifier:willDeleteTimeSubIdentifier];
+        }
+    }
+
+    return willDeletePaths;
 }
 
 #pragma mark - 加载历史消息
@@ -864,48 +859,6 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
     
 //    messageContent.message = newMessage;
 }
-
-
-
-//if (messageContent.contentType == GJGCChatFriendContentTypeText ||
-//    messageContent.contentType == GJGCChatFriendContentTypeAudio)
-//{
-//    message = [[RCIMClient sharedRCIMClient] sendMessage:conversationType
-//                                                targetId:messageContent.toId
-//                                                 content:msgContent
-//                                             pushContent:nil
-//                                                pushData:nil
-//                                                 success:^(long messageId) {
-//                                                     [weakSelf handleSendMessageSucess:messageId];
-//                                                 } error:^(RCErrorCode nErrorCode, long messageId) {
-//                                                     [weakSelf handleSendMessageError:messageId];
-//                                                 }];
-//    
-//}
-//else if (messageContent.contentType == GJGCChatFriendContentTypeImage)
-//{
-//    message = [[RCIMClient sharedRCIMClient] sendMediaMessage:conversationType targetId:messageContent.toId content:msgContent pushContent:nil pushData:nil progress:nil success:^(long messageId) {
-//        
-//        NSLog(@"success = %@", @(messageId));
-//        [weakSelf handleSendMessageSucess:messageId];
-//        
-//    } error:^(RCErrorCode errorCode, long messageId) {
-//        
-//        NSLog(@"error = %@", @(errorCode));
-//        [weakSelf handleSendMessageError:messageId];
-//        
-//    } cancel:^(long messageId) {
-//        
-//        NSLog(@"cancel = %@", @(messageId));
-//        
-//    }];
-//}
-//else{
-//    //Do nothing
-//}
-
-
-
 
 #pragma mark - 收环信消息到数据源，子类具体实现
 - (GJGCChatFriendContentModel *)addEaseMessage:(EMMessage *)aMessage
