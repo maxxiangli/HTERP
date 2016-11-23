@@ -28,4 +28,14 @@ FOUNDATION_EXPORT NSString *const CHRCIMLeftMessageKey;
 //创建群组
 - (void)createChatRoom:(NSString *)roomName users:(NSArray *)users;
 
+//退出群组
+- (void)quitChatRoom:(NSString *)targetId quitUsers:(NSArray *)quitUsers;
+
+//加入群组
+- (void)joinChatRoom:(NSString *)targetId joinUsers:(NSArray *)joinUsers;
+
+//获取群组用户
+- (void)getRoomUsers:(NSString *)targetId;
+
+
 @end

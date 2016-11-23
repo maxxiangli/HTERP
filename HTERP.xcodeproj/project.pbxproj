@@ -782,6 +782,13 @@
 		FAA8C0021DDDD96B001AD05F /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA8BFFD1DDDD96B001AD05F /* libopencore-amrnb.a */; };
 		FAA8C0031DDDD96B001AD05F /* RCConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAA8BFFE1DDDD96B001AD05F /* RCConfig.plist */; };
 		FAA8C0041DDDD96B001AD05F /* RongIMLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA8BFFF1DDDD96B001AD05F /* RongIMLib.framework */; };
+		FABAC2091DE58167008B96AF /* CHQuitGroupParam.m in Sources */ = {isa = PBXBuildFile; fileRef = FABAC2081DE58167008B96AF /* CHQuitGroupParam.m */; };
+		FABAC20C1DE58261008B96AF /* CHQuitGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FABAC20B1DE58261008B96AF /* CHQuitGroupModel.m */; };
+		FABAC20F1DE58DF0008B96AF /* CHJoinGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FABAC20E1DE58DF0008B96AF /* CHJoinGroupModel.m */; };
+		FABAC2131DE593FA008B96AF /* CHJoinGroupParam.m in Sources */ = {isa = PBXBuildFile; fileRef = FABAC2121DE593FA008B96AF /* CHJoinGroupParam.m */; };
+		FABAC2161DE59A65008B96AF /* CHGroupUserList.m in Sources */ = {isa = PBXBuildFile; fileRef = FABAC2151DE59A65008B96AF /* CHGroupUserList.m */; };
+		FABAC2191DE5A4D9008B96AF /* CHIMUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FABAC2181DE5A4D9008B96AF /* CHIMUserModel.m */; };
+		FABAC21C1DE5A6AA008B96AF /* CHGetGroupUserListParam.m in Sources */ = {isa = PBXBuildFile; fileRef = FABAC21B1DE5A6AA008B96AF /* CHGetGroupUserListParam.m */; };
 		FADA20D01DD2C14600F73DAC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */; };
 		FADA20D31DD2C23900F73DAC /* CHSpashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */; };
 		FAF727841DE14A110086DF05 /* CHRCIMDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF727831DE14A110086DF05 /* CHRCIMDataSource.m */; };
@@ -2055,6 +2062,20 @@
 		FAA8BFFD1DDDD96B001AD05F /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
 		FAA8BFFE1DDDD96B001AD05F /* RCConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RCConfig.plist; sourceTree = "<group>"; };
 		FAA8BFFF1DDDD96B001AD05F /* RongIMLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RongIMLib.framework; sourceTree = "<group>"; };
+		FABAC2071DE58167008B96AF /* CHQuitGroupParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHQuitGroupParam.h; sourceTree = "<group>"; };
+		FABAC2081DE58167008B96AF /* CHQuitGroupParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHQuitGroupParam.m; sourceTree = "<group>"; };
+		FABAC20A1DE58261008B96AF /* CHQuitGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHQuitGroupModel.h; sourceTree = "<group>"; };
+		FABAC20B1DE58261008B96AF /* CHQuitGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHQuitGroupModel.m; sourceTree = "<group>"; };
+		FABAC20D1DE58DF0008B96AF /* CHJoinGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJoinGroupModel.h; sourceTree = "<group>"; };
+		FABAC20E1DE58DF0008B96AF /* CHJoinGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJoinGroupModel.m; sourceTree = "<group>"; };
+		FABAC2111DE593FA008B96AF /* CHJoinGroupParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJoinGroupParam.h; sourceTree = "<group>"; };
+		FABAC2121DE593FA008B96AF /* CHJoinGroupParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJoinGroupParam.m; sourceTree = "<group>"; };
+		FABAC2141DE59A65008B96AF /* CHGroupUserList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHGroupUserList.h; sourceTree = "<group>"; };
+		FABAC2151DE59A65008B96AF /* CHGroupUserList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHGroupUserList.m; sourceTree = "<group>"; };
+		FABAC2171DE5A4D9008B96AF /* CHIMUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHIMUserModel.h; sourceTree = "<group>"; };
+		FABAC2181DE5A4D9008B96AF /* CHIMUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHIMUserModel.m; sourceTree = "<group>"; };
+		FABAC21A1DE5A6AA008B96AF /* CHGetGroupUserListParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHGetGroupUserListParam.h; sourceTree = "<group>"; };
+		FABAC21B1DE5A6AA008B96AF /* CHGetGroupUserListParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHGetGroupUserListParam.m; sourceTree = "<group>"; };
 		FADA20CF1DD2C14600F73DAC /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		FADA20D11DD2C23900F73DAC /* CHSpashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSpashScreenViewController.h; sourceTree = "<group>"; };
 		FADA20D21DD2C23900F73DAC /* CHSpashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSpashScreenViewController.m; sourceTree = "<group>"; };
@@ -4837,6 +4858,20 @@
 				FA8497221DE45139005E6155 /* CHCreateGroupParam.m */,
 				FA8497241DE4560C005E6155 /* CHCreateGroupModel.h */,
 				FA8497251DE4560C005E6155 /* CHCreateGroupModel.m */,
+				FABAC2071DE58167008B96AF /* CHQuitGroupParam.h */,
+				FABAC2081DE58167008B96AF /* CHQuitGroupParam.m */,
+				FABAC20A1DE58261008B96AF /* CHQuitGroupModel.h */,
+				FABAC20B1DE58261008B96AF /* CHQuitGroupModel.m */,
+				FABAC20D1DE58DF0008B96AF /* CHJoinGroupModel.h */,
+				FABAC20E1DE58DF0008B96AF /* CHJoinGroupModel.m */,
+				FABAC2111DE593FA008B96AF /* CHJoinGroupParam.h */,
+				FABAC2121DE593FA008B96AF /* CHJoinGroupParam.m */,
+				FABAC2141DE59A65008B96AF /* CHGroupUserList.h */,
+				FABAC2151DE59A65008B96AF /* CHGroupUserList.m */,
+				FABAC2171DE5A4D9008B96AF /* CHIMUserModel.h */,
+				FABAC2181DE5A4D9008B96AF /* CHIMUserModel.m */,
+				FABAC21A1DE5A6AA008B96AF /* CHGetGroupUserListParam.h */,
+				FABAC21B1DE5A6AA008B96AF /* CHGetGroupUserListParam.m */,
 			);
 			path = Datasource;
 			sourceTree = "<group>";
@@ -5307,6 +5342,7 @@
 				FAA8BFB41DDDB2A3001AD05F /* ZYNetWorkTask.m in Sources */,
 				FAA8BE431DDDB2A2001AD05F /* GJCFAssetsPreviewController.m in Sources */,
 				FAA8BE2D1DDDB2A2001AD05F /* FLAnimatedImageView.m in Sources */,
+				FABAC2191DE5A4D9008B96AF /* CHIMUserModel.m in Sources */,
 				FAA8BE351DDDB2A2001AD05F /* GJCFAssetsPickerConstans.m in Sources */,
 				FAA8BE791DDDB2A2001AD05F /* GJGCChatInputExpandEmojiPanelPageItem.m in Sources */,
 				FAA8BFE41DDDB2A3001AD05F /* GJGCInformationCellConstans.m in Sources */,
@@ -5351,6 +5387,7 @@
 				FAA8BE1A1DDDB2A2001AD05F /* AFNetworkReachabilityManager.m in Sources */,
 				FAA8BFAE1DDDB2A3001AD05F /* ZYUserDatabaseManager.m in Sources */,
 				FAA8BF7E1DDDB2A3001AD05F /* SCRecordSessionManager.m in Sources */,
+				FABAC2091DE58167008B96AF /* CHQuitGroupParam.m in Sources */,
 				FAA8BE421DDDB2A2001AD05F /* GJCFAssetsPickerViewController.m in Sources */,
 				C91ED3F41DCB1D68003688C7 /* CURLLoaderProxy.m in Sources */,
 				FAA8BDD71DDDB2A1001AD05F /* GJGCChatFriendVideoCell.m in Sources */,
@@ -5375,6 +5412,7 @@
 				C91ED3F11DCB1D68003688C7 /* CURLDataDownloader.m in Sources */,
 				FAA8BF451DDDB2A3001AD05F /* NSDictionary+Json.m in Sources */,
 				FAA8BFA71DDDB2A3001AD05F /* ZYDataCenter.m in Sources */,
+				FABAC2161DE59A65008B96AF /* CHGroupUserList.m in Sources */,
 				C91ED3DB1DCB1B32003688C7 /* NSString+Draw.m in Sources */,
 				FAA8BFD41DDDB2A3001AD05F /* GJGCInfoBaseListBaseCell.m in Sources */,
 				FAA8BE2B1DDDB2A2001AD05F /* GJCFUploadFileModel.m in Sources */,
@@ -5582,6 +5620,7 @@
 				C91ED43F1DCB3311003688C7 /* NSObject+Json.m in Sources */,
 				C9CB2C361DDB3D8100260DF7 /* CRegisterViewController.m in Sources */,
 				FAA8BDE11DDDB2A1001AD05F /* GJGCChatSystemNotiConstans.m in Sources */,
+				FABAC20F1DE58DF0008B96AF /* CHJoinGroupModel.m in Sources */,
 				FAA8BFC91DDDB2A3001AD05F /* GJGCCreateGroupLabelsSheetDataManager.m in Sources */,
 				FAA8BF591DDDB2A3001AD05F /* SCProcessingQueue.m in Sources */,
 				FAA8BF621DDDB2A3001AD05F /* SCSwipeableFilterView.m in Sources */,
@@ -5606,6 +5645,7 @@
 				FAA8BFA11DDDB2A3001AD05F /* ZYDatabaseColunmCondition.m in Sources */,
 				FAA8BE031DDDB2A2001AD05F /* GJGCMessageExtendGroupModel.m in Sources */,
 				FAA8BE5D1DDDB2A2001AD05F /* GJCFQuickCacheUitil.m in Sources */,
+				FABAC2131DE593FA008B96AF /* CHJoinGroupParam.m in Sources */,
 				FAA8BFE01DDDB2A3001AD05F /* GJGCRecentContactListViewController.m in Sources */,
 				FAA8BFDE1DDDB2A3001AD05F /* GJGCRecentChatForwardContentModel.m in Sources */,
 				FAA8BE301DDDB2A2001AD05F /* FMDatabasePool.m in Sources */,
@@ -5675,6 +5715,7 @@
 				FAA8BFC01DDDB2A3001AD05F /* BTToast.m in Sources */,
 				FAA8BF4D1DDDB2A3001AD05F /* SCAudioTools.m in Sources */,
 				FAA8BF441DDDB2A3001AD05F /* README.mdown in Sources */,
+				FABAC21C1DE5A6AA008B96AF /* CHGetGroupUserListParam.m in Sources */,
 				C91ED42A1DCB2C89003688C7 /* CPortfolioLoginManager.m in Sources */,
 				C91ED3D61DCB1B32003688C7 /* UIViewController+SEGUE.m in Sources */,
 				FAA8BF491DDDB2A3001AD05F /* NSURL+SCSaveToCameraRoll.m in Sources */,
@@ -5698,6 +5739,7 @@
 				FAA8BFCE1DDDB2A3001AD05F /* GJGCCreateGroupTypeSheetViewController.m in Sources */,
 				C91ED4121DCB2351003688C7 /* HttpDnsRecordRequest.m in Sources */,
 				FAA8BFCF1DDDB2A3001AD05F /* GJGCCreateGroupViewController.m in Sources */,
+				FABAC20C1DE58261008B96AF /* CHQuitGroupModel.m in Sources */,
 				FAA8BE0B1DDDB2A2001AD05F /* GJGCChatSystemNotiViewController.m in Sources */,
 				FAA8BDF61DDDB2A1001AD05F /* GJGCWebViewController.m in Sources */,
 				FA6BE4FC1DD9629F00878C03 /* PinYinForObjc.m in Sources */,

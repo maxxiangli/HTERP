@@ -10,6 +10,12 @@
 #import "HTLoginManager.h"
 #import "CHCreateGroupParam.h"
 #import "CHCreateGroupModel.h"
+#import "CHQuitGroupModel.h"
+#import "CHQuitGroupParam.h"
+#import "CHJoinGroupModel.h"
+#import "CHJoinGroupParam.h"
+#import "CHGetGroupUserListParam.h"
+#import "CHGroupUserList.h"
 #import "CLoginStateJSONRequestCommand.h"
 
 //融云APPKey
@@ -109,7 +115,7 @@ NSString *const CHRCIMLeftMessageKey = @"CHRCIMLeftMessageKey";
 //消息被撤回的回调方法
 - (void)onMessageRecalled:(long)messageId
 {
-    
+    NSLog(@"===========%s", __FUNCTION__);
 }
 
 //请求消息已读回执
@@ -117,7 +123,8 @@ NSString *const CHRCIMLeftMessageKey = @"CHRCIMLeftMessageKey";
                        targetId:(NSString *)targetId
                      messageUId:(NSString *)messageUId
 {
-    
+    NSLog(@"===========%s", __FUNCTION__);
+
 }
 
 
@@ -127,7 +134,7 @@ NSString *const CHRCIMLeftMessageKey = @"CHRCIMLeftMessageKey";
                       messageUId:(NSString *)messageUId
                       readerList:(NSMutableDictionary *)userIdList
 {
-    
+    NSLog(@"===========%s", __FUNCTION__);
 }
 
 #pragma mark - Public function
@@ -168,6 +175,104 @@ NSString *const CHRCIMLeftMessageKey = @"CHRCIMLeftMessageKey";
     }];
 }
 
+
+- (void)quitChatRoom:(NSString *)targetId quitUsers:(NSArray *)quitUsers
+{
+    if (!targetId || [targetId length] == 0 )
+    {
+        return;
+    }
+    
+    if (!quitUsers || [quitUsers count] == 0 )
+    {
+        return;
+    }
+    
+    NSUInteger count = [quitUsers count];
+    NSMutableString *strUsers = [NSMutableString stringWithCapacity:128];
+    for (NSUInteger i = 0; i < count; i++)
+    {
+        NSString *content = (i != 0) ? [NSString stringWithFormat:@",%@",quitUsers[i]] : quitUsers[i];
+        [strUsers appendString:content];
+    }
+    
+    CHQuitGroupParam *getParam = [[CHQuitGroupParam alloc] init];
+    getParam.userId = @"1479369785138084301";//[HTLoginManager getInstance].loginInfor.userId;
+    
+    NSDictionary *postParam = @{@"roomid":targetId, @"userIds":strUsers};
+    
+    [CLoginStateJSONRequestCommand getWithParams:getParam modelClass:[CHQuitGroupModel class] postOtherParams:postParam header:nil sucess:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand) {
+        
+        CHQuitGroupModel *groupModel = (CHQuitGroupModel *)requestCommand.responseModel;
+        NSLog(@"退出群组聊天成功! %@", groupModel.msg);
+        
+    } failure:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand, NSError *dataParseError) {
+        
+        NSLog(@"msg==========");
+        
+    }];
+}
+
+- (void)joinChatRoom:(NSString *)targetId joinUsers:(NSArray *)joinUsers
+{
+    if (!targetId || [targetId length] == 0 )
+    {
+        return;
+    }
+    
+    if (!joinUsers || [joinUsers count] == 0 )
+    {
+        return;
+    }
+    
+    NSUInteger count = [joinUsers count];
+    NSMutableString *strUsers = [NSMutableString stringWithCapacity:128];
+    for (NSUInteger i = 0; i < count; i++)
+    {
+        NSString *content = (i != 0) ? [NSString stringWithFormat:@",%@",joinUsers[i]] : joinUsers[i];
+        [strUsers appendString:content];
+    }
+    
+    CHJoinGroupParam *getParam = [[CHJoinGroupParam alloc] init];
+    getParam.userId = @"1479369785138084301";//[HTLoginManager getInstance].loginInfor.userId;
+    
+    NSDictionary *postParam = @{@"roomid":targetId, @"userIds":strUsers};
+    
+    [CLoginStateJSONRequestCommand getWithParams:getParam modelClass:[CHJoinGroupModel class] postOtherParams:postParam header:nil sucess:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand) {
+        
+        CHJoinGroupModel *groupModel = (CHJoinGroupModel *)requestCommand.responseModel;
+        NSLog(@"加入群组聊天成功! %@", groupModel.msg);
+        
+    } failure:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand, NSError *dataParseError) {
+        
+        NSLog(@"msg==========");
+        
+    }];
+}
+
+- (void)getRoomUsers:(NSString *)targetId
+{
+    if (!targetId || [targetId length] == 0 )
+    {
+        return;
+    }
+    
+    CHGetGroupUserListParam *getParam = [[CHGetGroupUserListParam alloc] init];
+    getParam.userId = @"1479369785138084301";//[HTLoginManager getInstance].loginInfor.userId;
+    
+    NSDictionary *postParam = @{@"roomid":targetId};
+    
+    [CLoginStateJSONRequestCommand getWithParams:getParam modelClass:[CHGroupUserList class] postOtherParams:postParam header:nil sucess:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand) {
+        
+        CHGroupUserList *groupModel = (CHGroupUserList *)requestCommand.responseModel;
+        NSLog(@"获取人员成功! %@", groupModel.msg);
+        
+    } failure:^(NSInteger code, NSString *msg, CJSONRequestCommand *requestCommand, NSError *dataParseError) {
+        
+        NSLog(@"msg==========");
+        
+    }];
+}
 
 
 

@@ -64,8 +64,19 @@
 //TODO:测试使用
 - (void)rightButtonPressed:(UIButton *)sender
 {
-    NSArray *users = @[@"1479369785100021571",@"1478743481879054151",@"1478933128765095651"];
-    [[CHRCIMDataSource sharedRCIMDataSource] createChatRoom:@"聊天室" users:users];
+//    NSArray *users = @[@"1479369785100021571",@"1478743481879054151",@"1478933128765095651"];
+//    [[CHRCIMDataSource sharedRCIMDataSource] createChatRoom:@"聊天室" users:users];
+    
+//    1479817853683015991
+    
+    
+//    NSArray *quitUsers = @[@"1478933128765095651,1479369785100021571"];
+//    [[CHRCIMDataSource sharedRCIMDataSource] quitChatRoom:@"1479817853683015991" quitUsers:quitUsers];
+    
+    
+//    [[CHRCIMDataSource sharedRCIMDataSource] joinChatRoom:@"1479817853683015991" joinUsers:quitUsers];
+    
+    [[CHRCIMDataSource sharedRCIMDataSource] getRoomUsers:@"1479817853683015991"];
 }
 
 
