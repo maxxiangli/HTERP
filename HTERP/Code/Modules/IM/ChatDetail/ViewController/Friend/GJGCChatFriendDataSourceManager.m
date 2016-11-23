@@ -89,7 +89,7 @@ static const NSInteger kGetMessageCount = 20;
     NSString *targetId = self.taklInfo.toId;
     NSArray *tmp = [[RCIMClient sharedRCIMClient] getLatestMessages:type
                                                            targetId:targetId
-                                                              count:kGetMessageCount];
+                                                              count:(int)CHGetMessageHistoryCount];
     
     NSArray *latestMessages = [[tmp reverseObjectEnumerator] allObjects];
     for (RCMessage *message in latestMessages)
@@ -107,12 +107,13 @@ static const NSInteger kGetMessageCount = 20;
     self.isFinishLoadAllHistoryMsg = NO;
 }
 
-#pragma mark - 删除消息
+#pragma mark - 加载更多信息
 - (void)pushAddMoreMsg:(NSArray *)array
 {
     /* 分发到UI层，添加一组消息 */
-    for (EMMessage *aMessage in array) {
-        [self addEaseMessage:aMessage];
+    for (RCMessage *message in array)
+    {
+        [self addEasyMessage:message];
     }
     
     /* 重排时间顺序 */

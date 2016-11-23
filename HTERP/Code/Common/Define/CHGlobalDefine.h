@@ -7,7 +7,11 @@
 //
 
 //获取联系人成功
-extern NSString *const CHUpdateContactsNotification;
+FOUNDATION_EXPORT NSString *const CHUpdateContactsNotification;
+
+//获取消息数量
+FOUNDATION_EXPORT const NSInteger CHGetMessageHistoryCount;
+
 
 
 

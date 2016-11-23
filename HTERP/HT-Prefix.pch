@@ -32,6 +32,7 @@
 //
 ////    #import "CLogin.h"
 	#import "HTLoginManager.h"
+    #import "CHGlobalDefine.h"
 //
 ////	#import "CWtLoginManager.h"
 ////	#import "CWXLoginManager.h"

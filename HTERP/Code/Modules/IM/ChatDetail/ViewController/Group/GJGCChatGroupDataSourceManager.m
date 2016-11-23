@@ -96,14 +96,14 @@ static const NSInteger kGetMessageCount = 20;
 - (void)pushAddMoreMsg:(NSArray *)array
 {
     /* 分发到UI层，添加一组消息 */
-    for (EMMessage *aMessage in array) {
-        [self addEaseMessage:aMessage];
+    for (RCMessage *aMessage in array) {
+        [self addEasyMessage:aMessage];
     }
     
     /* 重排时间顺序 */
     [self resortAllChatContentBySendTime];
     
-    /* 上一次悬停的第一个cell的索引 */    
+    /* 上一次悬停的第一个cell的索引 */
     if (self.delegate && [self.delegate respondsToSelector:@selector(dataSourceManagerRequireFinishRefresh:)]) {
         __weak typeof(self) weakSelf = self;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -111,6 +111,25 @@ static const NSInteger kGetMessageCount = 20;
         });
     }
 }
+
+//- (void)pushAddMoreMsg:(NSArray *)array
+//{
+//    /* 分发到UI层，添加一组消息 */
+//    for (EMMessage *aMessage in array) {
+//        [self addEaseMessage:aMessage];
+//    }
+//    
+//    /* 重排时间顺序 */
+//    [self resortAllChatContentBySendTime];
+//    
+//    /* 上一次悬停的第一个cell的索引 */    
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(dataSourceManagerRequireFinishRefresh:)]) {
+//        __weak typeof(self) weakSelf = self;
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [weakSelf.delegate dataSourceManagerRequireFinishRefresh:weakSelf];
+//        });
+//    }
+//}
 
 - (void)updateAudioFinishRead:(NSString *)localMsgId
 {

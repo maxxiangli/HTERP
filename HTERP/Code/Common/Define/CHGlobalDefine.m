@@ -9,3 +9,7 @@
 //获取联系人成功
 NSString *const CHUpdateContactsNotification = @"CHUpdateContactsNotification";
 
+//获取消息数量
+const NSInteger CHGetMessageHistoryCount = 20;
+
+

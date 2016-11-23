@@ -160,7 +160,6 @@ static NSString * const GJGCActionSheetAssociateKey = @"GJIMSimpleCellActionShee
 }
 
 #pragma mark - 观察输入工具开始录音的通知
-
 - (void)observeChatInputPanelBeginRecord:(NSNotification *)noti
 {
     [self stopPlayCurrentAudio];

@@ -409,21 +409,18 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
                     lastMsgContent = item;
                     break;
                 }
-                
             }
             
-            /* 最后一条消息的发送时间 */
-            long long lastMsgSendTime;
-            if (lastMsgContent) {
-                lastMsgSendTime = lastMsgContent.sendTime;
-            }else{
-                lastMsgSendTime = 0;
-            }
-            
-            //环信精确到毫秒所以要*1000
-            //TODO:WXT
             NSArray *localHistroyMsgArray = nil;
-//            NSArray *localHistroyMsgArray = [self.taklInfo.conversation loadMoreMessagesContain:nil before:lastMsgSendTime*1000 limit:20 from:nil direction:EMMessageSearchDirectionUp];
+            if (lastMsgContent)
+            {
+                long messageId = lastMsgContent.message.messageId;
+                RCConversationType type = lastMsgContent.message.conversationType;
+                NSString *targetId = lastMsgContent.message.targetId;
+                localHistroyMsgArray = [[RCIMClient sharedRCIMClient] getHistoryMessages:type
+                                                                                targetId:targetId oldestMessageId:messageId
+                                                                                   count:(int)CHGetMessageHistoryCount];
+            }
             
             if (localHistroyMsgArray && localHistroyMsgArray.count > 0 ) {
                 
@@ -445,7 +442,6 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
             }
         }
     });
-    
 }
 
 - (void)pushAddMoreMsg:(NSArray *)array
@@ -454,7 +450,6 @@ NSString * GJGCChatForwardMessageDidSendNoti = @"GJGCChatForwardMessageDidSendNo
 }
 
 #pragma mark - 所有内容重排时间
-
 - (void)resortAllChatContentBySendTime
 {
     
