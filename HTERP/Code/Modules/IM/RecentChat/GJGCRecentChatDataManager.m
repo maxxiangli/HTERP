@@ -99,9 +99,8 @@
     GJGCRecentChatModel *chatModel = [self contentModelAtIndexPath:indexPath];
     
     //TODO:WXT(为了测试暂时不删除)
-//    [[RCIMClient sharedRCIMClient] removeConversation:chatModel.conversation.conversationType
-//                                             targetId:chatModel.conversation.targetId];
-    
+    [[RCIMClient sharedRCIMClient] removeConversation:chatModel.conversation.conversationType
+                                             targetId:chatModel.conversation.targetId];
     
     [self.sourceArray removeObject:chatModel];
 

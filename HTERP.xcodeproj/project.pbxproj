@@ -669,7 +669,6 @@
 		FAA8BF881DDDB2A3001AD05F /* GJGCMusicPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA8BCA21DDDB2A1001AD05F /* GJGCMusicPlayViewController.m */; };
 		FAA8BF891DDDB2A3001AD05F /* GJGCMusicSearchResultListDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA8BCA41DDDB2A1001AD05F /* GJGCMusicSearchResultListDataManager.m */; };
 		FAA8BF8A1DDDB2A3001AD05F /* GJGCMusicSearchResultListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA8BCA61DDDB2A1001AD05F /* GJGCMusicSearchResultListViewController.m */; };
-		FAA8BF8B1DDDB2A3001AD05F /* music@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA8BCA71DDDB2A1001AD05F /* music@2x.png */; };
 		FAA8BF8C1DDDB2A3001AD05F /* player_btn_next_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA8BCA81DDDB2A1001AD05F /* player_btn_next_highlight@2x.png */; };
 		FAA8BF8D1DDDB2A3001AD05F /* player_btn_next_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA8BCA91DDDB2A1001AD05F /* player_btn_next_normal@2x.png */; };
 		FAA8BF8E1DDDB2A3001AD05F /* player_btn_pause_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA8BCAA1DDDB2A1001AD05F /* player_btn_pause_highlight@2x.png */; };
@@ -1853,7 +1852,6 @@
 		FAA8BCA41DDDB2A1001AD05F /* GJGCMusicSearchResultListDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCMusicSearchResultListDataManager.m; sourceTree = "<group>"; };
 		FAA8BCA51DDDB2A1001AD05F /* GJGCMusicSearchResultListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJGCMusicSearchResultListViewController.h; sourceTree = "<group>"; };
 		FAA8BCA61DDDB2A1001AD05F /* GJGCMusicSearchResultListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJGCMusicSearchResultListViewController.m; sourceTree = "<group>"; };
-		FAA8BCA71DDDB2A1001AD05F /* music@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music@2x.png"; sourceTree = "<group>"; };
 		FAA8BCA81DDDB2A1001AD05F /* player_btn_next_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_btn_next_highlight@2x.png"; sourceTree = "<group>"; };
 		FAA8BCA91DDDB2A1001AD05F /* player_btn_next_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_btn_next_normal@2x.png"; sourceTree = "<group>"; };
 		FAA8BCAA1DDDB2A1001AD05F /* player_btn_pause_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_btn_pause_highlight@2x.png"; sourceTree = "<group>"; };
@@ -4280,7 +4278,6 @@
 				FAA8BCA41DDDB2A1001AD05F /* GJGCMusicSearchResultListDataManager.m */,
 				FAA8BCA51DDDB2A1001AD05F /* GJGCMusicSearchResultListViewController.h */,
 				FAA8BCA61DDDB2A1001AD05F /* GJGCMusicSearchResultListViewController.m */,
-				FAA8BCA71DDDB2A1001AD05F /* music@2x.png */,
 				FAA8BCA81DDDB2A1001AD05F /* player_btn_next_highlight@2x.png */,
 				FAA8BCA91DDDB2A1001AD05F /* player_btn_next_normal@2x.png */,
 				FAA8BCAA1DDDB2A1001AD05F /* player_btn_pause_highlight@2x.png */,
@@ -4967,7 +4964,6 @@
 				FAA8BEC31DDDB2A2001AD05F /* 062[勾引]@2x.png in Resources */,
 				FAA8BF1A1DDDB2A3001AD05F /* 聊天-icon-语音2-绿@2x.png in Resources */,
 				FAA8BECB1DDDB2A2001AD05F /* 070[篮球]@2x.png in Resources */,
-				FAA8BF8B1DDDB2A3001AD05F /* music@2x.png in Resources */,
 				FAA8BF2C1DDDB2A3001AD05F /* 聊天键盘-icon-选择照片-点击@2x.png in Resources */,
 				FAA8BEA61DDDB2A2001AD05F /* 033[右哼哼]@2x.png in Resources */,
 				FAA8BEB21DDDB2A2001AD05F /* 045[难过]@2x.png in Resources */,
